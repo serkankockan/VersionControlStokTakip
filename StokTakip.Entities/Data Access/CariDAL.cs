@@ -52,8 +52,8 @@ namespace StokTakip.Entities.Data_Access
                     cariler.SatisOzelFiyati,
                     cariler.Aciklama,
 
-                    AlisToplam = fisler.Where(c => c.FisTuru == "Alış Fişi").Sum(c => c.ToplamTutar) ?? 0,
-                    SatisToplam = fisler.Where(c => c.FisTuru == "Satış Fişi").Sum(c => c.ToplamTutar) ?? 0
+                    AlisToplam = fisler.Where(c => c.FisTuru == "Alış Faturası").Sum(c => c.ToplamTutar) ?? 0,
+                    SatisToplam = fisler.Where(c => c.FisTuru == "Perakende Satış Faturası").Sum(c => c.ToplamTutar) ?? 0
                 }).GroupJoin(context.KasaHareketleri, c => c.CariKodu, c => c.CariKodu, (cariler, kasahareket) => new
                 {
                     cariler.Id,
@@ -114,8 +114,8 @@ namespace StokTakip.Entities.Data_Access
                     fisler.IskontoTutar,
                     fisler.Aciklama,
                     fisler.ToplamTutar,
-                    Odenen = context.KasaHareketleri.Sum(c => c.Tutar) ?? 0,
-                    KalanOdeme = fisler.ToplamTutar - context.KasaHareketleri.Sum(c => c.Tutar) ?? 0
+                    Odenen = context.KasaHareketleri.Where(c=> c.FisKodu == fisler.FisKodu).Sum(c => c.Tutar) ?? 0,
+                    KalanOdeme = fisler.ToplamTutar - context.KasaHareketleri.Where(c => c.FisKodu == fisler.FisKodu).Sum(c => c.Tutar) ?? 0
                 }).ToList();
 
             return result;
@@ -124,13 +124,13 @@ namespace StokTakip.Entities.Data_Access
         public object CariFisGenelToplam(StokTakipContext context, string cariKodu)
         {
             var result = (from c in context.Fisler.Where(c => c.CariKodu == cariKodu)
-                group c by new {c.FisTuru, c.ToplamTutar}
+                group c by new {c.FisTuru}
                 into grp
                 select new
                 {
                     Bilgi = grp.Key.FisTuru,
                     KayitSayisi = grp.Count(),
-                    ToplamTutar = grp.Sum(c => c.ToplamTutar)
+                    Tutar = grp.Sum(c => c.ToplamTutar)
                 }).ToString();
             return result;
         }
@@ -144,7 +144,7 @@ namespace StokTakip.Entities.Data_Access
                      .Sum(c => c.Tutar) ?? 0);
 
             decimal borc =
-                (context.Fisler.Where(c => c.CariKodu == cariKodu && c.FisTuru == "Satış Faturası")
+                (context.Fisler.Where(c => c.CariKodu == cariKodu && c.FisTuru == "Perakende Satış Faturası")
                      .Sum(c => c.ToplamTutar) ?? 0) +
                 (context.KasaHareketleri.Where(c => c.CariKodu == cariKodu && c.Hareket == "Kasa Çıkış")
                      .Sum(c => c.Tutar) ?? 0);
@@ -158,12 +158,12 @@ namespace StokTakip.Entities.Data_Access
                 },
                 new GenelToplam
                 {
-                    Bilgi = "Alacak",
+                    Bilgi = "Borç",
                     Tutar = borc
                 },
                 new GenelToplam
                 {
-                    Bilgi = "Alacak",
+                    Bilgi = "Bakiye",
                     Tutar = alacak - borc
                 }
             };

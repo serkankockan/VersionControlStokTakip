@@ -1,6 +1,6 @@
 ﻿namespace StokTakip.BackOffice.Cari
 {
-    partial class frmCari
+    partial class frmCariSec
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCari));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCariSec));
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
+            this.lblUyari = new DevExpress.XtraEditors.LabelControl();
+            this.btnSec = new DevExpress.XtraEditors.SimpleButton();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
-            this.imgMenu = new System.Windows.Forms.ImageList(this.components);
-            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnStokHareket = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSil = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btnFiltreKapat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnFiltreIptal = new DevExpress.XtraEditors.SimpleButton();
-            this.btnFiltre = new DevExpress.XtraEditors.SimpleButton();
-            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -82,8 +70,6 @@
             this.colAlacak = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -104,34 +90,60 @@
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1235, 45);
-            this.lblBaslik.TabIndex = 1;
-            this.lblBaslik.Text = "Cari Kartlar";
+            this.lblBaslik.Size = new System.Drawing.Size(1143, 45);
+            this.lblBaslik.TabIndex = 3;
+            this.lblBaslik.Text = "Cari Seçim Ekranı";
             // 
             // grpMenu
             // 
+            this.grpMenu.Controls.Add(this.lblUyari);
+            this.grpMenu.Controls.Add(this.btnSec);
             this.grpMenu.Controls.Add(this.btnKapat);
-            this.grpMenu.Controls.Add(this.btnAra);
-            this.grpMenu.Controls.Add(this.btnGuncelle);
-            this.grpMenu.Controls.Add(this.btnStokHareket);
-            this.grpMenu.Controls.Add(this.btnKopyala);
-            this.grpMenu.Controls.Add(this.btnSil);
-            this.grpMenu.Controls.Add(this.btnDuzenle);
-            this.grpMenu.Controls.Add(this.btnEkle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 631);
+            this.grpMenu.Location = new System.Drawing.Point(0, 575);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1235, 68);
-            this.grpMenu.TabIndex = 2;
+            this.grpMenu.Size = new System.Drawing.Size(1143, 68);
+            this.grpMenu.TabIndex = 4;
             this.grpMenu.Text = "Menü";
+            // 
+            // lblUyari
+            // 
+            this.lblUyari.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblUyari.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("lblUyari.Appearance.Image")));
+            this.lblUyari.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUyari.Appearance.Options.UseFont = true;
+            this.lblUyari.Appearance.Options.UseImage = true;
+            this.lblUyari.Appearance.Options.UseImageAlign = true;
+            this.lblUyari.Appearance.Options.UseTextOptions = true;
+            this.lblUyari.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblUyari.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblUyari.Location = new System.Drawing.Point(12, 26);
+            this.lblUyari.Name = "lblUyari";
+            this.lblUyari.Size = new System.Drawing.Size(386, 37);
+            this.lblUyari.TabIndex = 3;
+            this.lblUyari.Text = "Çoklu seçim yapabilmek için CTRL tuşuna basılı tutunuz.";
+            this.lblUyari.Visible = false;
+            // 
+            // btnSec
+            // 
+            this.btnSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSec.ImageOptions.Image")));
+            this.btnSec.ImageOptions.ImageIndex = 0;
+            this.btnSec.Location = new System.Drawing.Point(961, 26);
+            this.btnSec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSec.Name = "btnSec";
+            this.btnSec.Size = new System.Drawing.Size(83, 35);
+            this.btnSec.TabIndex = 2;
+            this.btnSec.Text = "Seç";
+            this.btnSec.Click += new System.EventHandler(this.btnSec_Click);
             // 
             // btnKapat
             // 
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKapat.ImageOptions.ImageIndex = 6;
-            this.btnKapat.ImageOptions.ImageList = this.imgMenu;
-            this.btnKapat.Location = new System.Drawing.Point(1141, 26);
+            this.btnKapat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKapat.ImageOptions.Image")));
+            this.btnKapat.ImageOptions.ImageIndex = 1;
+            this.btnKapat.Location = new System.Drawing.Point(1050, 26);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(83, 35);
@@ -139,188 +151,16 @@
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
-            // imgMenu
-            // 
-            this.imgMenu.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgMenu.ImageStream")));
-            this.imgMenu.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgMenu.Images.SetKeyName(0, "Cari Bilgi.png");
-            this.imgMenu.Images.SetKeyName(1, "Cari Düzenle.png");
-            this.imgMenu.Images.SetKeyName(2, "Cari Ekle.png");
-            this.imgMenu.Images.SetKeyName(3, "Cari Hareket.png");
-            this.imgMenu.Images.SetKeyName(4, "cari kpyala.png");
-            this.imgMenu.Images.SetKeyName(5, "Cari Sil.png");
-            this.imgMenu.Images.SetKeyName(6, "folder_out.png");
-            this.imgMenu.Images.SetKeyName(7, "funnel.png");
-            this.imgMenu.Images.SetKeyName(8, "funnel_delete.png");
-            this.imgMenu.Images.SetKeyName(9, "refresh.png");
-            this.imgMenu.Images.SetKeyName(10, "user.png");
-            this.imgMenu.Images.SetKeyName(11, "view.png");
-            // 
-            // btnAra
-            // 
-            this.btnAra.ImageOptions.ImageIndex = 5;
-            this.btnAra.ImageOptions.ImageList = this.imgMenu;
-            this.btnAra.Location = new System.Drawing.Point(541, 26);
-            this.btnAra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(83, 35);
-            this.btnAra.TabIndex = 2;
-            this.btnAra.Text = "Ara";
-            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.ImageOptions.ImageIndex = 9;
-            this.btnGuncelle.ImageOptions.ImageList = this.imgMenu;
-            this.btnGuncelle.Location = new System.Drawing.Point(452, 26);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(83, 35);
-            this.btnGuncelle.TabIndex = 2;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnStokHareket
-            // 
-            this.btnStokHareket.ImageOptions.ImageIndex = 3;
-            this.btnStokHareket.ImageOptions.ImageList = this.imgMenu;
-            this.btnStokHareket.Location = new System.Drawing.Point(363, 26);
-            this.btnStokHareket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnStokHareket.Name = "btnStokHareket";
-            this.btnStokHareket.Size = new System.Drawing.Size(83, 35);
-            this.btnStokHareket.TabIndex = 1;
-            this.btnStokHareket.Text = "Cari\r\nHareket";
-            this.btnStokHareket.Click += new System.EventHandler(this.btnStokHareket_Click);
-            // 
-            // btnKopyala
-            // 
-            this.btnKopyala.ImageOptions.ImageIndex = 4;
-            this.btnKopyala.ImageOptions.ImageList = this.imgMenu;
-            this.btnKopyala.Location = new System.Drawing.Point(275, 26);
-            this.btnKopyala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnKopyala.Name = "btnKopyala";
-            this.btnKopyala.Size = new System.Drawing.Size(83, 35);
-            this.btnKopyala.TabIndex = 1;
-            this.btnKopyala.Text = "Kopyala";
-            this.btnKopyala.Click += new System.EventHandler(this.btnKopyala_Click);
-            // 
-            // btnSil
-            // 
-            this.btnSil.ImageOptions.ImageIndex = 5;
-            this.btnSil.ImageOptions.ImageList = this.imgMenu;
-            this.btnSil.Location = new System.Drawing.Point(187, 26);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(83, 35);
-            this.btnSil.TabIndex = 0;
-            this.btnSil.Text = "Sil";
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnDuzenle
-            // 
-            this.btnDuzenle.ImageOptions.ImageIndex = 1;
-            this.btnDuzenle.ImageOptions.ImageList = this.imgMenu;
-            this.btnDuzenle.Location = new System.Drawing.Point(99, 26);
-            this.btnDuzenle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(83, 35);
-            this.btnDuzenle.TabIndex = 0;
-            this.btnDuzenle.Text = "Düzenle";
-            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
-            // 
-            // btnEkle
-            // 
-            this.btnEkle.ImageOptions.ImageIndex = 2;
-            this.btnEkle.ImageOptions.ImageList = this.imgMenu;
-            this.btnEkle.Location = new System.Drawing.Point(10, 26);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(83, 35);
-            this.btnEkle.TabIndex = 0;
-            this.btnEkle.Text = "Ekle";
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
-            // 
-            // splitContainerControl1
-            // 
-            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 45);
-            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltreKapat);
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltreIptal);
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltre);
-            this.splitContainerControl1.Panel1.Controls.Add(this.filterControl1);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1235, 586);
-            this.splitContainerControl1.SplitterPosition = 247;
-            this.splitContainerControl1.TabIndex = 3;
-            this.splitContainerControl1.Text = "splitContainerControl1";
-            // 
-            // btnFiltreKapat
-            // 
-            this.btnFiltreKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltreKapat.ImageOptions.ImageIndex = 6;
-            this.btnFiltreKapat.ImageOptions.ImageList = this.imgMenu;
-            this.btnFiltreKapat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreKapat.Location = new System.Drawing.Point(1175, 201);
-            this.btnFiltreKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFiltreKapat.Name = "btnFiltreKapat";
-            this.btnFiltreKapat.Size = new System.Drawing.Size(50, 38);
-            this.btnFiltreKapat.TabIndex = 2;
-            this.btnFiltreKapat.Click += new System.EventHandler(this.btnFiltreKapat_Click);
-            // 
-            // btnFiltreIptal
-            // 
-            this.btnFiltreIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltreIptal.ImageOptions.ImageIndex = 8;
-            this.btnFiltreIptal.ImageOptions.ImageList = this.imgMenu;
-            this.btnFiltreIptal.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreIptal.Location = new System.Drawing.Point(1121, 201);
-            this.btnFiltreIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFiltreIptal.Name = "btnFiltreIptal";
-            this.btnFiltreIptal.Size = new System.Drawing.Size(50, 38);
-            this.btnFiltreIptal.TabIndex = 2;
-            this.btnFiltreIptal.Click += new System.EventHandler(this.btnFiltreIptal_Click);
-            // 
-            // btnFiltre
-            // 
-            this.btnFiltre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltre.ImageOptions.ImageIndex = 7;
-            this.btnFiltre.ImageOptions.ImageList = this.imgMenu;
-            this.btnFiltre.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltre.Location = new System.Drawing.Point(1066, 201);
-            this.btnFiltre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFiltre.Name = "btnFiltre";
-            this.btnFiltre.Size = new System.Drawing.Size(50, 38);
-            this.btnFiltre.TabIndex = 2;
-            this.btnFiltre.Click += new System.EventHandler(this.btnFiltre_Click);
-            // 
-            // filterControl1
-            // 
-            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.filterControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filterControl1.Location = new System.Drawing.Point(0, 0);
-            this.filterControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(1235, 247);
-            this.filterControl1.SortFilterColumns = false;
-            this.filterControl1.SourceControl = this.gridControl1;
-            this.filterControl1.TabIndex = 0;
-            this.filterControl1.Text = "filterControl1";
-            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.Location = new System.Drawing.Point(0, 45);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1235, 334);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.Size = new System.Drawing.Size(1143, 530);
+            this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -622,22 +462,19 @@
             this.colAlacak.VisibleIndex = 9;
             this.colAlacak.Width = 102;
             // 
-            // frmCari
+            // frmCariSec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 699);
-            this.Controls.Add(this.splitContainerControl1);
+            this.ClientSize = new System.Drawing.Size(1143, 643);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
-            this.Name = "frmCari";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cari Kartları";
-            this.Load += new System.EventHandler(this.frmCari_Load);
+            this.Name = "frmCariSec";
+            this.Text = "frmCariSec";
+            this.Load += new System.EventHandler(this.frmCariSec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -648,22 +485,11 @@
 
         private DevExpress.XtraEditors.LabelControl lblBaslik;
         private DevExpress.XtraEditors.GroupControl grpMenu;
+        private DevExpress.XtraEditors.LabelControl lblUyari;
+        private DevExpress.XtraEditors.SimpleButton btnSec;
         private DevExpress.XtraEditors.SimpleButton btnKapat;
-        private DevExpress.XtraEditors.SimpleButton btnAra;
-        private DevExpress.XtraEditors.SimpleButton btnGuncelle;
-        private DevExpress.XtraEditors.SimpleButton btnStokHareket;
-        private DevExpress.XtraEditors.SimpleButton btnKopyala;
-        private DevExpress.XtraEditors.SimpleButton btnSil;
-        private DevExpress.XtraEditors.SimpleButton btnDuzenle;
-        private DevExpress.XtraEditors.SimpleButton btnEkle;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.SimpleButton btnFiltreKapat;
-        private DevExpress.XtraEditors.SimpleButton btnFiltreIptal;
-        private DevExpress.XtraEditors.SimpleButton btnFiltre;
-        private DevExpress.XtraEditors.FilterControl filterControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.ImageList imgMenu;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colDurumu;
         private DevExpress.XtraGrid.Columns.GridColumn colCariTuru;

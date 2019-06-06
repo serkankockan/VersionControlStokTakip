@@ -17,6 +17,7 @@ namespace StokTakip.BackOffice.Stok
         private Entities.Tables.Stok _entity;
         private StokDAL stokDal = new StokDAL();
         private StokTakipContext context = new StokTakipContext();
+        public bool saved = false;
 
         public frmStokIslem(Entities.Tables.Stok entity)
         {
@@ -94,6 +95,7 @@ namespace StokTakip.BackOffice.Stok
             if (stokDal.AddOrUpdate(context, _entity))
             {
                 stokDal.Save(context);
+                saved = true;
                 this.Close();
 
             }

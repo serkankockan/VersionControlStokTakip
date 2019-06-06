@@ -81,6 +81,10 @@ namespace StokTakip.BackOffice.Cari
         {
             frmCariIslem form = new frmCariIslem(new Entities.Tables.Cari());
             form.ShowDialog();
+            if (form.saved)
+            {
+                GetAll();
+            }
         }
 
         private void btnDuzenle_Click(object sender, EventArgs e)
@@ -88,6 +92,10 @@ namespace StokTakip.BackOffice.Cari
             secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
             frmCariIslem form = new frmCariIslem(cariDal.GetByFilter(context, c => c.CariKodu == secilen));
             form.ShowDialog();
+            if (form.saved)
+            {
+                GetAll();
+            }
         }
 
         private void btnKopyala_Click(object sender, EventArgs e)
@@ -98,6 +106,18 @@ namespace StokTakip.BackOffice.Cari
             cariEntity.Id = -1;
             cariEntity.CariKodu = null;
             frmCariIslem form = new frmCariIslem(cariEntity);
+            form.ShowDialog();
+            if (form.saved)
+            {
+                GetAll();
+            }
+        }
+
+        private void btnStokHareket_Click(object sender, EventArgs e)
+        {
+            secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
+            string secilenAd = gridView1.GetFocusedRowCellValue(colCariAdi).ToString();
+            frmCariHareket form = new frmCariHareket(secilen, secilenAd);
             form.ShowDialog();
         }
     }

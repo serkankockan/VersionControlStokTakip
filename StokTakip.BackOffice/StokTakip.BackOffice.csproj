@@ -86,6 +86,30 @@
     <Compile Include="Cari\frmCariIslem.Designer.cs">
       <DependentUpon>frmCariIslem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cari\frmCariSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cari\frmCariSec.Designer.cs">
+      <DependentUpon>frmCariSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\frmKasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\frmKasa.Designer.cs">
+      <DependentUpon>frmKasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\frmKasaHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\frmKasaHareket.Designer.cs">
+      <DependentUpon>frmKasaHareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\frmKasaIslem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\frmKasaIslem.Designer.cs">
+      <DependentUpon>frmKasaIslem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stok\frmStok.cs">
@@ -124,6 +148,18 @@
     <EmbeddedResource Include="Cari\frmCariIslem.resx">
       <DependentUpon>frmCariIslem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cari\frmCariSec.resx">
+      <DependentUpon>frmCariSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\frmKasa.resx">
+      <DependentUpon>frmKasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\frmKasaHareket.resx">
+      <DependentUpon>frmKasaHareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\frmKasaIslem.resx">
+      <DependentUpon>frmKasaIslem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -150,6 +186,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Cari.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Fis.datasource" />
+    <None Include="Properties\DataSources\StokTakip.Entities.Tables.Kasa.datasource" />
+    <None Include="Properties\DataSources\StokTakip.Entities.Tables.KasaHareket.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Stok.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.StokHareket.datasource" />
     <None Include="Properties\Settings.settings">

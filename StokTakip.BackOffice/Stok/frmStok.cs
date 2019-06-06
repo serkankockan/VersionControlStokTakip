@@ -81,6 +81,10 @@ namespace StokTakip.BackOffice.Stok
         {
             frmStokIslem form = new frmStokIslem(new Entities.Tables.Stok());
             form.ShowDialog();
+            if (form.saved)
+            {
+                GetAll();
+            }
         }
 
         private void btnDuzenle_Click(object sender, EventArgs e)
@@ -88,6 +92,10 @@ namespace StokTakip.BackOffice.Stok
             secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
             frmStokIslem form = new frmStokIslem(stokDal.GetByFilter(contex, c=> c.StokKodu == secilen));
             form.ShowDialog();
+            if (form.saved)
+            {
+                GetAll();
+            }
         }
 
         private void btnKopyala_Click(object sender, EventArgs e)
@@ -99,6 +107,10 @@ namespace StokTakip.BackOffice.Stok
             stokEntity.StokKodu = null;
             frmStokIslem form = new frmStokIslem(stokEntity);
             form.ShowDialog();
+            if (form.saved)
+            {
+                GetAll();
+            }
         }
 
         private void btnStokHareket_Click(object sender, EventArgs e)

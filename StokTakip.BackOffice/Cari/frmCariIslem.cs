@@ -18,6 +18,7 @@ namespace StokTakip.BackOffice.Cari
         private Entities.Tables.Cari _entity;
         private CariDAL cariDal = new CariDAL();
         private StokTakipContext context = new StokTakipContext();
+        public bool saved = false;
 
         public frmCariIslem(Entities.Tables.Cari entity)
         {
@@ -76,8 +77,14 @@ namespace StokTakip.BackOffice.Cari
             if (cariDal.AddOrUpdate(context,_entity))
             {
                 cariDal.Save(context);
+                saved = true;
                 this.Close();
             }
+        }
+
+        private void frmCariIslem_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

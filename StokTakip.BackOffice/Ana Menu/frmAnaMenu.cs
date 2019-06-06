@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using StokTakip.BackOffice.Cari;
 using StokTakip.BackOffice.Stok;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
@@ -42,6 +43,13 @@ namespace StokTakip.BackOffice
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmStok form = new frmStok();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmCari form = new frmCari();
             form.MdiParent = this;
             form.Show();
         }
