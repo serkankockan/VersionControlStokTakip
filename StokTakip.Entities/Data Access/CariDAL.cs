@@ -169,6 +169,5 @@ namespace StokTakip.Entities.Data_Access
             };
             return genelToplamlar;
         }
-
     }
 }

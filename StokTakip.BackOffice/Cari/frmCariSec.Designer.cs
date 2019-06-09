@@ -471,7 +471,7 @@
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
             this.Name = "frmCariSec";
-            this.Text = "frmCariSec";
+            this.Text = "Cari Seçim Ekranı";
             this.Load += new System.EventHandler(this.frmCariSec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);

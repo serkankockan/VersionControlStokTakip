@@ -53,7 +53,5 @@ namespace StokTakip.Entities.Data_Access
             return tablo;
         }
 
-       
-
     }
 }

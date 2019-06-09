@@ -40,5 +40,41 @@ namespace StokTakip.Entities.Data_Access
                 }).ToList();
             return result;
         }
+
+        public object DepoStokListele(StokTakipContext context, string depoKodu)
+        {
+            var tablo = context.Stoklar.GroupJoin(context.StokHareketleri.Where(c=> c.DepoKodu == depoKodu), c => c.StokKodu, c => c.StokKodu,
+                (Stoklar, StokHareketleri) => new
+                {
+                    Stoklar.StokAdi,
+                    Stoklar.Barkod,
+                    StokGiris = StokHareketleri.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0,
+                    StokCikis = StokHareketleri.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0,
+                    MevcutStok = StokHareketleri.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) -
+                                 StokHareketleri.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0
+                }).ToList();
+            return tablo;
+        }
+
+        public object DepoIstatistikListele(StokTakipContext context, string depoKodu)
+        {
+            List<GenelToplam> genelToplamlar = new List<GenelToplam>()
+            {
+                new GenelToplam
+                {
+                    Bilgi = "Stok Giriş",
+                    KayitSayisi = context.StokHareketleri.Where(c=>c.DepoKodu == depoKodu && c.Hareket=="Stok Giriş").Count(),
+                    Tutar = context.StokHareketleri.Where(c=>c.DepoKodu == depoKodu && c.Hareket == "Stok Giriş").Sum(c=>c.Miktar) ?? 0
+                },
+                new GenelToplam
+                {
+                    Bilgi = "Stok Giriş",
+                    KayitSayisi = context.StokHareketleri.Where(c=>c.DepoKodu == depoKodu && c.Hareket=="Stok Çıkış").Count(),
+                    Tutar = context.StokHareketleri.Where(c=>c.DepoKodu == depoKodu && c.Hareket == "Stok Çıkış").Sum(c=>c.Miktar) ?? 0
+                },
+            };
+            return genelToplamlar;
+        }
+
     }
 }

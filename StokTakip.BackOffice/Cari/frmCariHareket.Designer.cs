@@ -513,6 +513,7 @@
             this.Controls.Add(this.lblBaslik);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCariHareket";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCariHareket";
             this.Load += new System.EventHandler(this.frmCariHareket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
