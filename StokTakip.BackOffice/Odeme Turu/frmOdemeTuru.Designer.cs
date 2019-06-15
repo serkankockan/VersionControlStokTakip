@@ -32,11 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOdemeTuru));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.btnFiltreKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnFiltreIptal = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiltre = new DevExpress.XtraEditors.SimpleButton();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
-            this.gridContDepolar = new DevExpress.XtraGrid.GridControl();
-            this.gridDepolar = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridContOdemeTuru = new DevExpress.XtraGrid.GridControl();
+            this.gridOdemeTuru = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdemeTuruKodu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdemeTuruAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKasaGiris = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKasaCikis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
@@ -46,18 +54,10 @@
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOdemeTuruKodu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOdemeTuruAdi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKasaGiris = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKasaCikis = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridContDepolar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDepolar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContOdemeTuru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOdemeTuru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,7 @@
             this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltre);
             this.splitContainerControl1.Panel1.Controls.Add(this.filterControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.gridContDepolar);
+            this.splitContainerControl1.Panel2.Controls.Add(this.gridContOdemeTuru);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1158, 526);
             this.splitContainerControl1.SplitterPosition = 189;
@@ -92,6 +92,24 @@
             this.btnFiltreKapat.Name = "btnFiltreKapat";
             this.btnFiltreKapat.Size = new System.Drawing.Size(50, 38);
             this.btnFiltreKapat.TabIndex = 2;
+            this.btnFiltreKapat.Click += new System.EventHandler(this.btnFiltreKapat_Click);
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "Hareketler.png");
+            this.ımageList1.Images.SetKeyName(1, "replace2.png");
+            this.ımageList1.Images.SetKeyName(2, "wallet_closed.png");
+            this.ımageList1.Images.SetKeyName(3, "wallet_closed_add.png");
+            this.ımageList1.Images.SetKeyName(4, "wallet_closed_delete.png");
+            this.ımageList1.Images.SetKeyName(5, "wallet_closed_edit.png");
+            this.ımageList1.Images.SetKeyName(6, "view.png");
+            this.ımageList1.Images.SetKeyName(7, "folder_out.png");
+            this.ımageList1.Images.SetKeyName(8, "refresh.png");
+            this.ımageList1.Images.SetKeyName(9, "folder_out.png");
+            this.ımageList1.Images.SetKeyName(10, "funnel.png");
+            this.ımageList1.Images.SetKeyName(11, "funnel_delete.png");
             // 
             // btnFiltreIptal
             // 
@@ -104,6 +122,7 @@
             this.btnFiltreIptal.Name = "btnFiltreIptal";
             this.btnFiltreIptal.Size = new System.Drawing.Size(50, 38);
             this.btnFiltreIptal.TabIndex = 2;
+            this.btnFiltreIptal.Click += new System.EventHandler(this.btnFiltreIptal_Click);
             // 
             // btnFiltre
             // 
@@ -116,6 +135,7 @@
             this.btnFiltre.Name = "btnFiltre";
             this.btnFiltre.Size = new System.Drawing.Size(50, 38);
             this.btnFiltre.TabIndex = 2;
+            this.btnFiltre.Click += new System.EventHandler(this.btnFiltre_Click);
             // 
             // filterControl1
             // 
@@ -126,26 +146,26 @@
             this.filterControl1.Name = "filterControl1";
             this.filterControl1.Size = new System.Drawing.Size(1158, 189);
             this.filterControl1.SortFilterColumns = false;
-            this.filterControl1.SourceControl = this.gridContDepolar;
+            this.filterControl1.SourceControl = this.gridContOdemeTuru;
             this.filterControl1.TabIndex = 0;
             this.filterControl1.Text = "filterControl1";
             // 
-            // gridContDepolar
+            // gridContOdemeTuru
             // 
-            this.gridContDepolar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridContDepolar.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridContDepolar.Location = new System.Drawing.Point(0, 0);
-            this.gridContDepolar.MainView = this.gridDepolar;
-            this.gridContDepolar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridContDepolar.Name = "gridContDepolar";
-            this.gridContDepolar.Size = new System.Drawing.Size(1158, 332);
-            this.gridContDepolar.TabIndex = 0;
-            this.gridContDepolar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridDepolar});
+            this.gridContOdemeTuru.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContOdemeTuru.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridContOdemeTuru.Location = new System.Drawing.Point(0, 0);
+            this.gridContOdemeTuru.MainView = this.gridOdemeTuru;
+            this.gridContOdemeTuru.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridContOdemeTuru.Name = "gridContOdemeTuru";
+            this.gridContOdemeTuru.Size = new System.Drawing.Size(1158, 332);
+            this.gridContOdemeTuru.TabIndex = 0;
+            this.gridContOdemeTuru.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridOdemeTuru});
             // 
-            // gridDepolar
+            // gridOdemeTuru
             // 
-            this.gridDepolar.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridOdemeTuru.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colOdemeTuruKodu,
             this.colOdemeTuruAdi,
@@ -153,8 +173,74 @@
             this.colKasaGiris,
             this.colKasaCikis,
             this.colBakiye});
-            this.gridDepolar.GridControl = this.gridContDepolar;
-            this.gridDepolar.Name = "gridDepolar";
+            this.gridOdemeTuru.GridControl = this.gridContOdemeTuru;
+            this.gridOdemeTuru.Name = "gridOdemeTuru";
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
+            // 
+            // colOdemeTuruKodu
+            // 
+            this.colOdemeTuruKodu.Caption = "Ödeme Türü Kodu";
+            this.colOdemeTuruKodu.FieldName = "OdemeTuruKodu";
+            this.colOdemeTuruKodu.Name = "colOdemeTuruKodu";
+            this.colOdemeTuruKodu.OptionsColumn.AllowEdit = false;
+            this.colOdemeTuruKodu.Visible = true;
+            this.colOdemeTuruKodu.VisibleIndex = 0;
+            this.colOdemeTuruKodu.Width = 97;
+            // 
+            // colOdemeTuruAdi
+            // 
+            this.colOdemeTuruAdi.Caption = "Ödeme Türü Adı";
+            this.colOdemeTuruAdi.FieldName = "OdemeTuruAdi";
+            this.colOdemeTuruAdi.Name = "colOdemeTuruAdi";
+            this.colOdemeTuruAdi.OptionsColumn.AllowEdit = false;
+            this.colOdemeTuruAdi.Visible = true;
+            this.colOdemeTuruAdi.VisibleIndex = 1;
+            this.colOdemeTuruAdi.Width = 185;
+            // 
+            // colAciklama
+            // 
+            this.colAciklama.Caption = "Açıklama";
+            this.colAciklama.FieldName = "Aciklama";
+            this.colAciklama.Name = "colAciklama";
+            this.colAciklama.OptionsColumn.AllowEdit = false;
+            this.colAciklama.Visible = true;
+            this.colAciklama.VisibleIndex = 2;
+            this.colAciklama.Width = 460;
+            // 
+            // colKasaGiris
+            // 
+            this.colKasaGiris.Caption = "Kasa Giriş";
+            this.colKasaGiris.FieldName = "KasaGiris";
+            this.colKasaGiris.Name = "colKasaGiris";
+            this.colKasaGiris.OptionsColumn.AllowEdit = false;
+            this.colKasaGiris.Visible = true;
+            this.colKasaGiris.VisibleIndex = 3;
+            this.colKasaGiris.Width = 130;
+            // 
+            // colKasaCikis
+            // 
+            this.colKasaCikis.Caption = "Kasa Çıkış";
+            this.colKasaCikis.FieldName = "KasaCikis";
+            this.colKasaCikis.Name = "colKasaCikis";
+            this.colKasaCikis.OptionsColumn.AllowEdit = false;
+            this.colKasaCikis.Visible = true;
+            this.colKasaCikis.VisibleIndex = 4;
+            this.colKasaCikis.Width = 130;
+            // 
+            // colBakiye
+            // 
+            this.colBakiye.Caption = "Bakiye";
+            this.colBakiye.FieldName = "Bakiye";
+            this.colBakiye.Name = "colBakiye";
+            this.colBakiye.OptionsColumn.AllowEdit = false;
+            this.colBakiye.Visible = true;
+            this.colBakiye.VisibleIndex = 5;
+            this.colBakiye.Width = 138;
             // 
             // grpMenu
             // 
@@ -184,6 +270,7 @@
             this.btnKapat.Size = new System.Drawing.Size(83, 35);
             this.btnKapat.TabIndex = 2;
             this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // btnAra
             // 
@@ -195,6 +282,7 @@
             this.btnAra.Size = new System.Drawing.Size(83, 35);
             this.btnAra.TabIndex = 2;
             this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // btnGuncelle
             // 
@@ -206,6 +294,7 @@
             this.btnGuncelle.Size = new System.Drawing.Size(83, 35);
             this.btnGuncelle.TabIndex = 2;
             this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnStokHareketleri
             // 
@@ -228,6 +317,7 @@
             this.btnSil.Size = new System.Drawing.Size(83, 35);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnDuzenle
             // 
@@ -239,6 +329,7 @@
             this.btnDuzenle.Size = new System.Drawing.Size(83, 35);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // btnEkle
             // 
@@ -250,6 +341,7 @@
             this.btnEkle.Size = new System.Drawing.Size(83, 35);
             this.btnEkle.TabIndex = 0;
             this.btnEkle.Text = "Ekle";
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // lblBaslik
             // 
@@ -271,82 +363,6 @@
             this.lblBaslik.TabIndex = 5;
             this.lblBaslik.Text = "Ödeme Kartları";
             // 
-            // ımageList1
-            // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "Hareketler.png");
-            this.ımageList1.Images.SetKeyName(1, "replace2.png");
-            this.ımageList1.Images.SetKeyName(2, "wallet_closed.png");
-            this.ımageList1.Images.SetKeyName(3, "wallet_closed_add.png");
-            this.ımageList1.Images.SetKeyName(4, "wallet_closed_delete.png");
-            this.ımageList1.Images.SetKeyName(5, "wallet_closed_edit.png");
-            this.ımageList1.Images.SetKeyName(6, "view.png");
-            this.ımageList1.Images.SetKeyName(7, "folder_out.png");
-            this.ımageList1.Images.SetKeyName(8, "refresh.png");
-            this.ımageList1.Images.SetKeyName(9, "folder_out.png");
-            this.ımageList1.Images.SetKeyName(10, "funnel.png");
-            this.ımageList1.Images.SetKeyName(11, "funnel_delete.png");
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            // 
-            // colOdemeTuruKodu
-            // 
-            this.colOdemeTuruKodu.Caption = "Ödeme Türü Kodu";
-            this.colOdemeTuruKodu.FieldName = "OdemeTuruKodu";
-            this.colOdemeTuruKodu.Name = "colOdemeTuruKodu";
-            this.colOdemeTuruKodu.Visible = true;
-            this.colOdemeTuruKodu.VisibleIndex = 0;
-            this.colOdemeTuruKodu.Width = 97;
-            // 
-            // colOdemeTuruAdi
-            // 
-            this.colOdemeTuruAdi.Caption = "Ödeme Türü Adı";
-            this.colOdemeTuruAdi.FieldName = "OdemeTuruAdi";
-            this.colOdemeTuruAdi.Name = "colOdemeTuruAdi";
-            this.colOdemeTuruAdi.Visible = true;
-            this.colOdemeTuruAdi.VisibleIndex = 1;
-            this.colOdemeTuruAdi.Width = 185;
-            // 
-            // colAciklama
-            // 
-            this.colAciklama.Caption = "Açıklama";
-            this.colAciklama.FieldName = "Aciklama";
-            this.colAciklama.Name = "colAciklama";
-            this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 2;
-            this.colAciklama.Width = 460;
-            // 
-            // colKasaGiris
-            // 
-            this.colKasaGiris.Caption = "Kasa Giriş";
-            this.colKasaGiris.FieldName = "KasaGiris";
-            this.colKasaGiris.Name = "colKasaGiris";
-            this.colKasaGiris.Visible = true;
-            this.colKasaGiris.VisibleIndex = 3;
-            this.colKasaGiris.Width = 130;
-            // 
-            // colKasaCikis
-            // 
-            this.colKasaCikis.Caption = "Kasa Çıkış";
-            this.colKasaCikis.FieldName = "KasaCikis";
-            this.colKasaCikis.Name = "colKasaCikis";
-            this.colKasaCikis.Visible = true;
-            this.colKasaCikis.VisibleIndex = 4;
-            this.colKasaCikis.Width = 130;
-            // 
-            // colBakiye
-            // 
-            this.colBakiye.Caption = "Bakiye";
-            this.colBakiye.FieldName = "Bakiye";
-            this.colBakiye.Name = "colBakiye";
-            this.colBakiye.Visible = true;
-            this.colBakiye.VisibleIndex = 5;
-            this.colBakiye.Width = 138;
-            // 
             // frmOdemeTuru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,10 +374,11 @@
             this.Name = "frmOdemeTuru";
             this.Text = "Ödeme Türleri";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.frmOdemeTuru_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridContDepolar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDepolar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContOdemeTuru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOdemeTuru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -376,8 +393,8 @@
         private DevExpress.XtraEditors.SimpleButton btnFiltreIptal;
         private DevExpress.XtraEditors.SimpleButton btnFiltre;
         private DevExpress.XtraEditors.FilterControl filterControl1;
-        private DevExpress.XtraGrid.GridControl gridContDepolar;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridDepolar;
+        private DevExpress.XtraGrid.GridControl gridContOdemeTuru;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridOdemeTuru;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colOdemeTuruKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colOdemeTuruAdi;

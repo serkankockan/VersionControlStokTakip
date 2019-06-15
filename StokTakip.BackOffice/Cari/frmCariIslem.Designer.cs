@@ -776,6 +776,7 @@
             this.btnOzelKod1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnOzelKod1.Size = new System.Drawing.Size(188, 22);
             this.btnOzelKod1.TabIndex = 7;
+            this.btnOzelKod1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnOzelKod1_ButtonClick);
             // 
             // btnCariAltGrubu
             // 
@@ -806,6 +807,7 @@
             this.btnCariGrubu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnCariGrubu.Size = new System.Drawing.Size(188, 22);
             this.btnCariGrubu.TabIndex = 6;
+            this.btnCariGrubu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnCariGrubu_ButtonClick);
             // 
             // labelControl27
             // 

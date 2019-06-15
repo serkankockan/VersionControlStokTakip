@@ -82,7 +82,7 @@
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1199, 45);
+            this.lblBaslik.Size = new System.Drawing.Size(1199, 54);
             this.lblBaslik.TabIndex = 2;
             this.lblBaslik.Text = "Depo Kartları";
             // 
@@ -207,7 +207,7 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 45);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 54);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltreKapat);
@@ -217,7 +217,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridContDepolar);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1199, 558);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1199, 549);
             this.splitContainerControl1.SplitterPosition = 189;
             this.splitContainerControl1.TabIndex = 4;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -282,7 +282,7 @@
             this.gridContDepolar.MainView = this.gridDepolar;
             this.gridContDepolar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridContDepolar.Name = "gridContDepolar";
-            this.gridContDepolar.Size = new System.Drawing.Size(1199, 364);
+            this.gridContDepolar.Size = new System.Drawing.Size(1199, 355);
             this.gridContDepolar.TabIndex = 0;
             this.gridContDepolar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridDepolar});

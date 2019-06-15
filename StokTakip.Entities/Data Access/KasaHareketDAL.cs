@@ -10,7 +10,7 @@ using StokTakip.Entities.Validations;
 
 namespace StokTakip.Entities.Data_Access
 {
-    class KasaHareketDAL : EntityRepositoryBase<StokTakipContext, KasaHareket,KasaHareketValidator>
+    public class KasaHareketDAL : EntityRepositoryBase<StokTakipContext, KasaHareket,KasaHareketValidator>
     {
     }
 }

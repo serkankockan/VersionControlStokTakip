@@ -255,7 +255,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1235, 586);
-            this.splitContainerControl1.SplitterPosition = 247;
+            this.splitContainerControl1.SplitterPosition = 225;
             this.splitContainerControl1.TabIndex = 3;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -265,7 +265,7 @@
             this.btnFiltreKapat.ImageOptions.ImageIndex = 6;
             this.btnFiltreKapat.ImageOptions.ImageList = this.imgMenu;
             this.btnFiltreKapat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreKapat.Location = new System.Drawing.Point(1175, 201);
+            this.btnFiltreKapat.Location = new System.Drawing.Point(1175, 179);
             this.btnFiltreKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreKapat.Name = "btnFiltreKapat";
             this.btnFiltreKapat.Size = new System.Drawing.Size(50, 38);
@@ -278,7 +278,7 @@
             this.btnFiltreIptal.ImageOptions.ImageIndex = 8;
             this.btnFiltreIptal.ImageOptions.ImageList = this.imgMenu;
             this.btnFiltreIptal.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreIptal.Location = new System.Drawing.Point(1121, 201);
+            this.btnFiltreIptal.Location = new System.Drawing.Point(1121, 179);
             this.btnFiltreIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreIptal.Name = "btnFiltreIptal";
             this.btnFiltreIptal.Size = new System.Drawing.Size(50, 38);
@@ -291,7 +291,7 @@
             this.btnFiltre.ImageOptions.ImageIndex = 7;
             this.btnFiltre.ImageOptions.ImageList = this.imgMenu;
             this.btnFiltre.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltre.Location = new System.Drawing.Point(1066, 201);
+            this.btnFiltre.Location = new System.Drawing.Point(1066, 179);
             this.btnFiltre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltre.Name = "btnFiltre";
             this.btnFiltre.Size = new System.Drawing.Size(50, 38);
@@ -305,7 +305,7 @@
             this.filterControl1.Location = new System.Drawing.Point(0, 0);
             this.filterControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(1235, 247);
+            this.filterControl1.Size = new System.Drawing.Size(1235, 225);
             this.filterControl1.SortFilterColumns = false;
             this.filterControl1.SourceControl = this.gridControl1;
             this.filterControl1.TabIndex = 0;
@@ -319,7 +319,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1235, 334);
+            this.gridControl1.Size = new System.Drawing.Size(1235, 356);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

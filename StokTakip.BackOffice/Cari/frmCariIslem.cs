@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using StokTakip.BackOffice.Tanim;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 
@@ -85,6 +86,42 @@ namespace StokTakip.BackOffice.Cari
         private void frmCariIslem_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCariGrubu_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            switch (e.Button.Index)
+            {
+                case 0: 
+                    frmTanim form = new frmTanim(frmTanim.TanimTuru.CariGrubu);
+                    form.ShowDialog();
+                    if (form.secildi)
+                    {
+                        btnCariGrubu.Text = form._entity.Tanimi;
+                    }
+                    break;
+                case 1:
+                    btnCariGrubu.Text = null;
+                    break;
+            }
+        }
+
+        private void btnOzelKod1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            switch (e.Button.Index)
+            {
+                case 0:
+                    frmTanim form = new frmTanim(frmTanim.TanimTuru.CariOzelKod1);
+                    form.ShowDialog();
+                    if (form.secildi)
+                    {
+                        btnOzelKod1.Text = form._entity.Tanimi;
+                    }
+                    break;
+                case 1:
+                    btnOzelKod1.Text = null;
+                    break;
+            }
         }
     }
 }

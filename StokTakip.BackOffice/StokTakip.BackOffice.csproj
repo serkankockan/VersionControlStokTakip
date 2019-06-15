@@ -116,6 +116,18 @@
     <Compile Include="Depo\frmDepoSec.Designer.cs">
       <DependentUpon>frmDepoSec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fis\frmFis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fis\frmFis.Designer.cs">
+      <DependentUpon>frmFis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fis\frmFisIslem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fis\frmFisIslem.Designer.cs">
+      <DependentUpon>frmFisIslem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kasa\frmKasaSec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +158,18 @@
     <Compile Include="Odeme Turu\frmOdemeTuru.Designer.cs">
       <DependentUpon>frmOdemeTuru.cs</DependentUpon>
     </Compile>
+    <Compile Include="Odeme Turu\frmOdemeTuruHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Odeme Turu\frmOdemeTuruHareket.Designer.cs">
+      <DependentUpon>frmOdemeTuruHareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Odeme Turu\frmOdemeTuruIslem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Odeme Turu\frmOdemeTuruIslem.Designer.cs">
+      <DependentUpon>frmOdemeTuruIslem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stok\frmStok.cs">
@@ -171,6 +195,12 @@
     </Compile>
     <Compile Include="Stok\frmStokSec.Designer.cs">
       <DependentUpon>frmStokSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanim\frmTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanim\frmTanim.Designer.cs">
+      <DependentUpon>frmTanim.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Ana Menu\frmAnaMenu.resx">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
@@ -199,6 +229,12 @@
     <EmbeddedResource Include="Depo\frmDepoSec.resx">
       <DependentUpon>frmDepoSec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fis\frmFis.resx">
+      <DependentUpon>frmFis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fis\frmFisIslem.resx">
+      <DependentUpon>frmFisIslem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Kasa\frmKasaSec.resx">
       <DependentUpon>frmKasaSec.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +249,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Odeme Turu\frmOdemeTuru.resx">
       <DependentUpon>frmOdemeTuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Odeme Turu\frmOdemeTuruHareket.resx">
+      <DependentUpon>frmOdemeTuruHareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Odeme Turu\frmOdemeTuruIslem.resx">
+      <DependentUpon>frmOdemeTuruIslem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -235,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\frmStokSec.resx">
       <DependentUpon>frmStokSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanim\frmTanim.resx">
+      <DependentUpon>frmTanim.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

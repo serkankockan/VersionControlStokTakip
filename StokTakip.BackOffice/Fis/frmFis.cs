@@ -12,33 +12,33 @@ using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
 
-namespace StokTakip.BackOffice.Odeme_Turu
+namespace StokTakip.BackOffice.Fis
 {
-    public partial class frmOdemeTuru : DevExpress.XtraEditors.XtraForm
+    public partial class frmFis : DevExpress.XtraEditors.XtraForm
     {
-
         StokTakipContext context = new StokTakipContext();
-        OdemeTuruDAL odemeTuruDal = new OdemeTuruDAL();
+        FisDAL fisDal = new FisDAL();
+        KasaHareketDAL kasaHareketDal = new KasaHareketDAL();
+        StokHareketDAL stokHareketDal = new StokHareketDAL();
 
-
-        public frmOdemeTuru()
+        public frmFis()
         {
             InitializeComponent();
         }
 
-        private void frmOdemeTuru_Load(object sender, EventArgs e)
+        private void frmFis_Load(object sender, EventArgs e)
         {
             Listele();
         }
 
         void Listele()
         {
-            gridContOdemeTuru.DataSource = odemeTuruDal.OdemeTuruListele(context);
+            gridContFis.DataSource = fisDal.GetAll(context);
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            Listele();
+            Listele();  
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -46,9 +46,9 @@ namespace StokTakip.BackOffice.Odeme_Turu
             splitContainerControl1.PanelVisibility = SplitPanelVisibility.Both;
         }
 
-        private void btnFiltre_Click(object sender, EventArgs e)
+        private void btnFiltreKapat_Click(object sender, EventArgs e)
         {
-            filterControl1.ApplyFilter();
+            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2;
         }
 
         private void btnFiltreIptal_Click(object sender, EventArgs e)
@@ -57,9 +57,9 @@ namespace StokTakip.BackOffice.Odeme_Turu
             filterControl1.ApplyFilter();
         }
 
-        private void btnFiltreKapat_Click(object sender, EventArgs e)
+        private void btnFiltre_Click(object sender, EventArgs e)
         {
-            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2;
+            filterControl1.ApplyFilter();
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -71,24 +71,13 @@ namespace StokTakip.BackOffice.Odeme_Turu
         {
             if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                string secilen = gridOdemeTuru.GetFocusedRowCellValue(colOdemeTuruKodu).ToString();
-                odemeTuruDal.Delete(context, c => c.OdemeTuruKodu == secilen);
-                odemeTuruDal.Save(context);
+                string secilen = gridFis.GetFocusedRowCellValue(colFisKodu).ToString();
+                fisDal.Delete(context, c => c.FisKodu == secilen);
+                kasaHareketDal.Delete(context,c=>c.FisKodu == secilen);
+                stokHareketDal.Delete(context,c=>c.FisKodu == secilen);
+                fisDal.Save(context);
                 Listele();
             }
-        }
-
-        private void btnEkle_Click(object sender, EventArgs e)
-        {
-            frmOdemeTuruIslem form = new frmOdemeTuruIslem(new OdemeTuru());
-            form.ShowDialog();
-        }
-
-        private void btnDuzenle_Click(object sender, EventArgs e)
-        {
-            string secilen = gridOdemeTuru.GetFocusedRowCellValue(colOdemeTuruKodu).ToString();
-            frmOdemeTuruIslem form = new frmOdemeTuruIslem(odemeTuruDal.GetByFilter(context,c=>c.OdemeTuruKodu == secilen));
-            form.ShowDialog();
         }
     }
 }

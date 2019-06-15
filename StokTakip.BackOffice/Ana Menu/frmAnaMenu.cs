@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using StokTakip.BackOffice.Cari;
+using StokTakip.BackOffice.Fis;
 using StokTakip.BackOffice.Stok;
+using StokTakip.BackOffice.Tanim;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
@@ -51,6 +53,12 @@ namespace StokTakip.BackOffice
         {
             frmCari form = new frmCari();
             form.MdiParent = this;
+            form.Show();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmFisIslem form = new frmFisIslem();
             form.Show();
         }
     }
