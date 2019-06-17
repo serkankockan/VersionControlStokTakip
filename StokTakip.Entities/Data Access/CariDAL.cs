@@ -18,7 +18,6 @@ namespace StokTakip.Entities.Data_Access
 
         public object GetCariler(StokTakipContext context)
         {
-
             var result = context.Cariler.GroupJoin(context.Fisler, c => c.CariKodu, c => c.CariKodu,
                 (cariler, fisler) => new
                 {
@@ -168,6 +167,31 @@ namespace StokTakip.Entities.Data_Access
                 }
             };
             return genelToplamlar;
+        }
+
+        public CariBakiye CariBakiyesi(StokTakipContext context, string cariKodu)
+        {
+            decimal alacak =
+                (context.Fisler.Where(c => c.CariKodu == cariKodu && c.FisTuru == "Alış Faturası")
+                     .Sum(c => c.ToplamTutar) ?? 0) +
+                (context.KasaHareketleri.Where(c => c.CariKodu == cariKodu && c.Hareket == "Kasa Giriş")
+                     .Sum(c => c.Tutar) ?? 0);
+
+            decimal borc =
+                (context.Fisler.Where(c => c.CariKodu == cariKodu && c.FisTuru == "Perakende Satış Faturası")
+                     .Sum(c => c.ToplamTutar) ?? 0) +
+                (context.KasaHareketleri.Where(c => c.CariKodu == cariKodu && c.Hareket == "Kasa Çıkış")
+                     .Sum(c => c.Tutar) ?? 0);
+            CariBakiye entity = new CariBakiye
+            {
+                CariKodu = cariKodu,
+                RiskLimiti =
+                    Convert.ToDecimal(context.Cariler.Where(c => c.CariKodu == cariKodu).SingleOrDefault().RiskLimiti),
+                Alacak = alacak,
+                Borc = borc,
+                Bakiye = alacak - borc
+            };
+            return entity;
         }
     }
 }

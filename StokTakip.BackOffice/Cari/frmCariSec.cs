@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
+using StokTakip.Entities.Tables;
 
 namespace StokTakip.BackOffice.Cari
 {
@@ -19,6 +20,7 @@ namespace StokTakip.BackOffice.Cari
         CariDAL cariDal = new CariDAL();
         StokTakipContext context = new StokTakipContext();
         public List<Entities.Tables.Cari> secilen = new List<Entities.Tables.Cari>();
+        public bool secildi = false;
 
         public frmCariSec(bool cokluSecim = false)
         {
@@ -38,12 +40,22 @@ namespace StokTakip.BackOffice.Cari
 
         private void btnSec_Click(object sender, EventArgs e)
         {
-            foreach (var row in gridView1.GetSelectedRows())
+            if (gridView1.GetSelectedRows().Length != 0)
             {
-                string carikodu = gridView1.GetRowCellValue(row, colCariKodu).ToString();
-                secilen.Add(context.Cariler.SingleOrDefault(c => c.CariKodu == carikodu));
+                foreach (var row in gridView1.GetSelectedRows())
+                {
+                    string carikodu = gridView1.GetRowCellValue(row, colCariKodu).ToString();
+                    secilen.Add(context.Cariler.SingleOrDefault(c => c.CariKodu == carikodu));
+
+                }
+
+                secildi = true;
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                MessageBox.Show("Seçinlen bir cari bulunamadı.");
+            }
         }
 
         private void btnKapat_Click(object sender, EventArgs e)

@@ -201,6 +201,7 @@
             this.colAlacak});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colId
             // 
@@ -435,6 +436,8 @@
             // colBorc
             // 
             this.colBorc.Caption = "Borç";
+            this.colBorc.DisplayFormat.FormatString = "C2";
+            this.colBorc.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colBorc.FieldName = "Borc";
             this.colBorc.Name = "colBorc";
             this.colBorc.OptionsColumn.AllowEdit = false;
@@ -445,6 +448,8 @@
             // colBakiye
             // 
             this.colBakiye.Caption = "Bakiye";
+            this.colBakiye.DisplayFormat.FormatString = "C2";
+            this.colBakiye.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colBakiye.FieldName = "Bakiye";
             this.colBakiye.Name = "colBakiye";
             this.colBakiye.OptionsColumn.AllowEdit = false;
@@ -455,6 +460,8 @@
             // colAlacak
             // 
             this.colAlacak.Caption = "Alacak";
+            this.colAlacak.DisplayFormat.FormatString = "C2";
+            this.colAlacak.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colAlacak.FieldName = "Alacak";
             this.colAlacak.Name = "colAlacak";
             this.colAlacak.OptionsColumn.AllowEdit = false;
