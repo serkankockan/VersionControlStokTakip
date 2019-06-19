@@ -33,9 +33,9 @@ namespace StokTakip.Entities.Tables
 
         public Nullable<decimal> IndirimOrani { get; set; }
 
-        public Nullable<decimal> IndirimTutari { get; set; }
+        //public Nullable<decimal> IndirimTutari { get; set; } Silindi
 
-        public Nullable<decimal> ToplamTutar { get; set; }
+        //public Nullable<decimal> ToplamTutar { get; set; } Silindi
 
         public string DepoKodu { get; set; }
 

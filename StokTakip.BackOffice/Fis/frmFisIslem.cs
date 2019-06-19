@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StokTakip.BackOffice.Cari;
+using StokTakip.BackOffice.Depo;
+using StokTakip.BackOffice.Kasa;
 using StokTakip.BackOffice.Stok;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
@@ -30,42 +32,73 @@ namespace StokTakip.BackOffice.Fis
         Entities.Tables.Fis _fisentity = new Entities.Tables.Fis();
         CariBakiye entityBakiye = new CariBakiye();
 
-        
+
 
         public frmFisIslem()
         {
             InitializeComponent();
+
             txtFisTuru.DataBindings.Add("Text", _fisentity, "FisTuru");
             cmbTarih.DataBindings.Add("EditValue", _fisentity, "Tarih");
             txtBelgeNo.DataBindings.Add("Text", _fisentity, "BelgeNo");
             txtAciklama.DataBindings.Add("Text", _fisentity, "Aciklama");
             lblCariKodu.DataBindings.Add("Text", _fisentity, "CariKodu");
             lblCariAdi.DataBindings.Add("Text", _fisentity, "CariAdi");
+            txtFaturaUnvani.DataBindings.Add("Text", _fisentity, "FaturaUnvani");
+            txtCepTelefonu.DataBindings.Add("Text", _fisentity, "CepTelefonu");
+            txtIl.DataBindings.Add("Text", _fisentity, "Il");
+            txtIlce.DataBindings.Add("Text", _fisentity, "Ilce");
+            txtSemt.DataBindings.Add("Text", _fisentity, "Semt");
+            txtAdres.DataBindings.Add("Text", _fisentity, "Adres");
+            txtVergiDairesi.DataBindings.Add("Text", _fisentity, "VergiDairesi");
+            txtVergiNo.DataBindings.Add("Text", _fisentity, "VergiNo");
+
             gridContStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridContKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
+
+            foreach (var item in context.OdemeTurleri.ToList())
+            {
+                var button = new SimpleButton
+                {
+                    Name = item.OdemeTuruKodu,
+                    Text = item.OdemeTuruAdi,
+                    Height = 35,
+                    Width = 75
+                };
+                button.Click += OdemeEkle_Click;
+                flowLayoutPanel1.Controls.Add(button);
+            }
+        }
+
+        private void OdemeEkle_Click(object sender, EventArgs e)
+        {
+            var button = (sender as SimpleButton);
+            KasaHareket entityKasaHareket = new KasaHareket
+            {
+                OdemeTuruKodu = button.Name, OdemeTuruAdi = button.Text, Tutar = txtOdenmesiGerekenTutar.Value
+            };
+
+            if (txtOdenmesiGerekenTutar.Value <= 0)
+            {
+                MessageBox.Show("Ödenmesi gereken tutar zaten ödenmiş durumdadır.");
+            }
+            else
+            {
+                kasaHareketDal.AddOrUpdate(context, entityKasaHareket);
+                OdenenTutarGuncelle();
+            }
+        }
+
+        private void OdenenTutarGuncelle()
+        {
+            gridKasaHareket.UpdateSummary();
+            txtOdenenTutar.Value = Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
+            txtOdenmesiGerekenTutar.Value = txtGenelToplam.Value - txtOdenenTutar.Value;
         }
 
         private void frmFisIslem_Load(object sender, EventArgs e)
         {
-            //FontFamilies();
-        }
 
-        void FontFamilies()
-        {
-            PrivateFontCollection pfc = new PrivateFontCollection();
-            pfc.AddFontFile("C:\\Users\\Admin\\Downloads\\ds_digital\\DS-DIGI.TTF");
-            txtOdenenTutar.Font = new Font(pfc.Families[0], 17, FontStyle.Bold);
-            txtOdenecekTutar.Font = new Font(pfc.Families[0], 17, FontStyle.Bold);
-            txtAcikHesapBakiyesi.Font = new Font(pfc.Families[0], 27, FontStyle.Bold);
-            txtMiktar.Font = new Font(pfc.Families[0], 17, FontStyle.Bold);
-            txtBarkod.Font = new Font(pfc.Families[0], 17, FontStyle.Bold);
-
-            txtIndirimToplam.Font = new Font(pfc.Families[0], 17, FontStyle.Bold);
-            txtIskontoOrani.Font = new Font(pfc.Families[0], 17, FontStyle.Bold);
-            txtIskontoTutar.Font = new Font(pfc.Families[0], 17, FontStyle.Bold);
-
-            txtKdvToplam.Font = new Font(pfc.Families[0], 33, FontStyle.Bold);
-            txtGenelToplam.Font = new Font(pfc.Families[0], 33, FontStyle.Bold);
         }
 
         private StokHareket StokSec(Entities.Tables.Stok entity)
@@ -100,7 +133,7 @@ namespace StokTakip.BackOffice.Fis
             {
                 Entities.Tables.Stok entity;
                 entity = context.Stoklar.Where(c => c.Barkod == txtBarkod.Text).SingleOrDefault();
-                if (entity!=null)
+                if (entity != null)
                 {
                     stokHareketDal.AddOrUpdate(context, StokSec(entity));
                     Toplamlar();
@@ -161,7 +194,7 @@ namespace StokTakip.BackOffice.Fis
 
         private void gridStokHareket_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-                Toplamlar();
+            Toplamlar();
         }
 
         private void Toplamlar()
@@ -174,6 +207,9 @@ namespace StokTakip.BackOffice.Fis
             txtGenelToplam.Value = Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue) - txtIskontoTutar.Value;
             txtKdvToplam.Value = Convert.ToDecimal(colKdvToplam.SummaryItem.SummaryValue);
             txtIndirimToplam.Value = Convert.ToDecimal(colIndirimTutar.SummaryItem.SummaryValue);
+            txtOdenmesiGerekenTutar.Value = txtGenelToplam.Value - txtOdenenTutar.Value;
+
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -184,6 +220,74 @@ namespace StokTakip.BackOffice.Fis
         private void txtIskontoOrani_Validated(object sender, EventArgs e)
         {
             Toplamlar();
+        }
+
+        private void repoDepo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            frmDepoSec form = new frmDepoSec(gridStokHareket.GetFocusedRowCellValue(colStokKodu).ToString());
+            form.ShowDialog();
+            if (form.secildi)
+            {
+                gridStokHareket.SetFocusedRowCellValue(colDepoKodu, form.entity.DepoKodu);
+                gridStokHareket.SetFocusedRowCellValue(colDepoAdi, form.entity.DepoKodu);
+            }
+        }
+
+        private void repoBirimFiyat_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            string fiyatSecilen = gridStokHareket.GetFocusedRowCellValue(colStokKodu).ToString();
+            Entities.Tables.Stok fiyatEntity = context.Stoklar.Where(c => c.StokKodu == fiyatSecilen).SingleOrDefault();
+
+            barFiyat1.Tag = fiyatEntity.SatisFiyati1 ?? 0;
+            barFiyat2.Tag = fiyatEntity.SatisFiyati2 ?? 0;
+            barFiyat3.Tag = fiyatEntity.SatisFiyati3 ?? 0;
+
+            barFiyat1.Caption = string.Format("{0:C2}", barFiyat1.Tag);
+            barFiyat2.Caption = string.Format("{0:C2}", barFiyat2.Tag);
+            barFiyat3.Caption = string.Format("{0:C2}", barFiyat3.Tag);
+
+            radialFiyat.ShowPopup(MousePosition);
+        }
+
+        private void FiyatSec(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridStokHareket.SetFocusedRowCellValue(colBirimFiyat, Convert.ToDecimal(e.Item.Tag));
+        }
+
+        private void repoSeriNo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            string veri = Convert.ToString(gridStokHareket.GetFocusedRowCellValue(colSeriNo));
+            fmrSeriNo form = new fmrSeriNo(veri);
+            form.ShowDialog();
+            gridStokHareket.SetFocusedRowCellValue(colSeriNo, form.veriSeriNo);
+        }
+
+        private void repoSil_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                gridStokHareket.DeleteSelectedRows();
+            }
+        }
+
+        private void repoKasa_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            frmKasaSec form = new frmKasaSec();
+            form.ShowDialog();
+            if (form.secildi)
+            {
+                gridKasaHareket.SetFocusedRowCellValue(colKasaKodu, form.entity.KasaKodu);
+                gridKasaHareket.SetFocusedRowCellValue(colKasaAdi, form.entity.KasaAdi);
+            }
+        }
+
+        private void repoKHSil_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                gridKasaHareket.DeleteSelectedRows();
+                OdenenTutarGuncelle();
+            }
         }
     }
 }

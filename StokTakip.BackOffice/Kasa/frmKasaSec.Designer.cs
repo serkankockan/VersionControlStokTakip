@@ -109,6 +109,7 @@
             this.btnKapat.Size = new System.Drawing.Size(83, 35);
             this.btnKapat.TabIndex = 2;
             this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // kasaBindingSource
             // 
@@ -236,7 +237,7 @@
             this.colBakiye.VisibleIndex = 7;
             this.colBakiye.Width = 159;
             // 
-            // fmrKasaSec
+            // frmKasaSec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -244,7 +245,7 @@
             this.Controls.Add(this.gridContSecim);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
-            this.Name = "fmrKasaSec";
+            this.Name = "frmKasaSec";
             this.Text = "Kasa Seçim Ekranı";
             this.Load += new System.EventHandler(this.fmrKasaSec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();

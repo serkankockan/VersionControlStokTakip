@@ -18,6 +18,7 @@ namespace StokTakip.BackOffice.Kasa
         KasaDAL kasaDal = new KasaDAL();
         StokTakipContext context = new StokTakipContext();
         public Entities.Tables.Kasa entity = new Entities.Tables.Kasa();
+        public bool secildi = false;
 
         public frmKasaSec()
         {
@@ -31,8 +32,17 @@ namespace StokTakip.BackOffice.Kasa
 
         private void btnSec_Click(object sender, EventArgs e)
         {
-            string kasakodu = gridSecim.GetFocusedRowCellValue(colKasaKodu).ToString();
-            entity = context.Kasalar.SingleOrDefault(c => c.KasaKodu == kasakodu);
+            if (gridSecim.GetSelectedRows().Length != 0)
+            {
+                string kasakodu = gridSecim.GetFocusedRowCellValue(colKasaKodu).ToString();
+                entity = context.Kasalar.SingleOrDefault(c => c.KasaKodu == kasakodu);
+                secildi = true;
+                this.Close();
+            }
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
