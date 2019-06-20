@@ -34,27 +34,49 @@ namespace StokTakip.BackOffice.Fis
 
 
 
-        public frmFisIslem()
+        public frmFisIslem(string fisKodu=null)
         {
             InitializeComponent();
+            if (fisKodu!=null)
+            {
+                _fisentity = context.Fisler.Where(c => c.FisKodu == fisKodu).SingleOrDefault();
+                context.StokHareketleri.Where(c=>c.FisKodu == fisKodu).Load();
+                context.KasaHareketleri.Where(c => c.FisKodu == fisKodu).Load();
 
-            txtFisTuru.DataBindings.Add("Text", _fisentity, "FisTuru");
-            cmbTarih.DataBindings.Add("EditValue", _fisentity, "Tarih");
-            txtBelgeNo.DataBindings.Add("Text", _fisentity, "BelgeNo");
-            txtAciklama.DataBindings.Add("Text", _fisentity, "Aciklama");
-            lblCariKodu.DataBindings.Add("Text", _fisentity, "CariKodu");
-            lblCariAdi.DataBindings.Add("Text", _fisentity, "CariAdi");
-            txtFaturaUnvani.DataBindings.Add("Text", _fisentity, "FaturaUnvani");
-            txtCepTelefonu.DataBindings.Add("Text", _fisentity, "CepTelefonu");
-            txtIl.DataBindings.Add("Text", _fisentity, "Il");
-            txtIlce.DataBindings.Add("Text", _fisentity, "Ilce");
-            txtSemt.DataBindings.Add("Text", _fisentity, "Semt");
-            txtAdres.DataBindings.Add("Text", _fisentity, "Adres");
-            txtVergiDairesi.DataBindings.Add("Text", _fisentity, "VergiDairesi");
-            txtVergiNo.DataBindings.Add("Text", _fisentity, "VergiNo");
+                entityBakiye = this.cariDal.CariBakiyesi(context, _fisentity.CariKodu);
+
+
+                lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
+                lblBorc.Text = entityBakiye.Borc.ToString("C2");
+                lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
+
+
+            }
+
+            
+
+            _fisentity.FisTuru = "Alış Faturası";
+            txtFisKodu.DataBindings.Add("Text", _fisentity, "FisKodu",false,DataSourceUpdateMode.OnPropertyChanged);
+            txtFisTuru.DataBindings.Add("Text", _fisentity, "FisTuru", false, DataSourceUpdateMode.OnPropertyChanged);
+            cmbTarih.DataBindings.Add("EditValue", _fisentity, "Tarih", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtBelgeNo.DataBindings.Add("Text", _fisentity, "BelgeNo", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtAciklama.DataBindings.Add("Text", _fisentity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
+            lblCariKodu.DataBindings.Add("Text", _fisentity, "CariKodu", false, DataSourceUpdateMode.OnPropertyChanged);
+            lblCariAdi.DataBindings.Add("Text", _fisentity, "CariAdi", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtFaturaUnvani.DataBindings.Add("Text", _fisentity, "FaturaUnvani", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtCepTelefonu.DataBindings.Add("Text", _fisentity, "CepTelefonu", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtIl.DataBindings.Add("Text", _fisentity, "Il", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtIlce.DataBindings.Add("Text", _fisentity, "Ilce", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtSemt.DataBindings.Add("Text", _fisentity, "Semt", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtAdres.DataBindings.Add("Text", _fisentity, "Adres", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtVergiDairesi.DataBindings.Add("Text", _fisentity, "VergiDairesi", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtVergiNo.DataBindings.Add("Text", _fisentity, "VergiNo", false, DataSourceUpdateMode.OnPropertyChanged);
 
             gridContStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridContKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
+
+            Toplamlar();
+            OdenenTutarGuncelle();
 
             foreach (var item in context.OdemeTurleri.ToList())
             {
@@ -75,7 +97,9 @@ namespace StokTakip.BackOffice.Fis
             var button = (sender as SimpleButton);
             KasaHareket entityKasaHareket = new KasaHareket
             {
-                OdemeTuruKodu = button.Name, OdemeTuruAdi = button.Text, Tutar = txtOdenmesiGerekenTutar.Value
+                OdemeTuruKodu = button.Name,
+                OdemeTuruAdi = button.Text,
+                Tutar = txtOdenmesiGerekenTutar.Value
             };
 
             if (txtOdenmesiGerekenTutar.Value <= 0)
@@ -98,7 +122,7 @@ namespace StokTakip.BackOffice.Fis
 
         private void frmFisIslem_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private StokHareket StokSec(Entities.Tables.Stok entity)
@@ -108,7 +132,7 @@ namespace StokTakip.BackOffice.Fis
             stokHareket.StokAdi = entity.StokAdi;
             stokHareket.Barkod = entity.Barkod;
             stokHareket.BarkodTuru = entity.BarkodTuru;
-            stokHareket.BirimFiyat = entity.SatisFiyati1;
+            stokHareket.BirimFiyat = txtFisTuru.Text == "Alış Faturası" ? entity.AlisFiyati1 : entity.SatisFiyati1;
             stokHareket.Birimi = entity.Birimi;
             stokHareket.Miktar = txtMiktar.Value;
             stokHareket.KDV = entity.SatisKDV;
@@ -155,7 +179,6 @@ namespace StokTakip.BackOffice.Fis
             {
                 Entities.Tables.Cari entity = form.secilen.FirstOrDefault();
                 entityBakiye = this.cariDal.CariBakiyesi(context, entity.CariKodu);
-
 
                 lblCariKodu.Text = entity.CariKodu;
                 lblCariAdi.Text = entity.CariAdi;
@@ -238,9 +261,9 @@ namespace StokTakip.BackOffice.Fis
             string fiyatSecilen = gridStokHareket.GetFocusedRowCellValue(colStokKodu).ToString();
             Entities.Tables.Stok fiyatEntity = context.Stoklar.Where(c => c.StokKodu == fiyatSecilen).SingleOrDefault();
 
-            barFiyat1.Tag = fiyatEntity.SatisFiyati1 ?? 0;
-            barFiyat2.Tag = fiyatEntity.SatisFiyati2 ?? 0;
-            barFiyat3.Tag = fiyatEntity.SatisFiyati3 ?? 0;
+            barFiyat1.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati1 ?? 0 : fiyatEntity.SatisFiyati1 ?? 0;
+            barFiyat2.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati2 ?? 0 : fiyatEntity.SatisFiyati2 ?? 0;
+            barFiyat3.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati3 ?? 0 : fiyatEntity.SatisFiyati3 ?? 0;
 
             barFiyat1.Caption = string.Format("{0:C2}", barFiyat1.Tag);
             barFiyat2.Caption = string.Format("{0:C2}", barFiyat2.Tag);
@@ -287,6 +310,42 @@ namespace StokTakip.BackOffice.Fis
             {
                 gridKasaHareket.DeleteSelectedRows();
                 OdenenTutarGuncelle();
+            }
+        }
+
+        private void btnIslemiKaydet_Click(object sender, EventArgs e)
+        {
+            int StokHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
+            int KasaHata = context.KasaHareketleri.Local.Where(c => c.KasaKodu == null).Count();
+            if (StokHata == 0 && KasaHata == 0)
+            {
+                foreach (var stokVeri in context.StokHareketleri.Local.ToList())
+                {
+                    stokVeri.Tarih = stokVeri.Tarih == null
+                        ? Convert.ToDateTime(cmbTarih.DateTime)
+                        : Convert.ToDateTime(stokVeri.Tarih);
+                    stokVeri.FisKodu = txtFisKodu.Text;
+                    stokVeri.Hareket = _fisentity.FisTuru == "Alış Faturası" ? "Stok Giriş" : "Stok Çıkış";
+                }
+
+                foreach (var kasaVeri in context.KasaHareketleri.Local.ToList())
+                {
+                    kasaVeri.Tarih = kasaVeri.Tarih == null
+                        ? Convert.ToDateTime(cmbTarih.DateTime)
+                        : Convert.ToDateTime(kasaVeri.Tarih);
+                    kasaVeri.FisKodu = txtFisKodu.Text;
+                    kasaVeri.Hareket = _fisentity.FisTuru == "Alış Faturası" ? "Kasa Çıkış" : "Kasa Giriş";
+                    kasaVeri.CariKodu = lblCariKodu.Text;
+                    kasaVeri.CariAdi = lblCariAdi.Text;
+                }
+
+                _fisentity.ToplamTutar = txtGenelToplam.Value;
+                _fisentity.IskontoOrani = txtIskontoOrani.Value;
+                _fisentity.IskontoTutar = txtIskontoTutar.Value;
+
+                fisDal.AddOrUpdate(context, _fisentity);
+
+                context.SaveChanges();
             }
         }
     }

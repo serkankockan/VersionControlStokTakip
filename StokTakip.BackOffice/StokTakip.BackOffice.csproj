@@ -68,6 +68,12 @@
     <Compile Include="Ana Menu\frmAnaMenu.Designer.cs">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ana Menu\frmAnaMenuBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ana Menu\frmAnaMenuBilgi.Designer.cs">
+      <DependentUpon>frmAnaMenuBilgi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cari\frmCari.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </Compile>
     <EmbeddedResource Include="Ana Menu\frmAnaMenu.resx">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ana Menu\frmAnaMenuBilgi.resx">
+      <DependentUpon>frmAnaMenuBilgi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cari\frmCari.resx">
       <DependentUpon>frmCari.cs</DependentUpon>

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using StokTakip.BackOffice.Ana_Menu;
 using StokTakip.BackOffice.Cari;
 using StokTakip.BackOffice.Fis;
 using StokTakip.BackOffice.Stok;
@@ -29,17 +30,9 @@ namespace StokTakip.BackOffice
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //StokTakipContext context = new StokTakipContext();
-            //CariDAL cariDal = new CariDAL();
-            //Cari entity = new Cari()
-            //{
-            //    CariKodu = "12345678",
-            //    CariAdi = "Serkan Koçkan",
-            //    YetkiliKisi = "Serkan",
-            //    FaturaUnvani = "Koçkan aş"
-            //};
-            //cariDal.AddOrUpdate(context,entity);
-            //cariDal.Save(context);
+            frmAnaMenuBilgi form = new frmAnaMenuBilgi();
+            form.MdiParent = this;
+            form.Show();
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -58,7 +51,7 @@ namespace StokTakip.BackOffice
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmFisIslem form = new frmFisIslem();
+            frmFisIslem form = new frmFisIslem("02");
             form.Show();
         }
     }

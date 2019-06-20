@@ -43,7 +43,7 @@ namespace StokTakip.Entities.Tables
 
         public string SeriNo { get; set; }
 
-        public DateTime Tarih { get; set; }
+        public Nullable<DateTime> Tarih { get; set; }
 
         public string Aciklama { get; set; }  
 

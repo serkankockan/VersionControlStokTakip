@@ -28,7 +28,7 @@ namespace StokTakip.Entities.Tables
 
         public string CariAdi { get; set; }
 
-        public DateTime Tarih { get; set; }
+        public Nullable<DateTime> Tarih { get; set; }
 
         public Nullable<decimal> Tutar { get; set; }
 
