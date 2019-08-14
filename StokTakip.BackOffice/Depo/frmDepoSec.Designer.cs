@@ -31,12 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDepoSec));
             this.gridContDepolar = new DevExpress.XtraGrid.GridControl();
-            this.gridDepolar = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.grpMenu = new DevExpress.XtraEditors.GroupControl();
-            this.btnSec = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
-            this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.depoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridDepolar = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoAdi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,11 +47,15 @@
             this.colStokGiris = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStokCikis = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMevcutStok = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grpMenu = new DevExpress.XtraEditors.GroupControl();
+            this.btnSec = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridContDepolar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDepolar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.depoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridContDepolar
@@ -71,6 +71,10 @@
             this.gridContDepolar.TabIndex = 9;
             this.gridContDepolar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridDepolar});
+            // 
+            // depoBindingSource
+            // 
+            this.depoBindingSource.DataSource = typeof(StokTakip.Entities.Tables.Depo);
             // 
             // gridDepolar
             // 
@@ -92,67 +96,6 @@
             this.gridDepolar.GridControl = this.gridContDepolar;
             this.gridDepolar.Name = "gridDepolar";
             this.gridDepolar.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
-            // 
-            // grpMenu
-            // 
-            this.grpMenu.Controls.Add(this.btnSec);
-            this.grpMenu.Controls.Add(this.btnKapat);
-            this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 572);
-            this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1047, 68);
-            this.grpMenu.TabIndex = 8;
-            this.grpMenu.Text = "Menü";
-            // 
-            // btnSec
-            // 
-            this.btnSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSec.ImageOptions.Image")));
-            this.btnSec.ImageOptions.ImageIndex = 0;
-            this.btnSec.Location = new System.Drawing.Point(865, 26);
-            this.btnSec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSec.Name = "btnSec";
-            this.btnSec.Size = new System.Drawing.Size(83, 35);
-            this.btnSec.TabIndex = 2;
-            this.btnSec.Text = "Seç";
-            this.btnSec.Click += new System.EventHandler(this.btnSec_Click);
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKapat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKapat.ImageOptions.Image")));
-            this.btnKapat.ImageOptions.ImageIndex = 1;
-            this.btnKapat.Location = new System.Drawing.Point(954, 26);
-            this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(83, 35);
-            this.btnKapat.TabIndex = 2;
-            this.btnKapat.Text = "Kapat";
-            // 
-            // lblBaslik
-            // 
-            this.lblBaslik.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBaslik.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("lblBaslik.Appearance.Image")));
-            this.lblBaslik.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblBaslik.Appearance.Options.UseFont = true;
-            this.lblBaslik.Appearance.Options.UseImage = true;
-            this.lblBaslik.Appearance.Options.UseImageAlign = true;
-            this.lblBaslik.Appearance.Options.UseTextOptions = true;
-            this.lblBaslik.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblBaslik.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblBaslik.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.lblBaslik.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblBaslik.Location = new System.Drawing.Point(0, 0);
-            this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1047, 45);
-            this.lblBaslik.TabIndex = 7;
-            this.lblBaslik.Text = "Depo Seçim Ekranı";
-            // 
-            // depoBindingSource
-            // 
-            this.depoBindingSource.DataSource = typeof(StokTakip.Entities.Tables.Depo);
             // 
             // colId
             // 
@@ -287,6 +230,64 @@
             this.colMevcutStok.VisibleIndex = 12;
             this.colMevcutStok.Width = 98;
             // 
+            // grpMenu
+            // 
+            this.grpMenu.Controls.Add(this.btnSec);
+            this.grpMenu.Controls.Add(this.btnKapat);
+            this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grpMenu.Location = new System.Drawing.Point(0, 572);
+            this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpMenu.Name = "grpMenu";
+            this.grpMenu.Size = new System.Drawing.Size(1047, 68);
+            this.grpMenu.TabIndex = 8;
+            this.grpMenu.Text = "Menü";
+            // 
+            // btnSec
+            // 
+            this.btnSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSec.ImageOptions.Image")));
+            this.btnSec.ImageOptions.ImageIndex = 0;
+            this.btnSec.Location = new System.Drawing.Point(865, 26);
+            this.btnSec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSec.Name = "btnSec";
+            this.btnSec.Size = new System.Drawing.Size(83, 35);
+            this.btnSec.TabIndex = 2;
+            this.btnSec.Text = "Seç";
+            this.btnSec.Click += new System.EventHandler(this.btnSec_Click);
+            // 
+            // btnKapat
+            // 
+            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKapat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKapat.ImageOptions.Image")));
+            this.btnKapat.ImageOptions.ImageIndex = 1;
+            this.btnKapat.Location = new System.Drawing.Point(954, 26);
+            this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(83, 35);
+            this.btnKapat.TabIndex = 2;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            // 
+            // lblBaslik
+            // 
+            this.lblBaslik.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBaslik.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("lblBaslik.Appearance.Image")));
+            this.lblBaslik.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBaslik.Appearance.Options.UseFont = true;
+            this.lblBaslik.Appearance.Options.UseImage = true;
+            this.lblBaslik.Appearance.Options.UseImageAlign = true;
+            this.lblBaslik.Appearance.Options.UseTextOptions = true;
+            this.lblBaslik.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblBaslik.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblBaslik.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.lblBaslik.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblBaslik.Location = new System.Drawing.Point(0, 0);
+            this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblBaslik.Name = "lblBaslik";
+            this.lblBaslik.Size = new System.Drawing.Size(1047, 45);
+            this.lblBaslik.TabIndex = 7;
+            this.lblBaslik.Text = "Depo Seçim Ekranı";
+            // 
             // frmDepoSec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,10 +302,10 @@
             this.Text = "Depo Seçim Ekranı";
             this.Load += new System.EventHandler(this.frmDepoSec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridContDepolar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDepolar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.depoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

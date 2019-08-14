@@ -42,5 +42,10 @@ namespace StokTakip.BackOffice.Depo
             this.Close();
             }
         }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

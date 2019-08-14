@@ -32,8 +32,6 @@ namespace StokTakip.BackOffice.Fis
         Entities.Tables.Fis _fisentity = new Entities.Tables.Fis();
         CariBakiye entityBakiye = new CariBakiye();
 
-
-
         public frmFisIslem(string fisKodu=null)
         {
             InitializeComponent();
@@ -45,18 +43,13 @@ namespace StokTakip.BackOffice.Fis
 
                 entityBakiye = this.cariDal.CariBakiyesi(context, _fisentity.CariKodu);
 
-
                 lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
                 lblBorc.Text = entityBakiye.Borc.ToString("C2");
                 lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
-
-
             }
-
             
-
             _fisentity.FisTuru = "Alış Faturası";
-            txtFisKodu.DataBindings.Add("Text", _fisentity, "FisKodu",false,DataSourceUpdateMode.OnPropertyChanged);
+            txtFisKodu.DataBindings.Add("Text", _fisentity, "FisKodu", false, DataSourceUpdateMode.OnPropertyChanged);
             txtFisTuru.DataBindings.Add("Text", _fisentity, "FisTuru", false, DataSourceUpdateMode.OnPropertyChanged);
             cmbTarih.DataBindings.Add("EditValue", _fisentity, "Tarih", false, DataSourceUpdateMode.OnPropertyChanged);
             txtBelgeNo.DataBindings.Add("Text", _fisentity, "BelgeNo", false, DataSourceUpdateMode.OnPropertyChanged);

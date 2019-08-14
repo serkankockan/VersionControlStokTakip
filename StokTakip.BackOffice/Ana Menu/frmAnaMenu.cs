@@ -9,7 +9,9 @@ using System.Windows.Forms;
 using StokTakip.BackOffice.Ana_Menu;
 using StokTakip.BackOffice.Cari;
 using StokTakip.BackOffice.Fis;
+using StokTakip.BackOffice.Kasa_Hareketleri;
 using StokTakip.BackOffice.Stok;
+using StokTakip.BackOffice.Stok_Hareketleri;
 using StokTakip.BackOffice.Tanim;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
@@ -53,6 +55,20 @@ namespace StokTakip.BackOffice
         {
             frmFisIslem form = new frmFisIslem("02");
             form.Show();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmStokHareketleri form = new frmStokHareketleri();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmKasaHareketleri kasaHareketleri = new FrmKasaHareketleri();
+            kasaHareketleri.MdiParent = this;
+            kasaHareketleri.Show();
         }
     }
 }
