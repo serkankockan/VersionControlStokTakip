@@ -32,7 +32,6 @@ namespace StokTakip.Entities.Tables
         public Nullable<decimal> PrimOrani { get; set; }
         public Nullable<decimal> AylikMaas { get; set; }
         public string Aciklama { get; set; }
-        
     }
 }
 

@@ -12,7 +12,8 @@ namespace StokTakip.Entities.Validations
     {
         public PersonelValidator()
         {
-            
+            RuleFor(p => p.PersonelKodu).NotEmpty().WithMessage("Personel Kodu alanı boş geçilemez.");
+            RuleFor(p => p.IseGirisTarihi).NotEmpty().WithMessage("İşe Giriş Tarihi alanı boş geçilemez.");
         }
     }
 }

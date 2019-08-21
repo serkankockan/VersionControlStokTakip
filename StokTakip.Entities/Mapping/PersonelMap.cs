@@ -20,6 +20,7 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.PersonelKodu).HasMaxLength(12);
             this.Property(p => p.PersonelAdi).HasMaxLength(50);
             this.Property(p => p.TCKimlikNo).HasMaxLength(11);
+            this.Property(p => p.CepTelefonu).HasMaxLength(20);
             this.Property(p => p.Telefon).HasMaxLength(20);
             this.Property(p => p.Fax).HasMaxLength(20);
             this.Property(p => p.Email).HasMaxLength(50);
@@ -40,6 +41,7 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.PersonelKodu).HasColumnName("PersonelKodu");
             this.Property(p => p.PersonelAdi).HasColumnName("PersonelAdi");
             this.Property(p => p.TCKimlikNo).HasColumnName("TCKimlikNo");
+            this.Property(p => p.CepTelefonu).HasColumnName("CepTelefonu");
             this.Property(p => p.Telefon).HasColumnName("Telefon");
             this.Property(p => p.Fax).HasColumnName("Fax");
             this.Property(p => p.Email).HasColumnName("Email");

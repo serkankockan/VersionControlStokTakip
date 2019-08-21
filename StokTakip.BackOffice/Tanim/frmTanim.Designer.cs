@@ -352,7 +352,7 @@
             this.MinimizeBox = false;
             this.Name = "frmTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTanim";
+            this.Text = "Tanımlar";
             this.Load += new System.EventHandler(this.frmTanim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Text;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -17,6 +18,7 @@ using StokTakip.BackOffice.Stok;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
+using StokTakip.Entities.Tables.Other_Tables;
 
 
 namespace StokTakip.BackOffice.Fis
@@ -29,29 +31,39 @@ namespace StokTakip.BackOffice.Fis
         KasaHareketDAL kasaHareketDal = new KasaHareketDAL();
         CariDAL cariDal = new CariDAL();
         StokHareketDAL stokHareketDal = new StokHareketDAL();
+        FisAyarlari ayarlar = new FisAyarlari();
         Entities.Tables.Fis _fisentity = new Entities.Tables.Fis();
         CariBakiye entityBakiye = new CariBakiye();
 
-        public frmFisIslem(string fisKodu=null)
+        public frmFisIslem(string fisKodu=null, string fisTuru=null)
         {
             InitializeComponent();
+
             if (fisKodu!=null)
             {
                 _fisentity = context.Fisler.Where(c => c.FisKodu == fisKodu).SingleOrDefault();
+                //_fisentity = context.Fisler.SingleOrDefault(c => c.FisKodu == fisKodu);
                 context.StokHareketleri.Where(c=>c.FisKodu == fisKodu).Load();
                 context.KasaHareketleri.Where(c => c.FisKodu == fisKodu).Load();
 
-                entityBakiye = this.cariDal.CariBakiyesi(context, _fisentity.CariKodu);
+                if (_fisentity.CariKodu != null)
+                {
+                    entityBakiye = this.cariDal.CariBakiyesi(context, _fisentity.CariKodu);
+                    lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
+                    lblBorc.Text = entityBakiye.Borc.ToString("C2");
+                    lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
+                }
 
-                lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
-                lblBorc.Text = entityBakiye.Borc.ToString("C2");
-                lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
+            }
+            else // yeni bir fiş oluşturuluyorsa
+            {
+                _fisentity.FisTuru = fisTuru;
+                _fisentity.Tarih = DateTime.Now;
             }
             
-            _fisentity.FisTuru = "Alış Faturası";
             txtFisKodu.DataBindings.Add("Text", _fisentity, "FisKodu", false, DataSourceUpdateMode.OnPropertyChanged);
             txtFisTuru.DataBindings.Add("Text", _fisentity, "FisTuru", false, DataSourceUpdateMode.OnPropertyChanged);
-            cmbTarih.DataBindings.Add("EditValue", _fisentity, "Tarih", false, DataSourceUpdateMode.OnPropertyChanged);
+            cmbTarih.DataBindings.Add("EditValue", _fisentity, "Tarih", false, DataSourceUpdateMode.OnPropertyChanged,DateTime.Now);
             txtBelgeNo.DataBindings.Add("Text", _fisentity, "BelgeNo", false, DataSourceUpdateMode.OnPropertyChanged);
             txtAciklama.DataBindings.Add("Text", _fisentity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
             lblCariKodu.DataBindings.Add("Text", _fisentity, "CariKodu", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -67,7 +79,7 @@ namespace StokTakip.BackOffice.Fis
 
             gridContStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridContKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
-
+            fisAyari();
             Toplamlar();
             OdenenTutarGuncelle();
 
@@ -82,6 +94,77 @@ namespace StokTakip.BackOffice.Fis
                 };
                 button.Click += OdemeEkle_Click;
                 flowLayoutPanel1.Controls.Add(button);
+            }
+        }
+
+        private void fisAyari()
+        {
+
+            
+
+            switch (_fisentity.FisTuru)
+            {
+                case "Alış Faturası":
+                    ayarlar.StokHareketi = "Stok Giriş";
+                    ayarlar.KasaHareketi = "Kasa Çıkış";
+                    ayarlar.OdemeEkrani = true;
+                    lblBaslik.Appearance.ImageIndex = 0;
+                    break;
+
+                case "Perakende Satış Faturası":
+                    ayarlar.StokHareketi = "Stok Çıkış";
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
+                    lblBaslik.Appearance.ImageIndex = 1;
+                    break;
+
+                case "Toptan Satış Faturası":
+                    ayarlar.StokHareketi = "Stok Çıkış";
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
+                    lblBaslik.Appearance.ImageIndex = 2;
+                    break;
+
+                case "Alış İade Faturası":
+                    ayarlar.StokHareketi = "Stok Çıkış";
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
+                    lblBaslik.Appearance.ImageIndex = 3;
+                    break;
+
+                case "Satış İade Faturası":
+                    ayarlar.StokHareketi = "Stok Giriş";
+                    ayarlar.KasaHareketi = "Kasa Çıkış";
+                    ayarlar.OdemeEkrani = true;
+                    lblBaslik.Appearance.ImageIndex = 4;
+                    break;
+
+                case "Sayım Fazlası Fişi":
+                    ayarlar.StokHareketi = "Stok Giriş";
+                    lblBaslik.Appearance.ImageIndex = 5;
+                    ayarlar.OdemeEkrani = false;
+                    panelOdeme.Visible = false;
+                    navOdemeEkrani.Dispose();
+                    navCariBilgi.Dispose();
+                    break;
+
+                case "Sayım Eksiği Fişi":
+                    ayarlar.StokHareketi = "Stok Çıkış";
+                    lblBaslik.Appearance.ImageIndex = 6;
+                    ayarlar.OdemeEkrani = false;
+                    panelOdeme.Visible = false;
+                    navOdemeEkrani.Dispose();
+                    navCariBilgi.Dispose();
+                    break;
+
+                case "Stok Devir Fişi":
+                    ayarlar.StokHareketi = "Stok Giriş";
+                    lblBaslik.Appearance.ImageIndex = 7;
+                    ayarlar.OdemeEkrani = false;
+                    panelOdeme.Visible = false;
+                    navOdemeEkrani.Dispose();
+                    navCariBilgi.Dispose();
+                    break;
             }
         }
 
@@ -230,7 +313,18 @@ namespace StokTakip.BackOffice.Fis
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (gridStokHareket.RowCount != 0)
+            {
+                if(MessageBox.Show("Satış ekranına eklenmiş ürünler var. Bu işlemi iptal edip formu " + 
+                                   "kapatmak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void txtIskontoOrani_Validated(object sender, EventArgs e)
@@ -283,6 +377,7 @@ namespace StokTakip.BackOffice.Fis
             if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 gridStokHareket.DeleteSelectedRows();
+                Toplamlar();
             }
         }
 
@@ -302,6 +397,7 @@ namespace StokTakip.BackOffice.Fis
             if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 gridKasaHareket.DeleteSelectedRows();
+                
                 OdenenTutarGuncelle();
             }
         }
@@ -310,36 +406,87 @@ namespace StokTakip.BackOffice.Fis
         {
             int StokHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
             int KasaHata = context.KasaHareketleri.Local.Where(c => c.KasaKodu == null).Count();
-            if (StokHata == 0 && KasaHata == 0)
-            {
-                foreach (var stokVeri in context.StokHareketleri.Local.ToList())
-                {
-                    stokVeri.Tarih = stokVeri.Tarih == null
-                        ? Convert.ToDateTime(cmbTarih.DateTime)
-                        : Convert.ToDateTime(stokVeri.Tarih);
-                    stokVeri.FisKodu = txtFisKodu.Text;
-                    stokVeri.Hareket = _fisentity.FisTuru == "Alış Faturası" ? "Stok Giriş" : "Stok Çıkış";
-                }
 
+            string message = null;
+            int hata = 0;
+
+            if (gridStokHareket.RowCount == 0)
+            {
+                message += "Satış ekranında eklenmiş bir ürün bulunamadı." + System.Environment.NewLine;
+                hata++;
+            }
+
+            if (txtFisKodu.Text == "")
+            {
+                message += "Fiş Kodu alanı boş geçilemez." + System.Environment.NewLine;
+                hata++;
+            }
+
+            if (txtFisKodu.Text == null)
+            {
+                message += "Fiş Kodu alanı boş geçilemez." + System.Environment.NewLine;
+                hata++;
+            }
+
+            if (txtOdenmesiGerekenTutar.Value != 0 && ayarlar.OdemeEkrani == true)
+            {
+                message += "Ödenmesi gereken tutar ödenmemiş görünüyor." + System.Environment.NewLine;
+                hata++;
+            }
+
+            if (StokHata != 0)
+            {
+                message += "Satış ekranındaki ürünlerin Depo seçimlerinde eksiklikler var." + System.Environment.NewLine;
+                hata++;
+            }
+
+            if (KasaHata != 0)
+            {
+                message += "Ödeme ekranındaki ödemelerin Kasa seçimlerinde eksiklikler var.";
+                hata++;
+            }
+
+            if (hata!=0)
+            {
+                MessageBox.Show(message);
+                return;
+            }
+
+
+
+
+            foreach (var stokVeri in context.StokHareketleri.Local.ToList())
+            {
+                stokVeri.Tarih = stokVeri.Tarih == null
+                    ? Convert.ToDateTime(cmbTarih.DateTime)
+                    : Convert.ToDateTime(stokVeri.Tarih);
+                stokVeri.FisKodu = txtFisKodu.Text;
+                stokVeri.Hareket = ayarlar.StokHareketi;
+            }
+
+            if (ayarlar.OdemeEkrani)
+            {
                 foreach (var kasaVeri in context.KasaHareketleri.Local.ToList())
                 {
                     kasaVeri.Tarih = kasaVeri.Tarih == null
                         ? Convert.ToDateTime(cmbTarih.DateTime)
                         : Convert.ToDateTime(kasaVeri.Tarih);
                     kasaVeri.FisKodu = txtFisKodu.Text;
-                    kasaVeri.Hareket = _fisentity.FisTuru == "Alış Faturası" ? "Kasa Çıkış" : "Kasa Giriş";
+                    kasaVeri.Hareket = ayarlar.KasaHareketi;
                     kasaVeri.CariKodu = lblCariKodu.Text;
                     kasaVeri.CariAdi = lblCariAdi.Text;
                 }
-
-                _fisentity.ToplamTutar = txtGenelToplam.Value;
-                _fisentity.IskontoOrani = txtIskontoOrani.Value;
-                _fisentity.IskontoTutar = txtIskontoTutar.Value;
-
-                fisDal.AddOrUpdate(context, _fisentity);
-
-                context.SaveChanges();
             }
+
+            _fisentity.ToplamTutar = txtGenelToplam.Value;
+            _fisentity.IskontoOrani = txtIskontoOrani.Value;
+            _fisentity.IskontoTutar = txtIskontoTutar.Value;
+
+            fisDal.AddOrUpdate(context, _fisentity);
+
+            context.SaveChanges();
+
+            this.Close();
         }
     }
 }

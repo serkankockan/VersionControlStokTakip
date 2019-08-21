@@ -20,7 +20,7 @@ namespace StokTakip.BackOffice.Fis
         FisDAL fisDal = new FisDAL();
         KasaHareketDAL kasaHareketDal = new KasaHareketDAL();
         StokHareketDAL stokHareketDal = new StokHareketDAL();
-
+        
         public frmFis()
         {
             InitializeComponent();
@@ -78,6 +78,20 @@ namespace StokTakip.BackOffice.Fis
                 fisDal.Save(context);
                 Listele();
             }
+        }
+
+
+        private void FisIslem_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmFisIslem form = new frmFisIslem(null,e.Item.Caption);
+            form.ShowDialog();
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+            string secilen = gridFis.GetFocusedRowCellValue(colFisKodu).ToString();
+            frmFisIslem form = new frmFisIslem(secilen,null);
+            form.ShowDialog();
         }
     }
 }

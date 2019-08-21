@@ -310,6 +310,9 @@
     <EmbeddedResource Include="Personel\FrmPersonel.resx">
       <DependentUpon>FrmPersonel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmPersonelHareket.resx">
+      <DependentUpon>FrmPersonelHareket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Personel\FrmPersonelIslem.resx">
       <DependentUpon>FrmPersonelIslem.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,6 +352,7 @@
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Kasa.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.KasaHareket.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.OdemeTuru.datasource" />
+    <None Include="Properties\DataSources\StokTakip.Entities.Tables.Personel.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Stok.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.StokHareket.datasource" />
     <None Include="Properties\Settings.settings">

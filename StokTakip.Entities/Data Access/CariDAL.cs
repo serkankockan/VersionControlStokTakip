@@ -182,6 +182,9 @@ namespace StokTakip.Entities.Data_Access
                      .Sum(c => c.ToplamTutar) ?? 0) +
                 (context.KasaHareketleri.Where(c => c.CariKodu == cariKodu && c.Hareket == "Kasa Çıkış")
                      .Sum(c => c.Tutar) ?? 0);
+
+
+
             CariBakiye entity = new CariBakiye
             {
                 CariKodu = cariKodu,
