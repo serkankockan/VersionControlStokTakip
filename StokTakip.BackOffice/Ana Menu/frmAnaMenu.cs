@@ -79,5 +79,12 @@ namespace StokTakip.BackOffice
             personel.MdiParent = this;
             personel.Show();
         }
+
+        private void FisIslemClick_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmFisIslem form = new frmFisIslem(null,e.Item.Caption);
+            form.ShowDialog();
+        }
+
     }
 }

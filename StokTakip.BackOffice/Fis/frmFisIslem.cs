@@ -165,6 +165,49 @@ namespace StokTakip.BackOffice.Fis
                     navOdemeEkrani.Dispose();
                     navCariBilgi.Dispose();
                     break;
+
+
+                case "Tahsilat Fişi":
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = false;
+                    navSatisEkrani.Dispose();
+                    navigationPane2.SelectedPage = navOdemeEkrani;
+                    panelOdeme.Visible = false;
+                    panelIskonto.Visible = false;
+                    panelKDV.Visible = false;
+                    grpToplamlar.Height = 98;
+                    panelToplam.Top = 32;
+                    break;
+
+
+                case "Ödeme Fişi":
+                    ayarlar.KasaHareketi = "Kasa Çıkış";
+                    ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = false;
+                    panelOdeme.Visible = false;
+                    panelIskonto.Visible = false;
+                    panelKDV.Visible = false;
+                    navSatisEkrani.Dispose();
+                    navigationPane2.SelectedPage = navOdemeEkrani;
+                    grpToplamlar.Height = 98;
+                    panelToplam.Top = 32;
+                    break;
+
+                //Bu alana daha sonra bakılacak
+
+                case "Cari Devir Fişi":
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = false;
+                    panelOdeme.Visible = false;
+                    panelIskonto.Visible = false;
+                    panelKDV.Visible = false;
+                    navSatisEkrani.Dispose();
+                    navigationPane2.SelectedPage = navOdemeEkrani;
+                    grpToplamlar.Height = 98;
+                    panelToplam.Top = 32;
+                    break;
             }
         }
 

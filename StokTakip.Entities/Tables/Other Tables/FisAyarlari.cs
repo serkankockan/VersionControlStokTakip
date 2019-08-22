@@ -15,5 +15,7 @@ namespace StokTakip.Entities.Tables.Other_Tables
 
         public bool OdemeEkrani { get; set; }
 
+        public bool SatisEkrani { get; set; }
+        
     }
 }
