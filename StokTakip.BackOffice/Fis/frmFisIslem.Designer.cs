@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFisIslem));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions11 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
@@ -45,6 +45,19 @@
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnIslemiKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.grpToplamlar = new DevExpress.XtraEditors.GroupControl();
+            this.panelToplam = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.txtGenelToplam = new DevExpress.XtraEditors.CalcEdit();
+            this.panelKDV = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
+            this.txtKdvToplam = new DevExpress.XtraEditors.CalcEdit();
+            this.panelIskonto = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.txtIskontoTutar = new DevExpress.XtraEditors.CalcEdit();
+            this.txtIskontoOrani = new DevExpress.XtraEditors.CalcEdit();
+            this.txtIndirimToplam = new DevExpress.XtraEditors.CalcEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.panelOdeme = new DevExpress.XtraEditors.PanelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txtAcikHesapBakiyesi = new DevExpress.XtraEditors.CalcEdit();
@@ -52,18 +65,19 @@
             this.txtOdenmesiGerekenTutar = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txtKdvToplam = new DevExpress.XtraEditors.CalcEdit();
-            this.txtGenelToplam = new DevExpress.XtraEditors.CalcEdit();
-            this.txtIndirimToplam = new DevExpress.XtraEditors.CalcEdit();
-            this.txtIskontoOrani = new DevExpress.XtraEditors.CalcEdit();
-            this.txtIskontoTutar = new DevExpress.XtraEditors.CalcEdit();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navFisBilgi = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.panelCariDevir = new System.Windows.Forms.Panel();
+            this.toggleBakiyeTuru = new DevExpress.XtraEditors.ToggleSwitch();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barFiyat1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barFiyat2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barFiyat3 = new DevExpress.XtraBars.BarButtonItem();
+            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtBelgeNo = new DevExpress.XtraEditors.TextEdit();
@@ -104,6 +118,7 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.navPlasiyerBilgi = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.flowPersonel = new System.Windows.Forms.FlowLayoutPanel();
             this.navigationPane2 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navSatisEkrani = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.gridContStokHareket = new DevExpress.XtraGrid.GridControl();
@@ -153,34 +168,32 @@
             this.repoKHSil = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.radialFiyat = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.barFiyat1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barFiyat2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barFiyat3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.panelIskonto = new DevExpress.XtraEditors.PanelControl();
-            this.panelKDV = new DevExpress.XtraEditors.PanelControl();
-            this.panelToplam = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpToplamlar)).BeginInit();
             this.grpToplamlar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelToplam)).BeginInit();
+            this.panelToplam.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGenelToplam.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelKDV)).BeginInit();
+            this.panelKDV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKdvToplam.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelIskonto)).BeginInit();
+            this.panelIskonto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIskontoTutar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIskontoOrani.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIndirimToplam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelOdeme)).BeginInit();
             this.panelOdeme.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAcikHesapBakiyesi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOdenenTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOdenmesiGerekenTutar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKdvToplam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGenelToplam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIndirimToplam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIskontoOrani.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIskontoTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.navFisBilgi.SuspendLayout();
+            this.panelCariDevir.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleBakiyeTuru.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBelgeNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTarih.Properties.CalendarTimeProperties)).BeginInit();
@@ -196,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIlce.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCepTelefonu.Properties)).BeginInit();
+            this.navPlasiyerBilgi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane2)).BeginInit();
             this.navigationPane2.SuspendLayout();
             this.navSatisEkrani.SuspendLayout();
@@ -216,13 +230,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoKasa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoKHSil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radialFiyat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelIskonto)).BeginInit();
-            this.panelIskonto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelKDV)).BeginInit();
-            this.panelKDV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelToplam)).BeginInit();
-            this.panelToplam.SuspendLayout();
             this.SuspendLayout();
             // 
             // ımageList2
@@ -327,6 +334,235 @@
             this.grpToplamlar.Size = new System.Drawing.Size(1521, 167);
             this.grpToplamlar.TabIndex = 11;
             this.grpToplamlar.Text = "Toplamlar ve Ek Bilgiler";
+            // 
+            // panelToplam
+            // 
+            this.panelToplam.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelToplam.Controls.Add(this.labelControl19);
+            this.panelToplam.Controls.Add(this.txtGenelToplam);
+            this.panelToplam.Location = new System.Drawing.Point(1010, 98);
+            this.panelToplam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelToplam.Name = "panelToplam";
+            this.panelToplam.Size = new System.Drawing.Size(506, 63);
+            this.panelToplam.TabIndex = 3;
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl19.Appearance.Options.UseBorderColor = true;
+            this.labelControl19.Appearance.Options.UseTextOptions = true;
+            this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl19.Location = new System.Drawing.Point(1, 0);
+            this.labelControl19.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(150, 62);
+            this.labelControl19.TabIndex = 15;
+            this.labelControl19.Text = "Genel Toplam :";
+            // 
+            // txtGenelToplam
+            // 
+            this.txtGenelToplam.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtGenelToplam.Location = new System.Drawing.Point(159, 0);
+            this.txtGenelToplam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtGenelToplam.Name = "txtGenelToplam";
+            this.txtGenelToplam.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
+            this.txtGenelToplam.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGenelToplam.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtGenelToplam.Properties.Appearance.Options.UseBackColor = true;
+            this.txtGenelToplam.Properties.Appearance.Options.UseFont = true;
+            this.txtGenelToplam.Properties.Appearance.Options.UseForeColor = true;
+            this.txtGenelToplam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtGenelToplam.Properties.DisplayFormat.FormatString = "C2";
+            this.txtGenelToplam.Properties.Mask.EditMask = "C";
+            this.txtGenelToplam.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtGenelToplam.Size = new System.Drawing.Size(339, 62);
+            this.txtGenelToplam.TabIndex = 17;
+            // 
+            // panelKDV
+            // 
+            this.panelKDV.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelKDV.Controls.Add(this.labelControl23);
+            this.panelKDV.Controls.Add(this.txtKdvToplam);
+            this.panelKDV.Location = new System.Drawing.Point(1010, 30);
+            this.panelKDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelKDV.Name = "panelKDV";
+            this.panelKDV.Size = new System.Drawing.Size(507, 63);
+            this.panelKDV.TabIndex = 3;
+            // 
+            // labelControl23
+            // 
+            this.labelControl23.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl23.Appearance.Options.UseBorderColor = true;
+            this.labelControl23.Appearance.Options.UseTextOptions = true;
+            this.labelControl23.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl23.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl23.Location = new System.Drawing.Point(1, 1);
+            this.labelControl23.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl23.Name = "labelControl23";
+            this.labelControl23.Size = new System.Drawing.Size(150, 62);
+            this.labelControl23.TabIndex = 16;
+            this.labelControl23.Text = "KDV Toplamı :";
+            // 
+            // txtKdvToplam
+            // 
+            this.txtKdvToplam.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtKdvToplam.Location = new System.Drawing.Point(159, 1);
+            this.txtKdvToplam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtKdvToplam.Name = "txtKdvToplam";
+            this.txtKdvToplam.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
+            this.txtKdvToplam.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKdvToplam.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtKdvToplam.Properties.Appearance.Options.UseBackColor = true;
+            this.txtKdvToplam.Properties.Appearance.Options.UseFont = true;
+            this.txtKdvToplam.Properties.Appearance.Options.UseForeColor = true;
+            this.txtKdvToplam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtKdvToplam.Properties.DisplayFormat.FormatString = "C2";
+            this.txtKdvToplam.Properties.Mask.EditMask = "C2";
+            this.txtKdvToplam.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtKdvToplam.Size = new System.Drawing.Size(339, 62);
+            this.txtKdvToplam.TabIndex = 17;
+            // 
+            // panelIskonto
+            // 
+            this.panelIskonto.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelIskonto.Controls.Add(this.labelControl13);
+            this.panelIskonto.Controls.Add(this.txtIskontoTutar);
+            this.panelIskonto.Controls.Add(this.txtIskontoOrani);
+            this.panelIskonto.Controls.Add(this.txtIndirimToplam);
+            this.panelIskonto.Controls.Add(this.labelControl14);
+            this.panelIskonto.Controls.Add(this.labelControl10);
+            this.panelIskonto.Location = new System.Drawing.Point(546, 30);
+            this.panelIskonto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelIskonto.Name = "panelIskonto";
+            this.panelIskonto.Size = new System.Drawing.Size(458, 132);
+            this.panelIskonto.TabIndex = 19;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl13.Appearance.Options.UseBorderColor = true;
+            this.labelControl13.Appearance.Options.UseTextOptions = true;
+            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl13.Location = new System.Drawing.Point(17, 48);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(150, 33);
+            this.labelControl13.TabIndex = 11;
+            this.labelControl13.Text = "İskonto Oranı :";
+            // 
+            // txtIskontoTutar
+            // 
+            this.txtIskontoTutar.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtIskontoTutar.Location = new System.Drawing.Point(171, 91);
+            this.txtIskontoTutar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIskontoTutar.Name = "txtIskontoTutar";
+            this.txtIskontoTutar.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
+            this.txtIskontoTutar.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIskontoTutar.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtIskontoTutar.Properties.Appearance.Options.UseBackColor = true;
+            this.txtIskontoTutar.Properties.Appearance.Options.UseFont = true;
+            this.txtIskontoTutar.Properties.Appearance.Options.UseForeColor = true;
+            this.txtIskontoTutar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtIskontoTutar.Properties.DisplayFormat.FormatString = "C2";
+            this.txtIskontoTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtIskontoTutar.Properties.Mask.EditMask = "C2";
+            this.txtIskontoTutar.Size = new System.Drawing.Size(279, 38);
+            this.txtIskontoTutar.TabIndex = 14;
+            // 
+            // txtIskontoOrani
+            // 
+            this.txtIskontoOrani.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtIskontoOrani.Location = new System.Drawing.Point(171, 46);
+            this.txtIskontoOrani.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIskontoOrani.Name = "txtIskontoOrani";
+            this.txtIskontoOrani.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
+            this.txtIskontoOrani.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIskontoOrani.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtIskontoOrani.Properties.Appearance.Options.UseBackColor = true;
+            this.txtIskontoOrani.Properties.Appearance.Options.UseFont = true;
+            this.txtIskontoOrani.Properties.Appearance.Options.UseForeColor = true;
+            this.txtIskontoOrani.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtIskontoOrani.Properties.DisplayFormat.FormatString = "\'%\'0";
+            this.txtIskontoOrani.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtIskontoOrani.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtIskontoOrani.Size = new System.Drawing.Size(279, 34);
+            this.txtIskontoOrani.TabIndex = 14;
+            this.txtIskontoOrani.Validated += new System.EventHandler(this.txtIskontoOrani_Validated);
+            // 
+            // txtIndirimToplam
+            // 
+            this.txtIndirimToplam.EditValue = "";
+            this.txtIndirimToplam.Location = new System.Drawing.Point(171, 0);
+            this.txtIndirimToplam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIndirimToplam.Name = "txtIndirimToplam";
+            this.txtIndirimToplam.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
+            this.txtIndirimToplam.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIndirimToplam.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtIndirimToplam.Properties.Appearance.Options.UseBackColor = true;
+            this.txtIndirimToplam.Properties.Appearance.Options.UseFont = true;
+            this.txtIndirimToplam.Properties.Appearance.Options.UseForeColor = true;
+            this.txtIndirimToplam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtIndirimToplam.Properties.DisplayFormat.FormatString = "C2";
+            this.txtIndirimToplam.Properties.Mask.EditMask = "C2";
+            this.txtIndirimToplam.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtIndirimToplam.Size = new System.Drawing.Size(279, 34);
+            this.txtIndirimToplam.TabIndex = 14;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl14.Appearance.Options.UseBorderColor = true;
+            this.labelControl14.Appearance.Options.UseTextOptions = true;
+            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl14.Location = new System.Drawing.Point(17, 91);
+            this.labelControl14.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(150, 37);
+            this.labelControl14.TabIndex = 11;
+            this.labelControl14.Text = "İskonto Tutar :";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl10.Appearance.Options.UseBorderColor = true;
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
+            this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl10.Location = new System.Drawing.Point(17, 0);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(150, 33);
+            this.labelControl10.TabIndex = 12;
+            this.labelControl10.Text = "İndirim Toplamı :";
             // 
             // panelOdeme
             // 
@@ -461,198 +697,6 @@
             this.labelControl7.TabIndex = 11;
             this.labelControl7.Text = "Ödenen Tutar :";
             // 
-            // labelControl19
-            // 
-            this.labelControl19.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl19.Appearance.Options.UseBorderColor = true;
-            this.labelControl19.Appearance.Options.UseTextOptions = true;
-            this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl19.Location = new System.Drawing.Point(1, 0);
-            this.labelControl19.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(150, 62);
-            this.labelControl19.TabIndex = 15;
-            this.labelControl19.Text = "Genel Toplam :";
-            // 
-            // labelControl23
-            // 
-            this.labelControl23.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl23.Appearance.Options.UseBorderColor = true;
-            this.labelControl23.Appearance.Options.UseTextOptions = true;
-            this.labelControl23.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl23.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl23.Location = new System.Drawing.Point(1, 1);
-            this.labelControl23.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(150, 62);
-            this.labelControl23.TabIndex = 16;
-            this.labelControl23.Text = "KDV Toplamı :";
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl14.Appearance.Options.UseBorderColor = true;
-            this.labelControl14.Appearance.Options.UseTextOptions = true;
-            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl14.Location = new System.Drawing.Point(17, 91);
-            this.labelControl14.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(150, 37);
-            this.labelControl14.TabIndex = 11;
-            this.labelControl14.Text = "İskonto Tutar :";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl13.Appearance.Options.UseBorderColor = true;
-            this.labelControl13.Appearance.Options.UseTextOptions = true;
-            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl13.Location = new System.Drawing.Point(17, 48);
-            this.labelControl13.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(150, 33);
-            this.labelControl13.TabIndex = 11;
-            this.labelControl13.Text = "İskonto Oranı :";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl10.Appearance.Options.UseBorderColor = true;
-            this.labelControl10.Appearance.Options.UseTextOptions = true;
-            this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl10.Location = new System.Drawing.Point(17, 0);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(150, 33);
-            this.labelControl10.TabIndex = 12;
-            this.labelControl10.Text = "İndirim Toplamı :";
-            // 
-            // txtKdvToplam
-            // 
-            this.txtKdvToplam.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtKdvToplam.Location = new System.Drawing.Point(159, 1);
-            this.txtKdvToplam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtKdvToplam.Name = "txtKdvToplam";
-            this.txtKdvToplam.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
-            this.txtKdvToplam.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKdvToplam.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtKdvToplam.Properties.Appearance.Options.UseBackColor = true;
-            this.txtKdvToplam.Properties.Appearance.Options.UseFont = true;
-            this.txtKdvToplam.Properties.Appearance.Options.UseForeColor = true;
-            this.txtKdvToplam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtKdvToplam.Properties.DisplayFormat.FormatString = "C2";
-            this.txtKdvToplam.Properties.Mask.EditMask = "C2";
-            this.txtKdvToplam.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtKdvToplam.Size = new System.Drawing.Size(339, 62);
-            this.txtKdvToplam.TabIndex = 17;
-            // 
-            // txtGenelToplam
-            // 
-            this.txtGenelToplam.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtGenelToplam.Location = new System.Drawing.Point(159, 0);
-            this.txtGenelToplam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtGenelToplam.Name = "txtGenelToplam";
-            this.txtGenelToplam.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
-            this.txtGenelToplam.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenelToplam.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtGenelToplam.Properties.Appearance.Options.UseBackColor = true;
-            this.txtGenelToplam.Properties.Appearance.Options.UseFont = true;
-            this.txtGenelToplam.Properties.Appearance.Options.UseForeColor = true;
-            this.txtGenelToplam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtGenelToplam.Properties.DisplayFormat.FormatString = "C2";
-            this.txtGenelToplam.Properties.Mask.EditMask = "C";
-            this.txtGenelToplam.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtGenelToplam.Size = new System.Drawing.Size(339, 62);
-            this.txtGenelToplam.TabIndex = 17;
-            // 
-            // txtIndirimToplam
-            // 
-            this.txtIndirimToplam.EditValue = "";
-            this.txtIndirimToplam.Location = new System.Drawing.Point(172, 0);
-            this.txtIndirimToplam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtIndirimToplam.Name = "txtIndirimToplam";
-            this.txtIndirimToplam.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
-            this.txtIndirimToplam.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIndirimToplam.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtIndirimToplam.Properties.Appearance.Options.UseBackColor = true;
-            this.txtIndirimToplam.Properties.Appearance.Options.UseFont = true;
-            this.txtIndirimToplam.Properties.Appearance.Options.UseForeColor = true;
-            this.txtIndirimToplam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtIndirimToplam.Properties.DisplayFormat.FormatString = "C2";
-            this.txtIndirimToplam.Properties.Mask.EditMask = "C2";
-            this.txtIndirimToplam.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtIndirimToplam.Size = new System.Drawing.Size(279, 34);
-            this.txtIndirimToplam.TabIndex = 14;
-            // 
-            // txtIskontoOrani
-            // 
-            this.txtIskontoOrani.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtIskontoOrani.Location = new System.Drawing.Point(172, 46);
-            this.txtIskontoOrani.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtIskontoOrani.Name = "txtIskontoOrani";
-            this.txtIskontoOrani.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
-            this.txtIskontoOrani.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIskontoOrani.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtIskontoOrani.Properties.Appearance.Options.UseBackColor = true;
-            this.txtIskontoOrani.Properties.Appearance.Options.UseFont = true;
-            this.txtIskontoOrani.Properties.Appearance.Options.UseForeColor = true;
-            this.txtIskontoOrani.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtIskontoOrani.Properties.DisplayFormat.FormatString = "\'%\'0";
-            this.txtIskontoOrani.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtIskontoOrani.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtIskontoOrani.Size = new System.Drawing.Size(279, 34);
-            this.txtIskontoOrani.TabIndex = 14;
-            this.txtIskontoOrani.Validated += new System.EventHandler(this.txtIskontoOrani_Validated);
-            // 
-            // txtIskontoTutar
-            // 
-            this.txtIskontoTutar.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtIskontoTutar.Location = new System.Drawing.Point(172, 91);
-            this.txtIskontoTutar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtIskontoTutar.Name = "txtIskontoTutar";
-            this.txtIskontoTutar.Properties.Appearance.BackColor = System.Drawing.Color.DarkGreen;
-            this.txtIskontoTutar.Properties.Appearance.Font = new System.Drawing.Font("Digital-7 Mono", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIskontoTutar.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtIskontoTutar.Properties.Appearance.Options.UseBackColor = true;
-            this.txtIskontoTutar.Properties.Appearance.Options.UseFont = true;
-            this.txtIskontoTutar.Properties.Appearance.Options.UseForeColor = true;
-            this.txtIskontoTutar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtIskontoTutar.Properties.DisplayFormat.FormatString = "C2";
-            this.txtIskontoTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtIskontoTutar.Properties.Mask.EditMask = "C2";
-            this.txtIskontoTutar.Size = new System.Drawing.Size(279, 38);
-            this.txtIskontoTutar.TabIndex = 14;
-            // 
             // navigationPane1
             // 
             this.navigationPane1.Controls.Add(this.navFisBilgi);
@@ -675,6 +719,7 @@
             // navFisBilgi
             // 
             this.navFisBilgi.Caption = "Fiş Bilgileri";
+            this.navFisBilgi.Controls.Add(this.panelCariDevir);
             this.navFisBilgi.Controls.Add(this.txtAciklama);
             this.navFisBilgi.Controls.Add(this.labelControl4);
             this.navFisBilgi.Controls.Add(this.txtBelgeNo);
@@ -691,6 +736,138 @@
             this.navFisBilgi.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navFisBilgi.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
             this.navFisBilgi.Size = new System.Drawing.Size(1426, 209);
+            // 
+            // panelCariDevir
+            // 
+            this.panelCariDevir.Controls.Add(this.toggleBakiyeTuru);
+            this.panelCariDevir.Controls.Add(this.labelControl26);
+            this.panelCariDevir.Location = new System.Drawing.Point(250, 2);
+            this.panelCariDevir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelCariDevir.Name = "panelCariDevir";
+            this.panelCariDevir.Size = new System.Drawing.Size(251, 25);
+            this.panelCariDevir.TabIndex = 32;
+            this.panelCariDevir.Visible = false;
+            // 
+            // toggleBakiyeTuru
+            // 
+            this.toggleBakiyeTuru.Location = new System.Drawing.Point(107, -2);
+            this.toggleBakiyeTuru.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.toggleBakiyeTuru.MenuManager = this.barManager1;
+            this.toggleBakiyeTuru.Name = "toggleBakiyeTuru";
+            this.toggleBakiyeTuru.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.toggleBakiyeTuru.Properties.OffText = "Borç";
+            this.toggleBakiyeTuru.Properties.OnText = "Alacak";
+            this.toggleBakiyeTuru.Size = new System.Drawing.Size(140, 26);
+            this.toggleBakiyeTuru.TabIndex = 25;
+            this.toggleBakiyeTuru.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barFiyat1,
+            this.barFiyat2,
+            this.barFiyat3});
+            this.barManager1.MaxItemId = 3;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1521, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1008);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1521, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1008);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1521, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1008);
+            // 
+            // barFiyat1
+            // 
+            this.barFiyat1.CloseRadialMenuOnItemClick = true;
+            this.barFiyat1.Id = 0;
+            this.barFiyat1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barFiyat1.ImageOptions.Image")));
+            this.barFiyat1.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat1.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barFiyat1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat1.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barFiyat1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat1.ItemAppearance.Normal.Options.UseFont = true;
+            this.barFiyat1.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat1.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barFiyat1.ItemInMenuAppearance.Disabled.Font = new System.Drawing.Font("Digital-7 Mono", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat1.ItemInMenuAppearance.Disabled.Options.UseFont = true;
+            this.barFiyat1.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Digital-7 Mono", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat1.ItemInMenuAppearance.Hovered.Options.UseFont = true;
+            this.barFiyat1.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Digital-7 Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat1.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.barFiyat1.ItemInMenuAppearance.Pressed.Font = new System.Drawing.Font("Digital-7 Mono", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat1.ItemInMenuAppearance.Pressed.Options.UseFont = true;
+            this.barFiyat1.Name = "barFiyat1";
+            this.barFiyat1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FiyatSec);
+            // 
+            // barFiyat2
+            // 
+            this.barFiyat2.CloseRadialMenuOnItemClick = true;
+            this.barFiyat2.Id = 1;
+            this.barFiyat2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barFiyat2.ImageOptions.Image")));
+            this.barFiyat2.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Digital-7 Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat2.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.barFiyat2.Name = "barFiyat2";
+            this.barFiyat2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FiyatSec);
+            // 
+            // barFiyat3
+            // 
+            this.barFiyat3.CloseRadialMenuOnItemClick = true;
+            this.barFiyat3.Id = 2;
+            this.barFiyat3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barFiyat3.ImageOptions.Image")));
+            this.barFiyat3.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Digital-7 Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barFiyat3.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.barFiyat3.Name = "barFiyat3";
+            this.barFiyat3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FiyatSec);
+            // 
+            // labelControl26
+            // 
+            this.labelControl26.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl26.Appearance.Options.UseBorderColor = true;
+            this.labelControl26.Appearance.Options.UseTextOptions = true;
+            this.labelControl26.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl26.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl26.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl26.Location = new System.Drawing.Point(1, 0);
+            this.labelControl26.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl26.Name = "labelControl26";
+            this.labelControl26.Size = new System.Drawing.Size(100, 25);
+            this.labelControl26.TabIndex = 24;
+            this.labelControl26.Text = "Fiş Kodu :";
             // 
             // txtAciklama
             // 
@@ -776,7 +953,7 @@
             this.txtFisKodu.Location = new System.Drawing.Point(110, 2);
             this.txtFisKodu.Margin = new System.Windows.Forms.Padding(2);
             this.txtFisKodu.Name = "txtFisKodu";
-            this.txtFisKodu.Size = new System.Drawing.Size(378, 22);
+            this.txtFisKodu.Size = new System.Drawing.Size(392, 22);
             this.txtFisKodu.TabIndex = 25;
             // 
             // txtFisTuru
@@ -1229,12 +1406,22 @@
             // navPlasiyerBilgi
             // 
             this.navPlasiyerBilgi.Caption = "Plasiyer Bilgileri";
+            this.navPlasiyerBilgi.Controls.Add(this.flowPersonel);
             this.navPlasiyerBilgi.Image = ((System.Drawing.Image)(resources.GetObject("navPlasiyerBilgi.Image")));
             this.navPlasiyerBilgi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navPlasiyerBilgi.Name = "navPlasiyerBilgi";
             this.navPlasiyerBilgi.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navPlasiyerBilgi.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
             this.navPlasiyerBilgi.Size = new System.Drawing.Size(1431, 209);
+            // 
+            // flowPersonel
+            // 
+            this.flowPersonel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPersonel.Location = new System.Drawing.Point(0, 0);
+            this.flowPersonel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowPersonel.Name = "flowPersonel";
+            this.flowPersonel.Size = new System.Drawing.Size(1431, 209);
+            this.flowPersonel.TabIndex = 0;
             // 
             // navigationPane2
             // 
@@ -1430,10 +1617,10 @@
             // repoBirimFiyat
             // 
             this.repoBirimFiyat.AutoHeight = false;
-            editorButtonImageOptions1.ImageIndex = 2;
-            editorButtonImageOptions1.ImageList = this.ımageList2;
+            editorButtonImageOptions7.ImageIndex = 2;
+            editorButtonImageOptions7.ImageList = this.ımageList2;
             this.repoBirimFiyat.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions7, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repoBirimFiyat.Name = "repoBirimFiyat";
             this.repoBirimFiyat.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoBirimFiyat_ButtonClick);
             // 
@@ -1677,7 +1864,7 @@
             this.navOdemeEkrani.Name = "navOdemeEkrani";
             this.navOdemeEkrani.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navOdemeEkrani.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navOdemeEkrani.Size = new System.Drawing.Size(1521, 423);
+            this.navOdemeEkrani.Size = new System.Drawing.Size(1426, 367);
             // 
             // gridContKasaHareket
             // 
@@ -1690,7 +1877,7 @@
             this.gridContKasaHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoKasa,
             this.repoKHSil});
-            this.gridContKasaHareket.Size = new System.Drawing.Size(1521, 373);
+            this.gridContKasaHareket.Size = new System.Drawing.Size(1426, 317);
             this.gridContKasaHareket.TabIndex = 2;
             this.gridContKasaHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridKasaHareket});
@@ -1803,7 +1990,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1521, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1426, 50);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // radialFiyat
@@ -1817,133 +2004,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barFiyat3)});
             this.radialFiyat.Manager = this.barManager1;
             this.radialFiyat.Name = "radialFiyat";
-            // 
-            // barFiyat1
-            // 
-            this.barFiyat1.CloseRadialMenuOnItemClick = true;
-            this.barFiyat1.Id = 0;
-            this.barFiyat1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barFiyat1.ImageOptions.Image")));
-            this.barFiyat1.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat1.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barFiyat1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat1.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barFiyat1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat1.ItemAppearance.Normal.Options.UseFont = true;
-            this.barFiyat1.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat1.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barFiyat1.ItemInMenuAppearance.Disabled.Font = new System.Drawing.Font("Digital-7 Mono", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat1.ItemInMenuAppearance.Disabled.Options.UseFont = true;
-            this.barFiyat1.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Digital-7 Mono", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat1.ItemInMenuAppearance.Hovered.Options.UseFont = true;
-            this.barFiyat1.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Digital-7 Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat1.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.barFiyat1.ItemInMenuAppearance.Pressed.Font = new System.Drawing.Font("Digital-7 Mono", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat1.ItemInMenuAppearance.Pressed.Options.UseFont = true;
-            this.barFiyat1.Name = "barFiyat1";
-            this.barFiyat1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FiyatSec);
-            // 
-            // barFiyat2
-            // 
-            this.barFiyat2.CloseRadialMenuOnItemClick = true;
-            this.barFiyat2.Id = 1;
-            this.barFiyat2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barFiyat2.ImageOptions.Image")));
-            this.barFiyat2.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Digital-7 Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat2.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.barFiyat2.Name = "barFiyat2";
-            this.barFiyat2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FiyatSec);
-            // 
-            // barFiyat3
-            // 
-            this.barFiyat3.CloseRadialMenuOnItemClick = true;
-            this.barFiyat3.Id = 2;
-            this.barFiyat3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barFiyat3.ImageOptions.Image")));
-            this.barFiyat3.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Digital-7 Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barFiyat3.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.barFiyat3.Name = "barFiyat3";
-            this.barFiyat3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FiyatSec);
-            // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barFiyat1,
-            this.barFiyat2,
-            this.barFiyat3});
-            this.barManager1.MaxItemId = 3;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1521, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1008);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1521, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1008);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1521, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1008);
-            // 
-            // panelIskonto
-            // 
-            this.panelIskonto.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelIskonto.Controls.Add(this.labelControl13);
-            this.panelIskonto.Controls.Add(this.txtIskontoTutar);
-            this.panelIskonto.Controls.Add(this.txtIskontoOrani);
-            this.panelIskonto.Controls.Add(this.txtIndirimToplam);
-            this.panelIskonto.Controls.Add(this.labelControl14);
-            this.panelIskonto.Controls.Add(this.labelControl10);
-            this.panelIskonto.Location = new System.Drawing.Point(546, 30);
-            this.panelIskonto.Name = "panelIskonto";
-            this.panelIskonto.Size = new System.Drawing.Size(459, 132);
-            this.panelIskonto.TabIndex = 19;
-            // 
-            // panelKDV
-            // 
-            this.panelKDV.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelKDV.Controls.Add(this.labelControl23);
-            this.panelKDV.Controls.Add(this.txtKdvToplam);
-            this.panelKDV.Location = new System.Drawing.Point(1010, 30);
-            this.panelKDV.Name = "panelKDV";
-            this.panelKDV.Size = new System.Drawing.Size(508, 63);
-            this.panelKDV.TabIndex = 3;
-            // 
-            // panelToplam
-            // 
-            this.panelToplam.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelToplam.Controls.Add(this.labelControl19);
-            this.panelToplam.Controls.Add(this.txtGenelToplam);
-            this.panelToplam.Location = new System.Drawing.Point(1010, 98);
-            this.panelToplam.Name = "panelToplam";
-            this.panelToplam.Size = new System.Drawing.Size(506, 63);
-            this.panelToplam.TabIndex = 3;
             // 
             // frmFisIslem
             // 
@@ -1968,19 +2028,28 @@
             this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpToplamlar)).EndInit();
             this.grpToplamlar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelToplam)).EndInit();
+            this.panelToplam.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtGenelToplam.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelKDV)).EndInit();
+            this.panelKDV.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtKdvToplam.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelIskonto)).EndInit();
+            this.panelIskonto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtIskontoTutar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIskontoOrani.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIndirimToplam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelOdeme)).EndInit();
             this.panelOdeme.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtAcikHesapBakiyesi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOdenenTutar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOdenmesiGerekenTutar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKdvToplam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGenelToplam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIndirimToplam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIskontoOrani.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIskontoTutar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
             this.navigationPane1.ResumeLayout(false);
             this.navFisBilgi.ResumeLayout(false);
+            this.panelCariDevir.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.toggleBakiyeTuru.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBelgeNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTarih.Properties.CalendarTimeProperties)).EndInit();
@@ -1996,6 +2065,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIlce.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCepTelefonu.Properties)).EndInit();
+            this.navPlasiyerBilgi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane2)).EndInit();
             this.navigationPane2.ResumeLayout(false);
             this.navSatisEkrani.ResumeLayout(false);
@@ -2016,13 +2086,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoKasa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoKHSil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radialFiyat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelIskonto)).EndInit();
-            this.panelIskonto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelKDV)).EndInit();
-            this.panelKDV.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelToplam)).EndInit();
-            this.panelToplam.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2157,5 +2220,9 @@
         private DevExpress.XtraEditors.PanelControl panelKDV;
         private DevExpress.XtraEditors.PanelControl panelIskonto;
         private DevExpress.XtraEditors.PanelControl panelToplam;
+        private System.Windows.Forms.FlowLayoutPanel flowPersonel;
+        private System.Windows.Forms.Panel panelCariDevir;
+        private DevExpress.XtraEditors.ToggleSwitch toggleBakiyeTuru;
+        private DevExpress.XtraEditors.LabelControl labelControl26;
     }
 }

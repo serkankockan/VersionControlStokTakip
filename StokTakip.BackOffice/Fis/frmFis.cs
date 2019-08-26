@@ -33,6 +33,7 @@ namespace StokTakip.BackOffice.Fis
 
         void Listele()
         {
+            context =new StokTakipContext();
             gridContFis.DataSource = fisDal.GetAll(context);
         }
 

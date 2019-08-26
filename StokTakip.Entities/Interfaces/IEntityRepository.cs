@@ -19,6 +19,5 @@ namespace StokTakip.Entities.Interfaces
         void Delete(TContext context, Expression<Func<TEntity, bool>> filter);
 
         void Save(TContext context);
-
     }
 }

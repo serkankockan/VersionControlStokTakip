@@ -10,6 +10,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
 using StokTakip.BackOffice.Cari;
 using StokTakip.BackOffice.Depo;
@@ -42,9 +43,11 @@ namespace StokTakip.BackOffice.Fis
             if (fisKodu!=null)
             {
                 _fisentity = context.Fisler.Where(c => c.FisKodu == fisKodu).SingleOrDefault();
-                //_fisentity = context.Fisler.SingleOrDefault(c => c.FisKodu == fisKodu);
                 context.StokHareketleri.Where(c=>c.FisKodu == fisKodu).Load();
                 context.KasaHareketleri.Where(c => c.FisKodu == fisKodu).Load();
+                toggleBakiyeTuru.IsOn =
+                    context.KasaHareketleri.Count(c => c.FisKodu == fisKodu && c.Hareket == "Kasa Giriş") == 0;
+
 
                 if (_fisentity.CariKodu != null)
                 {
@@ -82,7 +85,11 @@ namespace StokTakip.BackOffice.Fis
             fisAyari();
             Toplamlar();
             OdenenTutarGuncelle();
+            ButonlariYukle();
+        }
 
+        private void ButonlariYukle()
+        {
             foreach (var item in context.OdemeTurleri.ToList())
             {
                 var button = new SimpleButton
@@ -95,12 +102,56 @@ namespace StokTakip.BackOffice.Fis
                 button.Click += OdemeEkle_Click;
                 flowLayoutPanel1.Controls.Add(button);
             }
+
+            var personelSecimIptal = new CheckButton
+            {
+                Name = "Yok",
+                Text = "Yok",
+                GroupIndex = 1,
+                Height = 35,
+                Width = 75,
+                Checked = _fisentity.PlasiyerKodu==null
+                
+            };
+            personelSecimIptal.Click += PersonelYukle_Click;
+            flowPersonel.Controls.Add(personelSecimIptal);
+
+            foreach (var item in context.Personeller.ToList())
+            {
+                var button = new CheckButton
+                {
+                    Name = item.PersonelKodu,
+                    Text = item.PersonelAdi,
+                    Checked = item.PersonelKodu==_fisentity.PlasiyerKodu,
+                    GroupIndex = 1,
+                    Height = 35,
+                    Width = 75
+                };
+                button.Click += PersonelYukle_Click;
+                flowPersonel.Controls.Add(button);
+            }
+        }
+
+        private void PersonelYukle_Click(object sender, EventArgs e)
+        {
+            var button = sender as CheckButton;
+
+            if (button.Name == "Yok")
+            {
+                _fisentity.PlasiyerKodu = null;
+                _fisentity.PlasiyerAdi = null;
+            }
+            else
+            {
+                _fisentity.PlasiyerKodu = button.Name;
+                _fisentity.PlasiyerAdi = button.Text;
+            }
+
+            
         }
 
         private void fisAyari()
         {
-
-            
 
             switch (_fisentity.FisTuru)
             {
@@ -108,6 +159,7 @@ namespace StokTakip.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Giriş";
                     ayarlar.KasaHareketi = "Kasa Çıkış";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 0;
                     break;
 
@@ -115,6 +167,7 @@ namespace StokTakip.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Çıkış";
                     ayarlar.KasaHareketi = "Kasa Giriş";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 1;
                     break;
 
@@ -122,6 +175,7 @@ namespace StokTakip.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Çıkış";
                     ayarlar.KasaHareketi = "Kasa Giriş";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 2;
                     break;
 
@@ -129,6 +183,7 @@ namespace StokTakip.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Çıkış";
                     ayarlar.KasaHareketi = "Kasa Giriş";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 3;
                     break;
 
@@ -136,6 +191,7 @@ namespace StokTakip.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Giriş";
                     ayarlar.KasaHareketi = "Kasa Çıkış";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 4;
                     break;
 
@@ -143,6 +199,7 @@ namespace StokTakip.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Giriş";
                     lblBaslik.Appearance.ImageIndex = 5;
                     ayarlar.OdemeEkrani = false;
+                    ayarlar.SatisEkrani = true;
                     panelOdeme.Visible = false;
                     navOdemeEkrani.Dispose();
                     navCariBilgi.Dispose();
@@ -152,6 +209,7 @@ namespace StokTakip.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Çıkış";
                     lblBaslik.Appearance.ImageIndex = 6;
                     ayarlar.OdemeEkrani = false;
+                    ayarlar.SatisEkrani = true;
                     panelOdeme.Visible = false;
                     navOdemeEkrani.Dispose();
                     navCariBilgi.Dispose();
@@ -161,6 +219,7 @@ namespace StokTakip.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Giriş";
                     lblBaslik.Appearance.ImageIndex = 7;
                     ayarlar.OdemeEkrani = false;
+                    ayarlar.SatisEkrani = true;
                     panelOdeme.Visible = false;
                     navOdemeEkrani.Dispose();
                     navCariBilgi.Dispose();
@@ -203,6 +262,8 @@ namespace StokTakip.BackOffice.Fis
                     panelOdeme.Visible = false;
                     panelIskonto.Visible = false;
                     panelKDV.Visible = false;
+                    panelCariDevir.Visible = true;
+                    txtFisKodu.Width = 117;
                     navSatisEkrani.Dispose();
                     navigationPane2.SelectedPage = navOdemeEkrani;
                     grpToplamlar.Height = 98;
@@ -213,35 +274,59 @@ namespace StokTakip.BackOffice.Fis
 
         private void OdemeEkle_Click(object sender, EventArgs e)
         {
-            var button = (sender as SimpleButton);
-            KasaHareket entityKasaHareket = new KasaHareket
-            {
-                OdemeTuruKodu = button.Name,
-                OdemeTuruAdi = button.Text,
-                Tutar = txtOdenmesiGerekenTutar.Value
-            };
 
-            if (txtOdenmesiGerekenTutar.Value <= 0)
+            var button = (sender as SimpleButton);
+            if (ayarlar.SatisEkrani==false)
             {
-                MessageBox.Show("Ödenmesi gereken tutar zaten ödenmiş durumdadır.");
+                frmOdemeEkrani form = new frmOdemeEkrani(button.Text,button.Name);
+                form.ShowDialog();
+
+                if (form.entity!=null)
+                {
+                    kasaHareketDal.AddOrUpdate(context, form.entity);
+                    OdenenTutarGuncelle();
+                }
             }
             else
             {
-                kasaHareketDal.AddOrUpdate(context, entityKasaHareket);
-                OdenenTutarGuncelle();
+                if (txtOdenmesiGerekenTutar.Value <= 0)
+                {
+                    MessageBox.Show("Ödenmesi gereken tutar zaten ödenmiş durumdadır.");
+                }
+                else
+                {
+                    KasaHareket entityKasaHareket = new KasaHareket
+                    {
+                        OdemeTuruKodu = button.Name,
+                        OdemeTuruAdi = button.Text,
+                        Tutar = txtOdenmesiGerekenTutar.Value
+                    };
+
+                    kasaHareketDal.AddOrUpdate(context, entityKasaHareket);
+                    OdenenTutarGuncelle();
+                }
             }
         }
 
         private void OdenenTutarGuncelle()
         {
             gridKasaHareket.UpdateSummary();
-            txtOdenenTutar.Value = Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
-            txtOdenmesiGerekenTutar.Value = txtGenelToplam.Value - txtOdenenTutar.Value;
+
+
+            if (ayarlar.SatisEkrani)
+            {
+                txtOdenenTutar.Value = Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
+                txtOdenmesiGerekenTutar.Value = txtGenelToplam.Value - txtOdenenTutar.Value;
+            }
+            else
+            {
+                txtGenelToplam.Value = Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
+            }
         }
 
         private void frmFisIslem_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private StokHareket StokSec(Entities.Tables.Stok entity)
@@ -447,19 +532,41 @@ namespace StokTakip.BackOffice.Fis
 
         private void btnIslemiKaydet_Click(object sender, EventArgs e)
         {
+
+            if (toggleBakiyeTuru.IsOn)
+            {
+                ayarlar.KasaHareketi = "Kasa Çıkış";
+            }
+            else
+            {
+                ayarlar.KasaHareketi = "Kasa Giriş";
+            }
+
             int StokHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
             int KasaHata = context.KasaHareketleri.Local.Where(c => c.KasaKodu == null).Count();
 
             string message = null;
             int hata = 0;
 
-            if (gridStokHareket.RowCount == 0)
+            if (gridStokHareket.RowCount == 0 && ayarlar.SatisEkrani == true)
             {
                 message += "Satış ekranında eklenmiş bir ürün bulunamadı." + System.Environment.NewLine;
                 hata++;
             }
 
-            if (txtFisKodu.Text == "")
+            if (_fisentity.CariKodu==null && ayarlar.SatisEkrani==false)
+            {
+                message += txtFisTuru.Text + "türünde cari seçimi zorunludur." + System.Environment.NewLine;
+                hata++;
+            }
+
+            if (gridKasaHareket.RowCount== 0 && ayarlar.SatisEkrani == false)
+            {
+                message += "Herhangi bir ödeme bulunamadı." + System.Environment.NewLine;
+                hata++;
+            }
+
+            if (txtFisKodu.Text == "") //fiş kodunu almıyor. Refresh edilmesi gerekiyor.
             {
                 message += "Fiş Kodu alanı boş geçilemez." + System.Environment.NewLine;
                 hata++;
@@ -495,9 +602,6 @@ namespace StokTakip.BackOffice.Fis
                 return;
             }
 
-
-
-
             foreach (var stokVeri in context.StokHareketleri.Local.ToList())
             {
                 stokVeri.Tarih = stokVeri.Tarih == null
@@ -530,6 +634,11 @@ namespace StokTakip.BackOffice.Fis
             context.SaveChanges();
 
             this.Close();
+        }
+
+        private void toggleSwitch1_Toggled(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,7 +16,7 @@ namespace StokTakip.Entities.Data_Access
     {
         public object GetAllJoin(StokTakipContext context)
         {
-            var tablo = context.Stoklar.GroupJoin(context .StokHareketleri, c => c.StokKodu, c => c.StokKodu,
+            var tablo = context.Stoklar.GroupJoin(context.StokHareketleri, c => c.StokKodu, c => c.StokKodu,
                 (Stoklar, StokHareketleri) => new
                 {
                     Stoklar.Id,
