@@ -18,7 +18,7 @@ using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
 
-namespace StokTakip.BackOffice
+namespace StokTakip.BackOffice 
 {
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
