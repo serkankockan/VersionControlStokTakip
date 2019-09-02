@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -12,6 +12,22 @@
     <AssemblyName>StokTakip.BackOffice</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +48,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.1" />
@@ -43,13 +61,22 @@
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1.Extensions, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.4.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,6 +89,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ajanda\frmAjanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajanda\frmAjanda.Designer.cs">
+      <DependentUpon>frmAjanda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ana Menu\frmAnaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +106,12 @@
     </Compile>
     <Compile Include="Ana Menu\frmAnaMenuBilgi.Designer.cs">
       <DependentUpon>frmAnaMenuBilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\frmAyarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\frmAyarlar.Designer.cs">
+      <DependentUpon>frmAyarlar.cs</DependentUpon>
     </Compile>
     <Compile Include="Cari\frmCari.cs">
       <SubType>Form</SubType>
@@ -122,6 +161,12 @@
     <Compile Include="Depo\frmDepoSec.Designer.cs">
       <DependentUpon>frmDepoSec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Döviz Kurları\frmDovizKurlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Döviz Kurları\frmDovizKurlari.Designer.cs">
+      <DependentUpon>frmDovizKurlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fis\fmrSeriNo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +190,18 @@
     </Compile>
     <Compile Include="Fis\frmOdemeEkrani.Designer.cs">
       <DependentUpon>frmOdemeEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fiyat Değiştir\frmFiyatDegisitir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fiyat Değiştir\frmFiyatDegisitir.Designer.cs">
+      <DependentUpon>frmFiyatDegisitir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fiyat Değiştir\frmTopluFiyat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fiyat Değiştir\frmTopluFiyat.Designer.cs">
+      <DependentUpon>frmTopluFiyat.cs</DependentUpon>
     </Compile>
     <Compile Include="Kasa Hareketleri\FrmKasaHareketleri.cs">
       <SubType>Form</SubType>
@@ -214,6 +271,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ön Maliyet Formu\frmFormlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ön Maliyet Formu\frmFormlar.Designer.cs">
+      <DependentUpon>frmFormlar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Siparis Formu\frmSatınAlmaFormu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,11 +319,31 @@
     <Compile Include="Tanim\frmTanim.Designer.cs">
       <DependentUpon>frmTanim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ön Maliyet Formu\frmOnMaliyetFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ön Maliyet Formu\frmOnMaliyetFormu.Designer.cs">
+      <DependentUpon>frmOnMaliyetFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="İndirim%28Bekliyor%29\frmIndirim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="İndirim%28Bekliyor%29\frmIndirim.Designer.cs">
+      <DependentUpon>frmIndirim.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ajanda\frmAjanda.resx">
+      <DependentUpon>frmAjanda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ana Menu\frmAnaMenu.resx">
       <DependentUpon>frmAnaMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Ana Menu\frmAnaMenuBilgi.resx">
       <DependentUpon>frmAnaMenuBilgi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\frmAyarlar.resx">
+      <DependentUpon>frmAyarlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cari\frmCari.resx">
       <DependentUpon>frmCari.cs</DependentUpon>
@@ -286,6 +369,9 @@
     <EmbeddedResource Include="Depo\frmDepoSec.resx">
       <DependentUpon>frmDepoSec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Döviz Kurları\frmDovizKurlari.resx">
+      <DependentUpon>frmDovizKurlari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fis\fmrSeriNo.resx">
       <DependentUpon>fmrSeriNo.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +383,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fis\frmOdemeEkrani.resx">
       <DependentUpon>frmOdemeEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fiyat Değiştir\frmFiyatDegisitir.resx">
+      <DependentUpon>frmFiyatDegisitir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fiyat Değiştir\frmTopluFiyat.resx">
+      <DependentUpon>frmTopluFiyat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kasa Hareketleri\FrmKasaHareketleri.resx">
       <DependentUpon>FrmKasaHareketleri.cs</DependentUpon>
@@ -340,7 +432,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ön Maliyet Formu\frmFormlar.resx">
+      <DependentUpon>frmFormlar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Siparis Formu\frmSatınAlmaFormu.resx">
       <DependentUpon>frmSatınAlmaFormu.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,10 +458,17 @@
     <EmbeddedResource Include="Tanim\frmTanim.resx">
       <DependentUpon>frmTanim.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <EmbeddedResource Include="Ön Maliyet Formu\frmOnMaliyetFormu.resx">
+      <DependentUpon>frmOnMaliyetFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Cari.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Depo.datasource" />
+    <None Include="Properties\DataSources\StokTakip.Entities.Tables.EFAppointment.datasource" />
+    <None Include="Properties\DataSources\StokTakip.Entities.Tables.EFResource.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Fis.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Kasa.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.KasaHareket.datasource" />
@@ -384,12 +487,27 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StokTakip.Backup\StokTakip.Backup.csproj">
+      <Project>{4A7EF81E-4146-4417-8F14-780981E4D528}</Project>
+      <Name>StokTakip.Backup</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StokTakip.Entities\StokTakip.Entities.csproj">
       <Project>{dfcd95ab-4cf9-4c11-b3fc-5f229a62f072}</Project>
       <Name>StokTakip.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

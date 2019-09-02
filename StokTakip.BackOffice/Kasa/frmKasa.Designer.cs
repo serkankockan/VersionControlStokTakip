@@ -183,6 +183,7 @@
             this.btnKasaHareket.Size = new System.Drawing.Size(83, 35);
             this.btnKasaHareket.TabIndex = 1;
             this.btnKasaHareket.Text = "Kasa \r\nHareket";
+            this.btnKasaHareket.Click += new System.EventHandler(this.btnKasaHareket_Click);
             // 
             // btnSil
             // 

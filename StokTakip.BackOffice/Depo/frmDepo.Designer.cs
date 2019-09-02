@@ -136,7 +136,7 @@
             // 
             this.btnAra.ImageOptions.ImageIndex = 10;
             this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(453, 26);
+            this.btnAra.Location = new System.Drawing.Point(466, 26);
             this.btnAra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(83, 35);
@@ -148,7 +148,7 @@
             // 
             this.btnGuncelle.ImageOptions.ImageIndex = 8;
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(364, 26);
+            this.btnGuncelle.Location = new System.Drawing.Point(377, 26);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(83, 35);
@@ -163,9 +163,10 @@
             this.btnStokHareketleri.Location = new System.Drawing.Point(275, 26);
             this.btnStokHareketleri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStokHareketleri.Name = "btnStokHareketleri";
-            this.btnStokHareketleri.Size = new System.Drawing.Size(83, 35);
+            this.btnStokHareketleri.Size = new System.Drawing.Size(96, 35);
             this.btnStokHareketleri.TabIndex = 1;
             this.btnStokHareketleri.Text = "Stok\r\nHareketleri";
+            this.btnStokHareketleri.Click += new System.EventHandler(this.btnStokHareketleri_Click);
             // 
             // btnSil
             // 

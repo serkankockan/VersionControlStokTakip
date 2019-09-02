@@ -31,6 +31,10 @@ namespace StokTakip.Entities.Context
 
         public DbSet<Personel> Personeller { get; set; }
 
+        public DbSet<EFAppointment> EfAppointments { get; set; }
+
+        public DbSet<EFResource> EfResources { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new StokMap());

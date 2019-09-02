@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Globalization;
 using System.Text;
 using System.Linq;
 using System.Linq.Expressions;
@@ -12,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
+using FluentValidation.Results;
 using StokTakip.BackOffice.Cari;
 using StokTakip.BackOffice.Depo;
 using StokTakip.BackOffice.Kasa;
@@ -20,6 +23,8 @@ using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
 using StokTakip.Entities.Tables.Other_Tables;
+using DevExpress.Utils;
+using StokTakip.Entities.Tools;
 
 
 namespace StokTakip.BackOffice.Fis
@@ -35,6 +40,7 @@ namespace StokTakip.BackOffice.Fis
         FisAyarlari ayarlar = new FisAyarlari();
         Entities.Tables.Fis _fisentity = new Entities.Tables.Fis();
         CariBakiye entityBakiye = new CariBakiye();
+        
 
         public frmFisIslem(string fisKodu=null, string fisTuru=null)
         {
@@ -79,6 +85,8 @@ namespace StokTakip.BackOffice.Fis
             txtAdres.DataBindings.Add("Text", _fisentity, "Adres", false, DataSourceUpdateMode.OnPropertyChanged);
             txtVergiDairesi.DataBindings.Add("Text", _fisentity, "VergiDairesi", false, DataSourceUpdateMode.OnPropertyChanged);
             txtVergiNo.DataBindings.Add("Text", _fisentity, "VergiNo", false, DataSourceUpdateMode.OnPropertyChanged);
+            calcKurFiyati.DataBindings.Add("EditValue", _fisentity, "DovizKuru", true, DataSourceUpdateMode.OnPropertyChanged);
+            cmbKurCinsi.DataBindings.Add("EditValue", _fisentity, "DovizCinsi", false, DataSourceUpdateMode.OnPropertyChanged);
 
             gridContStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridContKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
@@ -86,10 +94,12 @@ namespace StokTakip.BackOffice.Fis
             Toplamlar();
             OdenenTutarGuncelle();
             ButonlariYukle();
+            KurKontrol();
         }
 
         private void ButonlariYukle()
         {
+            
             foreach (var item in context.OdemeTurleri.ToList())
             {
                 var button = new SimpleButton
@@ -146,13 +156,46 @@ namespace StokTakip.BackOffice.Fis
                 _fisentity.PlasiyerKodu = button.Name;
                 _fisentity.PlasiyerAdi = button.Text;
             }
+        }
 
-            
+        private void OdemeEkle_Click(object sender, EventArgs e)
+        {
+
+            var button = (sender as SimpleButton);
+            if (ayarlar.SatisEkrani == false)
+            {
+                frmOdemeEkrani form = new frmOdemeEkrani(button.Text, button.Name);
+                form.ShowDialog();
+
+                if (form.entity != null)
+                {
+                    kasaHareketDal.AddOrUpdate(context, form.entity);
+                    OdenenTutarGuncelle();
+                }
+            }
+            else
+            {
+                if (txtOdenmesiGerekenTutar.Value <= 0)
+                {
+                    MessageBox.Show("Ödenmesi gereken tutar zaten ödenmiş durumdadır.");
+                }
+                else
+                {
+                    KasaHareket entityKasaHareket = new KasaHareket
+                    {
+                        OdemeTuruKodu = button.Name,
+                        OdemeTuruAdi = button.Text,
+                        Tutar = txtOdenmesiGerekenTutar.Value
+                    };
+
+                    kasaHareketDal.AddOrUpdate(context, entityKasaHareket);
+                    OdenenTutarGuncelle();
+                }
+            }
         }
 
         private void fisAyari()
         {
-
             switch (_fisentity.FisTuru)
             {
                 case "Alış Faturası":
@@ -272,46 +315,9 @@ namespace StokTakip.BackOffice.Fis
             }
         }
 
-        private void OdemeEkle_Click(object sender, EventArgs e)
-        {
-
-            var button = (sender as SimpleButton);
-            if (ayarlar.SatisEkrani==false)
-            {
-                frmOdemeEkrani form = new frmOdemeEkrani(button.Text,button.Name);
-                form.ShowDialog();
-
-                if (form.entity!=null)
-                {
-                    kasaHareketDal.AddOrUpdate(context, form.entity);
-                    OdenenTutarGuncelle();
-                }
-            }
-            else
-            {
-                if (txtOdenmesiGerekenTutar.Value <= 0)
-                {
-                    MessageBox.Show("Ödenmesi gereken tutar zaten ödenmiş durumdadır.");
-                }
-                else
-                {
-                    KasaHareket entityKasaHareket = new KasaHareket
-                    {
-                        OdemeTuruKodu = button.Name,
-                        OdemeTuruAdi = button.Text,
-                        Tutar = txtOdenmesiGerekenTutar.Value
-                    };
-
-                    kasaHareketDal.AddOrUpdate(context, entityKasaHareket);
-                    OdenenTutarGuncelle();
-                }
-            }
-        }
-
         private void OdenenTutarGuncelle()
         {
             gridKasaHareket.UpdateSummary();
-
 
             if (ayarlar.SatisEkrani)
             {
@@ -336,6 +342,8 @@ namespace StokTakip.BackOffice.Fis
             stokHareket.StokAdi = entity.StokAdi;
             stokHareket.Barkod = entity.Barkod;
             stokHareket.BarkodTuru = entity.BarkodTuru;
+            stokHareket.DepoKodu = SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo);
+            stokHareket.DepoAdi = context.Depolar.SingleOrDefault(c => c.DepoKodu == stokHareket.DepoKodu).DepoAdi; // Singleordefault koşulunun karşılığında oluşan sonucun depoadı'nı alır.
             stokHareket.BirimFiyat = txtFisTuru.Text == "Alış Faturası" ? entity.AlisFiyati1 : entity.SatisFiyati1;
             stokHareket.Birimi = entity.Birimi;
             stokHareket.Miktar = txtMiktar.Value;
@@ -413,7 +421,6 @@ namespace StokTakip.BackOffice.Fis
             txtIlce.Text = null;
             txtSemt.Text = null;
             txtAdres.Text = null;
-
             lblAlacak.Text = "Görüntülenemiyor";
             lblBorc.Text = "Görüntülenemiyor";
             lblBakiye.Text = "Görüntülenemiyor";
@@ -426,17 +433,22 @@ namespace StokTakip.BackOffice.Fis
 
         private void Toplamlar()
         {
+            decimal dovizKuru = 1;
+
+            if (cmbKurCinsi.Text != "TL")
+            {
+                dovizKuru = calcKurFiyati.Value;
+            }
+
             gridStokHareket.UpdateSummary();
 
             txtIskontoTutar.Value =
                 Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue) / 100 * txtIskontoOrani.Value;
 
-            txtGenelToplam.Value = Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue) - txtIskontoTutar.Value;
+            txtGenelToplam.Value = Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue) * dovizKuru - txtIskontoTutar.Value;
             txtKdvToplam.Value = Convert.ToDecimal(colKdvToplam.SummaryItem.SummaryValue);
             txtIndirimToplam.Value = Convert.ToDecimal(colIndirimTutar.SummaryItem.SummaryValue);
             txtOdenmesiGerekenTutar.Value = txtGenelToplam.Value - txtOdenenTutar.Value;
-
-
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -480,16 +492,60 @@ namespace StokTakip.BackOffice.Fis
             barFiyat2.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati2 ?? 0 : fiyatEntity.SatisFiyati2 ?? 0;
             barFiyat3.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati3 ?? 0 : fiyatEntity.SatisFiyati3 ?? 0;
 
-            barFiyat1.Caption = string.Format("{0:C2}", barFiyat1.Tag);
-            barFiyat2.Caption = string.Format("{0:C2}", barFiyat2.Tag);
-            barFiyat3.Caption = string.Format("{0:C2}", barFiyat3.Tag);
+            RepoDovizIconu();
 
             radialFiyat.ShowPopup(MousePosition);
+        }
+
+        private void RepoDovizIconu()
+        {
+            //barFiyat1.Caption = string.Format("{0:C2}", barFiyat1.Tag);
+            //barFiyat2.Caption = string.Format("{0:C2}", barFiyat2.Tag);
+            //barFiyat3.Caption = string.Format("{0:C2}", barFiyat3.Tag);
+
+            if (cmbKurCinsi.Text == "TL")
+            {
+                barFiyat1.Caption = string.Format(new CultureInfo("tr-TR"), "{0:C2}", barFiyat1.Tag);
+                barFiyat2.Caption = string.Format(new CultureInfo("tr-TR"), "{0:C2}", barFiyat2.Tag);
+                barFiyat3.Caption = string.Format(new CultureInfo("tr-TR"), "{0:C2}", barFiyat3.Tag);
+            }
+            if (cmbKurCinsi.Text == "USD")
+            {
+                barFiyat1.Caption = string.Format(new CultureInfo("en-US"), "{0:C2}", barFiyat1.Tag);
+                barFiyat2.Caption = string.Format(new CultureInfo("en-US"), "{0:C2}", barFiyat2.Tag);
+                barFiyat3.Caption = string.Format(new CultureInfo("en-US"), "{0:C2}", barFiyat3.Tag);
+            }
+            if (cmbKurCinsi.Text == "EURO")
+            {
+                barFiyat1.Caption = string.Format(new CultureInfo("fr-FR"), "{0:C2}", barFiyat1.Tag);
+                barFiyat2.Caption = string.Format(new CultureInfo("fr-FR"), "{0:C2}", barFiyat2.Tag);
+                barFiyat3.Caption = string.Format(new CultureInfo("fr-FR"), "{0:C2}", barFiyat3.Tag);
+            }
+
         }
 
         private void FiyatSec(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gridStokHareket.SetFocusedRowCellValue(colBirimFiyat, Convert.ToDecimal(e.Item.Tag));
+
+            if (cmbKurCinsi.Text == "TL")
+            {
+                colBirimFiyat.DisplayFormat.FormatType = FormatType.Numeric;
+                colBirimFiyat.DisplayFormat.Format = new CultureInfo("tr-TR");
+                colBirimFiyat.DisplayFormat.FormatString = "C2";
+            }
+            if (cmbKurCinsi.Text == "USD")
+            {
+                colBirimFiyat.DisplayFormat.FormatType = FormatType.Numeric;
+                colBirimFiyat.DisplayFormat.Format = new CultureInfo("en-US");
+                colBirimFiyat.DisplayFormat.FormatString = "C2";
+            }
+            if (cmbKurCinsi.Text == "EURO")
+            {
+                colBirimFiyat.DisplayFormat.FormatType = FormatType.Numeric;
+                colBirimFiyat.DisplayFormat.Format = new CultureInfo("fr-FR");
+                colBirimFiyat.DisplayFormat.FormatString = "C2";
+            }
         }
 
         private void repoSeriNo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -639,6 +695,35 @@ namespace StokTakip.BackOffice.Fis
         private void toggleSwitch1_Toggled(object sender, EventArgs e)
         {
 
+        }
+
+        private void repoDovizCinsi_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            
+        }
+
+        private void calcKurFiyati_EditValueChanged(object sender, EventArgs e)
+        {
+            Toplamlar();
+        }
+
+        private void cmbKurCinsi_EditValueChanged(object sender, EventArgs e)
+        {
+            KurKontrol();
+        }
+
+        public void KurKontrol()
+        {
+
+            if (cmbKurCinsi.Text == "TL")
+            {
+                calcKurFiyati.Enabled = false;
+                calcKurFiyati.Value = 1;
+            }
+            else
+            {
+                calcKurFiyati.Enabled = true;
+            }
         }
     }
 }

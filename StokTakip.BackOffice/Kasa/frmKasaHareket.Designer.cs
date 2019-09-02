@@ -83,15 +83,15 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 55);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 68);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.gridContKasaHareket);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1241, 533);
-            this.splitContainerControl1.SplitterPosition = 299;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1448, 655);
+            this.splitContainerControl1.SplitterPosition = 349;
             this.splitContainerControl1.TabIndex = 7;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -103,7 +103,7 @@
             this.gridContKasaHareket.MainView = this.gridKasaHareket;
             this.gridContKasaHareket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridContKasaHareket.Name = "gridContKasaHareket";
-            this.gridContKasaHareket.Size = new System.Drawing.Size(1241, 299);
+            this.gridContKasaHareket.Size = new System.Drawing.Size(1448, 349);
             this.gridContKasaHareket.TabIndex = 1;
             this.gridContKasaHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridKasaHareket});
@@ -251,8 +251,8 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl2);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1241, 229);
-            this.splitContainerControl2.SplitterPosition = 655;
+            this.splitContainerControl2.Size = new System.Drawing.Size(1448, 300);
+            this.splitContainerControl2.SplitterPosition = 764;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
@@ -263,7 +263,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(655, 229);
+            this.groupControl1.Size = new System.Drawing.Size(764, 300);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Ödeme Türüne Göre Toplamlar";
             // 
@@ -271,11 +271,11 @@
             // 
             this.gridContOdemeTuruToplam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridContOdemeTuruToplam.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridContOdemeTuruToplam.Location = new System.Drawing.Point(2, 20);
+            this.gridContOdemeTuruToplam.Location = new System.Drawing.Point(2, 25);
             this.gridContOdemeTuruToplam.MainView = this.gridOdemeTuruToplam;
             this.gridContOdemeTuruToplam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridContOdemeTuruToplam.Name = "gridContOdemeTuruToplam";
-            this.gridContOdemeTuruToplam.Size = new System.Drawing.Size(651, 207);
+            this.gridContOdemeTuruToplam.Size = new System.Drawing.Size(760, 273);
             this.gridContOdemeTuruToplam.TabIndex = 2;
             this.gridContOdemeTuruToplam.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridOdemeTuruToplam});
@@ -293,7 +293,7 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(581, 229);
+            this.groupControl2.Size = new System.Drawing.Size(678, 300);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Genel Toplamlar";
             // 
@@ -301,11 +301,11 @@
             // 
             this.gridContGenelToplam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridContGenelToplam.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridContGenelToplam.Location = new System.Drawing.Point(2, 20);
+            this.gridContGenelToplam.Location = new System.Drawing.Point(2, 25);
             this.gridContGenelToplam.MainView = this.gridGenelToplam;
             this.gridContGenelToplam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridContGenelToplam.Name = "gridContGenelToplam";
-            this.gridContGenelToplam.Size = new System.Drawing.Size(577, 207);
+            this.gridContGenelToplam.Size = new System.Drawing.Size(674, 273);
             this.gridContGenelToplam.TabIndex = 2;
             this.gridContGenelToplam.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridGenelToplam});
@@ -347,10 +347,10 @@
             this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.btnGuncelle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 588);
+            this.grpMenu.Location = new System.Drawing.Point(0, 723);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1241, 68);
+            this.grpMenu.Size = new System.Drawing.Size(1448, 84);
             this.grpMenu.TabIndex = 6;
             this.grpMenu.Text = "Menü";
             // 
@@ -359,10 +359,10 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 0;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(1147, 26);
+            this.btnKapat.Location = new System.Drawing.Point(1338, 32);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(83, 35);
+            this.btnKapat.Size = new System.Drawing.Size(97, 43);
             this.btnKapat.TabIndex = 2;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -380,10 +380,10 @@
             this.btnAra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAra.ImageOptions.ImageIndex = 2;
             this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(93, 26);
+            this.btnAra.Location = new System.Drawing.Point(108, 32);
             this.btnAra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(83, 35);
+            this.btnAra.Size = new System.Drawing.Size(97, 43);
             this.btnAra.TabIndex = 2;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
@@ -393,10 +393,10 @@
             this.btnGuncelle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGuncelle.ImageOptions.ImageIndex = 1;
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(4, 26);
+            this.btnGuncelle.Location = new System.Drawing.Point(5, 32);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(83, 35);
+            this.btnGuncelle.Size = new System.Drawing.Size(97, 43);
             this.btnGuncelle.TabIndex = 2;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
@@ -417,20 +417,21 @@
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1241, 55);
+            this.lblBaslik.Size = new System.Drawing.Size(1448, 68);
             this.lblBaslik.TabIndex = 5;
             this.lblBaslik.Text = "Kasa Hareketleri";
             // 
             // frmKasaHareket
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 656);
+            this.ClientSize = new System.Drawing.Size(1448, 807);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmKasaHareket";
-            this.Text = "frmKasaHareket";
+            this.Text = "Kasa Hareketleri";
             this.Load += new System.EventHandler(this.frmKasaHareket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);

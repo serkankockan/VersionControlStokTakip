@@ -96,5 +96,10 @@ namespace StokTakip.BackOffice.Depo
                 Listele();
             }
         }
+
+        private void btnStokHareketleri_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -99,5 +99,13 @@ namespace StokTakip.BackOffice.Kasa
                 Guncelle();
             }
         }
+
+        private void btnKasaHareket_Click(object sender, EventArgs e)
+        {
+            string kasaKodu = layoutView1.GetFocusedRowCellValue(colKasaKodu).ToString();
+            string kasaAdi = layoutView1.GetFocusedRowCellValue(colKasaAdi).ToString();
+            frmKasaHareket form = new frmKasaHareket(kasaKodu,kasaAdi);
+            form.ShowDialog();
+        }
     }
 }

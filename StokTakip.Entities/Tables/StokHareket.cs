@@ -29,6 +29,8 @@ namespace StokTakip.Entities.Tables
 
         public int KDV { get; set; }
 
+        public string DovizCinsi { get; set; }
+
         public Nullable<decimal> BirimFiyat { get; set; }
 
         public Nullable<decimal> IndirimOrani { get; set; }

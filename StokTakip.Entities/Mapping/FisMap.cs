@@ -34,6 +34,8 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.IskontoOrani).HasPrecision(5, 2);
             this.Property(p => p.IskontoTutar).HasPrecision(12, 2);
             this.Property(p => p.ToplamTutar).HasPrecision(12, 2);
+            this.Property(p => p.DovizKuru).HasPrecision(12, 2);
+            this.Property(p => p.DovizCinsi).HasMaxLength(8);
             this.Property(p => p.Aciklama).HasMaxLength(200);
 
             this.ToTable("Fisler");
@@ -58,6 +60,8 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.IskontoOrani).HasColumnName("IskontoOrani");
             this.Property(p => p.IskontoTutar).HasColumnName("IskontoTutar");
             this.Property(p => p.ToplamTutar).HasColumnName("ToplamTutar");
+            this.Property(p => p.DovizKuru).HasColumnName("DovizKuru");
+            this.Property(p => p.DovizCinsi).HasColumnName("DovizCinsi");
             this.Property(p => p.Aciklama).HasColumnName("Aciklama");
         }
     }

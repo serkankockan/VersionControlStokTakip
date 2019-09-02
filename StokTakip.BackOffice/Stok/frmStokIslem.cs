@@ -28,7 +28,7 @@ namespace StokTakip.BackOffice.Stok
             txtBarkod.DataBindings.Add("Text", _entity, "Barkod");
             cmbBarkodTuru.DataBindings.Add("Text", _entity, "BarkodTuru");
             txtStokAdi.DataBindings.Add("Text", _entity, "StokAdi");
-            btnBirimi.DataBindings.Add("Text", _entity, "Birimi");
+            cmbBirimi.DataBindings.Add("Text", _entity, "Birimi");
             txtUreticiKodu.DataBindings.Add("Text", _entity, "UreticiKodu");
             txtGarantiSuresi.DataBindings.Add("Text", _entity, "GarantiSuresi");
 

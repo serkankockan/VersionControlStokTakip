@@ -6,14 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using StokTakip.BackOffice.Ajanda;
 using StokTakip.BackOffice.Ana_Menu;
+using StokTakip.BackOffice.Ayarlar;
 using StokTakip.BackOffice.Cari;
+using StokTakip.BackOffice.Depo;
+using StokTakip.BackOffice.Döviz_Kurları;
 using StokTakip.BackOffice.Fis;
+using StokTakip.BackOffice.Fiyat_Değiştir;
+using StokTakip.BackOffice.Kasa;
 using StokTakip.BackOffice.Kasa_Hareketleri;
+using StokTakip.BackOffice.Odeme_Turu;
 using StokTakip.BackOffice.Personel;
 using StokTakip.BackOffice.Stok;
 using StokTakip.BackOffice.Stok_Hareketleri;
 using StokTakip.BackOffice.Tanim;
+using StokTakip.Backup;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
@@ -86,5 +94,58 @@ namespace StokTakip.BackOffice
             form.ShowDialog();
         }
 
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmTopluFiyat personel = new frmTopluFiyat();
+            personel.MdiParent = this;
+            personel.Show();
+        }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDepo form = new frmDepo();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmOdemeTuru form = new frmOdemeTuru();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKasa form = new frmKasa();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmAjanda form = new frmAjanda();
+            form.WindowState = FormWindowState.Maximized;
+            form.Show();
+        }
+
+        private void barButtonItem31_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDovizKurlari form = new frmDovizKurlari();
+            form.ShowDialog();
+        }
+
+        private void barButtonItem32_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmAyarlar form = new frmAyarlar();
+            form.ShowDialog();
+        }
+
+        private void barButtonItem33_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmBackup form = new frmBackup();
+            form.ShowDialog();
+        }
     }
 }
+

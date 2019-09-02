@@ -33,14 +33,10 @@
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.btnFiltreKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnFiltreIptal = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiltre = new DevExpress.XtraEditors.SimpleButton();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
-            this.grpMenu = new DevExpress.XtraEditors.GroupControl();
-            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDetayGor = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.gridContKasaHareket = new DevExpress.XtraGrid.GridControl();
             this.gridKasaHareket = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,13 +52,17 @@
             this.colSaat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTutar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.grpMenu = new DevExpress.XtraEditors.GroupControl();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDetayGor = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
-            this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridContKasaHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridKasaHareket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
+            this.grpMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBaslik
@@ -81,7 +81,7 @@
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1247, 55);
+            this.lblBaslik.Size = new System.Drawing.Size(1455, 68);
             this.lblBaslik.TabIndex = 6;
             this.lblBaslik.Text = "Kasa Hareketleri";
             // 
@@ -89,7 +89,7 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 55);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 68);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltreKapat);
@@ -99,8 +99,8 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridContKasaHareket);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1247, 515);
-            this.splitContainerControl1.SplitterPosition = 145;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1455, 633);
+            this.splitContainerControl1.SplitterPosition = 169;
             this.splitContainerControl1.TabIndex = 10;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -110,12 +110,23 @@
             this.btnFiltreKapat.ImageOptions.ImageIndex = 0;
             this.btnFiltreKapat.ImageOptions.ImageList = this.ımageList1;
             this.btnFiltreKapat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreKapat.Location = new System.Drawing.Point(1187, 100);
+            this.btnFiltreKapat.Location = new System.Drawing.Point(1385, 114);
             this.btnFiltreKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreKapat.Name = "btnFiltreKapat";
-            this.btnFiltreKapat.Size = new System.Drawing.Size(50, 38);
+            this.btnFiltreKapat.Size = new System.Drawing.Size(58, 47);
             this.btnFiltreKapat.TabIndex = 2;
             this.btnFiltreKapat.Click += new System.EventHandler(this.btnFiltreKapat_Click);
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "folder_out.png");
+            this.ımageList1.Images.SetKeyName(1, "funnel.png");
+            this.ımageList1.Images.SetKeyName(2, "funnel_delete.png");
+            this.ımageList1.Images.SetKeyName(3, "note_information.png");
+            this.ımageList1.Images.SetKeyName(4, "refresh.png");
+            this.ımageList1.Images.SetKeyName(5, "view.png");
             // 
             // btnFiltreIptal
             // 
@@ -123,10 +134,10 @@
             this.btnFiltreIptal.ImageOptions.ImageIndex = 2;
             this.btnFiltreIptal.ImageOptions.ImageList = this.ımageList1;
             this.btnFiltreIptal.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreIptal.Location = new System.Drawing.Point(1133, 100);
+            this.btnFiltreIptal.Location = new System.Drawing.Point(1322, 114);
             this.btnFiltreIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreIptal.Name = "btnFiltreIptal";
-            this.btnFiltreIptal.Size = new System.Drawing.Size(50, 38);
+            this.btnFiltreIptal.Size = new System.Drawing.Size(58, 47);
             this.btnFiltreIptal.TabIndex = 2;
             this.btnFiltreIptal.Click += new System.EventHandler(this.btnFiltreIptal_Click);
             // 
@@ -136,10 +147,10 @@
             this.btnFiltre.ImageOptions.ImageIndex = 1;
             this.btnFiltre.ImageOptions.ImageList = this.ımageList1;
             this.btnFiltre.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltre.Location = new System.Drawing.Point(1078, 100);
+            this.btnFiltre.Location = new System.Drawing.Point(1258, 114);
             this.btnFiltre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltre.Name = "btnFiltre";
-            this.btnFiltre.Size = new System.Drawing.Size(50, 38);
+            this.btnFiltre.Size = new System.Drawing.Size(58, 47);
             this.btnFiltre.TabIndex = 2;
             this.btnFiltre.Click += new System.EventHandler(this.btnFiltre_Click);
             // 
@@ -150,77 +161,11 @@
             this.filterControl1.Location = new System.Drawing.Point(0, 0);
             this.filterControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(1247, 145);
+            this.filterControl1.Size = new System.Drawing.Size(1455, 169);
             this.filterControl1.SortFilterColumns = false;
             this.filterControl1.SourceControl = this.gridContKasaHareket;
             this.filterControl1.TabIndex = 0;
             this.filterControl1.Text = "filterControl1";
-            // 
-            // grpMenu
-            // 
-            this.grpMenu.Controls.Add(this.btnKapat);
-            this.grpMenu.Controls.Add(this.btnAra);
-            this.grpMenu.Controls.Add(this.btnDetayGor);
-            this.grpMenu.Controls.Add(this.btnGuncelle);
-            this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 570);
-            this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1247, 68);
-            this.grpMenu.TabIndex = 9;
-            this.grpMenu.Text = "Menü";
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKapat.ImageOptions.ImageIndex = 0;
-            this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(1154, 26);
-            this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(83, 35);
-            this.btnKapat.TabIndex = 2;
-            this.btnKapat.Text = "Kapat";
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
-            // 
-            // btnAra
-            // 
-            this.btnAra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAra.ImageOptions.ImageIndex = 5;
-            this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(195, 26);
-            this.btnAra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(83, 35);
-            this.btnAra.TabIndex = 2;
-            this.btnAra.Text = "Ara";
-            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
-            // 
-            // btnDetayGor
-            // 
-            this.btnDetayGor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDetayGor.ImageOptions.ImageIndex = 3;
-            this.btnDetayGor.ImageOptions.ImageList = this.ımageList1;
-            this.btnDetayGor.Location = new System.Drawing.Point(5, 26);
-            this.btnDetayGor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDetayGor.Name = "btnDetayGor";
-            this.btnDetayGor.Size = new System.Drawing.Size(96, 35);
-            this.btnDetayGor.TabIndex = 2;
-            this.btnDetayGor.Text = "Detay Gör";
-            this.btnDetayGor.Click += new System.EventHandler(this.btnDetayGor_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuncelle.ImageOptions.ImageIndex = 4;
-            this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(106, 26);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(83, 35);
-            this.btnGuncelle.TabIndex = 2;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // gridContKasaHareket
             // 
@@ -230,7 +175,7 @@
             this.gridContKasaHareket.MainView = this.gridKasaHareket;
             this.gridContKasaHareket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridContKasaHareket.Name = "gridContKasaHareket";
-            this.gridContKasaHareket.Size = new System.Drawing.Size(1247, 365);
+            this.gridContKasaHareket.Size = new System.Drawing.Size(1455, 458);
             this.gridContKasaHareket.TabIndex = 2;
             this.gridContKasaHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridKasaHareket});
@@ -381,34 +326,90 @@
             this.colTutar.VisibleIndex = 11;
             this.colTutar.Width = 103;
             // 
-            // ımageList1
+            // grpMenu
             // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "folder_out.png");
-            this.ımageList1.Images.SetKeyName(1, "funnel.png");
-            this.ımageList1.Images.SetKeyName(2, "funnel_delete.png");
-            this.ımageList1.Images.SetKeyName(3, "note_information.png");
-            this.ımageList1.Images.SetKeyName(4, "refresh.png");
-            this.ımageList1.Images.SetKeyName(5, "view.png");
+            this.grpMenu.Controls.Add(this.btnKapat);
+            this.grpMenu.Controls.Add(this.btnAra);
+            this.grpMenu.Controls.Add(this.btnDetayGor);
+            this.grpMenu.Controls.Add(this.btnGuncelle);
+            this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grpMenu.Location = new System.Drawing.Point(0, 701);
+            this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpMenu.Name = "grpMenu";
+            this.grpMenu.Size = new System.Drawing.Size(1455, 84);
+            this.grpMenu.TabIndex = 9;
+            this.grpMenu.Text = "Menü";
+            // 
+            // btnKapat
+            // 
+            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKapat.ImageOptions.ImageIndex = 0;
+            this.btnKapat.ImageOptions.ImageList = this.ımageList1;
+            this.btnKapat.Location = new System.Drawing.Point(1346, 32);
+            this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(97, 43);
+            this.btnKapat.TabIndex = 2;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            // 
+            // btnAra
+            // 
+            this.btnAra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAra.ImageOptions.ImageIndex = 5;
+            this.btnAra.ImageOptions.ImageList = this.ımageList1;
+            this.btnAra.Location = new System.Drawing.Point(227, 32);
+            this.btnAra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(97, 43);
+            this.btnAra.TabIndex = 2;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // btnDetayGor
+            // 
+            this.btnDetayGor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDetayGor.ImageOptions.ImageIndex = 3;
+            this.btnDetayGor.ImageOptions.ImageList = this.ımageList1;
+            this.btnDetayGor.Location = new System.Drawing.Point(6, 32);
+            this.btnDetayGor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDetayGor.Name = "btnDetayGor";
+            this.btnDetayGor.Size = new System.Drawing.Size(112, 43);
+            this.btnDetayGor.TabIndex = 2;
+            this.btnDetayGor.Text = "Detay Gör";
+            this.btnDetayGor.Click += new System.EventHandler(this.btnDetayGor_Click);
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGuncelle.ImageOptions.ImageIndex = 4;
+            this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
+            this.btnGuncelle.Location = new System.Drawing.Point(124, 32);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(97, 43);
+            this.btnGuncelle.TabIndex = 2;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // FrmKasaHareketleri
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1247, 638);
+            this.ClientSize = new System.Drawing.Size(1455, 785);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmKasaHareketleri";
-            this.Text = "FrmKasaHareketleri";
+            this.Text = "Kasa Hareketleri";
             this.Load += new System.EventHandler(this.FrmKasaHareketleri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
-            this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridContKasaHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridKasaHareket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
+            this.grpMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

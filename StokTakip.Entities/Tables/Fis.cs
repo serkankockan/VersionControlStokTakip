@@ -51,6 +51,10 @@ namespace StokTakip.Entities.Tables
 
         public Nullable<decimal> ToplamTutar { get; set; }
 
+        public Nullable<decimal> DovizKuru { get; set; }
+
+        public string DovizCinsi { get; set; }
+
         public string Aciklama { get; set; }
     }
 }
