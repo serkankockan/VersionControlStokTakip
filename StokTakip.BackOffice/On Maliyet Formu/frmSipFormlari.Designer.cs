@@ -1,6 +1,6 @@
-﻿namespace StokTakip.BackOffice.Siparis_Formu
+﻿namespace StokTakip.BackOffice.On_Maliyet_Formu
 {
-    partial class frmOnMaliyetFormu
+    partial class frmSipFormlari
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOnMaliyetFormu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSipFormlari));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.btnFiltreKapat = new DevExpress.XtraEditors.SimpleButton();
-            this.imgMenu = new System.Windows.Forms.ImageList(this.components);
             this.btnFiltreIptal = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiltre = new DevExpress.XtraEditors.SimpleButton();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
@@ -47,6 +46,7 @@
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
+            this.imgMenu = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridContFormlar)).BeginInit();
@@ -59,7 +59,7 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 51);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 63);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltreKapat);
@@ -69,9 +69,9 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridContFormlar);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1092, 509);
-            this.splitContainerControl1.SplitterPosition = 91;
-            this.splitContainerControl1.TabIndex = 6;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1218, 543);
+            this.splitContainerControl1.SplitterPosition = 78;
+            this.splitContainerControl1.TabIndex = 9;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // btnFiltreKapat
@@ -80,28 +80,11 @@
             this.btnFiltreKapat.ImageOptions.ImageIndex = 6;
             this.btnFiltreKapat.ImageOptions.ImageList = this.imgMenu;
             this.btnFiltreKapat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreKapat.Location = new System.Drawing.Point(1032, 45);
+            this.btnFiltreKapat.Location = new System.Drawing.Point(1148, 21);
             this.btnFiltreKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreKapat.Name = "btnFiltreKapat";
-            this.btnFiltreKapat.Size = new System.Drawing.Size(50, 38);
+            this.btnFiltreKapat.Size = new System.Drawing.Size(58, 47);
             this.btnFiltreKapat.TabIndex = 2;
-            // 
-            // imgMenu
-            // 
-            this.imgMenu.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgMenu.ImageStream")));
-            this.imgMenu.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgMenu.Images.SetKeyName(0, "Cari Bilgi.png");
-            this.imgMenu.Images.SetKeyName(1, "Cari Düzenle.png");
-            this.imgMenu.Images.SetKeyName(2, "Cari Ekle.png");
-            this.imgMenu.Images.SetKeyName(3, "Cari Hareket.png");
-            this.imgMenu.Images.SetKeyName(4, "cari kpyala.png");
-            this.imgMenu.Images.SetKeyName(5, "Cari Sil.png");
-            this.imgMenu.Images.SetKeyName(6, "folder_out.png");
-            this.imgMenu.Images.SetKeyName(7, "funnel.png");
-            this.imgMenu.Images.SetKeyName(8, "funnel_delete.png");
-            this.imgMenu.Images.SetKeyName(9, "refresh.png");
-            this.imgMenu.Images.SetKeyName(10, "user.png");
-            this.imgMenu.Images.SetKeyName(11, "view.png");
             // 
             // btnFiltreIptal
             // 
@@ -109,10 +92,10 @@
             this.btnFiltreIptal.ImageOptions.ImageIndex = 8;
             this.btnFiltreIptal.ImageOptions.ImageList = this.imgMenu;
             this.btnFiltreIptal.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreIptal.Location = new System.Drawing.Point(978, 45);
+            this.btnFiltreIptal.Location = new System.Drawing.Point(1085, 21);
             this.btnFiltreIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreIptal.Name = "btnFiltreIptal";
-            this.btnFiltreIptal.Size = new System.Drawing.Size(50, 38);
+            this.btnFiltreIptal.Size = new System.Drawing.Size(58, 47);
             this.btnFiltreIptal.TabIndex = 2;
             // 
             // btnFiltre
@@ -121,10 +104,10 @@
             this.btnFiltre.ImageOptions.ImageIndex = 7;
             this.btnFiltre.ImageOptions.ImageList = this.imgMenu;
             this.btnFiltre.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltre.Location = new System.Drawing.Point(923, 45);
+            this.btnFiltre.Location = new System.Drawing.Point(1021, 21);
             this.btnFiltre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltre.Name = "btnFiltre";
-            this.btnFiltre.Size = new System.Drawing.Size(50, 38);
+            this.btnFiltre.Size = new System.Drawing.Size(58, 47);
             this.btnFiltre.TabIndex = 2;
             // 
             // filterControl1
@@ -134,7 +117,7 @@
             this.filterControl1.Location = new System.Drawing.Point(0, 0);
             this.filterControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(1092, 91);
+            this.filterControl1.Size = new System.Drawing.Size(1218, 78);
             this.filterControl1.SortFilterColumns = false;
             this.filterControl1.SourceControl = this.gridContFormlar;
             this.filterControl1.TabIndex = 0;
@@ -148,7 +131,7 @@
             this.gridContFormlar.MainView = this.gridFormlar;
             this.gridContFormlar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridContFormlar.Name = "gridContFormlar";
-            this.gridContFormlar.Size = new System.Drawing.Size(1092, 413);
+            this.gridContFormlar.Size = new System.Drawing.Size(1218, 459);
             this.gridContFormlar.TabIndex = 0;
             this.gridContFormlar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridFormlar});
@@ -169,11 +152,11 @@
             this.grpMenu.Controls.Add(this.btnDuzenle);
             this.grpMenu.Controls.Add(this.btnEkle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 560);
+            this.grpMenu.Location = new System.Drawing.Point(0, 606);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1092, 68);
-            this.grpMenu.TabIndex = 5;
+            this.grpMenu.Size = new System.Drawing.Size(1218, 84);
+            this.grpMenu.TabIndex = 8;
             this.grpMenu.Text = "Menü";
             // 
             // btnKapat
@@ -181,10 +164,10 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 6;
             this.btnKapat.ImageOptions.ImageList = this.imgMenu;
-            this.btnKapat.Location = new System.Drawing.Point(998, 26);
+            this.btnKapat.Location = new System.Drawing.Point(1108, 32);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(83, 35);
+            this.btnKapat.Size = new System.Drawing.Size(97, 43);
             this.btnKapat.TabIndex = 2;
             this.btnKapat.Text = "Kapat";
             // 
@@ -192,10 +175,10 @@
             // 
             this.btnAra.ImageOptions.ImageIndex = 5;
             this.btnAra.ImageOptions.ImageList = this.imgMenu;
-            this.btnAra.Location = new System.Drawing.Point(453, 26);
+            this.btnAra.Location = new System.Drawing.Point(528, 32);
             this.btnAra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(83, 35);
+            this.btnAra.Size = new System.Drawing.Size(97, 43);
             this.btnAra.TabIndex = 2;
             this.btnAra.Text = "Ara";
             // 
@@ -203,10 +186,10 @@
             // 
             this.btnGuncelle.ImageOptions.ImageIndex = 9;
             this.btnGuncelle.ImageOptions.ImageList = this.imgMenu;
-            this.btnGuncelle.Location = new System.Drawing.Point(364, 26);
+            this.btnGuncelle.Location = new System.Drawing.Point(425, 32);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(83, 35);
+            this.btnGuncelle.Size = new System.Drawing.Size(97, 43);
             this.btnGuncelle.TabIndex = 2;
             this.btnGuncelle.Text = "Güncelle";
             // 
@@ -214,10 +197,10 @@
             // 
             this.btnKopyala.ImageOptions.ImageIndex = 4;
             this.btnKopyala.ImageOptions.ImageList = this.imgMenu;
-            this.btnKopyala.Location = new System.Drawing.Point(275, 26);
+            this.btnKopyala.Location = new System.Drawing.Point(321, 32);
             this.btnKopyala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKopyala.Name = "btnKopyala";
-            this.btnKopyala.Size = new System.Drawing.Size(83, 35);
+            this.btnKopyala.Size = new System.Drawing.Size(97, 43);
             this.btnKopyala.TabIndex = 1;
             this.btnKopyala.Text = "Kopyala";
             // 
@@ -225,10 +208,10 @@
             // 
             this.btnSil.ImageOptions.ImageIndex = 5;
             this.btnSil.ImageOptions.ImageList = this.imgMenu;
-            this.btnSil.Location = new System.Drawing.Point(187, 26);
+            this.btnSil.Location = new System.Drawing.Point(218, 32);
             this.btnSil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(83, 35);
+            this.btnSil.Size = new System.Drawing.Size(97, 43);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
             // 
@@ -236,10 +219,10 @@
             // 
             this.btnDuzenle.ImageOptions.ImageIndex = 1;
             this.btnDuzenle.ImageOptions.ImageList = this.imgMenu;
-            this.btnDuzenle.Location = new System.Drawing.Point(99, 26);
+            this.btnDuzenle.Location = new System.Drawing.Point(115, 32);
             this.btnDuzenle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(83, 35);
+            this.btnDuzenle.Size = new System.Drawing.Size(97, 43);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
             // 
@@ -247,12 +230,13 @@
             // 
             this.btnEkle.ImageOptions.ImageIndex = 2;
             this.btnEkle.ImageOptions.ImageList = this.imgMenu;
-            this.btnEkle.Location = new System.Drawing.Point(10, 26);
+            this.btnEkle.Location = new System.Drawing.Point(12, 32);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(83, 35);
+            this.btnEkle.Size = new System.Drawing.Size(97, 43);
             this.btnEkle.TabIndex = 0;
             this.btnEkle.Text = "Ekle";
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // lblBaslik
             // 
@@ -270,20 +254,37 @@
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1092, 51);
-            this.lblBaslik.TabIndex = 4;
+            this.lblBaslik.Size = new System.Drawing.Size(1218, 63);
+            this.lblBaslik.TabIndex = 7;
             this.lblBaslik.Text = "Formlar";
             // 
-            // frmOnMaliyetFormu
+            // imgMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.imgMenu.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgMenu.ImageStream")));
+            this.imgMenu.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgMenu.Images.SetKeyName(0, "Cari Bilgi.png");
+            this.imgMenu.Images.SetKeyName(1, "Cari Düzenle.png");
+            this.imgMenu.Images.SetKeyName(2, "Cari Ekle.png");
+            this.imgMenu.Images.SetKeyName(3, "Cari Hareket.png");
+            this.imgMenu.Images.SetKeyName(4, "cari kpyala.png");
+            this.imgMenu.Images.SetKeyName(5, "Cari Sil.png");
+            this.imgMenu.Images.SetKeyName(6, "folder_out.png");
+            this.imgMenu.Images.SetKeyName(7, "funnel.png");
+            this.imgMenu.Images.SetKeyName(8, "funnel_delete.png");
+            this.imgMenu.Images.SetKeyName(9, "refresh.png");
+            this.imgMenu.Images.SetKeyName(10, "user.png");
+            this.imgMenu.Images.SetKeyName(11, "view.png");
+            // 
+            // frmSipFormlari
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 628);
+            this.ClientSize = new System.Drawing.Size(1218, 690);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
-            this.Name = "frmOnMaliyetFormu";
-            this.Text = "Formlar";
+            this.Name = "frmSipFormlari";
+            this.Text = "Sipariş Formları";
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridContFormlar)).EndInit();
@@ -298,7 +299,6 @@
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.SimpleButton btnFiltreKapat;
-        private System.Windows.Forms.ImageList imgMenu;
         private DevExpress.XtraEditors.SimpleButton btnFiltreIptal;
         private DevExpress.XtraEditors.SimpleButton btnFiltre;
         private DevExpress.XtraEditors.FilterControl filterControl1;
@@ -313,5 +313,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDuzenle;
         private DevExpress.XtraEditors.SimpleButton btnEkle;
         private DevExpress.XtraEditors.LabelControl lblBaslik;
+        private System.Windows.Forms.ImageList imgMenu;
     }
 }

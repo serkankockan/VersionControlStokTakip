@@ -35,6 +35,9 @@ namespace StokTakip.Entities.Context
 
         public DbSet<EFResource> EfResources { get; set; }
 
+        public DbSet<OnMaliyetForm> OnMaliyetFormlari { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new StokMap());
@@ -47,6 +50,8 @@ namespace StokTakip.Entities.Context
             modelBuilder.Configurations.Add(new OdemeTuruMap());
             modelBuilder.Configurations.Add(new TanimMap());
             modelBuilder.Configurations.Add(new PersonelMap());
+            modelBuilder.Configurations.Add(new OnMaliyetFormMap());
+
         }
     }   
 }

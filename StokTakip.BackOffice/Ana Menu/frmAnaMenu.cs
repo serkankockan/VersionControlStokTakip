@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using StokTakip.BackOffice.Ajanda;
@@ -25,6 +28,8 @@ using StokTakip.Backup;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
+using StokTakip.BackOffice.Ön_Maliyet_Formu;
+using StokTakip.BackOffice.On_Maliyet_Formu;
 
 namespace StokTakip.BackOffice 
 {
@@ -145,6 +150,32 @@ namespace StokTakip.BackOffice
         {
             frmBackup form = new frmBackup();
             form.ShowDialog();
+        }
+
+        private void barButtonItem34_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            WebClient indir = new WebClient();
+            string programVersiyon = Assembly.Load("StokTakip.BackOffice").GetName().Version.ToString();
+            string guncelVersiyon = indir.DownloadString("http://mutludusunceler.com/versiyonlar/text.txt")
+                .Replace("\n", "");
+
+            if (programVersiyon != guncelVersiyon)
+            {
+                Process.Start($"{Application.StartupPath}\\StokTakip.Update.exe");
+            }
+            else
+            {
+                MessageBox.Show("Programınız Güncel.");
+            }
+
+            
+        }
+
+        private void barButtonItem39_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmSipFormlari form = new frmSipFormlari();
+            form.MdiParent = this;
+            form.Show();
         }
     }
 }

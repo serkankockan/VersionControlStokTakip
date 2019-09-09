@@ -1,6 +1,6 @@
 ﻿namespace StokTakip.Update
 {
-    partial class Form1
+    partial class frmGuncelle
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnGüncelle = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
-            // Form1
+            // btnGüncelle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.btnGüncelle.Location = new System.Drawing.Point(206, 69);
+            this.btnGüncelle.Name = "btnGüncelle";
+            this.btnGüncelle.Size = new System.Drawing.Size(240, 140);
+            this.btnGüncelle.TabIndex = 0;
+            this.btnGüncelle.Text = "Güncelle";
+            this.btnGüncelle.Click += new System.EventHandler(this.btnGüncelle_Click);
+            // 
+            // frmGuncelle
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 342);
+            this.ClientSize = new System.Drawing.Size(637, 309);
+            this.Controls.Add(this.btnGüncelle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "frmGuncelle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Güncelleme";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private DevExpress.XtraEditors.SimpleButton btnGüncelle;
     }
 }
 

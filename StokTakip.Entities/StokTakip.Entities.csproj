@@ -65,6 +65,7 @@
     <Compile Include="Data Access\KasaDAL.cs" />
     <Compile Include="Data Access\KasaHareketDAL.cs" />
     <Compile Include="Data Access\OdemeTuruDAL.cs" />
+    <Compile Include="Data Access\OnMaliyetFormDAL.cs" />
     <Compile Include="Data Access\PersonelDAL.cs" />
     <Compile Include="Data Access\StokDAL.cs" />
     <Compile Include="Data Access\StokHareketDAL.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Mapping\KasaHareketMap.cs" />
     <Compile Include="Mapping\KasaMap.cs" />
     <Compile Include="Mapping\OdemeTuruMap.cs" />
+    <Compile Include="Mapping\OnMaliyetFormMap.cs" />
     <Compile Include="Mapping\PersonelMap.cs" />
     <Compile Include="Mapping\StokHareketMap.cs" />
     <Compile Include="Mapping\StokMap.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Tables\EFAppointment.cs" />
     <Compile Include="Tables\EFResource.cs" />
     <Compile Include="Tables\Indirim.cs" />
+    <Compile Include="Tables\OnMaliyetForm.cs" />
     <Compile Include="Tables\Other Tables\CariBakiye.cs" />
     <Compile Include="Tables\Depo.cs" />
     <Compile Include="Tables\Fis.cs" />
@@ -103,18 +106,19 @@
     <Compile Include="Tables\KasaHareket.cs" />
     <Compile Include="Tables\OdemeTuru.cs" />
     <Compile Include="Tables\Personel.cs" />
-    <Compile Include="Tables\SiparisFormlari.cs" />
     <Compile Include="Tables\Stok.cs" />
     <Compile Include="Tables\StokHareket.cs" />
     <Compile Include="Tables\Tanim.cs" />
     <Compile Include="Tools\SettingsTool.cs" />
     <Compile Include="Tools\ValidatorTools.cs" />
+    <Compile Include="Tools\VersionControl.cs" />
     <Compile Include="Validations\CariValidator.cs" />
     <Compile Include="Validations\DepoValidator.cs" />
     <Compile Include="Validations\FisValidator.cs" />
     <Compile Include="Validations\KasaHareketValidator.cs" />
     <Compile Include="Validations\KasaValidator.cs" />
     <Compile Include="Validations\OdemeTuruValidator.cs" />
+    <Compile Include="Validations\OnMaliyetFormValidator.cs" />
     <Compile Include="Validations\PersonelValidator.cs" />
     <Compile Include="Validations\StokHareketValidator.cs" />
     <Compile Include="Validations\StokValidator.cs" />
