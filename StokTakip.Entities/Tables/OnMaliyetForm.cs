@@ -12,6 +12,7 @@ namespace StokTakip.Entities.Tables
         public int Id { get; set; }
         public bool Durumu { get; set; }
         public string MusteriAdi { get; set; }
+        public string DesenNo { get; set; }
         public int SiparisNo { get; set; }
         public decimal BoyaGideri { get; set; }
         public string Profil { get; set; }

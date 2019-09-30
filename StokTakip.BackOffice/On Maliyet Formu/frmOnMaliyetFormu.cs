@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StokTakip.BackOffice.Cari;
+using StokTakip.BackOffice.Tanim;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
@@ -31,8 +32,8 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
 
             toggleDurumu.DataBindings.Add("EditValue", _entity, "Durumu", false, DataSourceUpdateMode.OnPropertyChanged);
             btnMusteriAdi.DataBindings.Add("Text", _entity, "MusteriAdi", false, DataSourceUpdateMode.OnPropertyChanged);
-            txtSipNo.DataBindings.Add("Text", _entity, "SiparisNo", false, DataSourceUpdateMode.OnPropertyChanged);
-
+            btnDesenNo.DataBindings.Add("Text", _entity, "DesenNo", false, DataSourceUpdateMode.OnPropertyChanged);
+            
             txtSipNo.Text = (Convert.ToInt32(txtSipNo.EditValue) + 1).ToString();
         }
 
@@ -50,14 +51,47 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
                     }
                     break;
                 case 1:
-                    MessageBox.Show("İkinci butona basıldı");
+                    btnMusteriAdi.Text = null;
                     break;
             }
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            
+            if (onMaliyetFormDal.AddOrUpdate(context, _entity))
+            {
+                onMaliyetFormDal.Save(context);
+                saved = true;
+                this.Close();
+            }
+        }
+
+
+        private void Tanim_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var textBox = (sender as ButtonEdit);
+            frmTanim.TanimTuru tanimTuru;
+            tanimTuru = (frmTanim.TanimTuru) Enum.Parse(typeof(frmTanim.TanimTuru),textBox.AccessibleName.ToString());
+
+            switch (e.Button.Index)
+            {
+                case 0:
+                    frmTanim form = new frmTanim(tanimTuru);
+                    form.ShowDialog();
+                    if (form.secildi)
+                    {
+                        textBox.Text = form._entity.Tanimi;
+                    }
+                    break;
+                case 1:
+                    textBox.Text = null;
+                    break;
+            }
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 };

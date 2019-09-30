@@ -37,7 +37,20 @@ namespace StokTakip.BackOffice.Tanim
             CariOzelKod2,
             CariOzelKod3,
             CariOzelKod4,
-            PersonelUnvan
+            PersonelUnvan,
+            KumasCinsiVeEni,
+            BaskiEni,
+            PassSayisi,
+            SiparisEni,
+            KagitCinsi,
+            TransferHizi,
+            TransferDerecesi,
+            SatisFason,
+            DesenNo,
+            Makine,
+            Pazarlamaci,
+            Desinator
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)

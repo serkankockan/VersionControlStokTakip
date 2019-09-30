@@ -1989,7 +1989,7 @@
             this.navOdemeEkrani.Name = "navOdemeEkrani";
             this.navOdemeEkrani.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navOdemeEkrani.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navOdemeEkrani.Size = new System.Drawing.Size(1426, 367);
+            this.navOdemeEkrani.Size = new System.Drawing.Size(1431, 287);
             // 
             // gridContKasaHareket
             // 
@@ -2002,7 +2002,7 @@
             this.gridContKasaHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoKasa,
             this.repoKHSil});
-            this.gridContKasaHareket.Size = new System.Drawing.Size(1426, 317);
+            this.gridContKasaHareket.Size = new System.Drawing.Size(1431, 237);
             this.gridContKasaHareket.TabIndex = 2;
             this.gridContKasaHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridKasaHareket});
@@ -2115,7 +2115,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1426, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1431, 50);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // radialFiyat

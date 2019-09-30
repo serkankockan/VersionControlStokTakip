@@ -17,6 +17,7 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity); // Id otomatik artan yapılır.
             this.Property(p => p.Durumu);
             this.Property(p => p.MusteriAdi).HasMaxLength(50);
+            this.Property(p => p.MusteriAdi).HasMaxLength(35);
             this.Property(p => p.BoyaGideri).HasPrecision(5, 2);
             this.Property(p => p.Profil).HasMaxLength(25);
             this.Property(p => p.KumasCinsiVeEni).HasMaxLength(30);
@@ -37,6 +38,7 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.Id).HasColumnName("Id");
             this.Property(p => p.Durumu).HasColumnName("Durumu");
             this.Property(p => p.MusteriAdi).HasColumnName("MusteriAdi");
+            this.Property(p => p.DesenNo).HasColumnName("DesenNo");
             this.Property(p => p.SiparisNo).HasColumnName("SiparisNo");
             this.Property(p => p.BoyaGideri).HasColumnName("BoyaGideri");
             this.Property(p => p.Profil).HasColumnName("Profil");

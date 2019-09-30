@@ -19,8 +19,6 @@ namespace StokTakip.Entities.Validations
             RuleFor(p => p.EMail).EmailAddress().WithMessage("Girdiğiniz e-mail adresi geçersiz.");
             RuleFor(p => p.IskontoOrani).GreaterThanOrEqualTo(0).WithMessage("İskonto oranı alanı 0'dan küçük olamaz.");
             RuleFor(p => p.RiskLimiti).GreaterThanOrEqualTo(0).WithMessage("Risk Limiti alanı 0'dan küçük olamaz.");
-
-
         }
     }
 }

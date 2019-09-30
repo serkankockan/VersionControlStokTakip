@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
+using StokTakip.Entities.Tables;
 
 namespace StokTakip.Entities.Validations
 {
-    public class OnMaliyetFormValidator : AbstractValidator<OnMaliyetFormValidator>
+    public class OnMaliyetFormValidator : AbstractValidator<OnMaliyetForm>
     {
         public OnMaliyetFormValidator()
         {
