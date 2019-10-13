@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.ModelConfiguration;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -22,11 +24,20 @@ namespace StokTakip.BackOffice.Tanim
         private TanimTuru _tanimTuru;
         public Entities.Tables.Tanim _entity;
         public bool secildi = false;
+        
 
         public frmTanim(TanimTuru tanimTuru)
         {
             InitializeComponent();
             _tanimTuru = tanimTuru;
+
+
+            if (tanimTuru == TanimTuru.DesenNo)
+            {
+                groupControl3.Visible = true;
+                
+            }
+            
         }
 
         public enum TanimTuru
@@ -49,8 +60,8 @@ namespace StokTakip.BackOffice.Tanim
             DesenNo,
             Makine,
             Pazarlamaci,
-            Desinator
-
+            Desinator,
+            TransferDerecesi1
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -80,8 +91,11 @@ namespace StokTakip.BackOffice.Tanim
             btnKaydet.Enabled = true;
             btnVazgec.Enabled = true;
             navigationFrame1.SelectedPage = navigationPage1;
+
             txtTanim.DataBindings.Add("Text", _entity, "Tanimi");
             txtAciklama.DataBindings.Add("Text", _entity, "Aciklama");
+
+            //txtGorsel.DataBindings.Add("Text", _entity, "Gorsel");
         }
 
         void KayitKapat()
@@ -132,6 +146,7 @@ namespace StokTakip.BackOffice.Tanim
             if (tanimDal.AddOrUpdate(context,_entity))
             {
                 tanimDal.Save(context);
+                ResimKaydet();
                 KayitKapat();
                 Listele();
             }
@@ -140,6 +155,39 @@ namespace StokTakip.BackOffice.Tanim
         private void btnVazgec_Click(object sender, EventArgs e)
         {
             KayitKapat();
+        }
+
+        private void txtGorsel_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txtGorsel.Text = open.FileName;
+            }
+            else
+            {
+                
+            }
+        }
+
+        void ResimKaydet()
+        {
+            if (txtGorsel.Text!=null && txtGorsel.Text !="")
+            {
+                string image = txtGorsel.Text;
+                Bitmap bmp = new Bitmap(image);
+                FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read);
+                byte[] bimage = new byte[fs.Length];
+                fs.Read(bimage, 0, Convert.ToInt32(fs.Length));
+
+                _entity.Gorsel = bimage;
+
+                if (tanimDal.AddOrUpdate(context, _entity))
+                {
+                    tanimDal.Save(context);
+                }
+            }
         }
     }
 }

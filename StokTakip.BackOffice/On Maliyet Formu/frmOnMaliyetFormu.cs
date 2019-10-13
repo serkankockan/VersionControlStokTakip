@@ -22,6 +22,7 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
         private OnMaliyetFormDAL onMaliyetFormDal = new OnMaliyetFormDAL();
         private StokTakipContext context = new StokTakipContext();
         public bool saved = false;
+        public bool onayFormu = false;
 
         //public List<Entities.Tables.Cari> secilen = new List<Entities.Tables.Cari>();
 
@@ -30,11 +31,38 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
             InitializeComponent();
             _entity = entity;
 
-            toggleDurumu.DataBindings.Add("EditValue", _entity, "Durumu", false, DataSourceUpdateMode.OnPropertyChanged);
-            btnMusteriAdi.DataBindings.Add("Text", _entity, "MusteriAdi", false, DataSourceUpdateMode.OnPropertyChanged);
+            toggleDurumu.DataBindings.Add("EditValue", _entity, "Durumu", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            btnMusteriAdi.DataBindings.Add("Text", _entity, "MusteriAdi", false,
+                DataSourceUpdateMode.OnPropertyChanged);
             btnDesenNo.DataBindings.Add("Text", _entity, "DesenNo", false, DataSourceUpdateMode.OnPropertyChanged);
-            
-            txtSipNo.Text = (Convert.ToInt32(txtSipNo.EditValue) + 1).ToString();
+            btnMakina.DataBindings.Add("Text", _entity, "Makina", false, DataSourceUpdateMode.OnPropertyChanged);
+            btnBoyaGideri.DataBindings.Add("Text", _entity, "BoyaGideri", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            btnProfil.DataBindings.Add("Text", _entity, "Profil", false, DataSourceUpdateMode.OnPropertyChanged);
+            btnKumasCinsiveEni.DataBindings.Add("Text", _entity, "KumasCinsiVeEni", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            btnPassSayisi.DataBindings.Add("Text", _entity, "PassSayisi", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            btnBaskiEni.DataBindings.Add("Text", _entity, "BaskiEni", false, DataSourceUpdateMode.OnPropertyChanged);
+            btnKagitCinsi.DataBindings.Add("Text", _entity, "KagitCinsi", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            btnSiparisEni.DataBindings.Add("Text", _entity, "Eni", false, DataSourceUpdateMode.OnPropertyChanged);
+            btnTansferHizi.DataBindings.Add("Text", _entity, "TransferHizi", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            txtDateTime.DataBindings.Add("Text", _entity, "SiparisTarihi", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            btnTransferDerecesi.DataBindings.Add("Text", _entity, "TransferDerecesi", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            btnSatisFason.DataBindings.Add("Text", _entity, "IsTipi", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtSipMiktar.DataBindings.Add("Text", _entity, "SiparisMiktari", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            btnPazarlamaci.DataBindings.Add("Text", _entity, "Pazarlamaci", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            btnDesinator.DataBindings.Add("Text", _entity, "Desinator", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtAciklama.DataBindings.Add("Text", _entity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtSipNo.DataBindings.Add("Text", _entity, "Id", false, DataSourceUpdateMode.Never);
+
         }
 
         private void btnMusteriAdi_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -49,6 +77,7 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
                         Entities.Tables.Cari entity = form.secilen.FirstOrDefault();
                         btnMusteriAdi.Text = entity.CariAdi;
                     }
+
                     break;
                 case 1:
                     btnMusteriAdi.Text = null;
@@ -63,6 +92,9 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
                 onMaliyetFormDal.Save(context);
                 saved = true;
                 this.Close();
+                MessageBox.Show("Sipariş talep formu oluşturulmuştur", "Bilgi", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                this.Close();
             }
         }
 
@@ -71,7 +103,7 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
         {
             var textBox = (sender as ButtonEdit);
             frmTanim.TanimTuru tanimTuru;
-            tanimTuru = (frmTanim.TanimTuru) Enum.Parse(typeof(frmTanim.TanimTuru),textBox.AccessibleName.ToString());
+            tanimTuru = (frmTanim.TanimTuru) Enum.Parse(typeof(frmTanim.TanimTuru), textBox.AccessibleName.ToString());
 
             switch (e.Button.Index)
             {
@@ -82,6 +114,7 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
                     {
                         textBox.Text = form._entity.Tanimi;
                     }
+
                     break;
                 case 1:
                     textBox.Text = null;
@@ -93,5 +126,32 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
         {
             this.Close();
         }
+
+        private void Tanim_DoubleClick(object sender, EventArgs e)
+        {
+            var textBox = (sender as ButtonEdit);
+            frmTanim.TanimTuru tanimTuru;
+            tanimTuru = (frmTanim.TanimTuru) Enum.Parse(typeof(frmTanim.TanimTuru), textBox.AccessibleName.ToString());
+
+            frmTanim form = new frmTanim(tanimTuru);
+            form.ShowDialog();
+            if (form.secildi)
+            {
+                textBox.Text = form._entity.Tanimi;
+            }
+
+        }
+
+        private void frmOnMaliyetFormu_Load(object sender, EventArgs e)
+        {
+            if (onayFormu)
+            {
+                splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel1;
+            }
+            else
+            {
+                splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2;
+            }
+        }
     }
-};
+}

@@ -30,6 +30,7 @@ using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
 using StokTakip.BackOffice.Ön_Maliyet_Formu;
 using StokTakip.BackOffice.On_Maliyet_Formu;
+using StokTakip.Entities.Tools;
 
 namespace StokTakip.BackOffice 
 {
@@ -49,6 +50,8 @@ namespace StokTakip.BackOffice
             frmAnaMenuBilgi form = new frmAnaMenuBilgi();
             form.MdiParent = this;
             form.Show();
+
+            
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -176,6 +179,28 @@ namespace StokTakip.BackOffice
             frmSipFormlari form = new frmSipFormlari();
             form.MdiParent = this;
             form.Show();
+        }
+
+        private void barButtonItem40_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmAnaMenuBilgi form = new frmAnaMenuBilgi();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void barButtonItem38_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            string link = SettingsTool.AyarOku(SettingsTool.Ayarlar.WebSitesi_URL);
+            if (link!="")
+            {
+                System.Diagnostics.Process.Start(link);
+
+            }
+            else
+            {
+                System.Diagnostics.Process.Start("www.google.com");
+            }
         }
     }
 }

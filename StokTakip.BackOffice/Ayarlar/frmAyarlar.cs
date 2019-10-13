@@ -28,6 +28,8 @@ namespace StokTakip.BackOffice.Ayarlar
             lookUpDepo.EditValue = SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo);
             toggleSwitch1.IsOn = Convert.ToBoolean(SettingsTool.AyarOku(SettingsTool.Ayarlar.SesAyari_Varsayilan));
             btnDosyaSecimi.Text = SettingsTool.AyarOku(SettingsTool.Ayarlar.VeriTabaniYedekleme_Varsayilan);
+            txtWebSitesi.Text = SettingsTool.AyarOku(SettingsTool.Ayarlar.WebSitesi_URL);
+
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -35,6 +37,7 @@ namespace StokTakip.BackOffice.Ayarlar
             SettingsTool.AyarDegistir(SettingsTool.Ayarlar.SesAyari_Varsayilan, toggleSwitch1.EditValue.ToString());
             SettingsTool.AyarDegistir(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo,lookUpDepo.EditValue.ToString());
             SettingsTool.AyarDegistir(SettingsTool.Ayarlar.VeriTabaniYedekleme_Varsayilan, btnDosyaSecimi.Text);
+            SettingsTool.AyarDegistir(SettingsTool.Ayarlar.WebSitesi_URL,txtWebSitesi.Text);
             SettingsTool.Save();
 
             MessageBox.Show("Yapılan değişiklikler kaydedilmiştir.", "Bilgi", MessageBoxButtons.OK,

@@ -50,9 +50,14 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtTanim = new DevExpress.XtraEditors.TextEdit();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
+            this.lblGorsel = new DevExpress.XtraEditors.LabelControl();
             this.lblTanim = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.lblAciklama = new DevExpress.XtraEditors.LabelControl();
+            this.txtGorsel = new DevExpress.XtraEditors.ButtonEdit();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             this.navigationPage2.SuspendLayout();
@@ -63,8 +68,15 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGorsel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBaslik
@@ -83,7 +95,7 @@
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(631, 51);
+            this.lblBaslik.Size = new System.Drawing.Size(726, 63);
             this.lblBaslik.TabIndex = 3;
             this.lblBaslik.Text = "Tanımlar";
             // 
@@ -97,10 +109,10 @@
             this.grpMenu.Controls.Add(this.btnEkle);
             this.grpMenu.Controls.Add(this.btnSec);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 396);
+            this.grpMenu.Location = new System.Drawing.Point(0, 487);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(631, 68);
+            this.grpMenu.Size = new System.Drawing.Size(726, 84);
             this.grpMenu.TabIndex = 4;
             this.grpMenu.Text = "Menü";
             // 
@@ -108,10 +120,10 @@
             // 
             this.btnKapat.ImageOptions.ImageIndex = 5;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(537, 26);
+            this.btnKapat.Location = new System.Drawing.Point(626, 32);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(83, 35);
+            this.btnKapat.Size = new System.Drawing.Size(97, 43);
             this.btnKapat.TabIndex = 2;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -133,10 +145,10 @@
             this.btnVazgec.Enabled = false;
             this.btnVazgec.ImageOptions.ImageIndex = 4;
             this.btnVazgec.ImageOptions.ImageList = this.ımageList1;
-            this.btnVazgec.Location = new System.Drawing.Point(448, 26);
+            this.btnVazgec.Location = new System.Drawing.Point(523, 32);
             this.btnVazgec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVazgec.Name = "btnVazgec";
-            this.btnVazgec.Size = new System.Drawing.Size(83, 35);
+            this.btnVazgec.Size = new System.Drawing.Size(97, 43);
             this.btnVazgec.TabIndex = 1;
             this.btnVazgec.Text = "Vazgeç";
             this.btnVazgec.Click += new System.EventHandler(this.btnVazgec_Click);
@@ -146,10 +158,10 @@
             this.btnKaydet.Enabled = false;
             this.btnKaydet.ImageOptions.ImageIndex = 3;
             this.btnKaydet.ImageOptions.ImageList = this.ımageList1;
-            this.btnKaydet.Location = new System.Drawing.Point(360, 26);
+            this.btnKaydet.Location = new System.Drawing.Point(420, 32);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(83, 35);
+            this.btnKaydet.Size = new System.Drawing.Size(97, 43);
             this.btnKaydet.TabIndex = 1;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -158,10 +170,10 @@
             // 
             this.btnSil.ImageOptions.ImageIndex = 2;
             this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            this.btnSil.Location = new System.Drawing.Point(271, 26);
+            this.btnSil.Location = new System.Drawing.Point(316, 32);
             this.btnSil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(83, 35);
+            this.btnSil.Size = new System.Drawing.Size(97, 43);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -170,10 +182,10 @@
             // 
             this.btnDuzenle.ImageOptions.ImageIndex = 6;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(184, 26);
+            this.btnDuzenle.Location = new System.Drawing.Point(215, 32);
             this.btnDuzenle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(83, 35);
+            this.btnDuzenle.Size = new System.Drawing.Size(97, 43);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
             this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
@@ -182,10 +194,10 @@
             // 
             this.btnEkle.ImageOptions.ImageIndex = 0;
             this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnEkle.Location = new System.Drawing.Point(97, 26);
+            this.btnEkle.Location = new System.Drawing.Point(113, 32);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(83, 35);
+            this.btnEkle.Size = new System.Drawing.Size(97, 43);
             this.btnEkle.TabIndex = 0;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
@@ -194,28 +206,29 @@
             // 
             this.btnSec.ImageOptions.ImageIndex = 1;
             this.btnSec.ImageOptions.ImageList = this.ımageList1;
-            this.btnSec.Location = new System.Drawing.Point(10, 26);
+            this.btnSec.Location = new System.Drawing.Point(12, 32);
             this.btnSec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSec.Name = "btnSec";
-            this.btnSec.Size = new System.Drawing.Size(83, 35);
+            this.btnSec.Size = new System.Drawing.Size(97, 43);
             this.btnSec.TabIndex = 0;
             this.btnSec.Text = "Seç";
             this.btnSec.Click += new System.EventHandler(this.btnSec_Click);
             // 
             // navigationPage2
             // 
-            this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Controls.Add(this.gridContTanim);
+            this.navigationPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(631, 345);
+            this.navigationPage2.Size = new System.Drawing.Size(726, 424);
             // 
             // gridContTanim
             // 
-            this.gridContTanim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContTanim.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridContTanim.Location = new System.Drawing.Point(0, 0);
             this.gridContTanim.MainView = this.gridTanim;
+            this.gridContTanim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridContTanim.Name = "gridContTanim";
-            this.gridContTanim.Size = new System.Drawing.Size(631, 345);
+            this.gridContTanim.Size = new System.Drawing.Size(736, 425);
             this.gridContTanim.TabIndex = 0;
             this.gridContTanim.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridTanim});
@@ -260,39 +273,55 @@
             // 
             // navigationPage1
             // 
-            this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.groupControl1);
+            this.navigationPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(631, 345);
+            this.navigationPage1.Size = new System.Drawing.Size(726, 424);
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.txtTanim);
-            this.groupControl1.Controls.Add(this.txtAciklama);
-            this.groupControl1.Controls.Add(this.lblTanim);
-            this.groupControl1.Controls.Add(this.labelControl14);
+            this.groupControl1.Controls.Add(this.groupControl4);
+            this.groupControl1.Controls.Add(this.groupControl3);
+            this.groupControl1.Controls.Add(this.groupControl5);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(631, 345);
+            this.groupControl1.Size = new System.Drawing.Size(726, 424);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Tanım Bilgileri";
             // 
             // txtTanim
             // 
-            this.txtTanim.Location = new System.Drawing.Point(97, 24);
+            this.txtTanim.Location = new System.Drawing.Point(108, 5);
             this.txtTanim.Margin = new System.Windows.Forms.Padding(2);
             this.txtTanim.Name = "txtTanim";
-            this.txtTanim.Size = new System.Drawing.Size(518, 20);
+            this.txtTanim.Size = new System.Drawing.Size(611, 22);
             this.txtTanim.TabIndex = 16;
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(97, 48);
+            this.txtAciklama.Location = new System.Drawing.Point(108, 5);
             this.txtAciklama.Margin = new System.Windows.Forms.Padding(2);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(518, 290);
+            this.txtAciklama.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAciklama.Size = new System.Drawing.Size(612, 321);
             this.txtAciklama.TabIndex = 15;
+            // 
+            // lblGorsel
+            // 
+            this.lblGorsel.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblGorsel.Appearance.Options.UseBorderColor = true;
+            this.lblGorsel.Appearance.Options.UseTextOptions = true;
+            this.lblGorsel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblGorsel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblGorsel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lblGorsel.Location = new System.Drawing.Point(4, 3);
+            this.lblGorsel.Margin = new System.Windows.Forms.Padding(2);
+            this.lblGorsel.Name = "lblGorsel";
+            this.lblGorsel.Size = new System.Drawing.Size(100, 25);
+            this.lblGorsel.TabIndex = 13;
+            this.lblGorsel.Text = "Görsel :";
             // 
             // lblTanim
             // 
@@ -302,52 +331,105 @@
             this.lblTanim.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblTanim.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTanim.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblTanim.Location = new System.Drawing.Point(8, 24);
+            this.lblTanim.Location = new System.Drawing.Point(4, 4);
             this.lblTanim.Margin = new System.Windows.Forms.Padding(2);
             this.lblTanim.Name = "lblTanim";
-            this.lblTanim.Size = new System.Drawing.Size(86, 20);
+            this.lblTanim.Size = new System.Drawing.Size(100, 25);
             this.lblTanim.TabIndex = 13;
             this.lblTanim.Text = "Tanım :";
             // 
-            // labelControl14
+            // lblAciklama
             // 
-            this.labelControl14.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl14.Appearance.Options.UseBorderColor = true;
-            this.labelControl14.Appearance.Options.UseTextOptions = true;
-            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl14.Location = new System.Drawing.Point(8, 48);
-            this.labelControl14.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(86, 290);
-            this.labelControl14.TabIndex = 14;
-            this.labelControl14.Text = "Açıklama :";
+            this.lblAciklama.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblAciklama.Appearance.Options.UseBorderColor = true;
+            this.lblAciklama.Appearance.Options.UseTextOptions = true;
+            this.lblAciklama.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblAciklama.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblAciklama.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lblAciklama.Location = new System.Drawing.Point(4, 5);
+            this.lblAciklama.Margin = new System.Windows.Forms.Padding(2);
+            this.lblAciklama.Name = "lblAciklama";
+            this.lblAciklama.Size = new System.Drawing.Size(100, 321);
+            this.lblAciklama.TabIndex = 14;
+            this.lblAciklama.Text = "Açıklama :";
+            // 
+            // txtGorsel
+            // 
+            this.txtGorsel.Location = new System.Drawing.Point(108, 5);
+            this.txtGorsel.Name = "txtGorsel";
+            this.txtGorsel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtGorsel.Properties.ReadOnly = true;
+            this.txtGorsel.Size = new System.Drawing.Size(611, 22);
+            this.txtGorsel.TabIndex = 17;
+            this.txtGorsel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtGorsel_ButtonClick);
             // 
             // navigationFrame1
             // 
             this.navigationFrame1.Controls.Add(this.navigationPage1);
             this.navigationFrame1.Controls.Add(this.navigationPage2);
             this.navigationFrame1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationFrame1.Location = new System.Drawing.Point(0, 51);
+            this.navigationFrame1.Location = new System.Drawing.Point(0, 63);
+            this.navigationFrame1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navigationFrame1.Name = "navigationFrame1";
             this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.navigationPage1,
             this.navigationPage2});
             this.navigationFrame1.SelectedPage = this.navigationPage2;
-            this.navigationFrame1.Size = new System.Drawing.Size(631, 345);
+            this.navigationFrame1.Size = new System.Drawing.Size(726, 424);
             this.navigationFrame1.TabIndex = 5;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
+            // groupControl5
+            // 
+            this.groupControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl5.Controls.Add(this.txtAciklama);
+            this.groupControl5.Controls.Add(this.lblAciklama);
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl5.Location = new System.Drawing.Point(2, 91);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.ShowCaption = false;
+            this.groupControl5.Size = new System.Drawing.Size(722, 331);
+            this.groupControl5.TabIndex = 19;
+            this.groupControl5.Text = "groupControl2";
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl3.Controls.Add(this.lblGorsel);
+            this.groupControl3.Controls.Add(this.txtGorsel);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl3.Location = new System.Drawing.Point(2, 59);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.ShowCaption = false;
+            this.groupControl3.Size = new System.Drawing.Size(722, 32);
+            this.groupControl3.TabIndex = 20;
+            this.groupControl3.Text = "groupControl3";
+            this.groupControl3.Visible = false;
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl4.Controls.Add(this.txtTanim);
+            this.groupControl4.Controls.Add(this.lblTanim);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl4.Location = new System.Drawing.Point(2, 25);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.ShowCaption = false;
+            this.groupControl4.Size = new System.Drawing.Size(722, 34);
+            this.groupControl4.TabIndex = 21;
+            this.groupControl4.Text = "groupControl4";
+            // 
             // frmTanim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 464);
+            this.ClientSize = new System.Drawing.Size(726, 571);
             this.Controls.Add(this.navigationFrame1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmTanim";
@@ -364,8 +446,15 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGorsel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -393,7 +482,12 @@
         private DevExpress.XtraEditors.TextEdit txtTanim;
         private DevExpress.XtraEditors.MemoEdit txtAciklama;
         private DevExpress.XtraEditors.LabelControl lblTanim;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.LabelControl lblAciklama;
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
+        private DevExpress.XtraEditors.LabelControl lblGorsel;
+        private DevExpress.XtraEditors.ButtonEdit txtGorsel;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
     }
 }

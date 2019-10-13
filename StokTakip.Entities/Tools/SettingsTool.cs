@@ -38,7 +38,8 @@ namespace StokTakip.Entities.Tools
             SmsAyarları_Parola,
             SatisAyarlari_VarsayilanDepo,
             SesAyari_Varsayilan,
-            VeriTabaniYedekleme_Varsayilan
+            VeriTabaniYedekleme_Varsayilan,
+            WebSitesi_URL
         }
 
         public static void AyarDegistir(Ayarlar ayar, string value)

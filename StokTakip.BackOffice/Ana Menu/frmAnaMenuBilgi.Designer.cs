@@ -68,7 +68,11 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement37 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement38 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement39 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement40 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement41 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
+            this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
+            this.tileMaliyetForm = new DevExpress.XtraEditors.TileItem();
             this.tileKayitlar = new DevExpress.XtraEditors.TileGroup();
             this.tileItem1 = new DevExpress.XtraEditors.TileItem();
             this.tileItem2 = new DevExpress.XtraEditors.TileItem();
@@ -117,16 +121,49 @@
             this.tileControl1.BackColor = System.Drawing.Color.White;
             this.tileControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tileControl1.Groups.Add(this.tileGroup1);
             this.tileControl1.Groups.Add(this.tileKayitlar);
             this.tileControl1.Groups.Add(this.tileGroup2);
             this.tileControl1.Groups.Add(this.tileGroup3);
             this.tileControl1.Location = new System.Drawing.Point(0, 0);
-            this.tileControl1.MaxId = 52;
+            this.tileControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tileControl1.MaxId = 58;
             this.tileControl1.Name = "tileControl1";
+            this.tileControl1.Padding = new System.Windows.Forms.Padding(21, 22, 21, 22);
             this.tileControl1.ShowGroupText = true;
-            this.tileControl1.Size = new System.Drawing.Size(1412, 836);
+            this.tileControl1.Size = new System.Drawing.Size(1647, 1029);
             this.tileControl1.TabIndex = 0;
             this.tileControl1.Text = "tileControl1";
+            // 
+            // tileGroup1
+            // 
+            this.tileGroup1.Items.Add(this.tileMaliyetForm);
+            this.tileGroup1.Name = "tileGroup1";
+            this.tileGroup1.Text = "Bilgilendirmeler";
+            // 
+            // tileMaliyetForm
+            // 
+            this.tileMaliyetForm.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
+            this.tileMaliyetForm.AppearanceItem.Normal.Options.UseBackColor = true;
+            tileItemElement1.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileItemElement1.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement1.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement1.Image")));
+            tileItemElement1.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement1.ImageSize = new System.Drawing.Size(10, 50);
+            tileItemElement1.Text = "4";
+            tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement2.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement2.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileItemElement2.Appearance.Normal.Options.UseFont = true;
+            tileItemElement2.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement2.Text = "Onay Bekleyen Maliyet Formları";
+            tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            this.tileMaliyetForm.Elements.Add(tileItemElement1);
+            this.tileMaliyetForm.Elements.Add(tileItemElement2);
+            this.tileMaliyetForm.Id = 55;
+            this.tileMaliyetForm.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileMaliyetForm.Name = "tileMaliyetForm";
+            this.tileMaliyetForm.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileMaliyetForm_ItemClick);
             // 
             // tileKayitlar
             // 
@@ -160,9 +197,9 @@
             this.tileItem1.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem1.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem1.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement1.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement1.Image")));
-            tileItemElement1.Text = "Stoklar Kartları";
-            this.tileItem1.Elements.Add(tileItemElement1);
+            tileItemElement3.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement3.Image")));
+            tileItemElement3.Text = "Stoklar Kartları";
+            this.tileItem1.Elements.Add(tileItemElement3);
             this.tileItem1.Id = 0;
             this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem1.Name = "tileItem1";
@@ -176,9 +213,9 @@
             this.tileItem2.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem2.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem2.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement2.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement2.Image")));
-            tileItemElement2.Text = "Cariler";
-            this.tileItem2.Elements.Add(tileItemElement2);
+            tileItemElement4.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement4.Image")));
+            tileItemElement4.Text = "Cariler";
+            this.tileItem2.Elements.Add(tileItemElement4);
             this.tileItem2.Id = 1;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem2.Name = "tileItem2";
@@ -192,9 +229,9 @@
             this.tileItem3.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem3.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem3.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement3.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement3.Image")));
-            tileItemElement3.Text = "Fatura ve Fişler";
-            this.tileItem3.Elements.Add(tileItemElement3);
+            tileItemElement5.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement5.Image")));
+            tileItemElement5.Text = "Fatura ve Fişler";
+            this.tileItem3.Elements.Add(tileItemElement5);
             this.tileItem3.Id = 2;
             this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem3.Name = "tileItem3";
@@ -209,20 +246,20 @@
             this.tileItem15.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem15.AppearanceItem.Normal.Options.UseForeColor = true;
             this.tileItem15.ContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollTop;
-            tileItemElement4.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement4.Image")));
-            tileItemElement4.Text = "Satış Ekranı";
-            tileItemElement5.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Right;
-            tileItemElement5.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemElement5.Appearance.Normal.Options.UseFont = true;
-            tileItemElement5.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement5.Appearance.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            tileItemElement5.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement5.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
-            tileItemElement5.ImageToTextIndent = 3;
-            tileItemElement5.Text = "Satış Ekran menüsüyle  Satış ve Satış iade işelemlerini yapabilirsiniz.";
-            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
-            this.tileItem15.Elements.Add(tileItemElement4);
-            this.tileItem15.Elements.Add(tileItemElement5);
+            tileItemElement6.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement6.Image")));
+            tileItemElement6.Text = "Satış Ekranı";
+            tileItemElement7.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Right;
+            tileItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement7.Appearance.Normal.Options.UseFont = true;
+            tileItemElement7.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement7.Appearance.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            tileItemElement7.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement7.ImageBorder = DevExpress.XtraEditors.TileItemElementImageBorderMode.None;
+            tileItemElement7.ImageToTextIndent = 3;
+            tileItemElement7.Text = "Satış Ekran menüsüyle  Satış ve Satış iade işelemlerini yapabilirsiniz.";
+            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            this.tileItem15.Elements.Add(tileItemElement6);
+            this.tileItem15.Elements.Add(tileItemElement7);
             this.tileItem15.Id = 15;
             this.tileItem15.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem15.Name = "tileItem15";
@@ -236,9 +273,9 @@
             this.tileItem17.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem17.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem17.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement6.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement6.Image")));
-            tileItemElement6.Text = "İndirimler";
-            this.tileItem17.Elements.Add(tileItemElement6);
+            tileItemElement8.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement8.Image")));
+            tileItemElement8.Text = "İndirimler";
+            this.tileItem17.Elements.Add(tileItemElement8);
             this.tileItem17.Id = 18;
             this.tileItem17.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem17.Name = "tileItem17";
@@ -252,9 +289,9 @@
             this.tileItem18.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem18.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem18.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement7.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement7.Image")));
-            tileItemElement7.Text = "Toplu Fiyat Değişikliği";
-            this.tileItem18.Elements.Add(tileItemElement7);
+            tileItemElement9.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement9.Image")));
+            tileItemElement9.Text = "Toplu Fiyat Değişikliği";
+            this.tileItem18.Elements.Add(tileItemElement9);
             this.tileItem18.Id = 19;
             this.tileItem18.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem18.Name = "tileItem18";
@@ -268,9 +305,9 @@
             this.tileItem19.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem19.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem19.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement8.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement8.Image")));
-            tileItemElement8.Text = "Hızlı Satış Ürün Tanımı";
-            this.tileItem19.Elements.Add(tileItemElement8);
+            tileItemElement10.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement10.Image")));
+            tileItemElement10.Text = "Hızlı Satış Ürün Tanımı";
+            this.tileItem19.Elements.Add(tileItemElement10);
             this.tileItem19.Id = 20;
             this.tileItem19.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem19.Name = "tileItem19";
@@ -284,9 +321,9 @@
             this.tileItem20.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem20.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem20.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement9.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement9.Image")));
-            tileItemElement9.Text = "Plasiyer";
-            this.tileItem20.Elements.Add(tileItemElement9);
+            tileItemElement11.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement11.Image")));
+            tileItemElement11.Text = "Plasiyer";
+            this.tileItem20.Elements.Add(tileItemElement11);
             this.tileItem20.Id = 21;
             this.tileItem20.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem20.Name = "tileItem20";
@@ -300,9 +337,9 @@
             this.tileItem21.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem21.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem21.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement10.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement10.Image")));
-            tileItemElement10.Text = "Depolar";
-            this.tileItem21.Elements.Add(tileItemElement10);
+            tileItemElement12.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement12.Image")));
+            tileItemElement12.Text = "Depolar";
+            this.tileItem21.Elements.Add(tileItemElement12);
             this.tileItem21.Id = 22;
             this.tileItem21.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem21.Name = "tileItem21";
@@ -316,9 +353,9 @@
             this.tileItem22.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem22.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem22.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement11.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement11.Image")));
-            tileItemElement11.Text = "Kasalar";
-            this.tileItem22.Elements.Add(tileItemElement11);
+            tileItemElement13.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement13.Image")));
+            tileItemElement13.Text = "Kasalar";
+            this.tileItem22.Elements.Add(tileItemElement13);
             this.tileItem22.Id = 23;
             this.tileItem22.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem22.Name = "tileItem22";
@@ -332,9 +369,9 @@
             this.tileItem23.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem23.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem23.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement12.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement12.Image")));
-            tileItemElement12.Text = "Ödeme Türleri";
-            this.tileItem23.Elements.Add(tileItemElement12);
+            tileItemElement14.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement14.Image")));
+            tileItemElement14.Text = "Ödeme Türleri";
+            this.tileItem23.Elements.Add(tileItemElement14);
             this.tileItem23.Id = 24;
             this.tileItem23.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem23.Name = "tileItem23";
@@ -348,9 +385,9 @@
             this.tileItem24.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem24.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem24.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement13.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement13.Image")));
-            tileItemElement13.Text = "Raporlar";
-            this.tileItem24.Elements.Add(tileItemElement13);
+            tileItemElement15.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement15.Image")));
+            tileItemElement15.Text = "Raporlar";
+            this.tileItem24.Elements.Add(tileItemElement15);
             this.tileItem24.Id = 25;
             this.tileItem24.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem24.Name = "tileItem24";
@@ -364,9 +401,9 @@
             this.tileItem25.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem25.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem25.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement14.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement14.Image")));
-            tileItemElement14.Text = "Rapor Oluştur";
-            this.tileItem25.Elements.Add(tileItemElement14);
+            tileItemElement16.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement16.Image")));
+            tileItemElement16.Text = "Rapor Oluştur";
+            this.tileItem25.Elements.Add(tileItemElement16);
             this.tileItem25.Id = 26;
             this.tileItem25.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem25.Name = "tileItem25";
@@ -380,9 +417,9 @@
             this.tileItem26.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem26.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem26.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement15.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement15.Image")));
-            tileItemElement15.Text = "Etiket Basım Ekranı";
-            this.tileItem26.Elements.Add(tileItemElement15);
+            tileItemElement17.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement17.Image")));
+            tileItemElement17.Text = "Etiket Basım Ekranı";
+            this.tileItem26.Elements.Add(tileItemElement17);
             this.tileItem26.Id = 27;
             this.tileItem26.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem26.Name = "tileItem26";
@@ -396,9 +433,9 @@
             this.tileItem27.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem27.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem27.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement16.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement16.Image")));
-            tileItemElement16.Text = "Özgün Rapor Sihirbazı";
-            this.tileItem27.Elements.Add(tileItemElement16);
+            tileItemElement18.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement18.Image")));
+            tileItemElement18.Text = "Özgün Rapor Sihirbazı";
+            this.tileItem27.Elements.Add(tileItemElement18);
             this.tileItem27.Id = 28;
             this.tileItem27.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem27.Name = "tileItem27";
@@ -412,9 +449,9 @@
             this.tileItem28.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem28.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem28.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement17.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement17.Image")));
-            tileItemElement17.Text = "SMS";
-            this.tileItem28.Elements.Add(tileItemElement17);
+            tileItemElement19.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement19.Image")));
+            tileItemElement19.Text = "SMS";
+            this.tileItem28.Elements.Add(tileItemElement19);
             this.tileItem28.Id = 29;
             this.tileItem28.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem28.Name = "tileItem28";
@@ -428,9 +465,9 @@
             this.tileItem29.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem29.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem29.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement18.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement18.Image")));
-            tileItemElement18.Text = "Ajanda";
-            this.tileItem29.Elements.Add(tileItemElement18);
+            tileItemElement20.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement20.Image")));
+            tileItemElement20.Text = "Ajanda";
+            this.tileItem29.Elements.Add(tileItemElement20);
             this.tileItem29.Id = 30;
             this.tileItem29.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem29.Name = "tileItem29";
@@ -460,9 +497,9 @@
             this.tileItem4.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem4.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem4.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement19.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement19.Image")));
-            tileItemElement19.Text = "Alım Faturası";
-            this.tileItem4.Elements.Add(tileItemElement19);
+            tileItemElement21.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement21.Image")));
+            tileItemElement21.Text = "Alım Faturası";
+            this.tileItem4.Elements.Add(tileItemElement21);
             this.tileItem4.Id = 3;
             this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem4.Name = "tileItem4";
@@ -476,9 +513,9 @@
             this.tileItem5.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem5.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem5.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement20.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement20.Image")));
-            tileItemElement20.Text = "Perakende Satış Faturası";
-            this.tileItem5.Elements.Add(tileItemElement20);
+            tileItemElement22.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement22.Image")));
+            tileItemElement22.Text = "Perakende Satış Faturası";
+            this.tileItem5.Elements.Add(tileItemElement22);
             this.tileItem5.Id = 4;
             this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem5.Name = "tileItem5";
@@ -492,9 +529,9 @@
             this.tileItem14.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem14.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem14.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement21.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement21.Image")));
-            tileItemElement21.Text = "Toptan Satış Faturası";
-            this.tileItem14.Elements.Add(tileItemElement21);
+            tileItemElement23.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement23.Image")));
+            tileItemElement23.Text = "Toptan Satış Faturası";
+            this.tileItem14.Elements.Add(tileItemElement23);
             this.tileItem14.Id = 31;
             this.tileItem14.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem14.Name = "tileItem14";
@@ -508,9 +545,9 @@
             this.tileItem30.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem30.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem30.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement22.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement22.Image")));
-            tileItemElement22.Text = "Alım İade Faturası";
-            this.tileItem30.Elements.Add(tileItemElement22);
+            tileItemElement24.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement24.Image")));
+            tileItemElement24.Text = "Alım İade Faturası";
+            this.tileItem30.Elements.Add(tileItemElement24);
             this.tileItem30.Id = 32;
             this.tileItem30.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem30.Name = "tileItem30";
@@ -524,9 +561,9 @@
             this.tileItem31.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem31.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem31.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement23.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement23.Image")));
-            tileItemElement23.Text = "Perakende Satış İade Faturası";
-            this.tileItem31.Elements.Add(tileItemElement23);
+            tileItemElement25.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement25.Image")));
+            tileItemElement25.Text = "Perakende Satış İade Faturası";
+            this.tileItem31.Elements.Add(tileItemElement25);
             this.tileItem31.Id = 33;
             this.tileItem31.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem31.Name = "tileItem31";
@@ -540,9 +577,9 @@
             this.tileItem32.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem32.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem32.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement24.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement24.Image")));
-            tileItemElement24.Text = "Tahsilat Fişi";
-            this.tileItem32.Elements.Add(tileItemElement24);
+            tileItemElement26.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement26.Image")));
+            tileItemElement26.Text = "Tahsilat Fişi";
+            this.tileItem32.Elements.Add(tileItemElement26);
             this.tileItem32.Id = 34;
             this.tileItem32.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem32.Name = "tileItem32";
@@ -556,9 +593,9 @@
             this.tileItem34.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem34.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem34.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement25.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement25.Image")));
-            tileItemElement25.Text = "Ödeme Fişi";
-            this.tileItem34.Elements.Add(tileItemElement25);
+            tileItemElement27.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement27.Image")));
+            tileItemElement27.Text = "Ödeme Fişi";
+            this.tileItem34.Elements.Add(tileItemElement27);
             this.tileItem34.Id = 36;
             this.tileItem34.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem34.Name = "tileItem34";
@@ -572,9 +609,9 @@
             this.tileItem35.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem35.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem35.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement26.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement26.Image")));
-            tileItemElement26.Text = "Cari Devir Fişi";
-            this.tileItem35.Elements.Add(tileItemElement26);
+            tileItemElement28.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement28.Image")));
+            tileItemElement28.Text = "Cari Devir Fişi";
+            this.tileItem35.Elements.Add(tileItemElement28);
             this.tileItem35.Id = 37;
             this.tileItem35.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem35.Name = "tileItem35";
@@ -588,9 +625,9 @@
             this.tileItem36.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem36.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem36.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement27.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement27.Image")));
-            tileItemElement27.Text = "Stok Devir Fişi";
-            this.tileItem36.Elements.Add(tileItemElement27);
+            tileItemElement29.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement29.Image")));
+            tileItemElement29.Text = "Stok Devir Fişi";
+            this.tileItem36.Elements.Add(tileItemElement29);
             this.tileItem36.Id = 38;
             this.tileItem36.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem36.Name = "tileItem36";
@@ -604,9 +641,9 @@
             this.tileItem37.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem37.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem37.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement28.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement28.Image")));
-            tileItemElement28.Text = "Sayım Fazlası Fişi";
-            this.tileItem37.Elements.Add(tileItemElement28);
+            tileItemElement30.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement30.Image")));
+            tileItemElement30.Text = "Sayım Fazlası Fişi";
+            this.tileItem37.Elements.Add(tileItemElement30);
             this.tileItem37.Id = 39;
             this.tileItem37.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem37.Name = "tileItem37";
@@ -620,9 +657,9 @@
             this.tileItem11.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem11.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem11.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement29.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement29.Image")));
-            tileItemElement29.Text = "Sayım Eksiği Fişi";
-            this.tileItem11.Elements.Add(tileItemElement29);
+            tileItemElement31.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement31.Image")));
+            tileItemElement31.Text = "Sayım Eksiği Fişi";
+            this.tileItem11.Elements.Add(tileItemElement31);
             this.tileItem11.Id = 51;
             this.tileItem11.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem11.Name = "tileItem11";
@@ -649,9 +686,9 @@
             this.tileItem6.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem6.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem6.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement30.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement30.Image")));
-            tileItemElement30.Text = "Ayarlar";
-            this.tileItem6.Elements.Add(tileItemElement30);
+            tileItemElement32.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement32.Image")));
+            tileItemElement32.Text = "Ayarlar";
+            this.tileItem6.Elements.Add(tileItemElement32);
             this.tileItem6.Id = 5;
             this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem6.Name = "tileItem6";
@@ -665,9 +702,9 @@
             this.tileItem7.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem7.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem7.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement31.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement31.Image")));
-            tileItemElement31.Text = "İndirimler";
-            this.tileItem7.Elements.Add(tileItemElement31);
+            tileItemElement33.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement33.Image")));
+            tileItemElement33.Text = "İndirimler";
+            this.tileItem7.Elements.Add(tileItemElement33);
             this.tileItem7.Id = 6;
             this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem7.Name = "tileItem7";
@@ -681,9 +718,9 @@
             this.tileItem42.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem42.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem42.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement32.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement32.Image")));
-            tileItemElement32.Text = "Yedekleme";
-            this.tileItem42.Elements.Add(tileItemElement32);
+            tileItemElement34.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement34.Image")));
+            tileItemElement34.Text = "Yedekleme";
+            this.tileItem42.Elements.Add(tileItemElement34);
             this.tileItem42.Id = 48;
             this.tileItem42.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem42.Name = "tileItem42";
@@ -697,9 +734,9 @@
             this.tileItem8.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem8.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem8.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement33.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement33.Image")));
-            tileItemElement33.Text = "Güncelleme";
-            this.tileItem8.Elements.Add(tileItemElement33);
+            tileItemElement35.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement35.Image")));
+            tileItemElement35.Text = "Güncelleme";
+            this.tileItem8.Elements.Add(tileItemElement35);
             this.tileItem8.Id = 7;
             this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem8.Name = "tileItem8";
@@ -713,9 +750,9 @@
             this.tileItem10.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem10.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem10.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement34.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement34.Image")));
-            tileItemElement34.Text = "Lisans Bilgileri";
-            this.tileItem10.Elements.Add(tileItemElement34);
+            tileItemElement36.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement36.Image")));
+            tileItemElement36.Text = "Lisans Bilgileri";
+            this.tileItem10.Elements.Add(tileItemElement36);
             this.tileItem10.Id = 40;
             this.tileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem10.Name = "tileItem10";
@@ -729,9 +766,9 @@
             this.tileItem39.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem39.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem39.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement35.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement35.Image")));
-            tileItemElement35.Text = "Yardım";
-            this.tileItem39.Elements.Add(tileItemElement35);
+            tileItemElement37.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement37.Image")));
+            tileItemElement37.Text = "Yardım";
+            this.tileItem39.Elements.Add(tileItemElement37);
             this.tileItem39.Id = 45;
             this.tileItem39.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem39.Name = "tileItem39";
@@ -745,9 +782,9 @@
             this.tileItem12.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem12.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem12.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement36.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement36.Image")));
-            tileItemElement36.Text = "Hakkında";
-            this.tileItem12.Elements.Add(tileItemElement36);
+            tileItemElement38.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement38.Image")));
+            tileItemElement38.Text = "Hakkında";
+            this.tileItem12.Elements.Add(tileItemElement38);
             this.tileItem12.Id = 42;
             this.tileItem12.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem12.Name = "tileItem12";
@@ -761,40 +798,42 @@
             this.tileItem13.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem13.AppearanceItem.Normal.Options.UseFont = true;
             this.tileItem13.AppearanceItem.Normal.Options.UseForeColor = true;
-            tileItemElement37.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement37.Image")));
-            tileItemElement37.Text = "Web Sitemiz";
-            this.tileItem13.Elements.Add(tileItemElement37);
+            tileItemElement39.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement39.Image")));
+            tileItemElement39.Text = "Web Sitemiz";
+            this.tileItem13.Elements.Add(tileItemElement39);
             this.tileItem13.Id = 43;
             this.tileItem13.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem13.Name = "tileItem13";
             // 
             // tileItem16
             // 
-            tileItemElement38.Text = "tileItem16";
-            this.tileItem16.Elements.Add(tileItemElement38);
+            tileItemElement40.Text = "tileItem16";
+            this.tileItem16.Elements.Add(tileItemElement40);
             this.tileItem16.Id = 17;
             this.tileItem16.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem16.Name = "tileItem16";
             // 
             // tileItem9
             // 
-            tileItemElement39.Text = "Hızlı Satış Tanımları";
-            this.tileItem9.Elements.Add(tileItemElement39);
+            tileItemElement41.Text = "Hızlı Satış Tanımları";
+            this.tileItem9.Elements.Add(tileItemElement41);
             this.tileItem9.Id = 8;
             this.tileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem9.Name = "tileItem9";
             // 
             // frmAnaMenuBilgi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1412, 836);
+            this.ClientSize = new System.Drawing.Size(1647, 1029);
             this.Controls.Add(this.tileControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAnaMenuBilgi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ana Menü";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmAnaMenuBilgi_Load);
             this.ResumeLayout(false);
 
         }
@@ -843,5 +882,7 @@
         private DevExpress.XtraEditors.TileItem tileItem42;
         private DevExpress.XtraEditors.TileItem tileItem9;
         private DevExpress.XtraEditors.TileItem tileItem11;
+        private DevExpress.XtraEditors.TileGroup tileGroup1;
+        private DevExpress.XtraEditors.TileItem tileMaliyetForm;
     }
 }

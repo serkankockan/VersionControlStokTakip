@@ -23,6 +23,8 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.Turu).HasColumnName("Turu");
             this.Property(p => p.Tanimi).HasColumnName("Tanimi");
             this.Property(p => p.Aciklama).HasColumnName("Aciklama");
+            this.Property(p => p.Gorsel).HasColumnName("Gorsel");
+
         }
     }
 }

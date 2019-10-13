@@ -473,6 +473,7 @@
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Kasa.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.KasaHareket.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.OdemeTuru.datasource" />
+    <None Include="Properties\DataSources\StokTakip.Entities.Tables.OnMaliyetForm.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Personel.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Stok.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.StokHareket.datasource" />

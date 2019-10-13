@@ -12,6 +12,16 @@ namespace StokTakip.Entities.Data_Access
 {
     public class OnMaliyetFormDAL: EntityRepositoryBase<StokTakipContext, OnMaliyetForm, OnMaliyetFormValidator>
     {
+        public object TumOnMaliyetler(StokTakipContext context)
+        {
+            var result = context.OnMaliyetFormlari.ToList();
+            return result;
+        }
 
+        public int OnayBekleyenler(StokTakipContext context)
+        {
+            var result = context.OnMaliyetFormlari.Count(c => c.onayDurumu == false);
+            return result;
+        }
     }
 }
