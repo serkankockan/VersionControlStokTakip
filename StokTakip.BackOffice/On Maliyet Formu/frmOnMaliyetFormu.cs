@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Text;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -23,6 +25,7 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
         private StokTakipContext context = new StokTakipContext();
         public bool saved = false;
         public bool onayFormu = false;
+        public bool onaydDurumu;
 
         //public List<Entities.Tables.Cari> secilen = new List<Entities.Tables.Cari>();
 
@@ -50,8 +53,8 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
             btnSiparisEni.DataBindings.Add("Text", _entity, "Eni", false, DataSourceUpdateMode.OnPropertyChanged);
             btnTansferHizi.DataBindings.Add("Text", _entity, "TransferHizi", false,
                 DataSourceUpdateMode.OnPropertyChanged);
-            txtDateTime.DataBindings.Add("Text", _entity, "SiparisTarihi", false,
-                DataSourceUpdateMode.OnPropertyChanged);
+            cmbTarih.DataBindings.Add("EditValue", _entity, "Tarih", false,
+                DataSourceUpdateMode.OnPropertyChanged, DateTime.Now);
             btnTransferDerecesi.DataBindings.Add("Text", _entity, "TransferDerecesi", false,
                 DataSourceUpdateMode.OnPropertyChanged);
             btnSatisFason.DataBindings.Add("Text", _entity, "IsTipi", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -63,6 +66,30 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
             txtAciklama.DataBindings.Add("Text", _entity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
             txtSipNo.DataBindings.Add("Text", _entity, "Id", false, DataSourceUpdateMode.Never);
 
+            if (_entity.DesenNo != null)
+            {
+                ımageSlider1.Images.Add(Image.FromStream(onMaliyetFormDal.ResimGetir(context, _entity.DesenNo)));
+            }
+
+            if (_entity.onayDurumu == "Onaylandı")
+            {
+                lblDurum.Text = "Onaylandı";
+                lblDurum.ForeColor = Color.FromArgb(150, Color.PaleGreen);
+            }
+            else if (_entity.onayDurumu == "Bekliyor")
+            {
+                lblDurum.Text = "Bekliyor";
+                lblDurum.ForeColor = Color.FromArgb(150, Color.Orange);
+            }
+            else if (_entity.onayDurumu == "Reddedildi")
+            {
+                lblDurum.Text = "Reddedildi";
+                lblDurum.ForeColor = Color.FromArgb(150, Color.Salmon);
+            }
+            else
+            {
+                groupControl1.Visible = false;
+            }
         }
 
         private void btnMusteriAdi_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -89,11 +116,18 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
         {
             if (onMaliyetFormDal.AddOrUpdate(context, _entity))
             {
+
+                var entry = context.Entry(_entity);
+
+                if (entry.State == EntityState.Added)
+                {
+                    _entity.onayDurumu = "Bekliyor";
+                    MessageBox.Show("Sipariş talep formu oluşturulmuştur", "Bilgi", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
                 onMaliyetFormDal.Save(context);
                 saved = true;
                 this.Close();
-                MessageBox.Show("Sipariş talep formu oluşturulmuştur", "Bilgi", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
                 this.Close();
             }
         }
@@ -113,6 +147,9 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
                     if (form.secildi)
                     {
                         textBox.Text = form._entity.Tanimi;
+
+                        ımageSlider1.Images.Clear();
+                        ımageSlider1.Images.Add(Image.FromStream(onMaliyetFormDal.ResimGetir(context, _entity.DesenNo)));
                     }
 
                     break;
@@ -138,8 +175,10 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
             if (form.secildi)
             {
                 textBox.Text = form._entity.Tanimi;
-            }
 
+                ımageSlider1.Images.Clear();
+                ımageSlider1.Images.Add(Image.FromStream(onMaliyetFormDal.ResimGetir(context, _entity.DesenNo)));
+            }
         }
 
         private void frmOnMaliyetFormu_Load(object sender, EventArgs e)
@@ -151,6 +190,53 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
             else
             {
                 splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2;
+            }
+        }
+
+        private void Islemler_ButtonClick(object sender, EventArgs e)
+        {
+            string durum;
+            var button = sender as SimpleButton;
+            durum = button.AccessibleName.ToString();
+
+            switch (durum)
+            {
+                case "Onay":
+
+                    if (MessageBox.Show("Onaylamak istediğinize emin misiniz?", "Bilgi", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        _entity.onayDurumu = "Onaylandı";
+
+                        if (onMaliyetFormDal.AddOrUpdate(context, _entity))
+                        {
+                            onMaliyetFormDal.Save(context);
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    break;
+
+                case "Reddet":
+
+                    if (MessageBox.Show("Reddetmek istediğinize emin misiniz?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        _entity.onayDurumu = "Reddedildi";
+
+                        if (onMaliyetFormDal.AddOrUpdate(context, _entity))
+                        {
+                            onMaliyetFormDal.Save(context);
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        return;
+                    }
+
+                    break;
             }
         }
     }

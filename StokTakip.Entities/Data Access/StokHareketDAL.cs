@@ -76,5 +76,10 @@ namespace StokTakip.Entities.Data_Access
             return genelToplamlar;
         }
 
+        //public object KonumlarDuzenle(StokTakipContext context, string depoKodu)
+        //{
+        //    var KonumListele = context.StokHareketleri.Where()
+        //}
+
     }
 }

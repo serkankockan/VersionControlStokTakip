@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using StokTakip.BackOffice.Ön_Maliyet_Formu;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
@@ -31,13 +32,10 @@ namespace StokTakip.BackOffice.Tanim
             InitializeComponent();
             _tanimTuru = tanimTuru;
 
-
             if (tanimTuru == TanimTuru.DesenNo)
             {
                 groupControl3.Visible = true;
-                
             }
-            
         }
 
         public enum TanimTuru
@@ -61,7 +59,7 @@ namespace StokTakip.BackOffice.Tanim
             Makine,
             Pazarlamaci,
             Desinator,
-            TransferDerecesi1
+            
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -187,6 +185,8 @@ namespace StokTakip.BackOffice.Tanim
                 {
                     tanimDal.Save(context);
                 }
+
+                
             }
         }
     }

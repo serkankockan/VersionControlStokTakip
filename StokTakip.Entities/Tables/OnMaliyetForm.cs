@@ -23,14 +23,14 @@ namespace StokTakip.Entities.Tables
         public string KagitCinsi { get; set; }
         public string Eni { get; set; }
         public string TransferHizi { get; set; }
-        public Nullable<DateTime> SiparisTarihi { get; set; }
+        public DateTime Tarih { get; set; }
         public string TransferDerecesi { get; set; }
         public string IsTipi { get; set; }
         public string SiparisMiktari { get; set; }
         public string Pazarlamaci { get; set; }
         public string Desinator { get; set; }
         public string DesenGorseli { get; set; }
-        public bool onayDurumu { get; set; }
+        public string onayDurumu { get; set; }
         public string Aciklama { get; set; }
         public string Ozelkod1 { get; set; }
         public string OzelKod2 { get; set; }

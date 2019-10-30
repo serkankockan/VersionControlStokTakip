@@ -19,6 +19,7 @@ using StokTakip.BackOffice.Fis;
 using StokTakip.BackOffice.Fiyat_Değiştir;
 using StokTakip.BackOffice.Kasa;
 using StokTakip.BackOffice.Kasa_Hareketleri;
+using StokTakip.BackOffice.Konumlar;
 using StokTakip.BackOffice.Odeme_Turu;
 using StokTakip.BackOffice.Personel;
 using StokTakip.BackOffice.Stok;
@@ -201,6 +202,12 @@ namespace StokTakip.BackOffice
             {
                 System.Diagnostics.Process.Start("www.google.com");
             }
+        }
+
+        private void barButtonItem41_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKonumDuzenle form = new frmKonumDuzenle();
+            form.Show();
         }
     }
 }

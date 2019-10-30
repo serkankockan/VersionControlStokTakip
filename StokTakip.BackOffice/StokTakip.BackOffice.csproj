@@ -53,7 +53,10 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.1" />
     <Reference Include="DevExpress.Data.v17.1" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v17.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.1" />
     <Reference Include="DevExpress.XtraBars.v17.1" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core" />
@@ -61,6 +64,7 @@
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v17.1.Extensions, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -232,6 +236,24 @@
     </Compile>
     <Compile Include="Kasa\frmKasaIslem.Designer.cs">
       <DependentUpon>frmKasaIslem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Konumlar\frmAracEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konumlar\frmAracEkle.Designer.cs">
+      <DependentUpon>frmAracEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Konumlar\frmAracSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konumlar\frmAracSec.Designer.cs">
+      <DependentUpon>frmAracSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Konumlar\frmKonumDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konumlar\frmKonumDuzenle.Designer.cs">
+      <DependentUpon>frmKonumDuzenle.cs</DependentUpon>
     </Compile>
     <Compile Include="Odeme Turu\frmOdemeTuru.cs">
       <SubType>Form</SubType>
@@ -405,6 +427,15 @@
     <EmbeddedResource Include="Kasa\frmKasaIslem.resx">
       <DependentUpon>frmKasaIslem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Konumlar\frmAracEkle.resx">
+      <DependentUpon>frmAracEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Konumlar\frmAracSec.resx">
+      <DependentUpon>frmAracSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Konumlar\frmKonumDuzenle.resx">
+      <DependentUpon>frmKonumDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Odeme Turu\frmOdemeTuru.resx">
       <DependentUpon>frmOdemeTuru.cs</DependentUpon>
     </EmbeddedResource>
@@ -513,6 +544,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

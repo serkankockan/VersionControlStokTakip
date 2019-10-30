@@ -47,7 +47,10 @@ namespace StokTakip.Entities.Tables
 
         public Nullable<DateTime> Tarih { get; set; }
 
-        public string Aciklama { get; set; }  
+        public string Aciklama { get; set; }
+
+        public string Konum { get; set; }
+
 
     }
 }

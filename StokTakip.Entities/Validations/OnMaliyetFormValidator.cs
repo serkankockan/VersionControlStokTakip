@@ -12,6 +12,7 @@ namespace StokTakip.Entities.Validations
     {
         public OnMaliyetFormValidator()
         {
+            RuleFor(p => p.DesenNo).NotEmpty().WithMessage("Desen numarası alanı boş geçilemez.");
         }
     }
 }

@@ -72,5 +72,15 @@ namespace StokTakip.Entities.Tools
             parser.WriteFile(dosyaAdi,data);
         }
 
+        //////////////////RGB Formatına Ayrıma ////////////////////////////////////////////////
+        //string value = textEdit1.Text;
+        //string[] lines = Regex.Split(value, ",");
+        //List<int> argb = new List<int>();
+        //    foreach (string line in lines)
+        //{
+        //    argb.Add(Convert.ToInt32(line));
+        //}
+        //simpleButton1.Appearance.BackColor = Color.FromArgb(argb[0], argb[1], argb[2], argb[3]);
+        //////////////////RGB Formatına Ayrıma ////////////////////////////////////////////////
     }
 }

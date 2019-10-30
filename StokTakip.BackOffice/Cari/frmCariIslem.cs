@@ -64,8 +64,6 @@ namespace StokTakip.BackOffice.Cari
             txtRiskLimiti.DataBindings[0].FormatString = "C2";
             txtRiskLimiti.DataBindings[0].DataSourceNullValue = "0"; 
 
-
-
         }
 
         private void btnKapat_Click(object sender, EventArgs e)

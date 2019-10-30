@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using StokTakip.BackOffice.Ön_Maliyet_Formu;
 using StokTakip.BackOffice.Siparis_Formu;
 using StokTakip.Entities.Context;
@@ -134,6 +136,38 @@ namespace StokTakip.BackOffice.On_Maliyet_Formu
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gridFormlar_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.Column.FieldName == "onayDurumu")
+            {
+                string onayDurumu = View.GetRowCellDisplayText(e.RowHandle, View.Columns["onayDurumu"]);
+                if (onayDurumu == "Bekliyor")
+                {
+                    e.Appearance.BackColor = Color.FromArgb(150, Color.Orange);
+                    e.Appearance.BackColor2 = Color.FromArgb(150, Color.Orange);
+                }
+
+                if (onayDurumu == "Reddedildi")
+                {
+                    e.Appearance.BackColor = Color.FromArgb(150, Color.Salmon);
+                    e.Appearance.BackColor2 = Color.FromArgb(150, Color.Salmon);
+                }
+
+                if (onayDurumu == "Onaylandı")
+                {
+                    e.Appearance.BackColor = Color.FromArgb(150, Color.PaleGreen);
+                    e.Appearance.BackColor2 = Color.FromArgb(150, Color.PaleGreen);
+                }
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmOnMaliyetFormu form = new frmOnMaliyetFormu(new Entities.Tables.OnMaliyetForm());
+            form.ShowDialog();
         }
     }
 }

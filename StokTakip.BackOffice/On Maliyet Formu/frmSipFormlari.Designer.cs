@@ -39,7 +39,6 @@
             this.gridContFormlar = new DevExpress.XtraGrid.GridControl();
             this.gridFormlar = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSiparisNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDurumu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMusteriAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDesenNo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,6 +57,7 @@
             this.colSiparisMiktari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPazarlamaci = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDesinator = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOnayDurumu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
             this.btnIslemler = new DevExpress.XtraEditors.SimpleButton();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
@@ -68,19 +68,51 @@
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
+            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
+            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.filterControl2 = new DevExpress.XtraEditors.FilterControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridContBoya = new DevExpress.XtraGrid.GridControl();
+            this.gridBoya = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barAndDockingController1 = new DevExpress.XtraBars.BarAndDockingController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridContFormlar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFormlar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
+            this.tabPane1.SuspendLayout();
+            this.tabNavigationPage1.SuspendLayout();
+            this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
+            this.splitContainerControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContBoya)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBoya)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 63);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltreKapat);
@@ -90,18 +122,18 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridContFormlar);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1218, 543);
-            this.splitContainerControl1.SplitterPosition = 78;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1196, 487);
+            this.splitContainerControl1.SplitterPosition = 95;
             this.splitContainerControl1.TabIndex = 9;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // btnFiltreKapat
             // 
-            this.btnFiltreKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltreKapat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFiltreKapat.ImageOptions.ImageIndex = 6;
             this.btnFiltreKapat.ImageOptions.ImageList = this.imgMenu;
             this.btnFiltreKapat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreKapat.Location = new System.Drawing.Point(1148, 21);
+            this.btnFiltreKapat.Location = new System.Drawing.Point(1120, 13);
             this.btnFiltreKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreKapat.Name = "btnFiltreKapat";
             this.btnFiltreKapat.Size = new System.Drawing.Size(58, 47);
@@ -127,24 +159,24 @@
             // 
             // btnFiltreIptal
             // 
-            this.btnFiltreIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltreIptal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFiltreIptal.ImageOptions.ImageIndex = 8;
             this.btnFiltreIptal.ImageOptions.ImageList = this.imgMenu;
             this.btnFiltreIptal.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreIptal.Location = new System.Drawing.Point(1085, 21);
+            this.btnFiltreIptal.Location = new System.Drawing.Point(1065, 13);
             this.btnFiltreIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreIptal.Name = "btnFiltreIptal";
-            this.btnFiltreIptal.Size = new System.Drawing.Size(58, 47);
+            this.btnFiltreIptal.Size = new System.Drawing.Size(49, 47);
             this.btnFiltreIptal.TabIndex = 2;
             this.btnFiltreIptal.Click += new System.EventHandler(this.btnFiltreIptal_Click);
             // 
             // btnFiltre
             // 
-            this.btnFiltre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFiltre.ImageOptions.ImageIndex = 7;
             this.btnFiltre.ImageOptions.ImageList = this.imgMenu;
             this.btnFiltre.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltre.Location = new System.Drawing.Point(1021, 21);
+            this.btnFiltre.Location = new System.Drawing.Point(1001, 13);
             this.btnFiltre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltre.Name = "btnFiltre";
             this.btnFiltre.Size = new System.Drawing.Size(58, 47);
@@ -158,7 +190,7 @@
             this.filterControl1.Location = new System.Drawing.Point(0, 0);
             this.filterControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(1218, 78);
+            this.filterControl1.Size = new System.Drawing.Size(1196, 95);
             this.filterControl1.SortFilterColumns = false;
             this.filterControl1.SourceControl = this.gridContFormlar;
             this.filterControl1.TabIndex = 0;
@@ -172,7 +204,7 @@
             this.gridContFormlar.MainView = this.gridFormlar;
             this.gridContFormlar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridContFormlar.Name = "gridContFormlar";
-            this.gridContFormlar.Size = new System.Drawing.Size(1218, 459);
+            this.gridContFormlar.Size = new System.Drawing.Size(1196, 386);
             this.gridContFormlar.TabIndex = 0;
             this.gridContFormlar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridFormlar});
@@ -182,7 +214,6 @@
             // 
             this.gridFormlar.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
-            this.colSiparisNo,
             this.colDurumu,
             this.colMusteriAdi,
             this.colDesenNo,
@@ -200,10 +231,13 @@
             this.colIsTipi,
             this.colSiparisMiktari,
             this.colPazarlamaci,
-            this.colDesinator});
+            this.colDesinator,
+            this.colOnayDurumu});
             this.gridFormlar.GridControl = this.gridContFormlar;
             this.gridFormlar.Name = "gridFormlar";
+            this.gridFormlar.OptionsPrint.PrintFooter = false;
             this.gridFormlar.OptionsView.ShowGroupPanel = false;
+            this.gridFormlar.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridFormlar_RowCellStyle);
             // 
             // colId
             // 
@@ -215,15 +249,6 @@
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
             this.colId.Width = 69;
-            // 
-            // colSiparisNo
-            // 
-            this.colSiparisNo.FieldName = "SiparisNo";
-            this.colSiparisNo.Name = "colSiparisNo";
-            this.colSiparisNo.OptionsColumn.AllowEdit = false;
-            this.colSiparisNo.Visible = true;
-            this.colSiparisNo.VisibleIndex = 19;
-            this.colSiparisNo.Width = 64;
             // 
             // colDurumu
             // 
@@ -335,7 +360,7 @@
             // 
             // colSiparisTarihi
             // 
-            this.colSiparisTarihi.FieldName = "SiparisTarihi";
+            this.colSiparisTarihi.FieldName = "Tarih";
             this.colSiparisTarihi.Name = "colSiparisTarihi";
             this.colSiparisTarihi.OptionsColumn.AllowEdit = false;
             this.colSiparisTarihi.Visible = true;
@@ -387,8 +412,17 @@
             this.colDesinator.VisibleIndex = 18;
             this.colDesinator.Width = 68;
             // 
+            // colOnayDurumu
+            // 
+            this.colOnayDurumu.Caption = "Onay Durumu";
+            this.colOnayDurumu.FieldName = "onayDurumu";
+            this.colOnayDurumu.Name = "colOnayDurumu";
+            this.colOnayDurumu.Visible = true;
+            this.colOnayDurumu.VisibleIndex = 19;
+            // 
             // grpMenu
             // 
+            this.grpMenu.Controls.Add(this.dropDownButton1);
             this.grpMenu.Controls.Add(this.btnIslemler);
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnAra);
@@ -407,7 +441,7 @@
             // 
             // btnIslemler
             // 
-            this.btnIslemler.ImageOptions.ImageIndex = 5;
+            this.btnIslemler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIslemler.ImageOptions.Image")));
             this.btnIslemler.ImageOptions.ImageList = this.imgMenu;
             this.btnIslemler.Location = new System.Drawing.Point(321, 32);
             this.btnIslemler.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -495,7 +529,7 @@
             // 
             this.btnEkle.ImageOptions.ImageIndex = 2;
             this.btnEkle.ImageOptions.ImageList = this.imgMenu;
-            this.btnEkle.Location = new System.Drawing.Point(12, 32);
+            this.btnEkle.Location = new System.Drawing.Point(883, 32);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(97, 43);
@@ -523,14 +557,228 @@
             this.lblBaslik.TabIndex = 7;
             this.lblBaslik.Text = "Formlar";
             // 
+            // tabPane1
+            // 
+            this.tabPane1.Controls.Add(this.tabNavigationPage1);
+            this.tabPane1.Controls.Add(this.tabNavigationPage2);
+            this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPane1.Location = new System.Drawing.Point(0, 63);
+            this.tabPane1.Name = "tabPane1";
+            this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.tabNavigationPage1,
+            this.tabNavigationPage2});
+            this.tabPane1.RegularSize = new System.Drawing.Size(1218, 543);
+            this.tabPane1.SelectedPage = this.tabNavigationPage1;
+            this.tabPane1.Size = new System.Drawing.Size(1218, 543);
+            this.tabPane1.TabIndex = 10;
+            this.tabPane1.Text = "Sipariş Talep Formları";
+            // 
+            // tabNavigationPage1
+            // 
+            this.tabNavigationPage1.Caption = "Sipariş Talep Formları";
+            this.tabNavigationPage1.Controls.Add(this.splitContainerControl1);
+            this.tabNavigationPage1.Name = "tabNavigationPage1";
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1196, 487);
+            // 
+            // tabNavigationPage2
+            // 
+            this.tabNavigationPage2.Caption = "Boyalı Kumaş Maliyet Formarı";
+            this.tabNavigationPage2.Controls.Add(this.splitContainerControl2);
+            this.tabNavigationPage2.Name = "tabNavigationPage2";
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1196, 487);
+            // 
+            // splitContainerControl2
+            // 
+            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl2.Horizontal = false;
+            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl2.Name = "splitContainerControl2";
+            this.splitContainerControl2.Panel1.Controls.Add(this.simpleButton1);
+            this.splitContainerControl2.Panel1.Controls.Add(this.simpleButton2);
+            this.splitContainerControl2.Panel1.Controls.Add(this.simpleButton3);
+            this.splitContainerControl2.Panel1.Controls.Add(this.filterControl2);
+            this.splitContainerControl2.Panel1.Text = "Panel1";
+            this.splitContainerControl2.Panel2.Controls.Add(this.gridContBoya);
+            this.splitContainerControl2.Panel2.Text = "Panel2";
+            this.splitContainerControl2.Size = new System.Drawing.Size(1196, 487);
+            this.splitContainerControl2.SplitterPosition = 113;
+            this.splitContainerControl2.TabIndex = 0;
+            this.splitContainerControl2.Text = "splitContainerControl2";
+            // 
+            // filterControl2
+            // 
+            this.filterControl2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.filterControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filterControl2.Location = new System.Drawing.Point(0, 0);
+            this.filterControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.filterControl2.Name = "filterControl2";
+            this.filterControl2.Size = new System.Drawing.Size(1196, 113);
+            this.filterControl2.SortFilterColumns = false;
+            this.filterControl2.SourceControl = this.gridContBoya;
+            this.filterControl2.TabIndex = 1;
+            this.filterControl2.Text = "filterControl2";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.simpleButton1.ImageOptions.ImageIndex = 6;
+            this.simpleButton1.ImageOptions.ImageList = this.imgMenu;
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(1128, 10);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(58, 47);
+            this.simpleButton1.TabIndex = 3;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.simpleButton2.ImageOptions.ImageIndex = 8;
+            this.simpleButton2.ImageOptions.ImageList = this.imgMenu;
+            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton2.Location = new System.Drawing.Point(1073, 10);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(49, 47);
+            this.simpleButton2.TabIndex = 4;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.simpleButton3.ImageOptions.ImageIndex = 7;
+            this.simpleButton3.ImageOptions.ImageList = this.imgMenu;
+            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton3.Location = new System.Drawing.Point(1009, 10);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(58, 47);
+            this.simpleButton3.TabIndex = 5;
+            // 
+            // gridContBoya
+            // 
+            this.gridContBoya.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContBoya.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridContBoya.Location = new System.Drawing.Point(0, 0);
+            this.gridContBoya.MainView = this.gridBoya;
+            this.gridContBoya.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridContBoya.Name = "gridContBoya";
+            this.gridContBoya.Size = new System.Drawing.Size(1196, 368);
+            this.gridContBoya.TabIndex = 1;
+            this.gridContBoya.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridBoya});
+            // 
+            // gridBoya
+            // 
+            this.gridBoya.GridControl = this.gridContBoya;
+            this.gridBoya.Name = "gridBoya";
+            this.gridBoya.OptionsPrint.PrintFooter = false;
+            this.gridBoya.OptionsView.ShowGroupPanel = false;
+            // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.DropDownControl = this.popupMenu1;
+            this.dropDownButton1.ImageOptions.ImageIndex = 0;
+            this.dropDownButton1.ImageOptions.ImageList = this.ımageList1;
+            this.dropDownButton1.Location = new System.Drawing.Point(4, 32);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.barManager1.SetPopupContextMenu(this.dropDownButton1, this.popupMenu1);
+            this.dropDownButton1.Size = new System.Drawing.Size(105, 43);
+            this.dropDownButton1.TabIndex = 4;
+            this.dropDownButton1.Text = "Ekle";
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "note_add.png");
+            // 
+            // barManager1
+            // 
+            this.barManager1.Controller = this.barAndDockingController1;
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.barManager1.MaxItemId = 2;
+            this.barManager1.PopupMenuAlignment = DevExpress.XtraBars.PopupMenuAlignment.Right;
+            this.barManager1.PopupShowMode = DevExpress.XtraBars.PopupShowMode.Classic;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1218, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 690);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1218, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 690);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1218, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 690);
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Sipariş Talep Formu";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Boya Kumaş Maliyet Formu";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barAndDockingController1
+            // 
+            this.barAndDockingController1.PaintStyleName = "Office2000";
+            this.barAndDockingController1.PropertiesBar.AllowLinkLighting = false;
+            this.barAndDockingController1.PropertiesBar.DefaultGlyphSize = new System.Drawing.Size(16, 16);
+            this.barAndDockingController1.PropertiesBar.DefaultLargeGlyphSize = new System.Drawing.Size(32, 32);
+            // 
             // frmSipFormlari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 690);
-            this.Controls.Add(this.splitContainerControl1);
+            this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "frmSipFormlari";
             this.Text = "Sipariş Formları";
             this.Load += new System.EventHandler(this.frmSipFormlari_Load);
@@ -540,17 +788,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridFormlar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
+            this.tabPane1.ResumeLayout(false);
+            this.tabNavigationPage1.ResumeLayout(false);
+            this.tabNavigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
+            this.splitContainerControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridContBoya)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBoya)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.SimpleButton btnFiltreKapat;
-        private DevExpress.XtraEditors.SimpleButton btnFiltreIptal;
-        private DevExpress.XtraEditors.SimpleButton btnFiltre;
-        private DevExpress.XtraEditors.FilterControl filterControl1;
         private DevExpress.XtraGrid.GridControl gridContFormlar;
         private DevExpress.XtraGrid.Views.Grid.GridView gridFormlar;
         private DevExpress.XtraEditors.GroupControl grpMenu;
@@ -568,7 +824,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMusteriAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colDesenNo;
         private DevExpress.XtraGrid.Columns.GridColumn colMakina;
-        private DevExpress.XtraGrid.Columns.GridColumn colSiparisNo;
         private DevExpress.XtraGrid.Columns.GridColumn colBoyaGideri;
         private DevExpress.XtraGrid.Columns.GridColumn colProfil;
         private DevExpress.XtraGrid.Columns.GridColumn colKumasCinsiVeEni;
@@ -584,5 +839,31 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPazarlamaci;
         private DevExpress.XtraGrid.Columns.GridColumn colDesinator;
         private DevExpress.XtraEditors.SimpleButton btnIslemler;
+        private DevExpress.XtraGrid.Columns.GridColumn colOnayDurumu;
+        private DevExpress.XtraBars.Navigation.TabPane tabPane1;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private DevExpress.XtraEditors.SimpleButton btnFiltreKapat;
+        private DevExpress.XtraEditors.SimpleButton btnFiltreIptal;
+        private DevExpress.XtraEditors.SimpleButton btnFiltre;
+        private DevExpress.XtraEditors.FilterControl filterControl1;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.FilterControl filterControl2;
+        private DevExpress.XtraGrid.GridControl gridContBoya;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridBoya;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
+        private System.Windows.Forms.ImageList ımageList1;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarAndDockingController barAndDockingController1;
     }
 }

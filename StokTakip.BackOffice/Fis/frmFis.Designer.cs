@@ -98,7 +98,7 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 55);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 68);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltreKapat);
@@ -108,8 +108,8 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridContFis);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1327, 577);
-            this.splitContainerControl1.SplitterPosition = 187;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1548, 710);
+            this.splitContainerControl1.SplitterPosition = 218;
             this.splitContainerControl1.TabIndex = 7;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -119,10 +119,10 @@
             this.btnFiltreKapat.ImageOptions.ImageIndex = 0;
             this.btnFiltreKapat.ImageOptions.ImageList = this.ımageList1;
             this.btnFiltreKapat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreKapat.Location = new System.Drawing.Point(1267, 141);
+            this.btnFiltreKapat.Location = new System.Drawing.Point(1478, 162);
             this.btnFiltreKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreKapat.Name = "btnFiltreKapat";
-            this.btnFiltreKapat.Size = new System.Drawing.Size(50, 38);
+            this.btnFiltreKapat.Size = new System.Drawing.Size(58, 47);
             this.btnFiltreKapat.TabIndex = 2;
             this.btnFiltreKapat.Click += new System.EventHandler(this.btnFiltreKapat_Click);
             // 
@@ -148,10 +148,10 @@
             this.btnFiltreIptal.ImageOptions.ImageIndex = 10;
             this.btnFiltreIptal.ImageOptions.ImageList = this.ımageList1;
             this.btnFiltreIptal.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreIptal.Location = new System.Drawing.Point(1213, 141);
+            this.btnFiltreIptal.Location = new System.Drawing.Point(1415, 162);
             this.btnFiltreIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreIptal.Name = "btnFiltreIptal";
-            this.btnFiltreIptal.Size = new System.Drawing.Size(50, 38);
+            this.btnFiltreIptal.Size = new System.Drawing.Size(58, 47);
             this.btnFiltreIptal.TabIndex = 2;
             this.btnFiltreIptal.Click += new System.EventHandler(this.btnFiltreIptal_Click);
             // 
@@ -161,10 +161,10 @@
             this.btnFiltre.ImageOptions.ImageIndex = 9;
             this.btnFiltre.ImageOptions.ImageList = this.ımageList1;
             this.btnFiltre.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltre.Location = new System.Drawing.Point(1158, 141);
+            this.btnFiltre.Location = new System.Drawing.Point(1351, 162);
             this.btnFiltre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltre.Name = "btnFiltre";
-            this.btnFiltre.Size = new System.Drawing.Size(50, 38);
+            this.btnFiltre.Size = new System.Drawing.Size(58, 47);
             this.btnFiltre.TabIndex = 2;
             this.btnFiltre.Click += new System.EventHandler(this.btnFiltre_Click);
             // 
@@ -175,7 +175,7 @@
             this.filterControl1.Location = new System.Drawing.Point(0, 0);
             this.filterControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(1327, 187);
+            this.filterControl1.Size = new System.Drawing.Size(1548, 218);
             this.filterControl1.SortFilterColumns = false;
             this.filterControl1.SourceControl = this.gridContFis;
             this.filterControl1.TabIndex = 0;
@@ -189,7 +189,7 @@
             this.gridContFis.MainView = this.gridFis;
             this.gridContFis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridContFis.Name = "gridContFis";
-            this.gridContFis.Size = new System.Drawing.Size(1327, 385);
+            this.gridContFis.Size = new System.Drawing.Size(1548, 486);
             this.gridContFis.TabIndex = 0;
             this.gridContFis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridFis});
@@ -349,10 +349,10 @@
             this.grpMenu.Controls.Add(this.btnSil);
             this.grpMenu.Controls.Add(this.btnDuzenle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 632);
+            this.grpMenu.Location = new System.Drawing.Point(0, 778);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1327, 68);
+            this.grpMenu.Size = new System.Drawing.Size(1548, 84);
             this.grpMenu.TabIndex = 6;
             this.grpMenu.Text = "Menü";
             // 
@@ -361,9 +361,10 @@
             this.dropDownButton1.DropDownControl = this.popupMenu1;
             this.dropDownButton1.ImageOptions.ImageIndex = 2;
             this.dropDownButton1.ImageOptions.ImageList = this.ımageList1;
-            this.dropDownButton1.Location = new System.Drawing.Point(10, 26);
+            this.dropDownButton1.Location = new System.Drawing.Point(12, 32);
+            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(83, 35);
+            this.dropDownButton1.Size = new System.Drawing.Size(97, 43);
             this.dropDownButton1.TabIndex = 3;
             this.dropDownButton1.Text = "Ekle";
             // 
@@ -545,15 +546,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1327, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1548, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 700);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 862);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1327, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1548, 0);
             // 
             // barDockControlLeft
             // 
@@ -561,25 +564,27 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 862);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1327, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1548, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 862);
             // 
             // btnKapat
             // 
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 0;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(1233, 26);
+            this.btnKapat.Location = new System.Drawing.Point(1438, 32);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(83, 35);
+            this.btnKapat.Size = new System.Drawing.Size(97, 43);
             this.btnKapat.TabIndex = 2;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -588,10 +593,10 @@
             // 
             this.btnAra.ImageOptions.ImageIndex = 8;
             this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(365, 26);
+            this.btnAra.Location = new System.Drawing.Point(426, 32);
             this.btnAra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(83, 35);
+            this.btnAra.Size = new System.Drawing.Size(97, 43);
             this.btnAra.TabIndex = 2;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
@@ -600,10 +605,10 @@
             // 
             this.btnGuncelle.ImageOptions.ImageIndex = 7;
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(276, 26);
+            this.btnGuncelle.Location = new System.Drawing.Point(322, 32);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(83, 35);
+            this.btnGuncelle.Size = new System.Drawing.Size(97, 43);
             this.btnGuncelle.TabIndex = 1;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
@@ -612,10 +617,10 @@
             // 
             this.btnSil.ImageOptions.ImageIndex = 3;
             this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            this.btnSil.Location = new System.Drawing.Point(187, 26);
+            this.btnSil.Location = new System.Drawing.Point(218, 32);
             this.btnSil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(83, 35);
+            this.btnSil.Size = new System.Drawing.Size(97, 43);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -624,10 +629,10 @@
             // 
             this.btnDuzenle.ImageOptions.ImageIndex = 4;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(99, 26);
+            this.btnDuzenle.Location = new System.Drawing.Point(115, 32);
             this.btnDuzenle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(83, 35);
+            this.btnDuzenle.Size = new System.Drawing.Size(97, 43);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
             this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
@@ -648,15 +653,15 @@
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1327, 55);
+            this.lblBaslik.Size = new System.Drawing.Size(1548, 68);
             this.lblBaslik.TabIndex = 5;
             this.lblBaslik.Text = "Fiş ve Faturalar";
             // 
             // frmFis
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1327, 700);
+            this.ClientSize = new System.Drawing.Size(1548, 862);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
@@ -664,6 +669,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmFis";
             this.Text = "Fiş ve Faturalar";
             this.Load += new System.EventHandler(this.frmFis_Load);

@@ -59,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\StokTakipContext.cs" />
+    <Compile Include="Data Access\ButonKonumDAL.cs" />
+    <Compile Include="Data Access\ButonTanimDAL.cs" />
     <Compile Include="Data Access\CariDAL.cs" />
     <Compile Include="Data Access\DepoDAL.cs" />
     <Compile Include="Data Access\FisDAL.cs" />
@@ -72,6 +74,21 @@
     <Compile Include="Data Access\TanimDAL.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IEntityRepository.cs" />
+    <Compile Include="Context\Mapping\ButonKonumMap.cs" />
+    <Compile Include="Context\Mapping\ButonTanimMap.cs" />
+    <Compile Include="Context\Mapping\CariMap.cs" />
+    <Compile Include="Context\Mapping\DepoMap.cs" />
+    <Compile Include="Context\Mapping\FisMap.cs" />
+    <Compile Include="Context\Mapping\KasaHareketMap.cs" />
+    <Compile Include="Context\Mapping\KasaMap.cs" />
+    <Compile Include="Context\Mapping\OdemeTuruMap.cs" />
+    <Compile Include="Context\Mapping\OnMaliyetFormMap.cs" />
+    <Compile Include="Context\Mapping\PersonelMap.cs" />
+    <Compile Include="Context\Mapping\StokHareketMap.cs" />
+    <Compile Include="Context\Mapping\StokMap.cs" />
+    <Compile Include="Context\Mapping\TanimMap.cs" />
+    <Compile Include="Mapping\ButonKonumMap.cs" />
+    <Compile Include="Mapping\ButonTanimMap.cs" />
     <Compile Include="Mapping\CariMap.cs" />
     <Compile Include="Mapping\DepoMap.cs" />
     <Compile Include="Mapping\FisMap.cs" />
@@ -90,6 +107,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EntityRepositoryBase.cs" />
+    <Compile Include="Tables\BoyaliKumasMaliyet.cs" />
+    <Compile Include="Tables\ButonKonum.cs" />
+    <Compile Include="Tables\ButonTanim.cs" />
     <Compile Include="Tables\Cari.cs" />
     <Compile Include="Tables\EFAppointment.cs" />
     <Compile Include="Tables\EFResource.cs" />
@@ -110,8 +130,11 @@
     <Compile Include="Tables\StokHareket.cs" />
     <Compile Include="Tables\Tanim.cs" />
     <Compile Include="Tools\SettingsTool.cs" />
+    <Compile Include="Tools\TableTools.cs" />
     <Compile Include="Tools\ValidatorTools.cs" />
     <Compile Include="Tools\VersionControl.cs" />
+    <Compile Include="Validations\ButonKonumValidator.cs" />
+    <Compile Include="Validations\ButonTanimValidator.cs" />
     <Compile Include="Validations\CariValidator.cs" />
     <Compile Include="Validations\DepoValidator.cs" />
     <Compile Include="Validations\FisValidator.cs" />
