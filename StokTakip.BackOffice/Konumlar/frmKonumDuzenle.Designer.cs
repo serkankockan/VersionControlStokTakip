@@ -31,45 +31,59 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKonumDuzenle));
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.ımageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.grpAraclar = new DevExpress.XtraEditors.GroupControl();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.PanelKat = new DevExpress.XtraEditors.PanelControl();
+            this.lblY = new DevExpress.XtraEditors.LabelControl();
+            this.lblX = new DevExpress.XtraEditors.LabelControl();
+            this.btnKonumEkle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpAraclar)).BeginInit();
+            this.grpAraclar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelKat)).BeginInit();
+            this.PanelKat.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpMenu
             // 
+            this.grpMenu.Controls.Add(this.simpleButton1);
+            this.grpMenu.Controls.Add(this.btnKonumEkle);
             this.grpMenu.Controls.Add(this.btnDuzenle);
             this.grpMenu.Controls.Add(this.btnEkle);
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnKaydet);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 802);
+            this.grpMenu.Location = new System.Drawing.Point(0, 826);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(2);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1303, 84);
+            this.grpMenu.ShowCaption = false;
+            this.grpMenu.Size = new System.Drawing.Size(1303, 60);
             this.grpMenu.TabIndex = 7;
             this.grpMenu.Text = "Menü";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(1027, 18);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btnDuzenle
             // 
             this.btnDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDuzenle.ImageOptions.ImageIndex = 3;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(127, 32);
+            this.btnDuzenle.Location = new System.Drawing.Point(155, 8);
             this.btnDuzenle.Margin = new System.Windows.Forms.Padding(2);
             this.btnDuzenle.Name = "btnDuzenle";
             this.btnDuzenle.Size = new System.Drawing.Size(125, 43);
@@ -85,18 +99,19 @@
             this.ımageList1.Images.SetKeyName(1, "folder_out.png");
             this.ımageList1.Images.SetKeyName(2, "note_add.png");
             this.ımageList1.Images.SetKeyName(3, "note_edit.png");
+            this.ımageList1.Images.SetKeyName(4, "add-location-10-614632.png");
             // 
             // btnEkle
             // 
             this.btnEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEkle.ImageOptions.ImageIndex = 2;
             this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnEkle.Location = new System.Drawing.Point(11, 32);
+            this.btnEkle.Location = new System.Drawing.Point(11, 8);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(2);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(112, 43);
+            this.btnEkle.Size = new System.Drawing.Size(140, 43);
             this.btnEkle.TabIndex = 3;
-            this.btnEkle.Text = "Araç Ekle";
+            this.btnEkle.Text = "Yeni Araç Ekle";
             this.btnEkle.Click += new System.EventHandler(this.btnEkleDuzenle_Click);
             // 
             // btnKapat
@@ -104,7 +119,7 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 1;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(1215, 32);
+            this.btnKapat.Location = new System.Drawing.Point(1215, 8);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(2);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(85, 43);
@@ -117,7 +132,7 @@
             this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKaydet.ImageOptions.ImageIndex = 0;
             this.btnKaydet.ImageOptions.ImageList = this.ımageList1;
-            this.btnKaydet.Location = new System.Drawing.Point(1107, 32);
+            this.btnKaydet.Location = new System.Drawing.Point(1107, 8);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(103, 43);
@@ -131,49 +146,71 @@
             this.ımageList2.Images.SetKeyName(0, "checkbox.png");
             this.ımageList2.Images.SetKeyName(1, "delete.png");
             // 
-            // groupControl1
+            // grpAraclar
             // 
-            this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
-            this.groupControl1.Controls.Add(this.flowLayoutPanel1);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(190, 802);
-            this.groupControl1.TabIndex = 8;
-            this.groupControl1.Text = "Araçlar";
+            this.grpAraclar.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
+            this.grpAraclar.Controls.Add(this.flowLayoutPanel1);
+            this.grpAraclar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.grpAraclar.Location = new System.Drawing.Point(0, 0);
+            this.grpAraclar.Name = "grpAraclar";
+            this.grpAraclar.Size = new System.Drawing.Size(155, 826);
+            this.grpAraclar.TabIndex = 8;
+            this.grpAraclar.Text = "Araçlar";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 25);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(186, 775);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(151, 799);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
-            // panelControl1
+            // PanelKat
             // 
-            this.panelControl1.Controls.Add(this.groupControl2);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(190, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1113, 802);
-            this.panelControl1.TabIndex = 9;
+            this.PanelKat.Controls.Add(this.lblY);
+            this.PanelKat.Controls.Add(this.lblX);
+            this.PanelKat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelKat.Location = new System.Drawing.Point(155, 0);
+            this.PanelKat.Name = "PanelKat";
+            this.PanelKat.Size = new System.Drawing.Size(1148, 826);
+            this.PanelKat.TabIndex = 9;
             // 
-            // groupControl2
+            // lblY
             // 
-            this.groupControl2.Location = new System.Drawing.Point(623, 360);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(200, 100);
-            this.groupControl2.TabIndex = 0;
-            this.groupControl2.Text = "groupControl2";
+            this.lblY.Location = new System.Drawing.Point(1025, 34);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(75, 16);
+            this.lblY.TabIndex = 2;
+            this.lblY.Text = "labelControl2";
+            // 
+            // lblX
+            // 
+            this.lblX.Location = new System.Drawing.Point(1025, 12);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(75, 16);
+            this.lblX.TabIndex = 1;
+            this.lblX.Text = "labelControl1";
+            // 
+            // btnKonumEkle
+            // 
+            this.btnKonumEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKonumEkle.ImageOptions.ImageIndex = 4;
+            this.btnKonumEkle.ImageOptions.ImageList = this.ımageList1;
+            this.btnKonumEkle.Location = new System.Drawing.Point(284, 8);
+            this.btnKonumEkle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKonumEkle.Name = "btnKonumEkle";
+            this.btnKonumEkle.Size = new System.Drawing.Size(125, 43);
+            this.btnKonumEkle.TabIndex = 3;
+            this.btnKonumEkle.Text = "Konum Ekle";
+            this.btnKonumEkle.Click += new System.EventHandler(this.btnKonumEkle_Click);
             // 
             // frmKonumDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1303, 886);
-            this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.groupControl1);
+            this.Controls.Add(this.PanelKat);
+            this.Controls.Add(this.grpAraclar);
             this.Controls.Add(this.grpMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmKonumDuzenle";
@@ -182,11 +219,11 @@
             this.Load += new System.EventHandler(this.frmKonumDuzenle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpAraclar)).EndInit();
+            this.grpAraclar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PanelKat)).EndInit();
+            this.PanelKat.ResumeLayout(false);
+            this.PanelKat.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -198,11 +235,14 @@
         private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.ImageList ımageList2;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl grpAraclar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl PanelKat;
         private DevExpress.XtraEditors.SimpleButton btnEkle;
         private DevExpress.XtraEditors.SimpleButton btnDuzenle;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl lblY;
+        private DevExpress.XtraEditors.LabelControl lblX;
+        private DevExpress.XtraEditors.SimpleButton btnKonumEkle;
     }
 }

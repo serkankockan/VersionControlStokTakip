@@ -107,6 +107,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(191, 138);
             this.groupControl1.TabIndex = 11;
+            this.groupControl1.Text = "Masa 5";
             // 
             // simpleButton1
             // 
@@ -118,7 +119,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(187, 76);
             this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Text = "Serkan Koçkan";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // flowLayoutPanel1

@@ -95,9 +95,6 @@ namespace StokTakip.BackOffice.Konumlar
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-
-
-
             _entity.GroupHeight = groupControl1.Height;
             _entity.GroupWidth = groupControl1.Width;
             _entity.FlowDock = flowLayoutPanel1.Dock.ToString();
