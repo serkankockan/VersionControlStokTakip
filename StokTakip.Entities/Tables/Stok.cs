@@ -65,5 +65,8 @@ namespace StokTakip.Entities.Tables
 
         public string Aciklama { get; set; }
 
+        public byte[] Gorsel { get; set; }
+
+
     }
 }

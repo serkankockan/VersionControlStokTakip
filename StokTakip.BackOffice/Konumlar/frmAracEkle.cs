@@ -22,6 +22,8 @@ namespace StokTakip.BackOffice.Konumlar
         private StokTakipContext context = new StokTakipContext();
         private ButonTanimDAL buttonTanimDal = new ButonTanimDAL();
         private ButonTanim _entity;
+        private ButonKonum but;
+        private  ButonKonumDAL butonKonumDal = new ButonKonumDAL();
         private bool _duzenle;
         int secim;
 
@@ -39,6 +41,8 @@ namespace StokTakip.BackOffice.Konumlar
             toggleSwitch1.DataBindings.Add("EditValue", _entity, "FlowVisible", false, DataSourceUpdateMode.OnPropertyChanged);
             txtTuru.DataBindings.Add("Text", _entity, "Turu", false, DataSourceUpdateMode.OnPropertyChanged);
             txtAciklama.DataBindings.Add("Text", _entity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtBarkod.DataBindings.Add("Text", _entity, "BarkodNo", false, DataSourceUpdateMode.OnPropertyChanged);
+            cmbBarkodTuru.DataBindings.Add("EditValue", _entity, "BarkodTipi", false, DataSourceUpdateMode.OnPropertyChanged);
 
             if (_duzenle)
             {
@@ -95,6 +99,7 @@ namespace StokTakip.BackOffice.Konumlar
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            
             _entity.GroupHeight = groupControl1.Height;
             _entity.GroupWidth = groupControl1.Width;
             _entity.FlowDock = flowLayoutPanel1.Dock.ToString();
@@ -109,7 +114,6 @@ namespace StokTakip.BackOffice.Konumlar
                 buttonTanimDal.Save(context);
                 this.Close();
             }
-
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

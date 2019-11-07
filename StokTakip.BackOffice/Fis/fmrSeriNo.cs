@@ -16,7 +16,7 @@ namespace StokTakip.BackOffice.Fis
     {
 
         public string veriSeriNo;
-        public bool Kilitli = true;
+        public bool Kilitli = false;
 
         public fmrSeriNo(string veri)
         {
@@ -39,7 +39,6 @@ namespace StokTakip.BackOffice.Fis
             {
                 grpMenu.Enabled = false;
             }
-
         }
 
         private void fmrSeriNo_Load(object sender, EventArgs e)

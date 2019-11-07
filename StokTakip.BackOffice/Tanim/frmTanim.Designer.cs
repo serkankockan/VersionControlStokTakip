@@ -48,16 +48,16 @@
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txtTanim = new DevExpress.XtraEditors.TextEdit();
-            this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
-            this.lblGorsel = new DevExpress.XtraEditors.LabelControl();
-            this.lblTanim = new DevExpress.XtraEditors.LabelControl();
-            this.lblAciklama = new DevExpress.XtraEditors.LabelControl();
-            this.txtGorsel = new DevExpress.XtraEditors.ButtonEdit();
-            this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
-            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.txtTanim = new DevExpress.XtraEditors.TextEdit();
+            this.lblTanim = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.lblGorsel = new DevExpress.XtraEditors.LabelControl();
+            this.txtGorsel = new DevExpress.XtraEditors.ButtonEdit();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
+            this.lblAciklama = new DevExpress.XtraEditors.LabelControl();
+            this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             this.navigationPage2.SuspendLayout();
@@ -66,17 +66,17 @@
             this.navigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGorsel.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
-            this.navigationFrame1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
-            this.groupControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGorsel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
+            this.navigationFrame1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBaslik
@@ -216,6 +216,7 @@
             // 
             // navigationPage2
             // 
+            this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Controls.Add(this.gridContTanim);
             this.navigationPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navigationPage2.Name = "navigationPage2";
@@ -273,6 +274,7 @@
             // 
             // navigationPage1
             // 
+            this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.groupControl1);
             this.navigationPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navigationPage1.Name = "navigationPage1";
@@ -291,6 +293,19 @@
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Tanım Bilgileri";
             // 
+            // groupControl4
+            // 
+            this.groupControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl4.Controls.Add(this.txtTanim);
+            this.groupControl4.Controls.Add(this.lblTanim);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl4.Location = new System.Drawing.Point(2, 25);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.ShowCaption = false;
+            this.groupControl4.Size = new System.Drawing.Size(722, 34);
+            this.groupControl4.TabIndex = 21;
+            this.groupControl4.Text = "groupControl4";
+            // 
             // txtTanim
             // 
             this.txtTanim.Location = new System.Drawing.Point(108, 5);
@@ -298,30 +313,6 @@
             this.txtTanim.Name = "txtTanim";
             this.txtTanim.Size = new System.Drawing.Size(611, 22);
             this.txtTanim.TabIndex = 16;
-            // 
-            // txtAciklama
-            // 
-            this.txtAciklama.Location = new System.Drawing.Point(108, 5);
-            this.txtAciklama.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtAciklama.Size = new System.Drawing.Size(612, 321);
-            this.txtAciklama.TabIndex = 15;
-            // 
-            // lblGorsel
-            // 
-            this.lblGorsel.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblGorsel.Appearance.Options.UseBorderColor = true;
-            this.lblGorsel.Appearance.Options.UseTextOptions = true;
-            this.lblGorsel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblGorsel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblGorsel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblGorsel.Location = new System.Drawing.Point(4, 3);
-            this.lblGorsel.Margin = new System.Windows.Forms.Padding(2);
-            this.lblGorsel.Name = "lblGorsel";
-            this.lblGorsel.Size = new System.Drawing.Size(100, 25);
-            this.lblGorsel.TabIndex = 13;
-            this.lblGorsel.Text = "Görsel :";
             // 
             // lblTanim
             // 
@@ -338,6 +329,68 @@
             this.lblTanim.TabIndex = 13;
             this.lblTanim.Text = "Tanım :";
             // 
+            // groupControl3
+            // 
+            this.groupControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl3.Controls.Add(this.lblGorsel);
+            this.groupControl3.Controls.Add(this.txtGorsel);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl3.Location = new System.Drawing.Point(2, 59);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.ShowCaption = false;
+            this.groupControl3.Size = new System.Drawing.Size(722, 32);
+            this.groupControl3.TabIndex = 20;
+            this.groupControl3.Text = "groupControl3";
+            this.groupControl3.Visible = false;
+            // 
+            // lblGorsel
+            // 
+            this.lblGorsel.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblGorsel.Appearance.Options.UseBorderColor = true;
+            this.lblGorsel.Appearance.Options.UseTextOptions = true;
+            this.lblGorsel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblGorsel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblGorsel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lblGorsel.Location = new System.Drawing.Point(4, 3);
+            this.lblGorsel.Margin = new System.Windows.Forms.Padding(2);
+            this.lblGorsel.Name = "lblGorsel";
+            this.lblGorsel.Size = new System.Drawing.Size(100, 25);
+            this.lblGorsel.TabIndex = 13;
+            this.lblGorsel.Text = "Görsel :";
+            // 
+            // txtGorsel
+            // 
+            this.txtGorsel.Location = new System.Drawing.Point(108, 5);
+            this.txtGorsel.Name = "txtGorsel";
+            this.txtGorsel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtGorsel.Properties.ReadOnly = true;
+            this.txtGorsel.Size = new System.Drawing.Size(611, 22);
+            this.txtGorsel.TabIndex = 17;
+            this.txtGorsel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtGorsel_ButtonClick);
+            // 
+            // groupControl5
+            // 
+            this.groupControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl5.Controls.Add(this.txtAciklama);
+            this.groupControl5.Controls.Add(this.lblAciklama);
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl5.Location = new System.Drawing.Point(2, 91);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.ShowCaption = false;
+            this.groupControl5.Size = new System.Drawing.Size(722, 331);
+            this.groupControl5.TabIndex = 19;
+            this.groupControl5.Text = "groupControl2";
+            // 
+            // txtAciklama
+            // 
+            this.txtAciklama.Location = new System.Drawing.Point(108, 5);
+            this.txtAciklama.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAciklama.Size = new System.Drawing.Size(612, 321);
+            this.txtAciklama.TabIndex = 15;
+            // 
             // lblAciklama
             // 
             this.lblAciklama.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -352,17 +405,6 @@
             this.lblAciklama.Size = new System.Drawing.Size(100, 321);
             this.lblAciklama.TabIndex = 14;
             this.lblAciklama.Text = "Açıklama :";
-            // 
-            // txtGorsel
-            // 
-            this.txtGorsel.Location = new System.Drawing.Point(108, 5);
-            this.txtGorsel.Name = "txtGorsel";
-            this.txtGorsel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txtGorsel.Properties.ReadOnly = true;
-            this.txtGorsel.Size = new System.Drawing.Size(611, 22);
-            this.txtGorsel.TabIndex = 17;
-            this.txtGorsel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtGorsel_ButtonClick);
             // 
             // navigationFrame1
             // 
@@ -379,46 +421,6 @@
             this.navigationFrame1.Size = new System.Drawing.Size(726, 424);
             this.navigationFrame1.TabIndex = 5;
             this.navigationFrame1.Text = "navigationFrame1";
-            // 
-            // groupControl5
-            // 
-            this.groupControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupControl5.Controls.Add(this.txtAciklama);
-            this.groupControl5.Controls.Add(this.lblAciklama);
-            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl5.Location = new System.Drawing.Point(2, 91);
-            this.groupControl5.Name = "groupControl5";
-            this.groupControl5.ShowCaption = false;
-            this.groupControl5.Size = new System.Drawing.Size(722, 331);
-            this.groupControl5.TabIndex = 19;
-            this.groupControl5.Text = "groupControl2";
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupControl3.Controls.Add(this.lblGorsel);
-            this.groupControl3.Controls.Add(this.txtGorsel);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl3.Location = new System.Drawing.Point(2, 59);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.ShowCaption = false;
-            this.groupControl3.Size = new System.Drawing.Size(722, 32);
-            this.groupControl3.TabIndex = 20;
-            this.groupControl3.Text = "groupControl3";
-            this.groupControl3.Visible = false;
-            // 
-            // groupControl4
-            // 
-            this.groupControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupControl4.Controls.Add(this.txtTanim);
-            this.groupControl4.Controls.Add(this.lblTanim);
-            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl4.Location = new System.Drawing.Point(2, 25);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.ShowCaption = false;
-            this.groupControl4.Size = new System.Drawing.Size(722, 34);
-            this.groupControl4.TabIndex = 21;
-            this.groupControl4.Text = "groupControl4";
             // 
             // frmTanim
             // 
@@ -444,17 +446,17 @@
             this.navigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGorsel.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
-            this.navigationFrame1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
-            this.groupControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtGorsel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
+            this.navigationFrame1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

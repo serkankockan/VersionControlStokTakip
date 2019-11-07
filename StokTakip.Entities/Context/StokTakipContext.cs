@@ -11,6 +11,9 @@ namespace StokTakip.Entities.Context
 {
     public class StokTakipContext:DbContext
     {
+
+        public StokTakipContext() : base("GPY_StokTakip") { }
+
         public DbSet<Stok> Stoklar { get; set; }
 
         public DbSet<Cari> Cariler { get; set; }

@@ -58,9 +58,6 @@ namespace StokTakip.BackOffice.Fis
                 if (_fisentity.CariKodu != null)
                 {
                     entityBakiye = this.cariDal.CariBakiyesi(context, _fisentity.CariKodu);
-                    lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
-                    lblBorc.Text = entityBakiye.Borc.ToString("C2");
-                    lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
                 }
 
             }
@@ -343,7 +340,7 @@ namespace StokTakip.BackOffice.Fis
             stokHareket.Barkod = entity.Barkod;
             stokHareket.BarkodTuru = entity.BarkodTuru;
             stokHareket.DepoKodu = SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo);
-            stokHareket.DepoAdi = context.Depolar.SingleOrDefault(c => c.DepoKodu == stokHareket.DepoKodu).DepoAdi; // Singleordefault koşulunun karşılığında oluşan sonucun depoadı'nı alır.
+            //stokHareket.DepoAdi = context.Depolar.SingleOrDefault(c => c.DepoKodu == stokHareket.DepoKodu).DepoAdi; // Singleordefault koşulunun karşılığında oluşan sonucun depoadı'nı alır.
             stokHareket.BirimFiyat = txtFisTuru.Text == "Alış Faturası" ? entity.AlisFiyati1 : entity.SatisFiyati1;
             stokHareket.Birimi = entity.Birimi;
             stokHareket.Miktar = txtMiktar.Value;
@@ -402,10 +399,6 @@ namespace StokTakip.BackOffice.Fis
                 txtIlce.Text = entity.Ilce;
                 txtSemt.Text = entity.Semt;
                 txtAdres.Text = entity.Adres;
-
-                lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
-                lblBorc.Text = entityBakiye.Borc.ToString("C2");
-                lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
             }
         }
 
@@ -421,9 +414,6 @@ namespace StokTakip.BackOffice.Fis
             txtIlce.Text = null;
             txtSemt.Text = null;
             txtAdres.Text = null;
-            lblAlacak.Text = "Görüntülenemiyor";
-            lblBorc.Text = "Görüntülenemiyor";
-            lblBakiye.Text = "Görüntülenemiyor";
         }
 
         private void gridStokHareket_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -479,7 +469,7 @@ namespace StokTakip.BackOffice.Fis
             if (form.secildi)
             {
                 gridStokHareket.SetFocusedRowCellValue(colDepoKodu, form.entity.DepoKodu);
-                gridStokHareket.SetFocusedRowCellValue(colDepoAdi, form.entity.DepoKodu);
+                gridStokHareket.SetFocusedRowCellValue(colDepoAdi, form.entity.DepoAdi);
             }
         }
 
@@ -550,6 +540,7 @@ namespace StokTakip.BackOffice.Fis
 
         private void repoSeriNo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            
             string veri = Convert.ToString(gridStokHareket.GetFocusedRowCellValue(colSeriNo));
             fmrSeriNo form = new fmrSeriNo(veri);
             form.ShowDialog();

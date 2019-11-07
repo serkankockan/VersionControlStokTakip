@@ -32,6 +32,9 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.PrimOrani).HasPrecision(5, 2);
             this.Property(p => p.AylikMaas).HasPrecision(12, 2);
             this.Property(p => p.Aciklama).HasMaxLength(200);
+            this.Property(p => p.PersonelSoyadi).HasMaxLength(200);
+            this.Property(p => p.Konumu).HasMaxLength(200);
+
 
             this.ToTable("Personeller"); //Tablo Adı
 
@@ -53,8 +56,8 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.PrimOrani).HasColumnName("PrimOrani");
             this.Property(p => p.AylikMaas).HasColumnName("AylikMaas");
             this.Property(p => p.Aciklama).HasColumnName("Aciklama");
-
-
+            this.Property(p => p.PersonelSoyadi).HasColumnName("PersonelSoyadi");
+            this.Property(p => p.Konumu).HasColumnName("Konumu");
         }
     }
 }

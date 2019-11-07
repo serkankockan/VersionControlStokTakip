@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,6 +84,12 @@ namespace StokTakip.BackOffice.Stok
             calcSatisFiyati3.DataBindings.Add("Text", _entity, "SatisFiyati3");
             calcSatisFiyati3.DataBindings[0].FormattingEnabled = true;
             calcSatisFiyati3.DataBindings[0].FormatString = "C2";
+
+            if (_entity.Gorsel!= null)
+            {
+                ımageSlider1.Images.Add(Image.FromStream(stokDal.ResimGetir(context, _entity.StokKodu)));
+            }
+
         }
 
         private void frmStokIslem_Load(object sender, EventArgs e)
@@ -94,6 +101,7 @@ namespace StokTakip.BackOffice.Stok
         {
             if (stokDal.AddOrUpdate(context, _entity))
             {
+                ResimKaydet();
                 stokDal.Save(context);
                 saved = true;
                 this.Close();
@@ -104,6 +112,44 @@ namespace StokTakip.BackOffice.Stok
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtGorsel_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txtGorsel.Text = open.FileName;
+                ımageSlider1.Images.Add(Image.FromFile(open.FileName));
+            }
+            else
+            {
+
+            }
+
+
+
+        }
+
+        void ResimKaydet()
+        {
+            if (txtGorsel.Text != null && txtGorsel.Text != "")
+            {
+                string image = txtGorsel.Text;
+                Bitmap bmp = new Bitmap(image);
+                FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read);
+                byte[] bimage = new byte[fs.Length];
+                fs.Read(bimage, 0, Convert.ToInt32(fs.Length));
+
+                _entity.Gorsel = bimage;
+
+            }
+        }
+
+        private void txtGorsel_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

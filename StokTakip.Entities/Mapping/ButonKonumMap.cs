@@ -19,6 +19,7 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.Size).HasMaxLength(30);
             this.Property(p => p.Turu).HasMaxLength(30);
             this.Property(p => p.KonumAdi).HasMaxLength(30);
+            this.Property(p => p.TurKodu);
 
             this.ToTable("ButonKonum"); // Tablo adı tanımlanır
 
@@ -32,6 +33,7 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.X).HasColumnName("X");
             this.Property(p => p.Y).HasColumnName("Y");
             this.Property(p => p.KonumAdi).HasColumnName("KonumAdi");
+            this.Property(p => p.TurKodu).HasColumnName("TurKodu");
 
         }
     }

@@ -31,17 +31,15 @@ namespace StokTakip.BackOffice.Personel
             toggleDurumu.DataBindings.Add("EditValue", _entity, "Calisisyor", false, DataSourceUpdateMode.OnPropertyChanged);
             txtPersonelKodu.DataBindings.Add("Text", _entity, "PersonelKodu", false,
                 DataSourceUpdateMode.OnPropertyChanged);
-            txtPersonelAdi.DataBindings.Add("Text", _entity, "PersonelAdi", false,
+            txtAdi.DataBindings.Add("Text", _entity, "PersonelAdi", false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            txtSoyad.DataBindings.Add("Text", _entity, "PersonelSoyadi", false,
                 DataSourceUpdateMode.OnPropertyChanged);
             btnUnvani.DataBindings.Add("Text", _entity, "Unvani", false, DataSourceUpdateMode.OnPropertyChanged);
-            txtTCKimlikNo.DataBindings.Add("Text", _entity, "TcKimlikNo", false,
-                DataSourceUpdateMode.OnPropertyChanged);
             cmbIseGirisTarihi.DataBindings.Add("EditValue", _entity, "IseGirisTarihi", true,
                 DataSourceUpdateMode.OnPropertyChanged, null, "F");
             cmbIstenCikisTarihi.DataBindings.Add("EditValue", _entity, "IstenCikisTarihi", true,
                 DataSourceUpdateMode.OnPropertyChanged, null, "F");
-            txtVergiDairesi.DataBindings.Add("Text", _entity, "VergiDairesi", false, DataSourceUpdateMode.OnPropertyChanged);
-            txtVergiNo.DataBindings.Add("Text", _entity, "VergiNo", false, DataSourceUpdateMode.OnPropertyChanged);
             txtAciklama.DataBindings.Add("Text", _entity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
             txtCepTelefonu.DataBindings.Add("Text", _entity, "CepTelefonu", false, DataSourceUpdateMode.OnPropertyChanged);
             txtSabitTelefon.DataBindings.Add("Text", _entity, "Telefon", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -50,10 +48,6 @@ namespace StokTakip.BackOffice.Personel
             txtIlce.DataBindings.Add("Text", _entity, "Ilce", false, DataSourceUpdateMode.OnPropertyChanged);
             txtSemt.DataBindings.Add("Text", _entity, "Semt", false, DataSourceUpdateMode.OnPropertyChanged);
             txtAdres.DataBindings.Add("Text", _entity, "Adres", false, DataSourceUpdateMode.OnPropertyChanged);
-            calcMaasi.DataBindings.Add("EditValue", _entity, "AylikMaas", true, DataSourceUpdateMode.OnPropertyChanged, 0,
-                "C2");
-            calcPrimOrani.DataBindings.Add("EditValue", _entity, "PrimOrani", true, DataSourceUpdateMode.OnPropertyChanged,
-                0, "'%'0");
         }
 
         private void FrmPersonelIslem_Load(object sender, EventArgs e)

@@ -63,6 +63,10 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtBarkod = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.cmbBarkodTuru = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -86,12 +90,14 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbBarkodTuru.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
-            this.panelControl1.Location = new System.Drawing.Point(5, 109);
+            this.panelControl1.Location = new System.Drawing.Point(6, 109);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(300, 190);
             this.panelControl1.TabIndex = 0;
@@ -103,7 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Controls.Add(this.flowLayoutPanel1);
-            this.groupControl1.Location = new System.Drawing.Point(8, 5);
+            this.groupControl1.Location = new System.Drawing.Point(8, 6);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(191, 138);
             this.groupControl1.TabIndex = 11;
@@ -184,25 +190,29 @@
             // 
             this.groupGruplar.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.groupGruplar.AppearanceCaption.Options.UseFont = true;
+            this.groupGruplar.Controls.Add(this.cmbBarkodTuru);
             this.groupGruplar.Controls.Add(this.txtAciklama);
             this.groupGruplar.Controls.Add(this.labelControl4);
             this.groupGruplar.Controls.Add(this.toggleDurumu);
             this.groupGruplar.Controls.Add(this.labelControl1);
             this.groupGruplar.Controls.Add(this.txtTuru);
             this.groupGruplar.Controls.Add(this.labelControl12);
-            this.groupGruplar.Location = new System.Drawing.Point(0, 58);
+            this.groupGruplar.Controls.Add(this.labelControl7);
+            this.groupGruplar.Controls.Add(this.txtBarkod);
+            this.groupGruplar.Controls.Add(this.labelControl6);
+            this.groupGruplar.Location = new System.Drawing.Point(11, 58);
             this.groupGruplar.Margin = new System.Windows.Forms.Padding(2);
             this.groupGruplar.Name = "groupGruplar";
-            this.groupGruplar.Size = new System.Drawing.Size(374, 183);
+            this.groupGruplar.Size = new System.Drawing.Size(374, 201);
             this.groupGruplar.TabIndex = 6;
             this.groupGruplar.Text = "Genel Bilgiler";
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(109, 110);
+            this.txtAciklama.Location = new System.Drawing.Point(109, 144);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtAciklama.Size = new System.Drawing.Size(257, 67);
+            this.txtAciklama.Size = new System.Drawing.Size(257, 52);
             this.txtAciklama.TabIndex = 15;
             // 
             // labelControl4
@@ -213,7 +223,7 @@
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl4.Location = new System.Drawing.Point(4, 107);
+            this.labelControl4.Location = new System.Drawing.Point(5, 145);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(100, 25);
@@ -247,7 +257,7 @@
             // 
             // txtTuru
             // 
-            this.txtTuru.Location = new System.Drawing.Point(108, 80);
+            this.txtTuru.Location = new System.Drawing.Point(108, 59);
             this.txtTuru.Margin = new System.Windows.Forms.Padding(2);
             this.txtTuru.Name = "txtTuru";
             this.txtTuru.Size = new System.Drawing.Size(258, 22);
@@ -261,17 +271,17 @@
             this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl12.Location = new System.Drawing.Point(4, 78);
+            this.labelControl12.Location = new System.Drawing.Point(4, 57);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(100, 25);
             this.labelControl12.TabIndex = 4;
-            this.labelControl12.Text = "Türü :";
+            this.labelControl12.Text = "Adı :";
             // 
             // trackBarControl1
             // 
             this.trackBarControl1.EditValue = 1;
-            this.trackBarControl1.Location = new System.Drawing.Point(5, 47);
+            this.trackBarControl1.Location = new System.Drawing.Point(6, 47);
             this.trackBarControl1.Name = "trackBarControl1";
             this.trackBarControl1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.trackBarControl1.Properties.LabelAppearance.BackColor = System.Drawing.Color.Black;
@@ -306,7 +316,7 @@
             // trackBarControl2
             // 
             this.trackBarControl2.EditValue = 1;
-            this.trackBarControl2.Location = new System.Drawing.Point(311, 109);
+            this.trackBarControl2.Location = new System.Drawing.Point(312, 109);
             this.trackBarControl2.Name = "trackBarControl2";
             this.trackBarControl2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.trackBarControl2.Properties.LabelAppearance.BackColor = System.Drawing.Color.Black;
@@ -330,10 +340,11 @@
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnKaydet);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 589);
+            this.grpMenu.Location = new System.Drawing.Point(0, 611);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(2);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(695, 84);
+            this.grpMenu.ShowCaption = false;
+            this.grpMenu.Size = new System.Drawing.Size(709, 61);
             this.grpMenu.TabIndex = 11;
             this.grpMenu.Text = "Menü";
             // 
@@ -341,7 +352,7 @@
             // 
             this.btnEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEkleDuzenle.ImageOptions.ImageIndex = 2;
-            this.btnEkleDuzenle.Location = new System.Drawing.Point(-513, 32);
+            this.btnEkleDuzenle.Location = new System.Drawing.Point(-499, 9);
             this.btnEkleDuzenle.Margin = new System.Windows.Forms.Padding(2);
             this.btnEkleDuzenle.Name = "btnEkleDuzenle";
             this.btnEkleDuzenle.Size = new System.Drawing.Size(177, 43);
@@ -353,7 +364,7 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 1;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(607, 32);
+            this.btnKapat.Location = new System.Drawing.Point(621, 9);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(2);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(85, 43);
@@ -374,7 +385,7 @@
             this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKaydet.ImageOptions.ImageIndex = 0;
             this.btnKaydet.ImageOptions.ImageList = this.ımageList1;
-            this.btnKaydet.Location = new System.Drawing.Point(499, 32);
+            this.btnKaydet.Location = new System.Drawing.Point(513, 9);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(103, 43);
@@ -467,7 +478,7 @@
             this.groupControl2.Controls.Add(this.trackBarControl1);
             this.groupControl2.Controls.Add(this.trackBarControl2);
             this.groupControl2.Controls.Add(this.panelControl1);
-            this.groupControl2.Location = new System.Drawing.Point(0, 246);
+            this.groupControl2.Location = new System.Drawing.Point(11, 264);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(374, 342);
             this.groupControl2.TabIndex = 17;
@@ -483,9 +494,9 @@
             this.groupControl3.Controls.Add(this.toggleSwitch1);
             this.groupControl3.Controls.Add(this.labelControl3);
             this.groupControl3.Controls.Add(this.labelControl5);
-            this.groupControl3.Location = new System.Drawing.Point(379, 58);
+            this.groupControl3.Location = new System.Drawing.Point(390, 58);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(311, 530);
+            this.groupControl3.Size = new System.Drawing.Size(311, 548);
             this.groupControl3.TabIndex = 18;
             this.groupControl3.Text = "Genel Görünüm Ayarları";
             // 
@@ -509,15 +520,62 @@
             this.lblBaslik.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblBaslik.Margin = new System.Windows.Forms.Padding(2);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(695, 55);
+            this.lblBaslik.Size = new System.Drawing.Size(709, 55);
             this.lblBaslik.TabIndex = 19;
             this.lblBaslik.Text = "Araç Ekle";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl6.Appearance.Options.UseBorderColor = true;
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl6.Location = new System.Drawing.Point(4, 85);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(100, 25);
+            this.labelControl6.TabIndex = 4;
+            this.labelControl6.Text = "Barkod :";
+            // 
+            // txtBarkod
+            // 
+            this.txtBarkod.Location = new System.Drawing.Point(108, 87);
+            this.txtBarkod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBarkod.Name = "txtBarkod";
+            this.txtBarkod.Size = new System.Drawing.Size(258, 22);
+            this.txtBarkod.TabIndex = 11;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl7.Appearance.Options.UseBorderColor = true;
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl7.Location = new System.Drawing.Point(4, 114);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(100, 25);
+            this.labelControl7.TabIndex = 4;
+            this.labelControl7.Text = "Barkod Türü :";
+            // 
+            // cmbBarkodTuru
+            // 
+            this.cmbBarkodTuru.Location = new System.Drawing.Point(108, 116);
+            this.cmbBarkodTuru.Name = "cmbBarkodTuru";
+            this.cmbBarkodTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbBarkodTuru.Size = new System.Drawing.Size(258, 22);
+            this.cmbBarkodTuru.TabIndex = 16;
             // 
             // frmAracEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 673);
+            this.ClientSize = new System.Drawing.Size(709, 672);
             this.Controls.Add(this.lblBaslik);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
@@ -552,6 +610,8 @@
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbBarkodTuru.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -591,5 +651,9 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         public DevExpress.XtraEditors.LabelControl lblBaslik;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbBarkodTuru;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit txtBarkod;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }

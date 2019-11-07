@@ -16,6 +16,8 @@ namespace StokTakip.Entities.Tables
 
         public string Turu { get; set; } //Buton özelliklerini alır.
 
+        public int TurKodu { get; set; }
+
         public string Size { get; set; }
 
         public Nullable<int> X { get; set; } // Mevcut buton konumunu alır.
@@ -25,6 +27,10 @@ namespace StokTakip.Entities.Tables
         public string KonumAdi { get; set; } // Kullanıcı ve cihazları birleştirir.
 
         public string Aciklama { get; set; }
+
+        public string BarkodNo { get; set; }
+
+        public string BarkodTipi { get; set; }
 
     }
 }

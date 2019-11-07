@@ -51,6 +51,9 @@ namespace StokTakip.Entities.Tables
 
         public string Konum { get; set; }
 
+        public string BirimKodu { get; set; }
 
+        public string BirimAdi { get; set; }
+        
     }
 }

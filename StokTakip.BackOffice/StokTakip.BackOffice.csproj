@@ -255,6 +255,18 @@
     <Compile Include="Konumlar\frmKonumDuzenle.Designer.cs">
       <DependentUpon>frmKonumDuzenle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Konumlar\frmSecimEkranı.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konumlar\frmSecimEkranı.Designer.cs">
+      <DependentUpon>frmSecimEkranı.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Konumlar\frmUrunleriGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konumlar\frmUrunleriGoruntule.Designer.cs">
+      <DependentUpon>frmUrunleriGoruntule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Odeme Turu\frmOdemeTuru.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +447,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Konumlar\frmKonumDuzenle.resx">
       <DependentUpon>frmKonumDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Konumlar\frmSecimEkranı.resx">
+      <DependentUpon>frmSecimEkranı.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Konumlar\frmUrunleriGoruntule.resx">
+      <DependentUpon>frmUrunleriGoruntule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Odeme Turu\frmOdemeTuru.resx">
       <DependentUpon>frmOdemeTuru.cs</DependentUpon>

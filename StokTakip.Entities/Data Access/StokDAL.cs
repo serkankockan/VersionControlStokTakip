@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -53,5 +54,11 @@ namespace StokTakip.Entities.Data_Access
             return tablo;
         }
 
+        public Stream ResimGetir(StokTakipContext context, string stokNo)
+        {
+            var resim = context.Stoklar.Where(c => c.StokKodu == stokNo).SingleOrDefault();
+            Stream stream = new MemoryStream(resim.Gorsel);
+            return stream;
+        }
     }
 }

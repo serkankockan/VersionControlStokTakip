@@ -14,6 +14,8 @@ namespace StokTakip.Entities.Tables
         public bool Durumu { get; set; }
 
         public string Turu { get; set; }
+
+        public bool TuruTF { get; set; }
         
         public string Size { get; set; }
 

@@ -34,29 +34,9 @@ namespace StokTakip.BackOffice.Konumlar
         public frmKonumDuzenle()
         {
             InitializeComponent();
-            AraclarButonYukle();
-
+            
             GroupOlustur();
 
-        }
-
-        private void AraclarButonYukle()
-        {
-            tableTools.RefreshAll(context);
-
-            foreach (var item in context.ButonTanimlar.ToList())
-            {
-                SimpleButton dynamicButton = new SimpleButton();
-
-                dynamicButton.Height = 41;
-                dynamicButton.Width = 132;
-                dynamicButton.Text = item.Turu;
-                dynamicButton.Name = item.Id.ToString();
-                dynamicButton.Left = (this.ClientSize.Width - Width) / 2;
-                dynamicButton.Top = (this.ClientSize.Height - Height) / 2;
-                dynamicButton.Click += new EventHandler(btnPaneleEkle_Click);
-                flowLayoutPanel1.Controls.Add(dynamicButton);
-            }
         }
 
         private void frmKonumDuzenle_Load(object sender, EventArgs e)
@@ -66,49 +46,31 @@ namespace StokTakip.BackOffice.Konumlar
 
         private void btnEkleDuzenle_Click(object sender, EventArgs e)
         {
+            konumKaydet();
+
             frmAracEkle form = new frmAracEkle(new Entities.Tables.ButonTanim(),false);
             form.ShowDialog();
             if (form.kaydedildi)
             {
-                flowLayoutPanel1.Controls.Clear();
-                AraclarButonYukle();
+                PanelKat.Controls.Clear();
+                GroupOlustur();
             }
         }
 
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
-            frmAracSec form = new frmAracSec();
+            frmAracSec form = new frmAracSec("Duzenle");
             form.ShowDialog();
             if (form.secildi)
             {
-                flowLayoutPanel1.Controls.Clear();
-                AraclarButonYukle();
+                PanelKat.Controls.Clear();
+                GroupOlustur();
             }
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        public void butonYukle()
-        {
-            tableTools.RefreshAll(context);
-
-            foreach (var item in context.ButonTanimlar.ToList())
-            {
-                var button = new SimpleButton
-                {
-                    Name = item.Id.ToString(),
-                    Text = item.Turu,
-                    Width = 132,
-                    Height = 41,
-                    Left = (this.ClientSize.Width - Width) / 2,
-                    Top = (this.ClientSize.Height - Height) / 2,
-                    Anchor = AnchorStyles.None
-                };
-                flowLayoutPanel1.Controls.Add(button);
-            }
         }
 
         private void btnPaneleEkle_Click(object sender, EventArgs e)
@@ -131,7 +93,7 @@ namespace StokTakip.BackOffice.Konumlar
             {
                 var sonListe = context.ButonTanimlar.Where(c => c.Turu == liste.Turu).ToList();
 
-                foreach (var butonTanimlari in sonListe)
+                foreach (var butonTanimlari in sonListe) // Araçları biçimlendirip panele ekler
                 {
                     GroupControl groupControl = new GroupControl();
                     groupControl.Name = liste.Id.ToString();
@@ -149,6 +111,7 @@ namespace StokTakip.BackOffice.Konumlar
 
                     SimpleButton simpleButton = new SimpleButton();
                     simpleButton.Name = liste.Id.ToString();
+                    simpleButton.AccessibleName = liste.Id.ToString();
                     simpleButton.Dock = (DockStyle)System.Enum.Parse(typeof(DockStyle), butonTanimlari.SimpleDock);
                     simpleButton.LookAndFeel.Style = LookAndFeelStyle.Flat;
                     simpleButton.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -156,15 +119,17 @@ namespace StokTakip.BackOffice.Konumlar
                     simpleButton.Appearance.BorderColor = colorConverter(butonTanimlari.SimpleKenarRengi);
                     groupControl.Controls.Add(simpleButton);
 
+                    simpleButton.Click += btnDuzenleGoruntule_Click;
+
                     FlowLayoutPanel flowLayout = new FlowLayoutPanel();
                     flowLayout.Height = butonTanimlari.FlowHeight.Value;
                     flowLayout.Dock = (DockStyle)System.Enum.Parse(typeof(DockStyle), butonTanimlari.FlowDock);
                     flowLayout.Visible = butonTanimlari.FlowVisible;
                     groupControl.Controls.Add(flowLayout);
-                    
                 }
             }
         }
+        
 
         private Color colorConverter(object gelenRenk)
         {
@@ -222,11 +187,37 @@ namespace StokTakip.BackOffice.Konumlar
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnKonumEkle_Click(object sender, EventArgs e)
+        {
+            konumKaydet();
+
+            frmAracSec form = new frmAracSec("PaneleEkle");
+            form.ShowDialog();
+            if (form.secildi)
+            {
+                PanelKat.Controls.Clear();
+                GroupOlustur();
+            }
+
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            konumKaydet();
+
+            MessageBox.Show("Konumlar kaydedilmiştir.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void konumKaydet()
+        {
             List<Control> list1 = new List<Control>();
 
             GetAllControl(PanelKat, list1);
 
-            foreach (var items in context.ButonKonumlar.Where(c=> c.Durumu == true).ToList())
+            foreach (var items in context.ButonKonumlar.Where(c => c.Durumu == true).ToList())
             {
                 foreach (Control control in list1.Where(c => c.Name == Convert.ToString(items.Id)).ToList())
                 {
@@ -253,13 +244,14 @@ namespace StokTakip.BackOffice.Konumlar
                         GetAllControl(control, list);
                 }
             }
-
-            MessageBox.Show("Konumlar kaydedilmiştir.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnKonumEkle_Click(object sender, EventArgs e)
+        private void btnDuzenleGoruntule_Click(object sender, EventArgs e)
         {
+            SimpleButton buton = sender as SimpleButton;
+            frmUrunleriGoruntule form = new frmUrunleriGoruntule(buton.AccessibleName);
+            form.ShowDialog();
 
         }
     }
-}
+}   

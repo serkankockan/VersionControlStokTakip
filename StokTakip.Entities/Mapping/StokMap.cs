@@ -73,7 +73,9 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.MinStokMiktari).HasColumnName("MinStokMiktari");
             this.Property(p => p.MaxStokMiktari).HasColumnName("MaxStokMiktari");
             this.Property(p => p.Aciklama).HasColumnName("Aciklama");
-            
+            this.Property(p => p.Gorsel).HasColumnName("Gorsel");
+
+
         }
     }
 }

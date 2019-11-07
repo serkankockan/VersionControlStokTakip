@@ -15,6 +15,7 @@ namespace StokTakip.Entities.Tables
         public string Unvani { get; set; }
         public string PersonelKodu { get; set; }
         public string PersonelAdi { get; set; }
+        public string PersonelSoyadi { get; set; }
         public string TCKimlikNo { get; set; }
         public Nullable<DateTime> IseGirisTarihi { get; set; }
         public Nullable<DateTime> IstenCikisTarihi { get; set; }
@@ -32,6 +33,7 @@ namespace StokTakip.Entities.Tables
         public Nullable<decimal> PrimOrani { get; set; }
         public Nullable<decimal> AylikMaas { get; set; }
         public string Aciklama { get; set; }
+        public string Konumu { get; set; }
     }
 }
 

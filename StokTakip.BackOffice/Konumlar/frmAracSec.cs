@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
+using StokTakip.Entities.Tables;
 
 namespace StokTakip.BackOffice.Konumlar
 {
@@ -17,13 +18,18 @@ namespace StokTakip.BackOffice.Konumlar
     {
         StokTakipContext context = new StokTakipContext();
         ButonTanimDAL butonTanimDal = new ButonTanimDAL();
+        ButonKonumDAL butonKonumDal = new ButonKonumDAL();
+        public ButonKonum entity = new ButonKonum();
         int secilen;
         public bool secildi = false;
         public bool duzenleme = false;
+        public string _islem;
+        public int butonId;
 
 
-        public frmAracSec()
+        public frmAracSec(string islem)
         {
+            _islem = islem;
             InitializeComponent();
         }
 
@@ -35,14 +41,33 @@ namespace StokTakip.BackOffice.Konumlar
 
         private void btnSec_Click(object sender, EventArgs e)
         {
-            secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colid).ToString());
-            frmAracEkle form = new frmAracEkle(butonTanimDal.GetByFilter(context, c => c.Id == secilen),true);
-            form.lblBaslik.Text = "Araç Düzenle - " + gridView1.GetFocusedRowCellValue(colButonIsimleri).ToString();
-            form.ShowDialog();
-            if (form.kaydedildi)
+            if (_islem == "PaneleEkle")
             {
-                secildi = true;
-                Listele();
+                entity.X = 50;
+                entity.Y = 250;
+                entity.Durumu = true;
+                entity.KonumAdi = null;
+                entity.Turu = gridView1.GetFocusedRowCellValue(colButonIsimleri).ToString();
+
+                if (butonKonumDal.AddOrUpdate(context, entity))
+                {
+                    butonKonumDal.Save(context);
+                    secildi = true;
+                    this.Close();
+                }
+
+            }
+            else if (_islem == "Duzenle")
+            {
+                secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colid).ToString());
+                frmAracEkle form = new frmAracEkle(butonTanimDal.GetByFilter(context, c => c.Id == secilen), true);
+                form.lblBaslik.Text = "Araç Düzenle - " + gridView1.GetFocusedRowCellValue(colButonIsimleri).ToString();
+                form.ShowDialog();
+                if (form.kaydedildi)
+                {
+                    secildi = true;
+                    Listele();
+                }
             }
         }
 
