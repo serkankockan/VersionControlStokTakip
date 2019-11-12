@@ -12,7 +12,7 @@ namespace StokTakip.Entities.Validations
     {
         public ButonTanimValidator()
         {
-            RuleFor(p => p.Turu).NotEmpty().WithMessage("Türü alanı boş geçilemez.");
+            RuleFor(p => p.Turu).NotEmpty().WithMessage("Tür alanı boş geçilemez.");
             RuleFor(p => p.Aciklama).NotEmpty().WithMessage("Açıklama alanı boş geçilemez.");
         }
     }

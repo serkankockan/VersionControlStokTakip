@@ -39,12 +39,14 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.groupGruplar = new DevExpress.XtraEditors.GroupControl();
+            this.cmbTuru = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.toggleDurumu = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTuru = new DevExpress.XtraEditors.TextEdit();
+            this.txtAdi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.trackBarControl1 = new DevExpress.XtraEditors.TrackBarControl();
             this.colorPickEditArkaPlan = new DevExpress.XtraEditors.ColorPickEdit();
             this.trackBarControl2 = new DevExpress.XtraEditors.TrackBarControl();
@@ -63,10 +65,6 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtBarkod = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbBarkodTuru = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -74,9 +72,10 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupGruplar)).BeginInit();
             this.groupGruplar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTuru.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleDurumu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTuru.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorPickEditArkaPlan.Properties)).BeginInit();
@@ -90,8 +89,6 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbBarkodTuru.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -190,16 +187,14 @@
             // 
             this.groupGruplar.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.groupGruplar.AppearanceCaption.Options.UseFont = true;
-            this.groupGruplar.Controls.Add(this.cmbBarkodTuru);
+            this.groupGruplar.Controls.Add(this.cmbTuru);
             this.groupGruplar.Controls.Add(this.txtAciklama);
             this.groupGruplar.Controls.Add(this.labelControl4);
             this.groupGruplar.Controls.Add(this.toggleDurumu);
             this.groupGruplar.Controls.Add(this.labelControl1);
-            this.groupGruplar.Controls.Add(this.txtTuru);
+            this.groupGruplar.Controls.Add(this.txtAdi);
             this.groupGruplar.Controls.Add(this.labelControl12);
             this.groupGruplar.Controls.Add(this.labelControl7);
-            this.groupGruplar.Controls.Add(this.txtBarkod);
-            this.groupGruplar.Controls.Add(this.labelControl6);
             this.groupGruplar.Location = new System.Drawing.Point(11, 58);
             this.groupGruplar.Margin = new System.Windows.Forms.Padding(2);
             this.groupGruplar.Name = "groupGruplar";
@@ -207,9 +202,21 @@
             this.groupGruplar.TabIndex = 6;
             this.groupGruplar.Text = "Genel Bilgiler";
             // 
+            // cmbTuru
+            // 
+            this.cmbTuru.Location = new System.Drawing.Point(108, 89);
+            this.cmbTuru.Name = "cmbTuru";
+            this.cmbTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTuru.Properties.Items.AddRange(new object[] {
+            "Masa",
+            "Dolap"});
+            this.cmbTuru.Size = new System.Drawing.Size(258, 22);
+            this.cmbTuru.TabIndex = 16;
+            // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(109, 144);
+            this.txtAciklama.Location = new System.Drawing.Point(109, 118);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAciklama.Size = new System.Drawing.Size(257, 52);
@@ -223,7 +230,7 @@
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl4.Location = new System.Drawing.Point(5, 145);
+            this.labelControl4.Location = new System.Drawing.Point(5, 119);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(100, 25);
@@ -255,13 +262,13 @@
             this.labelControl1.TabIndex = 12;
             this.labelControl1.Text = "Durumu :";
             // 
-            // txtTuru
+            // txtAdi
             // 
-            this.txtTuru.Location = new System.Drawing.Point(108, 59);
-            this.txtTuru.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTuru.Name = "txtTuru";
-            this.txtTuru.Size = new System.Drawing.Size(258, 22);
-            this.txtTuru.TabIndex = 11;
+            this.txtAdi.Location = new System.Drawing.Point(108, 59);
+            this.txtAdi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAdi.Name = "txtAdi";
+            this.txtAdi.Size = new System.Drawing.Size(258, 22);
+            this.txtAdi.TabIndex = 11;
             // 
             // labelControl12
             // 
@@ -277,6 +284,21 @@
             this.labelControl12.Size = new System.Drawing.Size(100, 25);
             this.labelControl12.TabIndex = 4;
             this.labelControl12.Text = "Adı :";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl7.Appearance.Options.UseBorderColor = true;
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl7.Location = new System.Drawing.Point(4, 87);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(100, 25);
+            this.labelControl7.TabIndex = 4;
+            this.labelControl7.Text = "Türü :";
             // 
             // trackBarControl1
             // 
@@ -340,7 +362,7 @@
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnKaydet);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 611);
+            this.grpMenu.Location = new System.Drawing.Point(0, 610);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(2);
             this.grpMenu.Name = "grpMenu";
             this.grpMenu.ShowCaption = false;
@@ -524,58 +546,11 @@
             this.lblBaslik.TabIndex = 19;
             this.lblBaslik.Text = "Araç Ekle";
             // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl6.Appearance.Options.UseBorderColor = true;
-            this.labelControl6.Appearance.Options.UseTextOptions = true;
-            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl6.Location = new System.Drawing.Point(4, 85);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(100, 25);
-            this.labelControl6.TabIndex = 4;
-            this.labelControl6.Text = "Barkod :";
-            // 
-            // txtBarkod
-            // 
-            this.txtBarkod.Location = new System.Drawing.Point(108, 87);
-            this.txtBarkod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBarkod.Name = "txtBarkod";
-            this.txtBarkod.Size = new System.Drawing.Size(258, 22);
-            this.txtBarkod.TabIndex = 11;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl7.Appearance.Options.UseBorderColor = true;
-            this.labelControl7.Appearance.Options.UseTextOptions = true;
-            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl7.Location = new System.Drawing.Point(4, 114);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(100, 25);
-            this.labelControl7.TabIndex = 4;
-            this.labelControl7.Text = "Barkod Türü :";
-            // 
-            // cmbBarkodTuru
-            // 
-            this.cmbBarkodTuru.Location = new System.Drawing.Point(108, 116);
-            this.cmbBarkodTuru.Name = "cmbBarkodTuru";
-            this.cmbBarkodTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbBarkodTuru.Size = new System.Drawing.Size(258, 22);
-            this.cmbBarkodTuru.TabIndex = 16;
-            // 
             // frmAracEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 672);
+            this.ClientSize = new System.Drawing.Size(709, 671);
             this.Controls.Add(this.lblBaslik);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
@@ -593,9 +568,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupGruplar)).EndInit();
             this.groupGruplar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTuru.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleDurumu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTuru.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorPickEditArkaPlan.Properties)).EndInit();
@@ -610,8 +586,6 @@
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbBarkodTuru.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,7 +594,7 @@
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupGruplar;
-        private DevExpress.XtraEditors.TextEdit txtTuru;
+        private DevExpress.XtraEditors.TextEdit txtAdi;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.ToggleSwitch toggleDurumu;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -651,9 +625,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         public DevExpress.XtraEditors.LabelControl lblBaslik;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbBarkodTuru;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbTuru;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit txtBarkod;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }

@@ -48,6 +48,7 @@ namespace StokTakip.BackOffice.Konumlar
                 entity.Durumu = true;
                 entity.KonumAdi = null;
                 entity.Turu = gridView1.GetFocusedRowCellValue(colButonIsimleri).ToString();
+                entity.TurKodu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colid));
 
                 if (butonKonumDal.AddOrUpdate(context, entity))
                 {

@@ -35,6 +35,7 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.Konum).HasMaxLength(20);
             this.Property(p => p.BirimKodu).HasMaxLength(20);
             this.Property(p => p.BirimAdi).HasMaxLength(35);
+            this.Property(p => p.KonumKodu).HasMaxLength(35);
 
 
             this.ToTable("StokHareketleri");
@@ -61,6 +62,7 @@ namespace StokTakip.Entities.Mapping
             this.Property(p => p.Konum).HasColumnName("Konum");
             this.Property(p => p.BirimKodu).HasColumnName("BirimKodu");
             this.Property(p => p.BirimAdi).HasColumnName("BirimAdi");
+            this.Property(p => p.KonumKodu).HasColumnName("KonumKodu");
 
         }
     }

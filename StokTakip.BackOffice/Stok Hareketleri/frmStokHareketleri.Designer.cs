@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStokHareketleri));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
@@ -67,6 +67,7 @@
             this.colSaat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKdvTutar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKonum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -277,6 +278,7 @@
             this.colIndirimTutari,
             this.colToplamTutar,
             this.colDepoKodu,
+            this.colKonum,
             this.colDepoAdi,
             this.colSeriNo,
             this.colTarih,
@@ -310,7 +312,7 @@
             this.colHareket.Name = "colHareket";
             this.colHareket.OptionsColumn.AllowEdit = false;
             this.colHareket.Visible = true;
-            this.colHareket.VisibleIndex = 5;
+            this.colHareket.VisibleIndex = 6;
             this.colHareket.Width = 53;
             // 
             // colStokKodu
@@ -320,7 +322,7 @@
             this.colStokKodu.OptionsColumn.AllowEdit = false;
             this.colStokKodu.OptionsColumn.ShowInCustomizationForm = false;
             this.colStokKodu.Visible = true;
-            this.colStokKodu.VisibleIndex = 1;
+            this.colStokKodu.VisibleIndex = 7;
             this.colStokKodu.Width = 61;
             // 
             // colStokAdi
@@ -330,7 +332,7 @@
             this.colStokAdi.OptionsColumn.AllowEdit = false;
             this.colStokAdi.OptionsColumn.ShowInCustomizationForm = false;
             this.colStokAdi.Visible = true;
-            this.colStokAdi.VisibleIndex = 2;
+            this.colStokAdi.VisibleIndex = 1;
             this.colStokAdi.Width = 93;
             // 
             // colBarkodTuru
@@ -356,7 +358,7 @@
             this.colBirimi.Name = "colBirimi";
             this.colBirimi.OptionsColumn.AllowEdit = false;
             this.colBirimi.Visible = true;
-            this.colBirimi.VisibleIndex = 6;
+            this.colBirimi.VisibleIndex = 8;
             this.colBirimi.Width = 53;
             // 
             // colMiktar
@@ -366,7 +368,7 @@
             this.colMiktar.Name = "colMiktar";
             this.colMiktar.OptionsColumn.AllowEdit = false;
             this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 12;
+            this.colMiktar.VisibleIndex = 2;
             this.colMiktar.Width = 46;
             // 
             // colKDV
@@ -377,8 +379,6 @@
             this.colKDV.FieldName = "KDV";
             this.colKDV.Name = "colKDV";
             this.colKDV.OptionsColumn.AllowEdit = false;
-            this.colKDV.Visible = true;
-            this.colKDV.VisibleIndex = 11;
             this.colKDV.Width = 46;
             // 
             // colBirimFiyat
@@ -389,8 +389,6 @@
             this.colBirimFiyat.FieldName = "BirimFiyat";
             this.colBirimFiyat.Name = "colBirimFiyat";
             this.colBirimFiyat.OptionsColumn.AllowEdit = false;
-            this.colBirimFiyat.Visible = true;
-            this.colBirimFiyat.VisibleIndex = 13;
             this.colBirimFiyat.Width = 47;
             // 
             // colIndirimOrani
@@ -401,8 +399,6 @@
             this.colIndirimOrani.FieldName = "IndirimOrani";
             this.colIndirimOrani.Name = "colIndirimOrani";
             this.colIndirimOrani.OptionsColumn.AllowEdit = false;
-            this.colIndirimOrani.Visible = true;
-            this.colIndirimOrani.VisibleIndex = 14;
             this.colIndirimOrani.Width = 59;
             // 
             // colIndirimTutari
@@ -413,8 +409,6 @@
             this.colIndirimTutari.FieldName = "IndirimTutari";
             this.colIndirimTutari.Name = "colIndirimTutari";
             this.colIndirimTutari.OptionsColumn.AllowEdit = false;
-            this.colIndirimTutari.Visible = true;
-            this.colIndirimTutari.VisibleIndex = 15;
             this.colIndirimTutari.Width = 58;
             // 
             // colToplamTutar
@@ -425,8 +419,6 @@
             this.colToplamTutar.FieldName = "ToplamTutar";
             this.colToplamTutar.Name = "colToplamTutar";
             this.colToplamTutar.OptionsColumn.AllowEdit = false;
-            this.colToplamTutar.Visible = true;
-            this.colToplamTutar.VisibleIndex = 17;
             this.colToplamTutar.Width = 123;
             // 
             // colDepoKodu
@@ -436,7 +428,7 @@
             this.colDepoKodu.Name = "colDepoKodu";
             this.colDepoKodu.OptionsColumn.AllowEdit = false;
             this.colDepoKodu.Visible = true;
-            this.colDepoKodu.VisibleIndex = 3;
+            this.colDepoKodu.VisibleIndex = 4;
             this.colDepoKodu.Width = 81;
             // 
             // colDepoAdi
@@ -446,7 +438,7 @@
             this.colDepoAdi.Name = "colDepoAdi";
             this.colDepoAdi.OptionsColumn.AllowEdit = false;
             this.colDepoAdi.Visible = true;
-            this.colDepoAdi.VisibleIndex = 4;
+            this.colDepoAdi.VisibleIndex = 5;
             this.colDepoAdi.Width = 78;
             // 
             // colSeriNo
@@ -457,16 +449,16 @@
             this.colSeriNo.Name = "colSeriNo";
             this.colSeriNo.OptionsColumn.ShowInCustomizationForm = false;
             this.colSeriNo.Visible = true;
-            this.colSeriNo.VisibleIndex = 10;
+            this.colSeriNo.VisibleIndex = 12;
             this.colSeriNo.Width = 58;
             // 
             // repoSeriNo
             // 
             this.repoSeriNo.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            editorButtonImageOptions2.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions1.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.repoSeriNo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Seri No", -1, true, true, false, editorButtonImageOptions2)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Seri No", -1, true, true, false, editorButtonImageOptions1)});
             this.repoSeriNo.Name = "repoSeriNo";
             this.repoSeriNo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repoSeriNo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoSeriNo_ButtonClick);
@@ -480,7 +472,7 @@
             this.colTarih.Name = "colTarih";
             this.colTarih.OptionsColumn.AllowEdit = false;
             this.colTarih.Visible = true;
-            this.colTarih.VisibleIndex = 7;
+            this.colTarih.VisibleIndex = 9;
             this.colTarih.Width = 53;
             // 
             // colSaat
@@ -491,7 +483,7 @@
             this.colSaat.FieldName = "Tarih";
             this.colSaat.Name = "colSaat";
             this.colSaat.Visible = true;
-            this.colSaat.VisibleIndex = 8;
+            this.colSaat.VisibleIndex = 10;
             this.colSaat.Width = 53;
             // 
             // colAciklama
@@ -501,7 +493,7 @@
             this.colAciklama.Name = "colAciklama";
             this.colAciklama.OptionsColumn.AllowEdit = false;
             this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 9;
+            this.colAciklama.VisibleIndex = 11;
             this.colAciklama.Width = 98;
             // 
             // colKdvTutar
@@ -510,9 +502,15 @@
             this.colKdvTutar.GroupFormat.FormatString = "\'0\'%";
             this.colKdvTutar.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colKdvTutar.Name = "colKdvTutar";
-            this.colKdvTutar.Visible = true;
-            this.colKdvTutar.VisibleIndex = 16;
             this.colKdvTutar.Width = 72;
+            // 
+            // colKonum
+            // 
+            this.colKonum.Caption = "Konum";
+            this.colKonum.FieldName = "Konum";
+            this.colKonum.Name = "colKonum";
+            this.colKonum.Visible = true;
+            this.colKonum.VisibleIndex = 3;
             // 
             // frmStokHareketleri
             // 
@@ -575,5 +573,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
         private DevExpress.XtraGrid.Columns.GridColumn colKdvTutar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoSeriNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colKonum;
     }
 }

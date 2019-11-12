@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using DevExpress.Office.Utils;
+using DevExpress.Utils;
 using DevExpress.XtraEditors;
+using StokTakip.BackOffice.Stok_Hareketleri;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 using StokTakip.Entities.Tables;
@@ -41,7 +43,7 @@ namespace StokTakip.BackOffice.Konumlar
 
         private void frmKonumDuzenle_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnEkleDuzenle_Click(object sender, EventArgs e)
@@ -91,7 +93,7 @@ namespace StokTakip.BackOffice.Konumlar
         {
             foreach (var liste in context.ButonKonumlar.ToList())
             {
-                var sonListe = context.ButonTanimlar.Where(c => c.Turu == liste.Turu).ToList();
+                var sonListe = context.ButonTanimlar.Where(c => c.Id == liste.TurKodu).ToList();
 
                 foreach (var butonTanimlari in sonListe) // Araçları biçimlendirip panele ekler
                 {
@@ -102,24 +104,60 @@ namespace StokTakip.BackOffice.Konumlar
                     groupControl.Width = butonTanimlari.GroupWidth.Value;
                     groupControl.Location = new Point(liste.X.Value,liste.Y.Value);
                     groupControl.AllowDrop = true;
+                    groupControl.Text = "Masa - 1";
+                    groupControl.TabIndex = 0;
+                    groupControl.AccessibleName = liste.KonumKodu;
+
+                    DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+                    DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+                    DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions3 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+                    DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+                    DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+                    DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+                    DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+                    DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+                    DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+                    DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+                    DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+                    DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+                    System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKonumDuzenle));
+                    
+                    buttonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions1.Image")));
+                    toolTipTitleItem1.Text = "İzlemeler";
+                    toolTipItem1.LeftIndent = 6;
+                    toolTipItem1.Text = "Konumda bulunan ürünleri gösterir";
+                    superToolTip1.Items.Add(toolTipTitleItem1);
+                    superToolTip1.Items.Add(toolTipItem1);
+                    buttonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions2.Image")));
+                    toolTipTitleItem2.Text = "Düzenle";
+                    toolTipItem2.LeftIndent = 6;
+                    toolTipItem2.Text = "Konumda ürün ekleme, silme, düzenleme işlemleri yapılır.";
+                    superToolTip2.Items.Add(toolTipTitleItem2);
+                    superToolTip2.Items.Add(toolTipItem2);
+                    buttonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions3.Image")));
+                    toolTipTitleItem3.Text = "Silme";
+                    toolTipItem3.LeftIndent = 6;
+                    toolTipItem3.Text = "Konumu siler. Konum üzerinde ürünler var ise ürünleri boşa çıkartır.";
+                    superToolTip3.Items.Add(toolTipTitleItem3);
+                    superToolTip3.Items.Add(toolTipItem3);
+
+                    groupControl.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+                        new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Izle", false, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, superToolTip1, true, false, true, null, -1),
+                        new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Düzenle", false, buttonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, superToolTip2, true, false, true, null, -1),
+                        new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Sil", false, buttonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, superToolTip3, true, false, true, null, -1)});
+                    groupControl.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+
+                    groupControl.LookAndFeel.SkinName = "Office 2007 Black";
+                    groupControl.LookAndFeel.UseDefaultLookAndFeel = false;
+                    groupControl.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+                    
                     PanelKat.Controls.Add(groupControl);
                     
-
                     groupControl.MouseDown += groupControl_MouseDown;
                     groupControl.MouseUp += groupControl_MouseUp;
                     groupControl.MouseMove += groupControl_MouseMove;
-
-                    SimpleButton simpleButton = new SimpleButton();
-                    simpleButton.Name = liste.Id.ToString();
-                    simpleButton.AccessibleName = liste.Id.ToString();
-                    simpleButton.Dock = (DockStyle)System.Enum.Parse(typeof(DockStyle), butonTanimlari.SimpleDock);
-                    simpleButton.LookAndFeel.Style = LookAndFeelStyle.Flat;
-                    simpleButton.LookAndFeel.UseDefaultLookAndFeel = false;
-                    simpleButton.Appearance.BackColor = colorConverter(butonTanimlari.SimpleArkaPlanRengi);
-                    simpleButton.Appearance.BorderColor = colorConverter(butonTanimlari.SimpleKenarRengi);
-                    groupControl.Controls.Add(simpleButton);
-
-                    simpleButton.Click += btnDuzenleGoruntule_Click;
+                    groupControl.CustomButtonClick += groupControl_CustomButtonClick;
+                    
 
                     FlowLayoutPanel flowLayout = new FlowLayoutPanel();
                     flowLayout.Height = butonTanimlari.FlowHeight.Value;
@@ -246,11 +284,32 @@ namespace StokTakip.BackOffice.Konumlar
             }
         }
 
-        private void btnDuzenleGoruntule_Click(object sender, EventArgs e)
+        
+
+        private void groupControl_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
         {
-            SimpleButton buton = sender as SimpleButton;
-            frmUrunleriGoruntule form = new frmUrunleriGoruntule(buton.AccessibleName);
-            form.ShowDialog();
+
+            GroupControl groupControl = sender as GroupControl;
+
+            if (e.Button == groupControl.CustomHeaderButtons[0])
+            {
+                MessageBox.Show("0'a basıldı");
+            }
+
+            if (e.Button == groupControl.CustomHeaderButtons[1])
+            {
+                frmStokDuzenle form = new frmStokDuzenle(groupControl.AccessibleName);
+                form.ShowDialog();
+            }
+
+            if (e.Button == groupControl.CustomHeaderButtons[2])
+            {
+                MessageBox.Show("2'e basıldı");
+            }
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

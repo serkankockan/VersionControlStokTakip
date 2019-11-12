@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using StokTakip.Entities.Context;
@@ -75,6 +79,30 @@ namespace StokTakip.Entities.Data_Access
             };
             return genelToplamlar;
         }
+
+        public object KonumStoklari(StokTakipContext context, string konum)
+        {
+            /*context.StokHareketleri.Where(s => s.Konum == konum).ToList();*/
+
+            var result = (from sh in context.StokHareketleri.Where(s=>s.Konum==konum)
+                join s in context.Stoklar on sh.StokKodu equals s.StokKodu
+                select new
+                {
+                    sh.StokAdi,
+                    sh.SeriNo,
+                    sh.Birimi,
+                    sh.Miktar,
+                    s.Gorsel
+                }).ToList();
+            return result;
+        }
+
+        public object KonumsuzStoklar(StokTakipContext context)
+        {
+            var result = context.StokHareketleri.Where(c => c.Konum == null || c.Konum == "").ToList();
+            return result;
+        }
+
 
         //public object KonumlarDuzenle(StokTakipContext context, string depoKodu)
         //{

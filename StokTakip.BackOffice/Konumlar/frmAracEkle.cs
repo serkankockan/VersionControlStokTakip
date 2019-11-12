@@ -39,10 +39,9 @@ namespace StokTakip.BackOffice.Konumlar
 
             toggleDurumu.DataBindings.Add("EditValue", _entity, "Durumu", false, DataSourceUpdateMode.OnPropertyChanged);
             toggleSwitch1.DataBindings.Add("EditValue", _entity, "FlowVisible", false, DataSourceUpdateMode.OnPropertyChanged);
-            txtTuru.DataBindings.Add("Text", _entity, "Turu", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtAdi.DataBindings.Add("Text", _entity, "Adi", false, DataSourceUpdateMode.OnPropertyChanged);
             txtAciklama.DataBindings.Add("Text", _entity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
-            txtBarkod.DataBindings.Add("Text", _entity, "BarkodNo", false, DataSourceUpdateMode.OnPropertyChanged);
-            cmbBarkodTuru.DataBindings.Add("EditValue", _entity, "BarkodTipi", false, DataSourceUpdateMode.OnPropertyChanged);
+            cmbTuru.DataBindings.Add("EditValue", _entity, "Turu", false, DataSourceUpdateMode.OnPropertyChanged);
 
             if (_duzenle)
             {
@@ -175,7 +174,7 @@ namespace StokTakip.BackOffice.Konumlar
             colorPickEditArkaPlan.EditValue = _entity.SimpleArkaPlanRengi;
             colorPickEditKenar.EditValue = _entity.SimpleKenarRengi;
 
-            txtTuru.Text = _entity.Turu;
+            txtAdi.Text = _entity.Turu;
             txtAciklama.Text = _entity.Aciklama;
             toggleDurumu.EditValue = _entity.Durumu;
             toggleSwitch1.EditValue = _entity.FlowVisible;

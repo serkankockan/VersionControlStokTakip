@@ -45,8 +45,6 @@ namespace StokTakip.Entities.Context
         public DbSet<ButonKonum> ButonKonumlar { get; set; }
 
 
-
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new StokMap());

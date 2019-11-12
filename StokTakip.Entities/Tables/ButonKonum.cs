@@ -26,11 +26,17 @@ namespace StokTakip.Entities.Tables
 
         public string KonumAdi { get; set; } // Kullanıcı ve cihazları birleştirir.
 
+        public string KonumKodu { get; set; }
+
         public string Aciklama { get; set; }
 
         public string BarkodNo { get; set; }
 
         public string BarkodTipi { get; set; }
+
+        public string DepoAdi { get; set; }
+
+        public int DepoKodu { get; set; }
 
     }
 }
