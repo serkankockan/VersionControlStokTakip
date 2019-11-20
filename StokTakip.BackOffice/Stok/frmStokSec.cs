@@ -19,6 +19,7 @@ namespace StokTakip.BackOffice.Stok
         StokTakipContext context = new StokTakipContext();
         public List<Entities.Tables.Stok> secilen = new List<Entities.Tables.Stok>();
         public bool secildi = false;
+        StokHareketDAL stokHareketDal = new StokHareketDAL();
 
         public frmStokSec(bool cokluSecim=false)
         {
@@ -57,6 +58,8 @@ namespace StokTakip.BackOffice.Stok
             {
                 MessageBox.Show("Seçilen bir ürün bulunamadı");
             }
+
+            
         }
     }
 }

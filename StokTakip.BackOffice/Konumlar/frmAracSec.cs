@@ -25,12 +25,14 @@ namespace StokTakip.BackOffice.Konumlar
         public bool duzenleme = false;
         public string _islem;
         public int butonId;
+        private int _katKodu;
 
 
-        public frmAracSec(string islem)
+        public frmAracSec(string islem,int katKodu)
         {
-            _islem = islem;
             InitializeComponent();
+            _islem = islem;
+            _katKodu = katKodu;
         }
 
         private void frmAracSec_Load(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace StokTakip.BackOffice.Konumlar
                 entity.KonumAdi = null;
                 entity.Turu = gridView1.GetFocusedRowCellValue(colButonIsimleri).ToString();
                 entity.TurKodu = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colid));
+                entity.KatKodu = _katKodu;
 
                 if (butonKonumDal.AddOrUpdate(context, entity))
                 {
@@ -56,7 +59,6 @@ namespace StokTakip.BackOffice.Konumlar
                     secildi = true;
                     this.Close();
                 }
-
             }
             else if (_islem == "Duzenle")
             {

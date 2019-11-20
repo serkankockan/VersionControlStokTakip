@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,5 +57,11 @@ namespace StokTakip.Entities.Tables
         public string BirimKodu { get; set; }
 
         public string BirimAdi { get; set; }
+
+        [NotMapped]
+        public bool Flag { get; set; }
+
+        [NotMapped]
+        public byte[] Resim { get; set; }
     }
 }

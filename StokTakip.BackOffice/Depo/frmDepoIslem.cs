@@ -25,6 +25,7 @@ namespace StokTakip.BackOffice.Depo
             InitializeComponent();
             _entity = entity;
 
+            toggleSwitch1.DataBindings.Add("EditValue", _entity, "Kat");
             txtDepoKodu.DataBindings.Add("Text", _entity, "DepoKodu");
             txtDepoAdi.DataBindings.Add("Text", _entity, "DepoAdi");
             txtYetkiliKodu.DataBindings.Add("Text", _entity, "YetkiliKodu");

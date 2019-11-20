@@ -59,6 +59,10 @@ namespace StokTakip.BackOffice.Tanim
             Makine,
             Pazarlamaci,
             Desinator,
+            StokGrubu,
+            StokAltGrubu,
+            Marka,
+            Modeli
             
         }
 

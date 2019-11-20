@@ -8,6 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using StokTakip.BackOffice.Tanim;
+using StokTakip.Entities.Context;
+using StokTakip.Entities.Data_Access;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using StokTakip.BackOffice.Tanim;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
 
@@ -23,7 +41,9 @@ namespace StokTakip.BackOffice.Stok
         public frmStokIslem(Entities.Tables.Stok entity)
         {
             InitializeComponent();
+
             _entity = entity;
+
             toggleDurumu.DataBindings.Add("EditValue", _entity, "Durumu");
             txtStokKodu.DataBindings.Add("Text", _entity, "StokKodu");
             txtBarkod.DataBindings.Add("Text", _entity, "Barkod");
@@ -150,6 +170,43 @@ namespace StokTakip.BackOffice.Stok
         private void txtGorsel_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Tanim_DoubleClick(object sender, EventArgs e)
+        {
+            var textBox = (sender as ButtonEdit);
+            frmTanim.TanimTuru tanimTuru;
+            tanimTuru = (frmTanim.TanimTuru)Enum.Parse(typeof(frmTanim.TanimTuru), textBox.AccessibleName.ToString());
+
+            frmTanim form = new frmTanim(tanimTuru);
+            form.ShowDialog();
+            if (form.secildi)
+            {
+                textBox.Text = form._entity.Tanimi;
+            }
+        }
+
+        private void Tanim_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+            var textBox = (sender as ButtonEdit);
+            frmTanim.TanimTuru tanimTuru;
+            tanimTuru = (frmTanim.TanimTuru)Enum.Parse(typeof(frmTanim.TanimTuru), textBox.AccessibleName.ToString());
+
+            switch (e.Button.Index)
+            {
+                case 0:
+                    frmTanim form = new frmTanim(tanimTuru);
+                    form.ShowDialog();
+                    if (form.secildi)
+                    {
+                        textBox.Text = form._entity.Tanimi;
+                    }
+
+                    break;
+                case 1:
+                    textBox.Text = null;
+                    break;
+            }
         }
     }
 }

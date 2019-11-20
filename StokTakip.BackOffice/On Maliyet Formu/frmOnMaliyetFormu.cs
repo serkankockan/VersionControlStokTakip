@@ -239,5 +239,10 @@ namespace StokTakip.BackOffice.Ön_Maliyet_Formu
                     break;
             }
         }
+
+        private void btnMusteriAdi_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

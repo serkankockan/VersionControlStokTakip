@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Repositories;
 using StokTakip.Entities.Tables;
+using StokTakip.Entities.Tables.Other_Tables;
 using StokTakip.Entities.Validations;
 
 namespace StokTakip.Entities.Data_Access
@@ -80,20 +81,22 @@ namespace StokTakip.Entities.Data_Access
             return genelToplamlar;
         }
 
-        public object KonumStoklari(StokTakipContext context, string konum)
+        public object KonumStoklari(StokTakipContext context, string konumKodu)
         {
-            /*context.StokHareketleri.Where(s => s.Konum == konum).ToList();*/
-
-            var result = (from sh in context.StokHareketleri.Where(s=>s.Konum==konum)
+            var result = (from sh in context.StokHareketleri.Where(s => s.Konum == konumKodu)
                 join s in context.Stoklar on sh.StokKodu equals s.StokKodu
-                select new
+                select new ToplamStokGorsel()
                 {
-                    sh.StokAdi,
-                    sh.SeriNo,
-                    sh.Birimi,
-                    sh.Miktar,
-                    s.Gorsel
-                }).ToList();
+                    StokAdi = sh.StokAdi,
+                    SeriNo = sh.SeriNo,
+                    Birim = sh.Birimi,
+                    Miktar = sh.Miktar,
+                    Marka = s.Marka,
+                    Model = s.Modeli,
+                    StokGrubu = s.StokGrubu,
+                    Gorsel = s.Gorsel
+
+                }).ToList();/*.OrderByDescending(s => s.StokGrubu);*/
             return result;
         }
 
@@ -103,11 +106,15 @@ namespace StokTakip.Entities.Data_Access
             return result;
         }
 
+        public ObservableCollection<StokSec> StokSecimleri(StokTakipContext context, StokSec secimler)
+        {
 
-        //public object KonumlarDuzenle(StokTakipContext context, string depoKodu)
-        //{
-        //    var KonumListele = context.StokHareketleri.Where()
-        //}
+            ObservableCollection<StokSec> stokSecs = new ObservableCollection<StokSec>();
+
+            stokSecs.Add(secimler);
+
+            return stokSecs;
+        }
 
     }
 }

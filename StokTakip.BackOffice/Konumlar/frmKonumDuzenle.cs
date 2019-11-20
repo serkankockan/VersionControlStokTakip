@@ -13,6 +13,7 @@ using DevExpress.LookAndFeel;
 using DevExpress.Office.Utils;
 using DevExpress.Utils;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using StokTakip.BackOffice.Stok_Hareketleri;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
@@ -29,21 +30,31 @@ namespace StokTakip.BackOffice.Konumlar
         private ButonKonum entity;
         TableTools tableTools = new TableTools();
         public ButonKonum butonKonum = new ButonKonum();
-
+        private int secilen;
         bool isDragged = false;
         Point ptOffset;
+        Entities.Tables.Depo depo = new Entities.Tables.Depo();
+        DepoDAL depoDal = new DepoDAL();
+        List<Entities.Tables.Depo> depoList= new List<Entities.Tables.Depo>();
+        private int katKodu;
+        bool dataLoaded = false;
 
         public frmKonumDuzenle()
         {
-            InitializeComponent();
-            
-            GroupOlustur();
 
+            InitializeComponent();
+            depoList = context.Depolar.Where(c => c.Kat == true).ToList();
+            lookKatlar.Properties.DataSource = depoList;
+            lookKatlar.Properties.ValueMember = "Id";
+            lookKatlar.Properties.DisplayMember = "DepoAdi";
+            lookKatlar.EditValue = depoList[0].Id;
+            katKodu = Convert.ToInt32(depoList[0].Id.ToString());
+            GroupOlustur();
+            dataLoaded = true;
         }
 
         private void frmKonumDuzenle_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnEkleDuzenle_Click(object sender, EventArgs e)
@@ -54,18 +65,18 @@ namespace StokTakip.BackOffice.Konumlar
             form.ShowDialog();
             if (form.kaydedildi)
             {
-                PanelKat.Controls.Clear();
+                xtraScrollableControl1.Controls.Clear();
                 GroupOlustur();
             }
         }
 
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
-            frmAracSec form = new frmAracSec("Duzenle");
+            frmAracSec form = new frmAracSec("Duzenle", katKodu);
             form.ShowDialog();
             if (form.secildi)
             {
-                PanelKat.Controls.Clear();
+                xtraScrollableControl1.Controls.Clear();
                 GroupOlustur();
             }
         }
@@ -77,7 +88,6 @@ namespace StokTakip.BackOffice.Konumlar
 
         private void btnPaneleEkle_Click(object sender, EventArgs e)
         {
-
             var group = new GroupControl()
             {
                 Name = "test",
@@ -86,12 +96,12 @@ namespace StokTakip.BackOffice.Konumlar
                 Height = 41,
                 //Location = new System.Drawing.Point(18, 12),
             };
-            PanelKat.Controls.Add(group);
+            xtraScrollableControl1.Controls.Add(group);
         }
 
         public void GroupOlustur()
         {
-            foreach (var liste in context.ButonKonumlar.ToList())
+            foreach (var liste in context.ButonKonumlar.Where(c=>c.KatKodu == katKodu))
             {
                 var sonListe = context.ButonTanimlar.Where(c => c.Id == liste.TurKodu).ToList();
 
@@ -104,9 +114,9 @@ namespace StokTakip.BackOffice.Konumlar
                     groupControl.Width = butonTanimlari.GroupWidth.Value;
                     groupControl.Location = new Point(liste.X.Value,liste.Y.Value);
                     groupControl.AllowDrop = true;
-                    groupControl.Text = "Masa - 1";
+                    groupControl.Text = liste.KonumAdi;
                     groupControl.TabIndex = 0;
-                    groupControl.AccessibleName = liste.KonumKodu;
+                    groupControl.AccessibleName = Convert.ToString(liste.Id);
 
                     DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
                     DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
@@ -151,7 +161,7 @@ namespace StokTakip.BackOffice.Konumlar
                     groupControl.LookAndFeel.UseDefaultLookAndFeel = false;
                     groupControl.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
                     
-                    PanelKat.Controls.Add(groupControl);
+                    xtraScrollableControl1.Controls.Add(groupControl);
                     
                     groupControl.MouseDown += groupControl_MouseDown;
                     groupControl.MouseUp += groupControl_MouseUp;
@@ -232,11 +242,11 @@ namespace StokTakip.BackOffice.Konumlar
         {
             konumKaydet();
 
-            frmAracSec form = new frmAracSec("PaneleEkle");
+            frmAracSec form = new frmAracSec("PaneleEkle", katKodu); 
             form.ShowDialog();
             if (form.secildi)
             {
-                PanelKat.Controls.Clear();
+                xtraScrollableControl1.Controls.Clear();
                 GroupOlustur();
             }
 
@@ -253,7 +263,7 @@ namespace StokTakip.BackOffice.Konumlar
         {
             List<Control> list1 = new List<Control>();
 
-            GetAllControl(PanelKat, list1);
+            GetAllControl(xtraScrollableControl1, list1);
 
             foreach (var items in context.ButonKonumlar.Where(c => c.Durumu == true).ToList())
             {
@@ -284,33 +294,56 @@ namespace StokTakip.BackOffice.Konumlar
             }
         }
 
-        
+
 
         private void groupControl_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
         {
 
             GroupControl groupControl = sender as GroupControl;
 
-            if (e.Button == groupControl.CustomHeaderButtons[0])
+            if (groupControl.AccessibleName != null)
             {
-                MessageBox.Show("0'a basıldı");
-            }
+                secilen = Convert.ToInt32(groupControl.AccessibleName);
 
-            if (e.Button == groupControl.CustomHeaderButtons[1])
-            {
-                frmStokDuzenle form = new frmStokDuzenle(groupControl.AccessibleName);
-                form.ShowDialog();
-            }
+                if (e.Button == groupControl.CustomHeaderButtons[0])
+                {
+                    frmUrunleriGoruntule form = new frmUrunleriGoruntule(secilen.ToString());
+                    form.ShowDialog();
 
-            if (e.Button == groupControl.CustomHeaderButtons[2])
+                }
+
+                if (e.Button == groupControl.CustomHeaderButtons[1])
+                {
+                    frmStokDuzenle form = new frmStokDuzenle(groupControl.AccessibleName, butonKonumDal.GetByFilter(context, c => c.Id == secilen));
+                    form.ShowDialog();
+                }
+
+                if (e.Button == groupControl.CustomHeaderButtons[2])
+                {
+                    MessageBox.Show("2'e basıldı");
+                }
+            }
+            else
             {
-                MessageBox.Show("2'e basıldı");
+                MessageBox.Show("Konum seçimi yapınız","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void lookKatlar_EditValueChanged(object sender, EventArgs e)
+        {
+            object inf = lookKatlar.GetColumnValue("Id");
+            katKodu = (int)inf;
+
+            if (dataLoaded)
+            {
+                xtraScrollableControl1.Controls.Clear();
+                GroupOlustur();
+            }
         }
     }
 }   

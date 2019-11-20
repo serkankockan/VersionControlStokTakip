@@ -584,6 +584,7 @@ namespace StokTakip.BackOffice.Fis
             {
                 ayarlar.KasaHareketi = "Kasa Çıkış";
             }
+
             else
             {
                 ayarlar.KasaHareketi = "Kasa Giriş";

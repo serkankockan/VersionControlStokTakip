@@ -38,5 +38,9 @@ namespace StokTakip.Entities.Tables
 
         public int DepoKodu { get; set; }
 
+        public string KatAdi { get; set; }
+
+        public int KatKodu { get; set; }
+
     }
 }

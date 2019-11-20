@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
+using StokTakip.BackOffice.Stok_Hareketleri;
 
 namespace StokTakip.BackOffice
 {
@@ -21,6 +22,7 @@ namespace StokTakip.BackOffice
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             Application.Run(new Form1());
+            
         }
     }
 }

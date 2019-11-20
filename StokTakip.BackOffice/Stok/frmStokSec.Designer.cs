@@ -91,7 +91,7 @@
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(963, 45);
+            this.lblBaslik.Size = new System.Drawing.Size(1123, 55);
             this.lblBaslik.TabIndex = 2;
             this.lblBaslik.Text = "Stok Seçim Ekranı";
             // 
@@ -101,10 +101,10 @@
             this.grpMenu.Controls.Add(this.btnSec);
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 537);
+            this.grpMenu.Location = new System.Drawing.Point(0, 661);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(963, 68);
+            this.grpMenu.Size = new System.Drawing.Size(1123, 84);
             this.grpMenu.TabIndex = 3;
             this.grpMenu.Text = "Menü";
             // 
@@ -119,9 +119,10 @@
             this.lblUyari.Appearance.Options.UseTextOptions = true;
             this.lblUyari.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblUyari.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblUyari.Location = new System.Drawing.Point(12, 26);
+            this.lblUyari.Location = new System.Drawing.Point(14, 32);
+            this.lblUyari.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblUyari.Name = "lblUyari";
-            this.lblUyari.Size = new System.Drawing.Size(386, 37);
+            this.lblUyari.Size = new System.Drawing.Size(450, 46);
             this.lblUyari.TabIndex = 3;
             this.lblUyari.Text = "Çoklu seçim yapabilmek için CTRL tuşuna basılı tutunuz.";
             this.lblUyari.Visible = false;
@@ -131,10 +132,10 @@
             this.btnSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSec.ImageOptions.ImageIndex = 0;
             this.btnSec.ImageOptions.ImageList = this.ımageList1;
-            this.btnSec.Location = new System.Drawing.Point(781, 26);
+            this.btnSec.Location = new System.Drawing.Point(911, 32);
             this.btnSec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSec.Name = "btnSec";
-            this.btnSec.Size = new System.Drawing.Size(83, 35);
+            this.btnSec.Size = new System.Drawing.Size(97, 43);
             this.btnSec.TabIndex = 2;
             this.btnSec.Text = "Seç";
             this.btnSec.Click += new System.EventHandler(this.btnSec_Click);
@@ -151,10 +152,10 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 1;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(870, 26);
+            this.btnKapat.Location = new System.Drawing.Point(1015, 32);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(83, 35);
+            this.btnKapat.Size = new System.Drawing.Size(97, 43);
             this.btnKapat.TabIndex = 2;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -163,11 +164,11 @@
             // 
             this.gridContStoklar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridContStoklar.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridContStoklar.Location = new System.Drawing.Point(0, 45);
+            this.gridContStoklar.Location = new System.Drawing.Point(0, 55);
             this.gridContStoklar.MainView = this.gridStoklar;
             this.gridContStoklar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridContStoklar.Name = "gridContStoklar";
-            this.gridContStoklar.Size = new System.Drawing.Size(963, 492);
+            this.gridContStoklar.Size = new System.Drawing.Size(1123, 606);
             this.gridContStoklar.TabIndex = 4;
             this.gridContStoklar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridStoklar});
@@ -468,13 +469,14 @@
             // 
             // frmStokSec
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 605);
+            this.ClientSize = new System.Drawing.Size(1123, 745);
             this.Controls.Add(this.gridContStoklar);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmStokSec";
