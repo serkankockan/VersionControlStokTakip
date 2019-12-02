@@ -209,6 +209,13 @@ namespace StokTakip.BackOffice
             frmKonumDuzenle form = new frmKonumDuzenle();
             form.Show();
         }
+
+        private void barButtonItem43_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKonumAracIslemleri form = new frmKonumAracIslemleri();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }
 

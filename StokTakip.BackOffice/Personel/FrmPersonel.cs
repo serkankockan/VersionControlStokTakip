@@ -86,7 +86,7 @@ namespace StokTakip.BackOffice.Personel
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
             _secilen = gridPersonel.GetFocusedRowCellValue(colPersonelKodu).ToString();
-            FrmPersonelIslem personelIslem = new FrmPersonelIslem(personelDal.GetByFilter(context,c=>c.PersonelKodu==_secilen));
+            FrmPersonelIslem personelIslem = new FrmPersonelIslem(personelDal.GetByFilter(context,a => a.PersonelKodu == _secilen));
             personelIslem.ShowDialog();
             if (personelIslem.saved)
             {

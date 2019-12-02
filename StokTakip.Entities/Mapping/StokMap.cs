@@ -47,6 +47,7 @@ namespace StokTakip.Entities.Mapping
             this.ToTable("Stoklar");
             this.Property(p => p.Id).HasColumnName("Id");
             this.Property(p => p.Durumu).HasColumnName("Durumu");
+            this.Property(p => p.Zimmet).HasColumnName("Zimmet");
             this.Property(p => p.StokKodu).HasColumnName("StokKodu");
             this.Property(p => p.StokAdi).HasColumnName("StokAdi");
             this.Property(p => p.Barkod).HasColumnName("Barkod");

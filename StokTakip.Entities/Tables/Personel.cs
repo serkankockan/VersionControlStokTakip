@@ -12,7 +12,9 @@ namespace StokTakip.Entities.Tables
 
         public int id { get; set; }
         public bool Calisisyor { get; set; }
+        public bool Kullanici { get; set; }
         public string Unvani { get; set; }
+        public string Bolumu { get; set; }
         public string PersonelKodu { get; set; }
         public string PersonelAdi { get; set; }
         public string PersonelSoyadi { get; set; }

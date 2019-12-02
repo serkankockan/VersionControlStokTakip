@@ -105,13 +105,13 @@
             this.btnMusteriAdi = new DevExpress.XtraEditors.ButtonEdit();
             this.ımageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
             this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btnKapat2 = new DevExpress.XtraEditors.SimpleButton();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnOnayla = new DevExpress.XtraEditors.SimpleButton();
-            this.btnReddet = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnReddet = new DevExpress.XtraEditors.SimpleButton();
+            this.btnOnayla = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKapat2 = new DevExpress.XtraEditors.SimpleButton();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupGenel)).BeginInit();
             this.groupGenel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTarih.Properties.CalendarTimeProperties)).BeginInit();
@@ -871,6 +871,82 @@
             this.listBoxControl1.Size = new System.Drawing.Size(438, 288);
             this.listBoxControl1.TabIndex = 7;
             // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "floppy_disk.png");
+            this.ımageList1.Images.SetKeyName(1, "folder_out.png");
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKaydet.ImageOptions.ImageIndex = 0;
+            this.btnKaydet.ImageOptions.ImageList = this.ımageList1;
+            this.btnKaydet.Location = new System.Drawing.Point(14, 17);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(103, 43);
+            this.btnKaydet.TabIndex = 2;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnKapat
+            // 
+            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKapat.ImageOptions.ImageIndex = 1;
+            this.btnKapat.ImageOptions.ImageList = this.ımageList1;
+            this.btnKapat.Location = new System.Drawing.Point(121, 17);
+            this.btnKapat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(85, 43);
+            this.btnKapat.TabIndex = 2;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            // 
+            // btnReddet
+            // 
+            this.btnReddet.AccessibleName = "Reddet";
+            this.btnReddet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReddet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReddet.ImageOptions.Image")));
+            this.btnReddet.ImageOptions.ImageIndex = 0;
+            this.btnReddet.Location = new System.Drawing.Point(195, 17);
+            this.btnReddet.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReddet.Name = "btnReddet";
+            this.btnReddet.Size = new System.Drawing.Size(103, 43);
+            this.btnReddet.TabIndex = 4;
+            this.btnReddet.Text = "Reddet";
+            this.btnReddet.Click += new System.EventHandler(this.Islemler_ButtonClick);
+            // 
+            // btnOnayla
+            // 
+            this.btnOnayla.AccessibleName = "Onay";
+            this.btnOnayla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOnayla.AppearanceHovered.BackColor = System.Drawing.Color.Red;
+            this.btnOnayla.AppearanceHovered.Options.UseBackColor = true;
+            this.btnOnayla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOnayla.ImageOptions.Image")));
+            this.btnOnayla.ImageOptions.ImageIndex = 1;
+            this.btnOnayla.Location = new System.Drawing.Point(302, 17);
+            this.btnOnayla.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOnayla.Name = "btnOnayla";
+            this.btnOnayla.Size = new System.Drawing.Size(109, 43);
+            this.btnOnayla.TabIndex = 3;
+            this.btnOnayla.Text = "Onayla";
+            this.btnOnayla.Click += new System.EventHandler(this.Islemler_ButtonClick);
+            // 
+            // btnKapat2
+            // 
+            this.btnKapat2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKapat2.ImageOptions.ImageIndex = 1;
+            this.btnKapat2.ImageOptions.ImageList = this.ımageList1;
+            this.btnKapat2.Location = new System.Drawing.Point(415, 17);
+            this.btnKapat2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKapat2.Name = "btnKapat2";
+            this.btnKapat2.Size = new System.Drawing.Size(85, 43);
+            this.btnKapat2.TabIndex = 5;
+            this.btnKapat2.Text = "Kapat";
+            this.btnKapat2.Click += new System.EventHandler(this.btnKapat_Click);
+            // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Appearance.BorderColor = System.Drawing.Color.Black;
@@ -891,82 +967,6 @@
             this.splitContainerControl1.SplitterPosition = 508;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "Menü";
-            // 
-            // btnKapat2
-            // 
-            this.btnKapat2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKapat2.ImageOptions.ImageIndex = 1;
-            this.btnKapat2.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat2.Location = new System.Drawing.Point(415, 17);
-            this.btnKapat2.Margin = new System.Windows.Forms.Padding(2);
-            this.btnKapat2.Name = "btnKapat2";
-            this.btnKapat2.Size = new System.Drawing.Size(85, 43);
-            this.btnKapat2.TabIndex = 5;
-            this.btnKapat2.Text = "Kapat";
-            this.btnKapat2.Click += new System.EventHandler(this.btnKapat_Click);
-            // 
-            // ımageList1
-            // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "floppy_disk.png");
-            this.ımageList1.Images.SetKeyName(1, "folder_out.png");
-            // 
-            // btnOnayla
-            // 
-            this.btnOnayla.AccessibleName = "Onay";
-            this.btnOnayla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOnayla.AppearanceHovered.BackColor = System.Drawing.Color.Red;
-            this.btnOnayla.AppearanceHovered.Options.UseBackColor = true;
-            this.btnOnayla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOnayla.ImageOptions.Image")));
-            this.btnOnayla.ImageOptions.ImageIndex = 1;
-            this.btnOnayla.Location = new System.Drawing.Point(302, 17);
-            this.btnOnayla.Margin = new System.Windows.Forms.Padding(2);
-            this.btnOnayla.Name = "btnOnayla";
-            this.btnOnayla.Size = new System.Drawing.Size(109, 43);
-            this.btnOnayla.TabIndex = 3;
-            this.btnOnayla.Text = "Onayla";
-            this.btnOnayla.Click += new System.EventHandler(this.Islemler_ButtonClick);
-            // 
-            // btnReddet
-            // 
-            this.btnReddet.AccessibleName = "Reddet";
-            this.btnReddet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReddet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReddet.ImageOptions.Image")));
-            this.btnReddet.ImageOptions.ImageIndex = 0;
-            this.btnReddet.Location = new System.Drawing.Point(195, 17);
-            this.btnReddet.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReddet.Name = "btnReddet";
-            this.btnReddet.Size = new System.Drawing.Size(103, 43);
-            this.btnReddet.TabIndex = 4;
-            this.btnReddet.Text = "Reddet";
-            this.btnReddet.Click += new System.EventHandler(this.Islemler_ButtonClick);
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKapat.ImageOptions.ImageIndex = 1;
-            this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(121, 17);
-            this.btnKapat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(85, 43);
-            this.btnKapat.TabIndex = 2;
-            this.btnKapat.Text = "Kapat";
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKaydet.ImageOptions.ImageIndex = 0;
-            this.btnKaydet.ImageOptions.ImageList = this.ımageList1;
-            this.btnKaydet.Location = new System.Drawing.Point(14, 17);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(103, 43);
-            this.btnKaydet.TabIndex = 2;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // frmOnMaliyetFormu
             // 
@@ -1048,8 +1048,6 @@
         private DevExpress.XtraEditors.ButtonEdit btnMusteriAdi;
         private System.Windows.Forms.ImageList ımageList2;
         private DevExpress.XtraEditors.TextEdit txtSipNo;
-        private DevExpress.XtraEditors.SimpleButton btnKapat;
-        private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private DevExpress.XtraEditors.ButtonEdit btnKumasCinsiveEni;
         private DevExpress.XtraEditors.ButtonEdit btnBaskiEni;
         private DevExpress.XtraEditors.ButtonEdit btnPassSayisi;
@@ -1066,13 +1064,15 @@
         private DevExpress.XtraEditors.ButtonEdit btnDesinator;
         private DevExpress.XtraEditors.TextEdit txtSipMiktar;
         private DevExpress.XtraEditors.ButtonEdit btnTransferDerecesi;
-        private DevExpress.XtraEditors.SimpleButton btnOnayla;
-        private DevExpress.XtraEditors.SimpleButton btnReddet;
         private System.Windows.Forms.ImageList ımageList1;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl lblDurum;
         private DevExpress.XtraEditors.DateEdit cmbTarih;
+        private DevExpress.XtraEditors.SimpleButton btnKaydet;
+        private DevExpress.XtraEditors.SimpleButton btnKapat;
+        private DevExpress.XtraEditors.SimpleButton btnReddet;
+        private DevExpress.XtraEditors.SimpleButton btnOnayla;
         private DevExpress.XtraEditors.SimpleButton btnKapat2;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
     }
 }

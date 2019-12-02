@@ -46,7 +46,7 @@ namespace StokTakip.BackOffice.Konumlar
             if (_islem == "PaneleEkle")
             {
                 entity.X = 50;
-                entity.Y = 250;
+                entity.Y = 250; 
                 entity.Durumu = true;
                 entity.KonumAdi = null;
                 entity.Turu = gridView1.GetFocusedRowCellValue(colButonIsimleri).ToString();

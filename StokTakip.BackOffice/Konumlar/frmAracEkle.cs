@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -22,8 +23,6 @@ namespace StokTakip.BackOffice.Konumlar
         private StokTakipContext context = new StokTakipContext();
         private ButonTanimDAL buttonTanimDal = new ButonTanimDAL();
         private ButonTanim _entity;
-        private ButonKonum but;
-        private  ButonKonumDAL butonKonumDal = new ButonKonumDAL();
         private bool _duzenle;
         int secim;
 
@@ -54,6 +53,10 @@ namespace StokTakip.BackOffice.Konumlar
                 colorPickEditKenar.EditValue = _entity.SimpleKenarRengi;
             }
 
+            if (_entity.Gorsel != null)
+            {
+                ımageSlider1.Images.Add(Image.FromStream(buttonTanimDal.ResimGetir(context, _entity.Id)));
+            }
         }
 
         private void trackBarControl1_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
@@ -98,7 +101,6 @@ namespace StokTakip.BackOffice.Konumlar
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            
             _entity.GroupHeight = groupControl1.Height;
             _entity.GroupWidth = groupControl1.Width;
             _entity.FlowDock = flowLayoutPanel1.Dock.ToString();
@@ -106,6 +108,7 @@ namespace StokTakip.BackOffice.Konumlar
             _entity.SimpleDock = simpleButton1.Dock.ToString();
             _entity.SimpleArkaPlanRengi = colorPickEditArkaPlan.Color.ToArgb().ToString();
             _entity.SimpleKenarRengi = colorPickEditKenar.Color.ToArgb().ToString();
+            ResimKaydet();
 
             if (buttonTanimDal.AddOrUpdate(context, _entity))
             {
@@ -186,5 +189,34 @@ namespace StokTakip.BackOffice.Konumlar
             this.Close();
         }
 
+        private void txtGorsel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txtGorsel.Text = open.FileName;
+                ımageSlider1.Images.Add(Image.FromFile(open.FileName));
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        void ResimKaydet()
+        {
+            if (txtGorsel.Text != null && txtGorsel.Text != "")
+            {
+                string image = txtGorsel.Text;
+                Bitmap bmp = new Bitmap(image);
+                FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read);
+                byte[] bimage = new byte[fs.Length];
+                fs.Read(bimage, 0, Convert.ToInt32(fs.Length));
+
+                _entity.Gorsel = bimage;
+
+            }
+        }
     }
 }

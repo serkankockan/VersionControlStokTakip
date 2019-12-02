@@ -53,5 +53,7 @@ namespace StokTakip.Entities.Tables
 
         public string SimpleKenarRengi { get; set; }
 
+        public byte[] Gorsel { get; set; }
+
     }
 }

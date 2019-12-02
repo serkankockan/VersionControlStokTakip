@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,13 @@ namespace StokTakip.Entities.Data_Access
         {
             var result = context.ButonTanimlar.First(c => c.Id == secim);
             return result;
+        }
+
+        public Stream ResimGetir(StokTakipContext context, int konumId)
+        {
+            var resim = context.ButonTanimlar.Where(c => c.Id == konumId).SingleOrDefault();
+            Stream stream = new MemoryStream(resim.Gorsel);
+            return stream;
         }
     }
 }

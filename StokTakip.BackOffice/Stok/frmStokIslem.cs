@@ -147,9 +147,6 @@ namespace StokTakip.BackOffice.Stok
             {
 
             }
-
-
-
         }
 
         void ResimKaydet()

@@ -29,6 +29,7 @@ namespace StokTakip.BackOffice.Personel
 
             _entity = entity;
             toggleDurumu.DataBindings.Add("EditValue", _entity, "Calisisyor", false, DataSourceUpdateMode.OnPropertyChanged);
+            toggleKullanici.DataBindings.Add("EditValue", _entity, "Kullanici", false, DataSourceUpdateMode.OnPropertyChanged);
             txtPersonelKodu.DataBindings.Add("Text", _entity, "PersonelKodu", false,
                 DataSourceUpdateMode.OnPropertyChanged);
             txtAdi.DataBindings.Add("Text", _entity, "PersonelAdi", false,
@@ -48,6 +49,7 @@ namespace StokTakip.BackOffice.Personel
             txtIlce.DataBindings.Add("Text", _entity, "Ilce", false, DataSourceUpdateMode.OnPropertyChanged);
             txtSemt.DataBindings.Add("Text", _entity, "Semt", false, DataSourceUpdateMode.OnPropertyChanged);
             txtAdres.DataBindings.Add("Text", _entity, "Adres", false, DataSourceUpdateMode.OnPropertyChanged);
+            btnBolumu.DataBindings.Add("Text", _entity, "Bolumu", false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void FrmPersonelIslem_Load(object sender, EventArgs e)
@@ -72,11 +74,47 @@ namespace StokTakip.BackOffice.Personel
 
         private void btnUnvani_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            frmTanim form = new frmTanim(frmTanim.TanimTuru.PersonelUnvan);
-            form.ShowDialog();
-            if (form.secildi)
+            var textBox = (sender as ButtonEdit);
+            frmTanim.TanimTuru tanimTuru;
+            tanimTuru = (frmTanim.TanimTuru)Enum.Parse(typeof(frmTanim.TanimTuru), textBox.AccessibleName.ToString());
+
+            switch (e.Button.Index)
             {
-                btnUnvani.Text = form._entity.Tanimi;
+                case 0:
+                    frmTanim form = new frmTanim(tanimTuru);
+                    form.ShowDialog();
+                    if (form.secildi)
+                    {
+                        textBox.Text = form._entity.Tanimi;
+                    }
+
+                    break;
+                case 1:
+                    textBox.Text = null;
+                    break;
+            }
+        }
+
+        private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var textBox = (sender as ButtonEdit);
+            frmTanim.TanimTuru tanimTuru;
+            tanimTuru = (frmTanim.TanimTuru)Enum.Parse(typeof(frmTanim.TanimTuru), textBox.AccessibleName.ToString());
+
+            switch (e.Button.Index)
+            {
+                case 0:
+                    frmTanim form = new frmTanim(tanimTuru);
+                    form.ShowDialog();
+                    if (form.secildi)
+                    {
+                        textBox.Text = form._entity.Tanimi;
+                    }
+
+                    break;
+                case 1:
+                    textBox.Text = null;
+                    break;
             }
         }
     }

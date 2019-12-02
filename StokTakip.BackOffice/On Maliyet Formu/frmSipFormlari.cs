@@ -14,6 +14,7 @@ using StokTakip.BackOffice.Ön_Maliyet_Formu;
 using StokTakip.BackOffice.Siparis_Formu;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
+using StokTakip.Entities.Tables;
 
 namespace StokTakip.BackOffice.On_Maliyet_Formu
 {
@@ -23,7 +24,7 @@ namespace StokTakip.BackOffice.On_Maliyet_Formu
         OnMaliyetFormDAL onMaliyetFormDal = new OnMaliyetFormDAL();
 
         private int secilen;
-
+        private string formSecim;
 
         public frmSipFormlari()
         {
@@ -166,8 +167,16 @@ namespace StokTakip.BackOffice.On_Maliyet_Formu
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmOnMaliyetFormu form = new frmOnMaliyetFormu(new Entities.Tables.OnMaliyetForm());
+
+            //formSecim = gridFormlar.GetFocusedRowCellValue(colFormNo).ToString();
+
+            frmSatınAlmaFormu form = new frmSatınAlmaFormu(new SatinAlmaTalepForm(), new FormUrunBilgi(), new FormFirmaBilgi());
             form.ShowDialog();
+        }
+
+        private void dropDownButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

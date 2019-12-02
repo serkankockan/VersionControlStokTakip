@@ -65,6 +65,10 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.ımageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
+            this.txtGorsel = new DevExpress.XtraEditors.ButtonEdit();
+            this.lblGorsel = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -89,6 +93,10 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ımageSlider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGorsel.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -180,7 +188,7 @@
             this.simpleButton4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.simpleButton4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(35, 30);
+            this.simpleButton4.Size = new System.Drawing.Size(35, 29);
             this.simpleButton4.TabIndex = 14;
             // 
             // groupGruplar
@@ -518,7 +526,7 @@
             this.groupControl3.Controls.Add(this.labelControl5);
             this.groupControl3.Location = new System.Drawing.Point(390, 58);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(311, 548);
+            this.groupControl3.Size = new System.Drawing.Size(311, 201);
             this.groupControl3.TabIndex = 18;
             this.groupControl3.Text = "Genel Görünüm Ayarları";
             // 
@@ -546,11 +554,60 @@
             this.lblBaslik.TabIndex = 19;
             this.lblBaslik.Text = "Araç Ekle";
             // 
+            // groupControl4
+            // 
+            this.groupControl4.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.groupControl4.AppearanceCaption.Options.UseFont = true;
+            this.groupControl4.Controls.Add(this.ımageSlider1);
+            this.groupControl4.Controls.Add(this.txtGorsel);
+            this.groupControl4.Controls.Add(this.lblGorsel);
+            this.groupControl4.Location = new System.Drawing.Point(390, 265);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(311, 340);
+            this.groupControl4.TabIndex = 20;
+            this.groupControl4.Text = "Görsel";
+            // 
+            // ımageSlider1
+            // 
+            this.ımageSlider1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ımageSlider1.Location = new System.Drawing.Point(5, 27);
+            this.ımageSlider1.Name = "ımageSlider1";
+            this.ımageSlider1.Size = new System.Drawing.Size(299, 271);
+            this.ımageSlider1.TabIndex = 23;
+            this.ımageSlider1.Text = "ımageSlider1";
+            // 
+            // txtGorsel
+            // 
+            this.txtGorsel.Location = new System.Drawing.Point(72, 305);
+            this.txtGorsel.Name = "txtGorsel";
+            this.txtGorsel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtGorsel.Properties.ReadOnly = true;
+            this.txtGorsel.Size = new System.Drawing.Size(232, 22);
+            this.txtGorsel.TabIndex = 22;
+            this.txtGorsel.Click += new System.EventHandler(this.txtGorsel_Click);
+            // 
+            // lblGorsel
+            // 
+            this.lblGorsel.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblGorsel.Appearance.Options.UseBorderColor = true;
+            this.lblGorsel.Appearance.Options.UseTextOptions = true;
+            this.lblGorsel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblGorsel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblGorsel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lblGorsel.Location = new System.Drawing.Point(5, 303);
+            this.lblGorsel.Margin = new System.Windows.Forms.Padding(2);
+            this.lblGorsel.Name = "lblGorsel";
+            this.lblGorsel.Size = new System.Drawing.Size(62, 25);
+            this.lblGorsel.TabIndex = 21;
+            this.lblGorsel.Text = "Görsel :";
+            // 
             // frmAracEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 671);
+            this.Controls.Add(this.groupControl4);
             this.Controls.Add(this.lblBaslik);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
@@ -586,6 +643,10 @@
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ımageSlider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGorsel.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,5 +688,9 @@
         public DevExpress.XtraEditors.LabelControl lblBaslik;
         private DevExpress.XtraEditors.ComboBoxEdit cmbTuru;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraEditors.Controls.ImageSlider ımageSlider1;
+        private DevExpress.XtraEditors.ButtonEdit txtGorsel;
+        private DevExpress.XtraEditors.LabelControl lblGorsel;
     }
 }

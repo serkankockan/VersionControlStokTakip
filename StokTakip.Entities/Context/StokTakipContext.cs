@@ -44,6 +44,12 @@ namespace StokTakip.Entities.Context
 
         public DbSet<ButonKonum> ButonKonumlar { get; set; }
 
+        public DbSet<SatinAlmaTalepForm> SatinAlmaTalepFormlari { get; set; }
+
+        public DbSet<FormUrunBilgi> FormUrunBilgileri { get; set; }
+
+        public DbSet<FormFirmaBilgi> FormFirmarBilgileri { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -60,7 +66,9 @@ namespace StokTakip.Entities.Context
             modelBuilder.Configurations.Add(new OnMaliyetFormMap());
             modelBuilder.Configurations.Add(new ButonTanimMap());
             modelBuilder.Configurations.Add(new ButonKonumMap());
-
+            modelBuilder.Configurations.Add(new SatinAlmaTalepFormMap());
+            modelBuilder.Configurations.Add(new FormUrunBilgiMap());
+            modelBuilder.Configurations.Add(new FormFirmaBilgiMap());
         }
     }   
 }

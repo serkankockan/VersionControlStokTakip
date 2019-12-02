@@ -20,6 +20,5 @@ namespace StokTakip.Entities.Tables
         public string YetkiliAdi { get; set; }
 
         public string Aciklama { get; set; }
-
     }
 }

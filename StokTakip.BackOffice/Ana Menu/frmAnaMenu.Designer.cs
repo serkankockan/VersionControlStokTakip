@@ -74,6 +74,9 @@
             this.barButtonItem39 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem40 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem41 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem42 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem43 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem44 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -95,6 +98,7 @@
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -147,10 +151,13 @@
             this.barButtonItem38,
             this.barButtonItem39,
             this.barButtonItem40,
-            this.barButtonItem41});
+            this.barButtonItem41,
+            this.barButtonItem42,
+            this.barButtonItem43,
+            this.barButtonItem44});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 44;
+            this.ribbonControl1.MaxItemId = 47;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -487,8 +494,30 @@
             // 
             this.barButtonItem41.Caption = "Stok Konumları";
             this.barButtonItem41.Id = 43;
+            this.barButtonItem41.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem41.ImageOptions.LargeImage")));
             this.barButtonItem41.Name = "barButtonItem41";
             this.barButtonItem41.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem41_ItemClick);
+            // 
+            // barButtonItem42
+            // 
+            this.barButtonItem42.Caption = "Konum Ekle";
+            this.barButtonItem42.Id = 44;
+            this.barButtonItem42.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem42.ImageOptions.LargeImage")));
+            this.barButtonItem42.Name = "barButtonItem42";
+            // 
+            // barButtonItem43
+            // 
+            this.barButtonItem43.Caption = "Araç Düzenle";
+            this.barButtonItem43.Id = 45;
+            this.barButtonItem43.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem43.ImageOptions.LargeImage")));
+            this.barButtonItem43.Name = "barButtonItem43";
+            this.barButtonItem43.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem43_ItemClick);
+            // 
+            // barButtonItem44
+            // 
+            this.barButtonItem44.Caption = "barButtonItem44";
+            this.barButtonItem44.Id = 46;
+            this.barButtonItem44.Name = "barButtonItem44";
             // 
             // ribbonPage1
             // 
@@ -648,15 +677,22 @@
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup17});
+            this.ribbonPageGroup17,
+            this.ribbonPageGroup18});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Konumlar";
             // 
             // ribbonPageGroup17
             // 
             this.ribbonPageGroup17.ItemLinks.Add(this.barButtonItem41);
+            this.ribbonPageGroup17.ItemLinks.Add(this.barButtonItem43);
             this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            this.ribbonPageGroup17.Text = "Konum Düzenle";
+            this.ribbonPageGroup17.Text = "Konum İşlemleri";
+            // 
+            // ribbonPageGroup18
+            // 
+            this.ribbonPageGroup18.Name = "ribbonPageGroup18";
+            this.ribbonPageGroup18.Text = "Konum Ayarları";
             // 
             // xtraTabbedMdiManager1
             // 
@@ -751,6 +787,10 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem41;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem42;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem43;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem44;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
     }
 }
 

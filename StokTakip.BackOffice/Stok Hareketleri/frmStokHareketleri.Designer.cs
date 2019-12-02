@@ -60,6 +60,7 @@
             this.colIndirimTutari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colToplamTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoKodu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKonum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeriNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repoSeriNo = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -67,7 +68,7 @@
             this.colSaat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKdvTutar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKonum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -189,7 +190,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.gridContStokHareket);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1555, 554);
-            this.splitContainerControl1.SplitterPosition = 101;
+            this.splitContainerControl1.SplitterPosition = 76;
             this.splitContainerControl1.TabIndex = 8;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -199,7 +200,7 @@
             this.btnFiltreKapat.ImageOptions.ImageIndex = 0;
             this.btnFiltreKapat.ImageOptions.ImageList = this.ımageList1;
             this.btnFiltreKapat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreKapat.Location = new System.Drawing.Point(1485, 46);
+            this.btnFiltreKapat.Location = new System.Drawing.Point(1485, 21);
             this.btnFiltreKapat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreKapat.Name = "btnFiltreKapat";
             this.btnFiltreKapat.Size = new System.Drawing.Size(58, 47);
@@ -212,7 +213,7 @@
             this.btnFiltreIptal.ImageOptions.ImageIndex = 2;
             this.btnFiltreIptal.ImageOptions.ImageList = this.ımageList1;
             this.btnFiltreIptal.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltreIptal.Location = new System.Drawing.Point(1422, 46);
+            this.btnFiltreIptal.Location = new System.Drawing.Point(1422, 21);
             this.btnFiltreIptal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltreIptal.Name = "btnFiltreIptal";
             this.btnFiltreIptal.Size = new System.Drawing.Size(58, 47);
@@ -225,7 +226,7 @@
             this.btnFiltre.ImageOptions.ImageIndex = 1;
             this.btnFiltre.ImageOptions.ImageList = this.ımageList1;
             this.btnFiltre.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnFiltre.Location = new System.Drawing.Point(1358, 46);
+            this.btnFiltre.Location = new System.Drawing.Point(1358, 21);
             this.btnFiltre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltre.Name = "btnFiltre";
             this.btnFiltre.Size = new System.Drawing.Size(58, 47);
@@ -239,7 +240,7 @@
             this.filterControl1.Location = new System.Drawing.Point(0, 0);
             this.filterControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(1555, 101);
+            this.filterControl1.Size = new System.Drawing.Size(1555, 76);
             this.filterControl1.SortFilterColumns = false;
             this.filterControl1.SourceControl = this.gridContStokHareket;
             this.filterControl1.TabIndex = 0;
@@ -255,7 +256,7 @@
             this.gridContStokHareket.Name = "gridContStokHareket";
             this.gridContStokHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoSeriNo});
-            this.gridContStokHareket.Size = new System.Drawing.Size(1555, 447);
+            this.gridContStokHareket.Size = new System.Drawing.Size(1555, 472);
             this.gridContStokHareket.TabIndex = 2;
             this.gridContStokHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridStokHareket});
@@ -284,7 +285,8 @@
             this.colTarih,
             this.colSaat,
             this.colAciklama,
-            this.colKdvTutar});
+            this.colKdvTutar,
+            this.gridColumn1});
             this.gridStokHareket.GridControl = this.gridContStokHareket;
             this.gridStokHareket.Name = "gridStokHareket";
             // 
@@ -312,7 +314,7 @@
             this.colHareket.Name = "colHareket";
             this.colHareket.OptionsColumn.AllowEdit = false;
             this.colHareket.Visible = true;
-            this.colHareket.VisibleIndex = 6;
+            this.colHareket.VisibleIndex = 7;
             this.colHareket.Width = 53;
             // 
             // colStokKodu
@@ -322,7 +324,7 @@
             this.colStokKodu.OptionsColumn.AllowEdit = false;
             this.colStokKodu.OptionsColumn.ShowInCustomizationForm = false;
             this.colStokKodu.Visible = true;
-            this.colStokKodu.VisibleIndex = 7;
+            this.colStokKodu.VisibleIndex = 8;
             this.colStokKodu.Width = 61;
             // 
             // colStokAdi
@@ -358,7 +360,7 @@
             this.colBirimi.Name = "colBirimi";
             this.colBirimi.OptionsColumn.AllowEdit = false;
             this.colBirimi.Visible = true;
-            this.colBirimi.VisibleIndex = 8;
+            this.colBirimi.VisibleIndex = 9;
             this.colBirimi.Width = 53;
             // 
             // colMiktar
@@ -368,7 +370,7 @@
             this.colMiktar.Name = "colMiktar";
             this.colMiktar.OptionsColumn.AllowEdit = false;
             this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 2;
+            this.colMiktar.VisibleIndex = 3;
             this.colMiktar.Width = 46;
             // 
             // colKDV
@@ -428,8 +430,16 @@
             this.colDepoKodu.Name = "colDepoKodu";
             this.colDepoKodu.OptionsColumn.AllowEdit = false;
             this.colDepoKodu.Visible = true;
-            this.colDepoKodu.VisibleIndex = 4;
+            this.colDepoKodu.VisibleIndex = 5;
             this.colDepoKodu.Width = 81;
+            // 
+            // colKonum
+            // 
+            this.colKonum.Caption = "Konum";
+            this.colKonum.FieldName = "Konum";
+            this.colKonum.Name = "colKonum";
+            this.colKonum.Visible = true;
+            this.colKonum.VisibleIndex = 4;
             // 
             // colDepoAdi
             // 
@@ -438,7 +448,7 @@
             this.colDepoAdi.Name = "colDepoAdi";
             this.colDepoAdi.OptionsColumn.AllowEdit = false;
             this.colDepoAdi.Visible = true;
-            this.colDepoAdi.VisibleIndex = 5;
+            this.colDepoAdi.VisibleIndex = 6;
             this.colDepoAdi.Width = 78;
             // 
             // colSeriNo
@@ -449,7 +459,7 @@
             this.colSeriNo.Name = "colSeriNo";
             this.colSeriNo.OptionsColumn.ShowInCustomizationForm = false;
             this.colSeriNo.Visible = true;
-            this.colSeriNo.VisibleIndex = 12;
+            this.colSeriNo.VisibleIndex = 2;
             this.colSeriNo.Width = 58;
             // 
             // repoSeriNo
@@ -472,7 +482,7 @@
             this.colTarih.Name = "colTarih";
             this.colTarih.OptionsColumn.AllowEdit = false;
             this.colTarih.Visible = true;
-            this.colTarih.VisibleIndex = 9;
+            this.colTarih.VisibleIndex = 10;
             this.colTarih.Width = 53;
             // 
             // colSaat
@@ -483,7 +493,7 @@
             this.colSaat.FieldName = "Tarih";
             this.colSaat.Name = "colSaat";
             this.colSaat.Visible = true;
-            this.colSaat.VisibleIndex = 10;
+            this.colSaat.VisibleIndex = 11;
             this.colSaat.Width = 53;
             // 
             // colAciklama
@@ -493,7 +503,7 @@
             this.colAciklama.Name = "colAciklama";
             this.colAciklama.OptionsColumn.AllowEdit = false;
             this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 11;
+            this.colAciklama.VisibleIndex = 12;
             this.colAciklama.Width = 98;
             // 
             // colKdvTutar
@@ -504,13 +514,12 @@
             this.colKdvTutar.Name = "colKdvTutar";
             this.colKdvTutar.Width = 72;
             // 
-            // colKonum
+            // gridColumn1
             // 
-            this.colKonum.Caption = "Konum";
-            this.colKonum.FieldName = "Konum";
-            this.colKonum.Name = "colKonum";
-            this.colKonum.Visible = true;
-            this.colKonum.VisibleIndex = 3;
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 13;
             // 
             // frmStokHareketleri
             // 
@@ -574,5 +583,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKdvTutar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoSeriNo;
         private DevExpress.XtraGrid.Columns.GridColumn colKonum;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

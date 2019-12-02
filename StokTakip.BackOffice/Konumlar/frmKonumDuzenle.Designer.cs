@@ -85,7 +85,7 @@
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnKaydet);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 727);
+            this.grpMenu.Location = new System.Drawing.Point(0, 726);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(2);
             this.grpMenu.Name = "grpMenu";
             this.grpMenu.ShowCaption = false;
@@ -98,7 +98,7 @@
             this.btnKonumEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnKonumEkle.ImageOptions.ImageIndex = 4;
             this.btnKonumEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnKonumEkle.Location = new System.Drawing.Point(284, 8);
+            this.btnKonumEkle.Location = new System.Drawing.Point(283, 7);
             this.btnKonumEkle.Margin = new System.Windows.Forms.Padding(2);
             this.btnKonumEkle.Name = "btnKonumEkle";
             this.btnKonumEkle.Size = new System.Drawing.Size(125, 43);
@@ -122,7 +122,7 @@
             this.btnDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDuzenle.ImageOptions.ImageIndex = 3;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(155, 8);
+            this.btnDuzenle.Location = new System.Drawing.Point(155, 7);
             this.btnDuzenle.Margin = new System.Windows.Forms.Padding(2);
             this.btnDuzenle.Name = "btnDuzenle";
             this.btnDuzenle.Size = new System.Drawing.Size(125, 43);
@@ -135,7 +135,7 @@
             this.btnEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEkle.ImageOptions.ImageIndex = 2;
             this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnEkle.Location = new System.Drawing.Point(11, 8);
+            this.btnEkle.Location = new System.Drawing.Point(10, 7);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(2);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(140, 43);
@@ -148,7 +148,7 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 1;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(1471, 8);
+            this.btnKapat.Location = new System.Drawing.Point(1471, 7);
             this.btnKapat.Margin = new System.Windows.Forms.Padding(2);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(85, 43);
@@ -161,7 +161,7 @@
             this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKaydet.ImageOptions.ImageIndex = 0;
             this.btnKaydet.ImageOptions.ImageList = this.ımageList1;
-            this.btnKaydet.Location = new System.Drawing.Point(1363, 8);
+            this.btnKaydet.Location = new System.Drawing.Point(1363, 7);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(103, 43);
@@ -206,11 +206,12 @@
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Düzenle", false, buttonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, superToolTip2, true, false, true, null, -1),
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Sil", false, buttonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, superToolTip3, true, false, true, null, -1)});
             this.groupControl1.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.groupControl1.Location = new System.Drawing.Point(732, 502);
+            this.groupControl1.Location = new System.Drawing.Point(1191, 426);
             this.groupControl1.LookAndFeel.SkinName = "Office 2007 Black";
             this.groupControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(156, 97);
+            this.groupControl1.Size = new System.Drawing.Size(64, 92);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Trading 1";
             this.groupControl1.Visible = false;
@@ -222,20 +223,22 @@
             this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(2, 31);
+            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.InitialImage = null;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(152, 48);
+            this.pictureEdit1.Size = new System.Drawing.Size(60, 43);
             this.pictureEdit1.TabIndex = 0;
             // 
             // labelControl1
             // 
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl1.Location = new System.Drawing.Point(2, 79);
+            this.labelControl1.Location = new System.Drawing.Point(2, 74);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(152, 16);
+            this.labelControl1.Size = new System.Drawing.Size(60, 16);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Masa 5";
             // 
@@ -245,9 +248,10 @@
             this.groupControl2.Controls.Add(this.ımageSlider1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(1567, 51);
+            this.groupControl2.Size = new System.Drawing.Size(1567, 50);
             this.groupControl2.TabIndex = 10;
             this.groupControl2.Text = "groupControl2";
             // 
@@ -255,6 +259,7 @@
             // 
             this.lookKatlar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lookKatlar.Location = new System.Drawing.Point(58, 2);
+            this.lookKatlar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lookKatlar.Name = "lookKatlar";
             this.lookKatlar.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lookKatlar.Properties.Appearance.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -281,7 +286,7 @@
             this.lookKatlar.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DepoAdi", "Alan Adı"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id")});
-            this.lookKatlar.Size = new System.Drawing.Size(1507, 47);
+            this.lookKatlar.Size = new System.Drawing.Size(1507, 46);
             this.lookKatlar.TabIndex = 2;
             this.lookKatlar.EditValueChanged += new System.EventHandler(this.lookKatlar_EditValueChanged);
             // 
@@ -293,8 +298,9 @@
             this.ımageSlider1.Dock = System.Windows.Forms.DockStyle.Left;
             this.ımageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("ımageSlider1.Images"))));
             this.ımageSlider1.Location = new System.Drawing.Point(2, 2);
+            this.ımageSlider1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ımageSlider1.Name = "ımageSlider1";
-            this.ımageSlider1.Size = new System.Drawing.Size(56, 47);
+            this.ımageSlider1.Size = new System.Drawing.Size(56, 46);
             this.ımageSlider1.TabIndex = 1;
             this.ımageSlider1.Text = "ımageSlider1";
             // 
@@ -302,10 +308,13 @@
             // 
             this.xtraScrollableControl1.Controls.Add(this.groupControl1);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 51);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 50);
+            this.xtraScrollableControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
             this.xtraScrollableControl1.Size = new System.Drawing.Size(1567, 676);
             this.xtraScrollableControl1.TabIndex = 11;
+            this.xtraScrollableControl1.Click += new System.EventHandler(this.xtraScrollableControl1_Click);
+            this.xtraScrollableControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraScrollableControl1_Paint);
             // 
             // ımageList3
             // 
@@ -323,10 +332,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1567, 787);
+            this.ClientSize = new System.Drawing.Size(1567, 786);
             this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.grpMenu);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmKonumDuzenle";
             this.Text = "Konum Düzenle";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

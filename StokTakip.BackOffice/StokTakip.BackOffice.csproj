@@ -51,6 +51,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.BonusSkins.v17.1" />
     <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.1" />
@@ -89,7 +90,13 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -256,6 +263,12 @@
     <Compile Include="Konumlar\frmAracSec.Designer.cs">
       <DependentUpon>frmAracSec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Konumlar\frmKonumAracIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konumlar\frmKonumAracIslemleri.Designer.cs">
+      <DependentUpon>frmKonumAracIslemleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Konumlar\frmKonumDuzenle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +328,12 @@
     </Compile>
     <Compile Include="Personel\FrmPersonelIslem.Designer.cs">
       <DependentUpon>FrmPersonelIslem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\frmPersonelSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\frmPersonelSec.Designer.cs">
+      <DependentUpon>frmPersonelSec.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -464,6 +483,9 @@
     <EmbeddedResource Include="Konumlar\frmAracSec.resx">
       <DependentUpon>frmAracSec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Konumlar\frmKonumAracIslemleri.resx">
+      <DependentUpon>frmKonumAracIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Konumlar\frmKonumDuzenle.resx">
       <DependentUpon>frmKonumDuzenle.cs</DependentUpon>
     </EmbeddedResource>
@@ -493,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Personel\FrmPersonelIslem.resx">
       <DependentUpon>FrmPersonelIslem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\frmPersonelSec.resx">
+      <DependentUpon>frmPersonelSec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -549,6 +574,7 @@
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.OdemeTuru.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.OnMaliyetForm.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Personel.datasource" />
+    <None Include="Properties\DataSources\StokTakip.Entities.Tables.SatinAlmaTalepForm.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.Stok.datasource" />
     <None Include="Properties\DataSources\StokTakip.Entities.Tables.StokHareket.datasource" />
     <None Include="Properties\Settings.settings">

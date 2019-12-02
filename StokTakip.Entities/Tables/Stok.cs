@@ -13,6 +13,8 @@ namespace StokTakip.Entities.Tables
 
         public bool Durumu { get; set; }
 
+        public bool Zimmet { get; set; }
+
         public string StokKodu { get; set; }
 
         public string StokAdi { get; set; }

@@ -33,19 +33,28 @@
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.groupGenel = new DevExpress.XtraEditors.GroupControl();
+            this.btnBolumu = new DevExpress.XtraEditors.ButtonEdit();
+            this.toggleKullanici = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.btnUnvani = new DevExpress.XtraEditors.ButtonEdit();
             this.cmbIstenCikisTarihi = new DevExpress.XtraEditors.DateEdit();
             this.cmbIseGirisTarihi = new DevExpress.XtraEditors.DateEdit();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
+            this.txtSoyad = new DevExpress.XtraEditors.TextEdit();
             this.txtAdi = new DevExpress.XtraEditors.TextEdit();
             this.txtPersonelKodu = new DevExpress.XtraEditors.TextEdit();
             this.toggleDurumu = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -69,16 +78,17 @@
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.ımageList2 = new System.Windows.Forms.ImageList(this.components);
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSoyad = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupGenel)).BeginInit();
             this.groupGenel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBolumu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleKullanici.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnvani.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIstenCikisTarihi.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIstenCikisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIseGirisTarihi.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIseGirisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPersonelKodu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleDurumu.Properties)).BeginInit();
@@ -93,7 +103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCepTelefonu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ımageList1
@@ -101,6 +110,7 @@
             this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
             this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.ımageList1.Images.SetKeyName(0, "checkbox.png");
+            this.ımageList1.Images.SetKeyName(1, "delete.png");
             // 
             // lblBaslik
             // 
@@ -124,6 +134,9 @@
             // 
             // groupGenel
             // 
+            this.groupGenel.Controls.Add(this.btnBolumu);
+            this.groupGenel.Controls.Add(this.toggleKullanici);
+            this.groupGenel.Controls.Add(this.labelControl9);
             this.groupGenel.Controls.Add(this.btnUnvani);
             this.groupGenel.Controls.Add(this.cmbIstenCikisTarihi);
             this.groupGenel.Controls.Add(this.cmbIseGirisTarihi);
@@ -136,6 +149,7 @@
             this.groupGenel.Controls.Add(this.labelControl7);
             this.groupGenel.Controls.Add(this.labelControl6);
             this.groupGenel.Controls.Add(this.labelControl11);
+            this.groupGenel.Controls.Add(this.labelControl10);
             this.groupGenel.Controls.Add(this.labelControl5);
             this.groupGenel.Controls.Add(this.labelControl4);
             this.groupGenel.Controls.Add(this.labelControl3);
@@ -144,19 +158,64 @@
             this.groupGenel.Location = new System.Drawing.Point(0, 55);
             this.groupGenel.Margin = new System.Windows.Forms.Padding(2);
             this.groupGenel.Name = "groupGenel";
-            this.groupGenel.Size = new System.Drawing.Size(672, 201);
+            this.groupGenel.Size = new System.Drawing.Size(672, 235);
             this.groupGenel.TabIndex = 5;
             this.groupGenel.Text = "Genel Bilgiler";
             // 
-            // btnUnvani
+            // btnBolumu
             // 
-            this.btnUnvani.Location = new System.Drawing.Point(443, 66);
-            this.btnUnvani.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnUnvani.Name = "btnUnvani";
+            this.btnBolumu.Location = new System.Drawing.Point(443, 68);
+            this.btnBolumu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBolumu.Name = "btnBolumu";
+            this.btnBolumu.Properties.AccessibleName = "Bolumu";
             editorButtonImageOptions1.ImageIndex = 0;
             editorButtonImageOptions1.ImageList = this.ımageList1;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btnBolumu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null),
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnBolumu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.btnBolumu.Size = new System.Drawing.Size(220, 24);
+            this.btnBolumu.TabIndex = 33;
+            this.btnBolumu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit1_ButtonClick);
+            // 
+            // toggleKullanici
+            // 
+            this.toggleKullanici.Location = new System.Drawing.Point(115, 67);
+            this.toggleKullanici.Margin = new System.Windows.Forms.Padding(2);
+            this.toggleKullanici.Name = "toggleKullanici";
+            this.toggleKullanici.Properties.OffText = "Hayır";
+            this.toggleKullanici.Properties.OnText = "Evet";
+            this.toggleKullanici.Size = new System.Drawing.Size(117, 26);
+            this.toggleKullanici.TabIndex = 32;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl9.Appearance.Options.UseBorderColor = true;
+            this.labelControl9.Appearance.Options.UseTextOptions = true;
+            this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl9.Location = new System.Drawing.Point(10, 67);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(100, 25);
+            this.labelControl9.TabIndex = 31;
+            this.labelControl9.Text = "Kullanıcı :";
+            // 
+            // btnUnvani
+            // 
+            this.btnUnvani.Location = new System.Drawing.Point(443, 95);
+            this.btnUnvani.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUnvani.Name = "btnUnvani";
+            this.btnUnvani.Properties.AccessibleName = "Unvani";
+            editorButtonImageOptions3.ImageIndex = 0;
+            editorButtonImageOptions3.ImageList = this.ımageList1;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btnUnvani.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null),
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnUnvani.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnUnvani.Size = new System.Drawing.Size(220, 24);
             this.btnUnvani.TabIndex = 9;
@@ -165,13 +224,13 @@
             // cmbIstenCikisTarihi
             // 
             this.cmbIstenCikisTarihi.EditValue = null;
-            this.cmbIstenCikisTarihi.Location = new System.Drawing.Point(443, 127);
+            this.cmbIstenCikisTarihi.Location = new System.Drawing.Point(443, 156);
             this.cmbIstenCikisTarihi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbIstenCikisTarihi.Name = "cmbIstenCikisTarihi";
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.cmbIstenCikisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.cmbIstenCikisTarihi.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbIstenCikisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -183,13 +242,13 @@
             // cmbIseGirisTarihi
             // 
             this.cmbIseGirisTarihi.EditValue = null;
-            this.cmbIseGirisTarihi.Location = new System.Drawing.Point(115, 126);
+            this.cmbIseGirisTarihi.Location = new System.Drawing.Point(115, 155);
             this.cmbIseGirisTarihi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbIseGirisTarihi.Name = "cmbIseGirisTarihi";
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
             this.cmbIseGirisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.cmbIseGirisTarihi.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cmbIseGirisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -200,15 +259,23 @@
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(115, 155);
+            this.txtAciklama.Location = new System.Drawing.Point(115, 184);
             this.txtAciklama.Margin = new System.Windows.Forms.Padding(2);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(553, 39);
+            this.txtAciklama.Size = new System.Drawing.Size(548, 39);
             this.txtAciklama.TabIndex = 10;
+            // 
+            // txtSoyad
+            // 
+            this.txtSoyad.Location = new System.Drawing.Point(443, 127);
+            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSoyad.Name = "txtSoyad";
+            this.txtSoyad.Size = new System.Drawing.Size(220, 22);
+            this.txtSoyad.TabIndex = 7;
             // 
             // txtAdi
             // 
-            this.txtAdi.Location = new System.Drawing.Point(115, 98);
+            this.txtAdi.Location = new System.Drawing.Point(115, 127);
             this.txtAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdi.Name = "txtAdi";
             this.txtAdi.Size = new System.Drawing.Size(220, 22);
@@ -216,7 +283,7 @@
             // 
             // txtPersonelKodu
             // 
-            this.txtPersonelKodu.Location = new System.Drawing.Point(115, 68);
+            this.txtPersonelKodu.Location = new System.Drawing.Point(115, 97);
             this.txtPersonelKodu.Margin = new System.Windows.Forms.Padding(2);
             this.txtPersonelKodu.Name = "txtPersonelKodu";
             this.txtPersonelKodu.Size = new System.Drawing.Size(219, 22);
@@ -240,7 +307,7 @@
             this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl19.Location = new System.Drawing.Point(339, 126);
+            this.labelControl19.Location = new System.Drawing.Point(339, 155);
             this.labelControl19.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(100, 25);
@@ -255,12 +322,27 @@
             this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl7.Location = new System.Drawing.Point(10, 126);
+            this.labelControl7.Location = new System.Drawing.Point(10, 155);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(100, 25);
             this.labelControl7.TabIndex = 5;
             this.labelControl7.Text = "İşe Giriş Tarihi :";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl6.Appearance.Options.UseBorderColor = true;
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl6.Location = new System.Drawing.Point(339, 126);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(100, 25);
+            this.labelControl6.TabIndex = 5;
+            this.labelControl6.Text = "Soyadı :";
             // 
             // labelControl11
             // 
@@ -270,12 +352,27 @@
             this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl11.Location = new System.Drawing.Point(10, 156);
+            this.labelControl11.Location = new System.Drawing.Point(10, 185);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(100, 38);
             this.labelControl11.TabIndex = 5;
             this.labelControl11.Text = "Açıklama :";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl10.Appearance.Options.UseBorderColor = true;
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
+            this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl10.Location = new System.Drawing.Point(339, 68);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(100, 25);
+            this.labelControl10.TabIndex = 4;
+            this.labelControl10.Text = "Bölümü :";
             // 
             // labelControl5
             // 
@@ -285,7 +382,7 @@
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl5.Location = new System.Drawing.Point(10, 97);
+            this.labelControl5.Location = new System.Drawing.Point(10, 126);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(100, 25);
@@ -300,7 +397,7 @@
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl4.Location = new System.Drawing.Point(339, 66);
+            this.labelControl4.Location = new System.Drawing.Point(339, 95);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(100, 25);
@@ -315,7 +412,7 @@
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl3.Location = new System.Drawing.Point(10, 66);
+            this.labelControl3.Location = new System.Drawing.Point(10, 95);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(100, 25);
@@ -354,7 +451,7 @@
             this.groupGruplar.Controls.Add(this.labelControl14);
             this.groupGruplar.Controls.Add(this.labelControl12);
             this.groupGruplar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupGruplar.Location = new System.Drawing.Point(0, 256);
+            this.groupGruplar.Location = new System.Drawing.Point(0, 290);
             this.groupGruplar.Margin = new System.Windows.Forms.Padding(2);
             this.groupGruplar.Name = "groupGruplar";
             this.groupGruplar.Size = new System.Drawing.Size(672, 185);
@@ -531,7 +628,7 @@
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnKaydet);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 444);
+            this.grpMenu.Location = new System.Drawing.Point(0, 478);
             this.grpMenu.Margin = new System.Windows.Forms.Padding(2);
             this.grpMenu.Name = "grpMenu";
             this.grpMenu.ShowCaption = false;
@@ -572,34 +669,11 @@
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl6.Appearance.Options.UseBorderColor = true;
-            this.labelControl6.Appearance.Options.UseTextOptions = true;
-            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl6.Location = new System.Drawing.Point(339, 97);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(100, 25);
-            this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "Soyadı :";
-            // 
-            // txtSoyad
-            // 
-            this.txtSoyad.Location = new System.Drawing.Point(443, 98);
-            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(220, 22);
-            this.txtSoyad.TabIndex = 7;
-            // 
             // FrmPersonelIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 505);
+            this.ClientSize = new System.Drawing.Size(672, 539);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.groupGruplar);
             this.Controls.Add(this.groupGenel);
@@ -613,12 +687,15 @@
             this.Load += new System.EventHandler(this.FrmPersonelIslem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupGenel)).EndInit();
             this.groupGenel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnBolumu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleKullanici.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnvani.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIstenCikisTarihi.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIstenCikisTarihi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIseGirisTarihi.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIseGirisTarihi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPersonelKodu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleDurumu.Properties)).EndInit();
@@ -633,7 +710,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCepTelefonu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -678,5 +754,9 @@
         private System.Windows.Forms.ImageList ımageList2;
         private DevExpress.XtraEditors.TextEdit txtSoyad;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.ToggleSwitch toggleKullanici;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.ButtonEdit btnBolumu;
     }
 }

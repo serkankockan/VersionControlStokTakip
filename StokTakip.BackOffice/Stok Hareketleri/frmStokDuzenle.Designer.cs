@@ -73,6 +73,8 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.xtraScrollableControl3 = new DevExpress.XtraEditors.XtraScrollableControl();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridContSag)).BeginInit();
@@ -97,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            this.navigationPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBaslik
@@ -207,7 +210,7 @@
             this.gridContSag.Name = "gridContSag";
             this.gridContSag.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageEdit2});
-            this.gridContSag.Size = new System.Drawing.Size(625, 609);
+            this.gridContSag.Size = new System.Drawing.Size(619, 609);
             this.gridContSag.TabIndex = 8;
             this.gridContSag.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSag});
@@ -305,7 +308,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridContSag);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1417, 609);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1411, 609);
             this.splitContainerControl1.SplitterPosition = 786;
             this.splitContainerControl1.TabIndex = 9;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -474,12 +477,14 @@
             // 
             this.navigationPane1.Controls.Add(this.navigationPage1);
             this.navigationPane1.Controls.Add(this.navigationPage2);
+            this.navigationPane1.Controls.Add(this.navigationPage3);
             this.navigationPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationPane1.Location = new System.Drawing.Point(0, 53);
             this.navigationPane1.Name = "navigationPane1";
             this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.navigationPage1,
-            this.navigationPage2});
+            this.navigationPage2,
+            this.navigationPage3});
             this.navigationPane1.RegularSize = new System.Drawing.Size(1557, 679);
             this.navigationPane1.SelectedPage = this.navigationPage1;
             this.navigationPane1.Size = new System.Drawing.Size(1557, 679);
@@ -491,14 +496,14 @@
             this.navigationPage1.Caption = "Ürün Düzenle";
             this.navigationPage1.Controls.Add(this.splitContainerControl1);
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(1417, 609);
+            this.navigationPage1.Size = new System.Drawing.Size(1411, 609);
             // 
             // navigationPage2
             // 
             this.navigationPage2.Caption = "Konum Özellikleri";
             this.navigationPage2.Controls.Add(this.groupControl2);
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(1417, 609);
+            this.navigationPage2.Size = new System.Drawing.Size(1411, 609);
             // 
             // groupControl2
             // 
@@ -506,7 +511,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1417, 111);
+            this.groupControl2.Size = new System.Drawing.Size(1411, 111);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Genel";
             // 
@@ -560,6 +565,21 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(346, 30);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // navigationPage3
+            // 
+            this.navigationPage3.Caption = "Ürünleri Görüntüle";
+            this.navigationPage3.Controls.Add(this.xtraScrollableControl3);
+            this.navigationPage3.Name = "navigationPage3";
+            this.navigationPage3.Size = new System.Drawing.Size(1411, 609);
+            // 
+            // xtraScrollableControl3
+            // 
+            this.xtraScrollableControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl3.Location = new System.Drawing.Point(0, 0);
+            this.xtraScrollableControl3.Name = "xtraScrollableControl3";
+            this.xtraScrollableControl3.Size = new System.Drawing.Size(1411, 609);
+            this.xtraScrollableControl3.TabIndex = 4;
+            // 
             // frmStokDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -596,6 +616,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            this.navigationPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -646,5 +667,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl3;
     }
 }

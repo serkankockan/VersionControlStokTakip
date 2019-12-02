@@ -10,32 +10,23 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StokTakip.Entities.Context;
 using StokTakip.Entities.Data_Access;
-using StokTakip.Entities.Tables;
 
-namespace StokTakip.BackOffice.Cari
+namespace StokTakip.BackOffice.Personel
 {
-    public partial class frmCariSec : DevExpress.XtraEditors.XtraForm
+    public partial class frmPersonelSec : DevExpress.XtraEditors.XtraForm
     {
 
-        CariDAL cariDal = new CariDAL();
+        PersonelDAL personelDal = new PersonelDAL();
         StokTakipContext context = new StokTakipContext();
-        public List<Entities.Tables.Cari> secilen = new List<Entities.Tables.Cari>();
+        public List<Entities.Tables.Personel> secilen = new List<Entities.Tables.Personel>();
         public bool secildi = false;
 
-        public frmCariSec(bool cokluSecim = false)
+        public frmPersonelSec()
         {
             InitializeComponent();
-            if (cokluSecim)
-            {
-                lblUyari.Visible = true;
-                gridView1.OptionsSelection.MultiSelect = true;
-            }
 
-        }
+            gridControl1.DataSource = personelDal.GetByFilter(context, c => c.Calisisyor == true);
 
-        private void frmCariSec_Load(object sender, EventArgs e)
-        {
-            gridControl1.DataSource = cariDal.GetCariler(context);
         }
 
         private void btnSec_Click(object sender, EventArgs e)
@@ -44,15 +35,15 @@ namespace StokTakip.BackOffice.Cari
             {
                 foreach (var row in gridView1.GetSelectedRows())
                 {
-                    string carikodu = gridView1.GetRowCellValue(row, colCariKodu).ToString();
-                    secilen.Add(context.Cariler.SingleOrDefault(c => c.CariKodu == carikodu));
+                    int Id = Convert.ToInt32(gridView1.GetRowCellValue(row, colid).ToString());
+                    secilen.Add(context.Personeller.SingleOrDefault(c => c.id == Id));
                 }
                 secildi = true;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Seçinlen bir cari bulunamadı.");
+                MessageBox.Show("Seçinlen personel bulunamadı.");
             }
         }
 

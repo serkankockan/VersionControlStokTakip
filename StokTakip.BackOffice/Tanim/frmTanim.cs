@@ -62,7 +62,9 @@ namespace StokTakip.BackOffice.Tanim
             StokGrubu,
             StokAltGrubu,
             Marka,
-            Modeli
+            Modeli,
+            Bolumu,
+            Unvani
             
         }
 

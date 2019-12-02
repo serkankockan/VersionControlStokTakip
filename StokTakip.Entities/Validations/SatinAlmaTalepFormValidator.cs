@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using StokTakip.Entities.Tables;
+using FluentValidation;
+
+namespace StokTakip.Entities.Validations
+{
+    public class SatinAlmaTalepFormValidator : AbstractValidator<SatinAlmaTalepForm>
+    {
+    }
+}
